@@ -270,7 +270,7 @@ export default function Classes() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Native Finnish Teachers</h3>
+                <h3 className="text-xl text-aurora-blue font-semibold mb-2">Native Finnish Teachers</h3>
                 <p className="text-gray-700">
                   Learn from experienced native Finnish speakers who understand the challenges faced by learners.
                 </p>
@@ -286,7 +286,7 @@ export default function Classes() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Practical & Relevant</h3>
+                <h3 className="text-xl text-aurora-blue font-semibold mb-2">Practical & Relevant</h3>
                 <p className="text-gray-700">
                   Our curriculum focuses on practical language skills you can use in everyday situations.
                 </p>
@@ -302,7 +302,7 @@ export default function Classes() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Cultural Immersion</h3>
+                <h3 className="text-xl text-aurora-blue font-semibold mb-2">Cultural Immersion</h3>
                 <p className="text-gray-700">
                   Learn not just the language but also the cultural context that gives Finnish its unique flavor.
                 </p>
@@ -318,7 +318,7 @@ export default function Classes() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Supportive Community</h3>
+                <h3 className="text-xl text-aurora-blue font-semibold mb-2">Supportive Community</h3>
                 <p className="text-gray-700">
                   Join a community of fellow learners for practice, support, and friendship beyond the classroom.
                 </p>

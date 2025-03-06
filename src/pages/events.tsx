@@ -223,7 +223,7 @@ export default function Events() {
             <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
               <div className="h-2 bg-aurora-green w-full"></div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-4">Beginner Immersion Weekend</h3>
+                <h3 className="text-xl text-aurora-blue font-semibold mb-4">Beginner Immersion Weekend</h3>
                 <p className="text-gray-700 mb-6">
                   A supportive environment for beginners to dive into Finnish through interactive activities, 
                   simple conversations, and cultural experiences.
@@ -252,7 +252,7 @@ export default function Events() {
             <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
               <div className="h-2 bg-aurora-blue w-full"></div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-4">Intermediate Immersion Weekend</h3>
+                <h3 className="text-xl text-aurora-blue font-semibold mb-4">Intermediate Immersion Weekend</h3>
                 <p className="text-gray-700 mb-6">
                   Deepen your Finnish skills through guided discussions, role-playing scenarios, 
                   and authentic cultural activities with native speakers.
@@ -281,7 +281,7 @@ export default function Events() {
             <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
               <div className="h-2 bg-aurora-purple w-full"></div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-4">Advanced Immersion Weekend</h3>
+                <h3 className="text-xl text-aurora-blue font-semibold mb-4">Advanced Immersion Weekend</h3>
                 <p className="text-gray-700 mb-6">
                   Challenge yourself with complex discussions, debates, and creative projects 
                   conducted entirely in Finnish with minimal English support.

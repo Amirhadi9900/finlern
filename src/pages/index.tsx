@@ -93,7 +93,7 @@ export default function Home() {
         <ClientOnly>
           <div 
             onClick={handleScrollDown}
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 fade-in cursor-pointer"
+            className="absolute bottom-8 w-full flex justify-center items-center fade-in cursor-pointer z-10"
             aria-label="Scroll to stats section"
             role="button"
             tabIndex={0}

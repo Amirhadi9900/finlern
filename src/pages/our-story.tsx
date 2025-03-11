@@ -95,11 +95,12 @@ export default function OurStory() {
                     width={600} 
                     height={600} 
                     className="w-full h-auto object-cover rounded-lg"
+                    unoptimized
                     onError={(e) => {
                       // Set fallback image if the original image fails to load
                       const target = e.target as HTMLImageElement;
-                      target.src = "https://via.placeholder.com/600x600?text=Founder+Image";
-                      target.onerror = null; // Prevent infinite loop
+                      target.src = "https://placehold.co/600x600?text=Founder+Image";
+                      target.onerror = null; // Prevent infinite loop if fallback also fails
                     }}
                   />
                 </div>

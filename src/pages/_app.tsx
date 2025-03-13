@@ -26,6 +26,19 @@ export default function App({ Component, pageProps }: AppProps) {
     // Page transition effect - only runs on client
     if (typeof window === 'undefined') return;
     
+    // iOS Safari compatibility improvements
+    // Set passive event listeners for better scrolling performance
+    if (typeof window !== 'undefined') {
+      // Add error logging for iOS Safari debugging
+      window.onerror = (msg, url, line, col, error) => {
+        console.error('Global error:', { msg, url, line, col, error: error?.stack || 'No stack' });
+        return false;
+      };
+
+      // Fix for Safari scroll performance
+      document.addEventListener('touchstart', function() {}, { passive: true });
+    }
+    
     const handleRouteChange = () => {
       // Scroll to top on page change
       window.scrollTo(0, 0);
@@ -59,11 +72,24 @@ export default function App({ Component, pageProps }: AppProps) {
       <ClientOnly>
         <AosInitializer />
         
-        {/* Add animation scripts */}
+        {/* iOS Safari compatibility script - must load before animations */}
+        <Script 
+          id="ios-fixes" 
+          strategy="beforeInteractive"
+          src="/ios-compatibility.js"
+          onError={(e) => {
+            console.error('Failed to load iOS compatibility script:', e);
+          }}
+        />
+        
+        {/* Add animation scripts with safeguards for iOS Safari */}
         <Script 
           id="animation-script" 
           strategy="afterInteractive"
           src="/scripts/animations.js"
+          onError={(e) => {
+            console.error('Failed to load animation script:', e);
+          }}
         />
       </ClientOnly>
     </>

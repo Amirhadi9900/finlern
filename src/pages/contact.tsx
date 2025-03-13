@@ -223,8 +223,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold mb-2">Phone</h3>
-                    <p className="text-gray-700 mb-1">Main Office: +358 (0) 40 123 4567</p>
-                    <p className="text-gray-700">Student Support: +358 (0) 40 765 4321</p>
+                    <p className="text-gray-700 mb-1">Main Office: +358 41 756 7339 (Mon-Fri 9:00-17:00)</p>
+                    <p className="text-gray-700">Student Support: +358 41 756 7339 (Mon-Fri 9:00-17:00)</p>
                   </div>
                 </div>
 
@@ -254,7 +254,7 @@ export default function Contact() {
                     <h3 className="text-xl font-semibold mb-2">Address</h3>
                     <p className="text-gray-700 mb-1">Finlern Language Center</p>
                     <p className="text-gray-700 mb-1">Mannerheimintie 123</p>
-                    <p className="text-gray-700">00100 Helsinki, Finland</p>
+                    <p className="text-gray-700">Valkeakoski, Finland</p>
                   </div>
                 </div>
 
@@ -267,8 +267,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold mb-2">Office Hours</h3>
-                    <p className="text-gray-700 mb-1">Monday to Friday: 9:00 AM - 7:00 PM</p>
-                    <p className="text-gray-700">Saturday: 10:00 AM - 4:00 PM</p>
+                    <p className="text-gray-700 mb-1">Monday to Friday: 9:00 AM - 5:00 PM</p>
                   </div>
                 </div>
               </div>
@@ -430,7 +429,7 @@ export default function Contact() {
           <div className="text-center mb-12">
             <h2 className="section-title text-aurora-blue">Find Us</h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              Our main language center is conveniently located in the heart of Helsinki, easily accessible by public transport.
+              Our main language center is conveniently located in the heart of Valkeakoski, easily accessible by public transport.
             </p>
           </div>
           
@@ -442,13 +441,13 @@ export default function Contact() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <p className="text-aurora-blue text-lg font-medium">Map of Helsinki Location</p>
+                <p className="text-aurora-blue text-lg font-medium">Map of Valkeakoski Location</p>
               </div>
             </div>
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="bg-white p-6 rounded-lg shadow-lg max-w-md">
                 <h3 className="text-xl font-semibold mb-2">Finlern Language Center</h3>
-                <p className="text-gray-700 mb-4">Mannerheimintie 123, 00100 Helsinki</p>
+                <p className="text-gray-700 mb-4">Valkeakoski</p>
                 <div className="flex items-center text-sm text-gray-700 mb-4">
                   <svg className="w-4 h-4 mr-1 text-aurora-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -476,7 +475,7 @@ export default function Contact() {
           
           <div className="max-w-3xl mx-auto space-y-6">
             <div className="bg-gray-50 rounded-lg p-6">
-              <h3 className="bg-cyan-800 rounded-lg p-1 text-lg font-semibold mb-3">How quickly will I receive a response to my inquiry?</h3>
+              <h3 className="bg-aurora-blue rounded-lg p-1 text-lg font-semibold mb-3">How quickly will I receive a response to my inquiry?</h3>
               <p className="text-gray-700">
                 We aim to respond to all inquiries within 24 hours during business days. For urgent matters, 
                 we recommend calling our office directly.
@@ -484,7 +483,7 @@ export default function Contact() {
             </div>
             
             <div className="bg-gray-50 rounded-lg p-6">
-              <h3 className="bg-cyan-800 rounded-lg p-1 text-lg font-semibold mb-3">Do you offer virtual consultations for prospective students?</h3>
+              <h3 className="bg-aurora-blue rounded-lg p-1 text-lg font-semibold mb-3">Do you offer virtual consultations for prospective students?</h3>
               <p className="text-gray-700">
                 Yes! We offer 15-minute free consultations via Zoom or phone to discuss your Finnish learning 
                 goals and help you choose the right course.
@@ -492,7 +491,7 @@ export default function Contact() {
             </div>
             
             <div className="bg-gray-50 rounded-lg p-6">
-              <h3 className="bg-cyan-800 rounded-lg p-1 text-lg font-semibold mb-3">Can I visit the language center before signing up for a class?</h3>
+              <h3 className="bg-aurora-blue rounded-lg p-1 text-lg font-semibold mb-3">Can I visit the language center before signing up for a class?</h3>
               <p className="text-gray-700">
                 Absolutely! We encourage prospective students to visit our center, meet our teachers, 
                 and get a feel for our learning environment. Contact us to schedule a visit.
@@ -500,7 +499,7 @@ export default function Contact() {
             </div>
             
             <div className="bg-gray-50 rounded-lg p-6">
-              <h3 className="bg-cyan-800 rounded-lg p-1 text-lg font-semibold mb-3">Do you have other locations besides Helsinki?</h3>
+              <h3 className="bg-aurora-blue rounded-lg p-1 text-lg font-semibold mb-3">Do you have other locations besides Helsinki?</h3>
               <p className="text-gray-700">
                 Currently, our physical language center is only in Helsinki, but we offer online classes 
                 that are accessible from anywhere in the world.

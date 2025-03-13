@@ -76,7 +76,7 @@ export default function Events() {
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center text-white">
                     <div className="text-5xl font-bold">15</div>
-                    <div className="text-xl">April</div>
+                    <div className="text-xl">March</div>
                   </div>
                 </div>
               </div>
@@ -90,18 +90,22 @@ export default function Events() {
                   <svg className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <span>6:00 PM - 8:00 PM</span>
+                  <span>6:00 PM - 8:30 PM</span>
                 </div>
                 <div className="flex items-center text-gray-700 mb-6">
                   <svg className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
-                  <span>Finlern Language Center, Helsinki</span>
+                  <span>Moro Sky Bar, Tampere</span>
+                </div>
+                <div className="flex justify-between items-center py-5">
+                  <span className="text-lg font-bold text-aurora-blue">Free Entrance!</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-lg font-bold text-aurora-blue">Free for students</span>
-                  <button className="btn-primary hover:scale-105">Register Now</button>
+                  <span className="text-xl font-bold bg-aurora-blue text-white rounded-md px-2 py-1">
+                    To register, please send an email to <a href="mailto:info@finlern.fi">info@finlern.fi</a>
+                  </span>
                 </div>
               </div>
             </div>
@@ -136,14 +140,18 @@ export default function Events() {
                   </svg>
                   <span>Cultural Center, Helsinki</span>
                 </div>
-                <div className="flex justify-between items-center">
+                <div className="flex justify-between items-center py-5">
                   <span className="text-lg font-bold text-aurora-blue">€5 (Students free)</span>
-                  <button className="btn-primary hover:scale-105">Register Now</button>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-xl font-bold bg-aurora-blue text-white rounded-md px-2 py-1">
+                    To register, please send an email to <a href="mailto:info@finlern.fi">info@finlern.fi</a>
+                  </span>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </div>    
       </section>
 
       {/* Monthly Cultural Exchange */}
@@ -179,25 +187,25 @@ export default function Events() {
                       <svg className="h-5 w-5 mr-2 mt-0.5 text-aurora-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
-                      <span>Held on the last Thursday of every month</span>
+                      <span className="text-gray-700">Held on the last Thursday of every month</span>
                     </li>
                     <li className="flex items-start">
                       <svg className="h-5 w-5 mr-2 mt-0.5 text-aurora-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
-                      <span>Rotating venues around Helsinki</span>
+                      <span className="text-gray-700">Rotating venues around Helsinki</span>
                     </li>
                     <li className="flex items-start">
                       <svg className="h-5 w-5 mr-2 mt-0.5 text-aurora-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
-                      <span>Different themes and activities each month</span>
+                      <span className="text-gray-700">Different themes and activities each month</span>
                     </li>
                     <li className="flex items-start">
                       <svg className="h-5 w-5 mr-2 mt-0.5 text-aurora-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
-                      <span>Free for Finlern students, €5 for others</span>
+                      <span className="text-gray-700">Free for Finlern students, €5 for others</span>
                     </li>
                   </ul>
                   <button className="btn-primary hover:scale-105">Join Next Exchange</button>

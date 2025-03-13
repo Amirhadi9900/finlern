@@ -135,7 +135,7 @@ const Footer: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-sm text-gray-400">Call Us</p>
-                  <a href="tel:+3580123456789" className="text-gray-300 hover:text-white transition-colors duration-300">+358 (0) 123 456 789</a>
+                  <a href="tel:+3580123456789" className="text-gray-300 hover:text-white transition-colors duration-300">+358 41 756 7339</a>
                 </div>
               </li>
             </ul>
@@ -182,7 +182,7 @@ const Footer: React.FC = () => {
             <Link href="/terms" className="hover:text-gray-300 transition-colors duration-300">
               Terms
             </Link>
-            <Link href="/privacy" className="hover:text-gray-300 transition-colors duration-300">
+            <Link href="/privacy-policy" className="hover:text-gray-300 transition-colors duration-300">
               Privacy
             </Link>
             <Link href="/cookies" className="hover:text-gray-300 transition-colors duration-300">

@@ -49,6 +49,71 @@ module.exports = {
         sans: ['var(--font-inter)'],
         heading: ['var(--font-poppins)'],
       },
+      keyframes: {
+        'gradient-x': {
+          '0%': {
+            'background-size': '200% 200%',
+            'background-position': 'left center'
+          },
+          '25%': {
+            'background-size': '200% 200%',
+            'background-position': 'center center'
+          },
+          '50%': {
+            'background-size': '200% 200%',
+            'background-position': 'right center'
+          },
+          '75%': {
+            'background-size': '200% 200%',
+            'background-position': 'center center'
+          },
+          '100%': {
+            'background-size': '200% 200%',
+            'background-position': 'left center'
+          }
+        },
+        'gradient-y': {
+          '0%': {
+            'background-size': '200% 200%',
+            'background-position': 'top center'
+          },
+          '25%': {
+            'background-size': '200% 200%',
+            'background-position': 'center center'
+          },
+          '50%': {
+            'background-size': '200% 200%',
+            'background-position': 'bottom center'
+          },
+          '75%': {
+            'background-size': '200% 200%',
+            'background-position': 'center center'
+          },
+          '100%': {
+            'background-size': '200% 200%',
+            'background-position': 'top center'
+          }
+        },
+        'shine': {
+          '0%': {
+            'transform': 'translateX(-100%)'
+          },
+          '40%, 100%': {
+            'transform': 'translateX(100%)'
+          }
+        }
+      },
+      animation: {
+        'gradient-x': 'gradient-x 5s ease-in-out infinite',
+        'gradient-y': 'gradient-y 5s ease-in-out infinite',
+        'shine': 'shine 3s ease-in-out infinite'
+      },
+      backgroundSize: {
+        'auto': 'auto',
+        'cover': 'cover',
+        'contain': 'contain',
+        '200%': '200%'
+      }
     },
   },
   plugins: [],

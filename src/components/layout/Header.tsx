@@ -12,6 +12,14 @@ const NAV_LINKS = [
   { href: '/contact', label: 'Contact' },
 ]
 
+// Aurora colors for the logo text animation
+const AURORA_COLORS = [
+  'from-pink-500 via-purple-500 to-indigo-500',
+  'from-indigo-500 via-purple-500 to-pink-500',
+  'from-emerald-500 via-teal-500 to-blue-500',
+  'from-blue-500 via-cyan-500 to-emerald-500'
+]
+
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
@@ -92,11 +100,23 @@ const Header: React.FC = () => {
                 width={1600} 
                 height={560} 
                 className={`w-auto transition-all duration-300 ease-in-out group-hover:scale-105 ${
-                  isScrolled ? 'h-16' : 'h-16'
+                  isScrolled ? 'h-14' : 'h-16'
                 }`}
-                style={{ maxWidth: '200px' }}
+                style={{ maxWidth: '170px' }}
                 priority
               />
+            </div>
+            {/* Company Name with Aurora Color Transition */}
+            <div className="ml-3 relative overflow-hidden">
+              <span className="absolute top-0 left-0 font-bold text-2xl md:text-3xl tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 animate-gradient-x">
+                Finlern
+              </span>
+              <span className="absolute top-0 left-0 font-bold text-2xl md:text-3xl tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 animate-gradient-y opacity-50 mix-blend-multiply">
+                Finlern
+              </span>
+              {/* Shine effect */}
+              <span className="absolute inset-0 w-[120%] h-full bg-gradient-to-r from-transparent via-white to-transparent opacity-25 -translate-x-full animate-shine"></span>
+              <span className="invisible font-bold text-2xl md:text-3xl tracking-wider">Finlern</span>
             </div>
           </Link>
 
@@ -179,14 +199,27 @@ const Header: React.FC = () => {
       >
         <div className="flex flex-col h-full p-6 overflow-y-auto">
           <div className="flex justify-between items-center mb-8">
-            <Image 
-              src="/images/finlern.png" 
-              alt="Finlern Logo" 
-              width={800} 
-              height={280} 
-              className="h-16 w-auto" 
-              priority
-            />
+            <div className="flex items-center">
+              <Image 
+                src="/images/finlern.png" 
+                alt="Finlern Logo" 
+                width={800} 
+                height={280} 
+                className="h-12 w-auto" 
+                priority
+              />
+              <div className="ml-2 relative overflow-hidden">
+                <span className="absolute top-0 left-0 font-bold text-xl tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 animate-gradient-x">
+                  Finlern
+                </span>
+                <span className="absolute top-0 left-0 font-bold text-xl tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 animate-gradient-y opacity-50 mix-blend-multiply">
+                  Finlern
+                </span>
+                {/* Shine effect */}
+                <span className="absolute inset-0 w-[120%] h-full bg-gradient-to-r from-transparent via-white to-transparent opacity-25 -translate-x-full animate-shine"></span>
+                <span className="invisible font-bold text-xl tracking-wider">Finlern</span>
+              </div>
+            </div>
             <button 
               className="p-2 text-gray-700 hover:text-gray-900"
               onClick={toggleMenu}

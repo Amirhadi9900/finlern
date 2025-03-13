@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Layout from '../components/layout/Layout'
+import Link from 'next/link'
 
 // Add type declaration for window.scrollAnimations
 declare global {
@@ -276,7 +277,7 @@ export default function OurStory() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-white">Sarah Johnson</h4>
-                  <p className="text-gray-300 text-sm">Intermediate Student, United States</p>
+                  <p className="text-gray-300 text-sm">Intermediate Student</p>
                 </div>
               </div>
             </div>
@@ -309,7 +310,7 @@ export default function OurStory() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-white">Thomas Lindberg</h4>
-                  <p className="text-gray-300 text-sm">Business Finnish Student, Germany</p>
+                  <p className="text-gray-300 text-sm">Intermediate Finnish Student</p>
                 </div>
               </div>
             </div>
@@ -342,7 +343,7 @@ export default function OurStory() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-white">Maria Koskinen</h4>
-                  <p className="text-gray-300 text-sm">Beginner Student, Canada</p>
+                  <p className="text-gray-300 text-sm">Beginner Student</p>
                 </div>
               </div>
             </div>
@@ -360,12 +361,12 @@ export default function OurStory() {
               Join our community of Finnish language learners and discover the joy of learning Finnish with Finlern.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <button className="btn-primary py-3 px-8 text-lg">
+              <Link href="/classes" className="btn-primary py-3 px-8 text-lg hover:scale-105 transition-transform duration-300">
                 Explore Our Classes
-              </button>
-              <button className="btn-secondary py-3 px-8 text-lg">
+              </Link>
+              <Link href="/contact" className="btn-secondary py-3 px-8 text-lg hover:scale-105 transition-transform duration-300">
                 Contact Us
-              </button>
+              </Link>
             </div>
           </div>
         </div>

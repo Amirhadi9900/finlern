@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Layout from '../components/layout/Layout'
@@ -14,6 +14,9 @@ declare global {
 }
 
 export default function Classes() {
+  // Reference for the course section
+  const courseSectionRef = useRef<HTMLDivElement>(null);
+  
   // Initialize animations on component mount
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -31,20 +34,29 @@ export default function Classes() {
     }
   }, []);
 
+  // Handle scroll to course section
+  const scrollToCourseSection = () => {
+    if (courseSectionRef.current) {
+      courseSectionRef.current.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <Layout>
       <Head>
-        <title>Our Classes | Finlern - Finnish Language Learning</title>
-        <meta name="description" content="Explore our Finnish language classes for all levels - from beginners to advanced learners." />
+        <title>Finnish Classes | Finlern - Finnish Language Learning</title>
+        <meta name="description" content="Join our Finnish language classes for all levels, from beginner to advanced. Learn Finnish with native teachers in a supportive environment." />
       </Head>
 
       {/* Hero Section */}
       <section className="bg-aurora-blue py-16 md:py-24 relative overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/3 w-1/2 h-1/3 bg-white/10 blur-3xl rounded-full animate-pulse"></div>
-          <div className="absolute top-1/2 right-1/4 w-1/3 h-1/3 bg-aurora-green/10 blur-3xl rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
-          <div className="absolute bottom-1/3 left-1/4 w-1/4 h-1/4 bg-aurora-purple/10 blur-3xl rounded-full animate-pulse" style={{ animationDelay: '3s' }}></div>
+          <div className="absolute top-1/4 left-1/4 w-1/2 h-1/3 bg-white/10 blur-3xl rounded-full animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-1/3 h-1/3 bg-aurora-green/10 blur-3xl rounded-full animate-pulse" style={{ animationDelay: '1.5s' }}></div>
         </div>
         
         <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
@@ -56,20 +68,19 @@ export default function Classes() {
               Discover the perfect Finnish language course for your level and goals.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <button className="btn-white py-3 px-8 text-lg">
+              <button 
+                className="btn-white py-3 px-8 text-lg"
+                onClick={scrollToCourseSection}
+              >
                 View Schedule
-              </button>
-              <button className="btn-white-outline py-3 px-8 text-lg">
-                Free Trial Lesson
               </button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Classes List */}
-      <section className="py-16 md:py-24 bg-warm-paper relative">
-        {/* Decorative elements */}
+      {/* Course Section */}
+      <section className="py-16 md:py-24 bg-warm-paper relative" ref={courseSectionRef}>
         <div className="absolute top-0 left-0 w-full h-4 bg-gradient-to-r from-aurora-blue/30 via-aurora-green/30 to-aurora-blue/30"></div>
         <div className="absolute top-4 right-0 w-24 h-24 bg-aurora-blue/5 rounded-full -translate-y-1/2 translate-x-1/3"></div>
         <div className="absolute bottom-0 left-0 w-32 h-32 bg-aurora-green/5 rounded-full translate-y-1/3 -translate-x-1/4"></div>
@@ -106,7 +117,7 @@ export default function Classes() {
                     <svg className="h-5 w-5 mr-2 mt-0.5 text-aurora-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-gray-700">2 hours per week</span>
+                    <span className="text-gray-700">4 hours per week</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="h-5 w-5 mr-2 mt-0.5 text-aurora-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -122,13 +133,15 @@ export default function Classes() {
                   </li>
                 </ul>
                 <div className="flex justify-between items-center">
-                  <span className="text-2xl font-bold text-aurora-blue">€280</span>
-                  <button className="btn-primary hover:scale-105">
-                    Enroll Now
-                  </button>
+                  <span className="text-2xl font-bold text-aurora-blue py-5">€219</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-xl font-bold bg-aurora-blue  text-white rounded-md px-2 py-1">
+                    To enroll, please send an email to <a href="mailto:info@finlern.fi">info@finlern.fi</a>
+                  </span>
                 </div>
               </div>
-            </div>
+            </div>    
 
             {/* Intermediate Class */}
             <div className="aurora-card group hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 scroll-reveal" style={{ animationDelay: '0.4s' }}>
@@ -147,19 +160,19 @@ export default function Classes() {
                     <svg className="h-5 w-5 mr-2 mt-0.5 text-aurora-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-gray-700">10-week course</span>
+                    <span className="text-gray-700">8-week course</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="h-5 w-5 mr-2 mt-0.5 text-aurora-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-gray-700">2 hours per week</span>
+                    <span className="text-gray-700">4 hours per week</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="h-5 w-5 mr-2 mt-0.5 text-aurora-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-gray-700">Small group size (max 8)</span>
+                    <span className="text-gray-700">Small group size (max 10)</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="h-5 w-5 mr-2 mt-0.5 text-aurora-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -169,11 +182,13 @@ export default function Classes() {
                   </li>
                 </ul>
                 <div className="flex justify-between items-center">
-                  <span className="text-2xl font-bold text-aurora-blue">€350</span>
-                  <button className="btn-primary hover:scale-105">
-                    Enroll Now
-                  </button>
+                  <span className="text-2xl font-bold text-aurora-blue py-5">€279</span>
                 </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-xl font-bold bg-aurora-blue  text-white rounded-md px-2 py-1">
+                    To enroll, please send an email to <a href="mailto:info@finlern.fi">info@finlern.fi</a>
+                  </span>
+                </div>  
               </div>
             </div>
 
@@ -194,19 +209,19 @@ export default function Classes() {
                     <svg className="h-5 w-5 mr-2 mt-0.5 text-aurora-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-gray-700">12-week course</span>
+                    <span className="text-gray-700">8-week course</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="h-5 w-5 mr-2 mt-0.5 text-aurora-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-gray-700">2 hours per week</span>
+                    <span className="text-gray-700">4 hours per week</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="h-5 w-5 mr-2 mt-0.5 text-aurora-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-gray-700">Small group size (max 6)</span>
+                    <span className="text-gray-700">Small group size (max 10)</span>
                   </li>
                   <li className="flex items-start">
                     <svg className="h-5 w-5 mr-2 mt-0.5 text-aurora-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -216,10 +231,12 @@ export default function Classes() {
                   </li>
                 </ul>
                 <div className="flex justify-between items-center">
-                  <span className="text-2xl font-bold text-aurora-blue">€450</span>
-                  <button className="btn-primary hover:scale-105">
-                    Enroll Now
-                  </button>
+                  <span className="text-2xl font-bold text-aurora-blue py-5">€345</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-xl font-bold bg-aurora-blue text-white rounded-md px-2 py-1">
+                    To enroll, please send an email to <a href="mailto:info@finlern.fi">info@finlern.fi</a>
+                  </span>
                 </div>
               </div>
             </div>
@@ -361,8 +378,8 @@ export default function Classes() {
                       <span className="text-aurora-blue font-bold">1</span>
                     </div>
                     <div>
-                      <h3 className="font-semibold text-lg">Immersive Learning</h3>
-                      <p className="text-gray-700">Finnish is spoken as much as possible during classes to develop your ear for the language.</p>
+                      <h3 className="font-semibold text-aurora-blue text-lg">Immersive Learning</h3>
+                      <p className="text-gray-700">Finnish is spoken as much as possible during classes to improve your listening skills for the language.</p>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -370,7 +387,7 @@ export default function Classes() {
                       <span className="text-aurora-green font-bold">2</span>
                     </div>
                     <div>
-                      <h3 className="font-semibold text-lg">Practical Focus</h3>
+                      <h3 className="font-semibold text-aurora-blue text-lg">Practical Focus</h3>
                       <p className="text-gray-700">We emphasize vocabulary and phrases you'll actually use in everyday situations.</p>
                     </div>
                   </div>
@@ -379,7 +396,7 @@ export default function Classes() {
                       <span className="text-aurora-purple font-bold">3</span>
                     </div>
                     <div>
-                      <h3 className="font-semibold text-lg">Interactive Sessions</h3>
+                      <h3 className="font-semibold text-aurora-blue text-lg">Interactive Sessions</h3>
                       <p className="text-gray-700">Classes involve role-playing, games, and conversation practice to make learning engaging.</p>
                     </div>
                   </div>
@@ -411,7 +428,7 @@ export default function Classes() {
               <div className="pt-6">
                 <p className="text-gray-700 mb-4 italic">
                   "I tried learning Finnish with various apps before, but nothing worked until I joined Finlern's classes. 
-                  The structured approach and supportive teachers made all the difference. After just three months, I was
+                  The structured approach and supportive teachers made all the difference. After just a month, I was
                   able to have basic conversations with my Finnish colleagues!"
                 </p>
                 <div className="flex items-center">
@@ -422,7 +439,7 @@ export default function Classes() {
                   </div>
                   <div>
                     <p className="font-semibold">John Miller</p>
-                    <p className="text-sm text-gray-700">Software Developer, United States</p>
+                    <p className="text-sm text-gray-700">Software Developer</p>
                   </div>
                 </div>
               </div>
@@ -449,7 +466,7 @@ export default function Classes() {
                   </div>
                   <div>
                     <p className="font-semibold">Sophie Martinez</p>
-                    <p className="text-sm text-gray-700">Architect, Spain</p>
+                    <p className="text-sm text-gray-700">Architect</p>
                   </div>
                 </div>
               </div>
@@ -476,7 +493,7 @@ export default function Classes() {
                   </div>
                   <div>
                     <p className="font-semibold">Aisha Khan</p>
-                    <p className="text-sm text-gray-700">Medical Researcher, Canada</p>
+                    <p className="text-sm text-gray-700">Medical Researcher</p>
                   </div>
                 </div>
               </div>

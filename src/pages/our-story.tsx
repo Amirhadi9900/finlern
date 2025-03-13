@@ -71,20 +71,22 @@ export default function OurStory() {
             <div className="scroll-reveal">
               <h2 className="section-title mb-6 text-left text-aurora-blue">Our Beginning</h2>
               <p className="text-lg text-gray-700 mb-6">
-                Finlern was founded in 2020 by Liisa Järvinen, a passionate Finnish language teacher with over 15 years 
-                of experience teaching Finnish to international students. After years of seeing students struggle with 
-                traditional language learning methods, Liisa envisioned a more engaging and effective approach.
+                Finlern was founded in 2024 by Hamid Reza Ghorbani. Finlern Oy is more than just a language school—it’s a labor of love, built from passion, dedication, and the belief that language can change lives.
               </p>
               <p className="text-lg text-gray-700 mb-6">
-                What started as small group classes in Helsinki quickly grew as students experienced remarkable progress 
-                through Liisa's innovative teaching methods. The combination of practical conversation skills, cultural 
-                immersion, and a supportive community created an environment where learning Finnish became an enjoyable 
-                journey rather than a daunting challenge.
+                Our journey started with a dream: to help people find their place in Finland through the power of language. We poured our hearts into Finlern, crafting it with care, patience, and the deep desire 
+                to make learning Finnish not just easier, but truly meaningful. Every lesson, every interaction, and every student’s progress fills us with pride because we know that we are not just teaching words;
+                we are opening doors to new opportunities, friendships, and a brighter future.
               </p>
               <p className="text-lg text-gray-700">
-                In 2021, Finlern expanded to offer online classes, making quality Finnish language education accessible 
-                to learners worldwide. Today, our team of dedicated native Finnish teachers continues to grow, united by 
-                our passion for sharing the Finnish language and culture with the world.
+              The love we have given to Finlern is the same love that Finlern now gives to every student. We understand the struggles, the small victories, and the joy of finally expressing yourself in a new language.
+              That’s why we don’t just teach—we support, encourage, and walk alongside our students in their journey.
+              </p>
+              <p className="text-lg text-gray-700">
+              At Finlern, you’re not just learning Finnish. You’re becoming part of a story—one filled with growth, belonging, and endless possibilities.
+              </p>
+              <p className="text-lg font-bold text-indigo-900">
+              Welcome to Finlern. Welcome to your new beginning!
               </p>
             </div>
             <div className="relative scroll-reveal" style={{ animationDelay: '0.2s' }}>
@@ -108,7 +110,7 @@ export default function OurStory() {
                 <div className="w-full md:w-1/2">
                   <h3 className="text-3xl font-bold mb-6 text-aurora-blue">Our Founder's Vision</h3>
                   <p className="text-gray-700">
-                    Liisa's innovative approach to Finnish language education forms the foundation of Finlern's methodology.
+                    Hamid's innovative approach to Finnish language education forms the foundation of Finlern's methodology.
                   </p>
                 </div>
               </div>
@@ -185,10 +187,10 @@ export default function OurStory() {
               <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden bg-aurora-blue/20 flex items-center justify-center border-4 border-white shadow-md">
                 <div className="text-aurora-blue font-bold text-xl">LJ</div>
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">Liisa Järvinen</h3>
-              <p className="text-aurora-blue font-medium mb-3">Founder & Head Teacher</p>
+              <h3 className="text-xl font-semibold mb-2 text-gray-800">Sanna Alavillamo</h3>
+              <p className="text-aurora-blue font-medium mb-3">Head Teacher</p>
               <p className="text-gray-700">
-                With 15+ years of teaching experience, Liisa's innovative approach to Finnish language education forms the foundation of Finlern's methodology.
+                With 20+ years of language teaching experience, Sanna's innovative approach to Finnish language education forms the foundation of Finlern's online courses.
               </p>
             </div>
 
@@ -197,10 +199,10 @@ export default function OurStory() {
               <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden bg-aurora-green/20 flex items-center justify-center border-4 border-white shadow-md">
                 <div className="text-aurora-green font-bold text-xl">MK</div>
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">Mikko Korhonen</h3>
-              <p className="text-aurora-blue font-medium mb-3">Senior Finnish Teacher</p>
+              <h3 className="text-xl font-semibold mb-2 text-gray-800">Amirhadi Borjian</h3>
+              <p className="text-aurora-blue font-medium mb-3">ICT</p>
               <p className="text-gray-700">
-                Mikko specializes in teaching Finnish for business and professional contexts, with expertise in advanced grammar and technical vocabulary.
+                Amirhadi is a dedicated ICT specialist with a passion for helping students learn and grow.
               </p>
             </div>
 
@@ -209,10 +211,10 @@ export default function OurStory() {
               <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden bg-aurora-purple/20 flex items-center justify-center border-4 border-white shadow-md">
                 <div className="text-aurora-purple font-bold text-xl">SV</div>
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">Sanna Virtanen</h3>
-              <p className="text-aurora-blue font-medium mb-3">Finnish Culture Specialist</p>
+              <h3 className="text-xl font-semibold mb-2 text-gray-800">Saghar Kazemi</h3>
+              <p className="text-aurora-blue font-medium mb-3">Graphic Designer and Social Media Specialist</p>
               <p className="text-gray-700">
-                Sanna brings Finnish culture to life in our classes, focusing on traditions, literature, and the cultural aspects of language learning.
+                Saghar is a dedicated graphic designer and social media specialist with a passion for helping students learn and grow.
               </p>
             </div>
 
@@ -221,10 +223,10 @@ export default function OurStory() {
               <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden bg-aurora-teal/20 flex items-center justify-center border-4 border-white shadow-md">
                 <div className="text-aurora-teal font-bold text-xl">AM</div>
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">Antti Mäkinen</h3>
-              <p className="text-aurora-blue font-medium mb-3">Beginner Finnish Expert</p>
+              <h3 className="text-xl font-semibold mb-2 text-gray-800">Sudabeh Sadeghi</h3>
+              <p className="text-aurora-blue font-medium mb-3">Event Organizer and Communication Specialist</p>
               <p className="text-gray-700">
-                Antti excels at making Finnish approachable for complete beginners, with a talent for breaking down complex concepts into simple, digestible lessons.
+                Sudabeh is a dedicated event organizer and communication specialist with a passion for helping students learn and grow.
               </p>
             </div>
           </div>

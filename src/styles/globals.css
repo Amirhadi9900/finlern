@@ -456,4 +456,43 @@ html {
     color: rgb(var(--aurora-night));
     font-weight: 600;
   }
+}
+
+/* Hardware acceleration helper */
+.hw-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform, opacity;
+}
+
+/* Make all animated elements hardware accelerated */
+.animate-float,
+.animate-float-delayed,
+.animate-float-slow,
+.animate-bounce,
+.scroll-reveal,
+.fade-in,
+[class*="animate-"] {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+/* Reduce complexity for low-powered devices */
+@media screen and (max-width: 768px), (prefers-reduced-motion) {
+  .blur-3xl {
+    filter: blur(20px) !important; /* Reduce blur intensity on mobile */
+  }
+  
+  .animate-float, 
+  .animate-float-delayed, 
+  .animate-float-slow {
+    animation-duration: 10s !important; /* Slow down animations on mobile */
+  }
+  
+  /* Reduce number of animated background elements on mobile */
+  .bg-gradient-to-br {
+    background-size: 100% 100% !important;
+  }
 } 

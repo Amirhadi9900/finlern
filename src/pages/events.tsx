@@ -31,6 +31,13 @@ export default function Events() {
     }
   }, []);
 
+  const scrollToUpcomingEvents = () => {
+    const upcomingEventsSection = document.getElementById('upcoming-events');
+    if (upcomingEventsSection) {
+      upcomingEventsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <Layout>
       <Head>
@@ -80,7 +87,10 @@ export default function Events() {
               data-aos-delay="300"
               className="flex flex-wrap justify-center gap-4"
             >
-              <button className="px-8 py-3 bg-white text-aurora-blue rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <button 
+                onClick={scrollToUpcomingEvents}
+                className="px-8 py-3 bg-white text-aurora-blue rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              >
                 Browse Events
               </button>
             </div>
@@ -89,7 +99,7 @@ export default function Events() {
       </section>
 
       {/* Upcoming Events - Enhanced */}
-      <section className="py-16 md:py-24 relative overflow-hidden">
+      <section id="upcoming-events" className="py-16 md:py-24 relative overflow-hidden">
         {/* Subtle background pattern */}
         <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#6B8AFD_1px,transparent_1px)] [background-size:20px_20px]"></div>
         

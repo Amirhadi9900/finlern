@@ -125,8 +125,8 @@ export default function OurStory() {
                   </p>
                   <p className="text-xl font-bold text-aurora-blue mt-8 px-6 py-4 bg-aurora-blue/5 rounded-lg border-l-4 border-aurora-blue inline-block">
                     Welcome to Finlern. Welcome to your new beginning!
-                  </p>
-                </div>
+              </p>
+            </div>
               </div>
               
               {/* Founder's Vision - Enhanced Further */}
@@ -231,7 +231,7 @@ export default function OurStory() {
               We believe that language learning should be accessible, engaging, and effective for everyone.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
             {/* Mission Card 1 - Enhanced */}
             <div 
@@ -244,7 +244,7 @@ export default function OurStory() {
                 <div className="w-16 h-16 mx-auto mb-6 bg-aurora-blue/10 rounded-xl flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-aurora-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                  </svg>
+                </svg>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Accessible Learning</h3>
                 <p className="text-gray-700 text-center">
@@ -252,7 +252,7 @@ export default function OurStory() {
                 </p>
               </div>
             </div>
-            
+
             {/* Mission Card 2 - Enhanced */}
             <div 
               className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100"
@@ -264,7 +264,7 @@ export default function OurStory() {
                 <div className="w-16 h-16 mx-auto mb-6 bg-aurora-green/10 rounded-xl flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-aurora-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
+                </svg>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Community-Focused</h3>
                 <p className="text-gray-700 text-center">
@@ -272,7 +272,7 @@ export default function OurStory() {
                 </p>
               </div>
             </div>
-            
+
             {/* Mission Card 3 - Enhanced */}
             <div 
               className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100"
@@ -284,7 +284,7 @@ export default function OurStory() {
                 <div className="w-16 h-16 mx-auto mb-6 bg-aurora-purple/10 rounded-xl flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-aurora-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                  </svg>
+                </svg>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Innovative Methods</h3>
                 <p className="text-gray-700 text-center">
@@ -339,13 +339,38 @@ export default function OurStory() {
             >
               <div className="h-3 bg-gradient-to-r from-aurora-blue to-aurora-purple w-full"></div>
               <div className="p-8 text-center">
-                <div className="relative w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden bg-aurora-blue/10 flex items-center justify-center border-4 border-white shadow-md transform transition-transform duration-500 hover:scale-105">
-                  <div className="text-aurora-blue font-bold text-2xl">LJ</div>
+                <div className="relative w-40 h-40 mx-auto mb-6 group">
+                  {/* Decorative background */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-aurora-blue/30 to-aurora-purple/30 rounded-full blur-md transform scale-110 group-hover:scale-125 transition-all duration-700"></div>
+                  
+                  {/* Outer ring */}
+                  <div className="absolute inset-0 rounded-full border-2 border-white p-1">
+                    <div className="absolute inset-0 rounded-full border-2 border-aurora-blue/50 animate-[spin_20s_linear_infinite_reverse]">
+                      <div className="absolute -top-1 left-1/2 w-2 h-2 bg-aurora-blue rounded-full transform -translate-x-1/2"></div>
+              </div>
+            </div>
+
+                  {/* Image placeholder with stylish design */}
+                  <div className="absolute inset-2 rounded-full overflow-hidden border-2 border-white shadow-xl flex items-center justify-center bg-gradient-to-br from-aurora-blue/10 to-aurora-purple/10 transform group-hover:scale-105 transition-transform duration-700">
+                    <div className="relative w-full h-full flex items-center justify-center bg-aurora-blue/5 overflow-hidden">
+                      <div className="text-aurora-blue font-bold text-3xl z-10 select-none">SA</div>
+                      
+                      {/* Decorative background pattern */}
+                      <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#6B8AFD_1px,transparent_1px)] [background-size:8px_8px]"></div>
+                      
+                      {/* Animated circle */}
+                      <div className="absolute top-1/2 left-1/2 w-32 h-32 rounded-full border border-dashed border-aurora-blue/30 -translate-x-1/2 -translate-y-1/2 animate-[spin_15s_linear_infinite]"></div>
+                      <div className="absolute top-1/2 left-1/2 w-24 h-24 rounded-full border border-dashed border-aurora-purple/30 -translate-x-1/2 -translate-y-1/2 animate-[spin_25s_linear_infinite_reverse]"></div>
+            </div>
+
+                    {/* Overlay shine effect */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  </div>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Sanna Alavillamo</h3>
-                <div className="px-3 py-1 bg-aurora-blue/10 text-aurora-blue rounded-full text-sm font-medium inline-block mb-4">
+                <div className="px-3 py-1 bg-gradient-to-r from-aurora-blue/20 to-aurora-purple/20 text-aurora-blue rounded-full text-sm font-medium inline-block mb-4 border border-aurora-blue/10">
                   Head Teacher
-                </div>
+              </div>
                 <p className="text-gray-700">
                   With 20+ years of language teaching experience, Sanna's innovative approach to Finnish language education forms the foundation of Finlern's online courses.
                 </p>
@@ -360,15 +385,41 @@ export default function OurStory() {
             >
               <div className="h-3 bg-gradient-to-r from-aurora-green to-aurora-blue w-full"></div>
               <div className="p-8 text-center">
-                <div className="relative w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden bg-aurora-green/10 flex items-center justify-center border-4 border-white shadow-md transform transition-transform duration-500 hover:scale-105">
-                  <div className="text-aurora-green font-bold text-2xl">MK</div>
+                <div className="relative w-40 h-40 mx-auto mb-6 group">
+                  {/* Decorative background */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-aurora-green/30 to-aurora-blue/30 rounded-full blur-md transform scale-110 group-hover:scale-125 transition-all duration-700"></div>
+                  
+                  {/* Outer ring */}
+                  <div className="absolute inset-0 rounded-full border-2 border-white p-1">
+                    <div className="absolute inset-0 rounded-full border-2 border-aurora-green/50 animate-[spin_25s_linear_infinite]">
+                      <div className="absolute -top-1 left-1/2 w-2 h-2 bg-aurora-green rounded-full transform -translate-x-1/2"></div>
+          </div>
+        </div>
+                  
+                  {/* Image container */}
+                  <div className="absolute inset-2 rounded-full overflow-hidden border-2 border-white shadow-xl transform group-hover:scale-105 transition-transform duration-700">
+                    <Image
+                      src="/images/Amirhadi-Borjian.png"
+                      alt="Amirhadi Borjian"
+                      width={160}
+                      height={160}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-3"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' className='h-12 w-12 text-aurora-green' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath strokeLinecap='round' strokeLinejoin='round' strokeWidth='1.5' d='M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z' /%3E%3C/svg%3E";
+                      }}
+                    />
+                    
+                    {/* Overlay shine effect */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              </div>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Amirhadi Borjian</h3>
-                <div className="px-3 py-1 bg-aurora-green/10 text-aurora-green rounded-full text-sm font-medium inline-block mb-4">
+                <div className="px-3 py-1 bg-gradient-to-r from-aurora-green/20 to-aurora-blue/20 text-aurora-green rounded-full text-sm font-medium inline-block mb-4 border border-aurora-green/10">
                   ICT
                 </div>
                 <p className="text-gray-700">
-                  Amirhadi is a dedicated ICT specialist with a passion for helping students learn and grow.
+                  Amirhadi is a dedicated ICT specialist who fosters and maintains the strong presence of Finlern in the digital world.
                 </p>
               </div>
             </div>
@@ -381,15 +432,41 @@ export default function OurStory() {
             >
               <div className="h-3 bg-gradient-to-r from-aurora-purple to-aurora-night w-full"></div>
               <div className="p-8 text-center">
-                <div className="relative w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden bg-aurora-purple/10 flex items-center justify-center border-4 border-white shadow-md transform transition-transform duration-500 hover:scale-105">
-                  <div className="text-aurora-purple font-bold text-2xl">SV</div>
+                <div className="relative w-40 h-40 mx-auto mb-6 group">
+                  {/* Decorative background */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-aurora-purple/30 to-aurora-blue/30 rounded-full blur-md transform scale-110 group-hover:scale-125 transition-all duration-700"></div>
+                  
+                  {/* Outer ring */}
+                  <div className="absolute inset-0 rounded-full border-2 border-white p-1">
+                    <div className="absolute inset-0 rounded-full border-2 border-aurora-purple/50 animate-[spin_30s_linear_infinite_reverse]">
+                      <div className="absolute -top-1 left-1/2 w-2 h-2 bg-aurora-purple rounded-full transform -translate-x-1/2"></div>
+                    </div>
+                  </div>
+                  
+                  {/* Image container */}
+                  <div className="absolute inset-2 rounded-full overflow-hidden border-2 border-white shadow-xl transform group-hover:scale-105 transition-transform duration-700">
+                    <Image
+                      src="/images/Saghar-Kazemi.jpg"
+                      alt="Saghar Kazemi"
+                      width={160}
+                      height={160}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-3"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' className='h-12 w-12 text-aurora-purple' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath strokeLinecap='round' strokeLinejoin='round' strokeWidth='1.5' d='M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z' /%3E%3C/svg%3E";
+                      }}
+                    />
+                    
+                    {/* Overlay shine effect */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              </div>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Saghar Kazemi</h3>
-                <div className="px-3 py-1 bg-aurora-purple/10 text-aurora-purple rounded-full text-sm font-medium inline-block mb-4">
-                  Graphic Designer
+                <div className="px-3 py-1 bg-gradient-to-r from-aurora-purple/20 to-aurora-blue/20 text-aurora-purple rounded-full text-sm font-medium inline-block mb-4 border border-aurora-purple/10">
+                  Graphic Designer & Social Media Specialist
                 </div>
                 <p className="text-gray-700">
-                  Saghar is a dedicated graphic designer and social media specialist with a passion for helping students learn and grow.
+                  Saghar is an experienced graphic designer and social media specialist who designs all the glamorous visual content for Finlern on different social media platforms.
                 </p>
               </div>
             </div>
@@ -402,15 +479,41 @@ export default function OurStory() {
             >
               <div className="h-3 bg-gradient-to-r from-aurora-teal to-aurora-green w-full"></div>
               <div className="p-8 text-center">
-                <div className="relative w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden bg-aurora-teal/10 flex items-center justify-center border-4 border-white shadow-md transform transition-transform duration-500 hover:scale-105">
-                  <div className="text-aurora-teal font-bold text-2xl">AM</div>
+                <div className="relative w-40 h-40 mx-auto mb-6 group">
+                  {/* Decorative background */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-aurora-teal/30 to-aurora-green/30 rounded-full blur-md transform scale-110 group-hover:scale-125 transition-all duration-700"></div>
+                  
+                  {/* Outer ring */}
+                  <div className="absolute inset-0 rounded-full border-2 border-white p-1">
+                    <div className="absolute inset-0 rounded-full border-2 border-aurora-teal/50 animate-[spin_28s_linear_infinite]">
+                      <div className="absolute -top-1 left-1/2 w-2 h-2 bg-aurora-teal rounded-full transform -translate-x-1/2"></div>
+                    </div>
+                  </div>
+                  
+                  {/* Image container */}
+                  <div className="absolute inset-2 rounded-full overflow-hidden border-2 border-white shadow-xl transform group-hover:scale-105 transition-transform duration-700">
+                    <Image
+                      src="/images/Sudabeh-Sadeghi-Mihan.JPG"
+                      alt="Sudabeh Sadeghi Mihan"
+                      width={160}
+                      height={160}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-3"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' className='h-12 w-12 text-aurora-teal' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath strokeLinecap='round' strokeLinejoin='round' strokeWidth='1.5' d='M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z' /%3E%3C/svg%3E";
+                      }}
+                    />
+                    
+                    {/* Overlay shine effect */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              </div>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Sudabeh Sadeghi</h3>
-                <div className="px-3 py-1 bg-aurora-teal/10 text-aurora-teal rounded-full text-sm font-medium inline-block mb-4">
-                  Event Organizer
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Sudabeh Sadeghi Mihan</h3>
+                <div className="px-3 py-1 bg-gradient-to-r from-aurora-teal/20 to-aurora-green/20 text-aurora-teal rounded-full text-sm font-medium inline-block mb-4 border border-aurora-teal/10">
+                  Event Organizer & Communication Specialist
                 </div>
                 <p className="text-gray-700">
-                  Sudabeh is a dedicated event organizer and communication specialist with a passion for helping students learn and grow.
+                  Sudabeh is a professional event organizer and communication specialist who organizes all the events and keeps the communication lines open between Finlern and its students.
                 </p>
               </div>
             </div>

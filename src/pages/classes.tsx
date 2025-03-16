@@ -520,25 +520,15 @@ export default function Classes() {
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-500 hover:shadow-2xl border border-gray-100" data-aos="fade-up">
               <div className="flex flex-col md:flex-row">
                 {/* Image section with overlay */}
-                <div className="w-full md:w-1/2 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-aurora-blue/80 to-aurora-purple/80 mix-blend-multiply z-10"></div>
-                  <Image 
-                    src="/images/teaching-approach.jpg" 
-                    alt="Our Teaching Approach" 
-                    width={600} 
-                    height={400} 
-                    className="w-full h-full object-cover object-center transform transition-transform duration-700 hover:scale-110"
-                    style={{ objectFit: 'cover' }}
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = "https://placehold.co/600x400?text=Teaching+Approach";
-                      target.onerror = null;
-                    }}
-                  />
-                  <div className="absolute inset-0 z-20 flex items-center justify-center p-8">
-                    <div className="text-center text-white">
-                      <h3 className="text-3xl font-bold mb-4 tracking-tight">Our Methodology</h3>
-                      <div className="w-16 h-1 bg-white mx-auto rounded-full mb-4"></div>
+                <div className="w-full md:w-1/2 relative overflow-hidden bg-gradient-to-br from-aurora-blue to-aurora-purple">
+                  <div className="absolute inset-0">
+                    <div className="w-full h-full flex items-center justify-center">
+                      <div className="p-8 text-white text-center">
+                        <svg className="w-16 h-16 mx-auto mb-4 opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                        <h3 className="text-xl font-semibold">Our Approach</h3>
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import ClientOnly from '@/components/ClientOnly'
 
 const Footer: React.FC = () => {
   // Use state to store the year
@@ -23,9 +22,9 @@ const Footer: React.FC = () => {
       <div className="h-1 w-full bg-gradient-to-r from-aurora-blue via-aurora-purple to-aurora-green"></div>
 
       <div className="container mx-auto px-4 md:px-6 lg:px-8 py-16 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Logo and Description */}
-          <div className="col-span-1 md:col-span-1">
+          <div className="col-span-1">
             <Link href="/" className="inline-block mb-6 transition-transform duration-300 hover:scale-105">
               <div className="overflow-hidden rounded-md">
                 <Image 
@@ -139,35 +138,6 @@ const Footer: React.FC = () => {
                 </div>
               </li>
             </ul>
-          </div>
-
-          {/* Newsletter */}
-          <div className="col-span-1">
-            <h3 className="text-lg font-semibold mb-6 relative inline-block">
-              Newsletter
-              <span className="absolute bottom-0 left-0 w-1/2 h-0.5 bg-aurora-blue"></span>
-            </h3>
-            <p className="text-sm text-gray-300 mb-4">
-              Subscribe to get updates on our latest offers and events.
-            </p>
-            <ClientOnly>
-              <form className="mt-2">
-                <div className="flex flex-col space-y-3">
-                  <input
-                    type="email"
-                    placeholder="Your email address"
-                    className="px-4 py-2 bg-aurora-night border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-aurora-blue focus:border-transparent text-white text-sm"
-                    required
-                  />
-                  <button 
-                    type="submit"
-                    className="px-4 py-2 bg-aurora-blue hover:bg-aurora-blue/90 text-white rounded-md transition-all duration-300 text-sm font-medium hover:-translate-y-0.5 hover:shadow-lg"
-                  >
-                    Subscribe
-                  </button>
-                </div>
-              </form>
-            </ClientOnly>
           </div>
         </div>
 

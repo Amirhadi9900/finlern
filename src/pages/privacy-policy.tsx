@@ -41,10 +41,18 @@ export default function PrivacyPolicy() {
       <section className="bg-aurora-blue py-12 md:py-16">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h1 
+            data-aos="fade-up" 
+            data-aos-duration="800"
+            data-aos-delay="100"
+            className="text-3xl md:text-4xl font-bold text-white mb-4">
               Privacy Policy
             </h1>
-            <p className="text-lg text-gray-100">
+            <p 
+            data-aos="fade-up" 
+            data-aos-duration="800"
+            data-aos-delay="100"
+            className="text-lg text-gray-100">
               Last Updated: February 25, 2025
             </p>
           </div>

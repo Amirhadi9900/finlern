@@ -18,6 +18,8 @@
   let timeoutIds = [];
   // Track all animation frames for proper cleanup
   let animationFrameIds = [];
+  // Track if counters have been animated already during this session
+  let countersAnimated = false;
 
   // Safely schedule timeout with tracking
   function safeTimeout(callback, delay) {
@@ -83,6 +85,34 @@
     } catch (e) {
       // Ignore errors here
     }
+    
+    // Do not reset the countersAnimated flag during cleanup
+    // This will make sure the counters keep their values when navigating back
+  }
+
+  // Store counter animation state in session storage to persist during navigation
+  function setCounterAnimated(value) {
+    try {
+      if (typeof sessionStorage !== 'undefined') {
+        sessionStorage.setItem('countersAnimated', value ? 'true' : 'false');
+      }
+      countersAnimated = value;
+    } catch (e) {
+      console.warn('Error accessing sessionStorage:', e);
+      countersAnimated = value;
+    }
+  }
+
+  function getCounterAnimated() {
+    try {
+      if (typeof sessionStorage !== 'undefined') {
+        return sessionStorage.getItem('countersAnimated') === 'true';
+      }
+      return countersAnimated;
+    } catch (e) {
+      console.warn('Error accessing sessionStorage:', e);
+      return countersAnimated;
+    }
   }
 
   // Scroll event handler - declared at top level for proper cleanup
@@ -91,6 +121,14 @@
   function initAnimations() {
     // Clean up any existing observers first
     cleanup();
+    
+    // Check if counters have been animated in this session
+    countersAnimated = getCounterAnimated();
+    
+    // Set final counter values if already animated
+    if (countersAnimated) {
+      setFinalCounterValues();
+    }
     
     // Fade-in elements on scroll
     try {
@@ -223,14 +261,23 @@
         }
       });
 
+      // Immediately set final counter values if already animated in this session
+      if (countersAnimated) {
+        setFinalCounterValues();
+        return;
+      }
+
       // Animate counters - simplified for Safari
       const counters = document.querySelectorAll('.counter');
-      if (counters.length > 0 && !isIOSSafari) { // Skip on iOS Safari
+      if (counters.length > 0 && !isIOSSafari) { // Skip animation on iOS Safari, just set values
         const counterObserver = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
               try {
-                const target = parseInt(entry.target.getAttribute('data-target') || '0');
+                // Get the target value and handle potential percentage symbol
+                const targetText = entry.target.getAttribute('data-target') || '0';
+                const hasPercentage = targetText.includes('%');
+                const target = parseInt(targetText.replace('%', ''));
                 const duration = 2000; // ms
                 const step = target / (duration / 32); // Reduced framerate for iOS
                 let current = 0;
@@ -238,68 +285,70 @@
                 const updateCounter = () => {
                   current += step;
                   if (current < target) {
-                    entry.target.textContent = Math.ceil(current).toString();
+                    entry.target.textContent = Math.ceil(current).toString() + (hasPercentage ? '%' : '');
                     safeAnimationFrame(updateCounter);
                   } else {
-                    entry.target.textContent = target.toString();
+                    entry.target.textContent = target.toString() + (hasPercentage ? '%' : '');
+                    
+                    // Mark counters as animated once all have completed
+                    const allCountersComplete = Array.from(counters).every(counter => {
+                      const targetVal = parseInt((counter.getAttribute('data-target') || '0').replace('%', ''));
+                      return parseInt(counter.textContent.replace('%', '')) >= targetVal;
+                    });
+                    
+                    if (allCountersComplete) {
+                      setCounterAnimated(true);
+                    }
                   }
                 };
                 
                 updateCounter();
                 counterObserver.unobserve(entry.target);
               } catch (e) {
-                console.warn('Error animating counter:', e);
+                console.warn('Error in counter animation:', e);
+                setFinalCounterValues(); // Fallback to showing target values
               }
             }
           });
-        }, { threshold: 0.5 });
+        }, { threshold: 0.1 });
         
-        counters.forEach(counter => {
-          try {
-            // For iOS Safari, just set the final value immediately
-            if (isIOSSafari) {
-              const target = counter.getAttribute('data-target') || '0';
-              counter.textContent = target;
-            } else {
-              counterObserver.observe(counter);
-            }
-          } catch (e) {
-            console.warn('Error setting up counter:', e);
-          }
-        });
-        observers.push(counterObserver);
-      } else if (counters.length > 0 && isIOSSafari) {
+        try {
+          counters.forEach(counter => {
+            counterObserver.observe(counter);
+          });
+          observers.push(counterObserver);
+        } catch (e) {
+          console.warn('Error observing counters:', e);
+          setFinalCounterValues(); // Fallback to showing target values
+        }
+      } else if (counters.length > 0) {
         // For iOS Safari, just set the values without animation
-        counters.forEach(counter => {
-          try {
-            const target = counter.getAttribute('data-target') || '0';
-            counter.textContent = target;
-          } catch (e) {
-            console.warn('Error setting counter value:', e);
-          }
-        });
+        setFinalCounterValues();
       }
 
-      // Text reveal elements - simplified approach
-      const revealElements = document.querySelectorAll('.text-reveal');
-      revealElements.forEach(el => {
-        try {
-          safeTimeout(() => {
-            el.style.opacity = '1';
-          }, 500);
-        } catch (e) {
-          console.warn('Error in text reveal:', e);
-        }
-      });
     } catch (e) {
-      console.error('Animation initialization error:', e);
+      console.error('Error initializing animations:', e);
     }
-
-    // Return a cleanup function
-    return cleanup;
   }
 
-  // Expose the initialization function to the global scope
+  // Helper function to set counters to their final values without animation
+  function setFinalCounterValues() {
+    try {
+      const counters = document.querySelectorAll('.counter');
+      counters.forEach(counter => {
+        const targetText = counter.getAttribute('data-target') || '0';
+        const hasPercentage = targetText.includes('%');
+        const target = parseInt(targetText.replace('%', ''));
+        counter.textContent = target.toString() + (hasPercentage ? '%' : '');
+      });
+      // Mark as animated
+      setCounterAnimated(true);
+    } catch (e) {
+      console.warn('Error setting final counter values:', e);
+    }
+  }
+
+  // Expose the init and cleanup functions to the window for external use
   window.scrollAnimations = {
     init: initAnimations,
     cleanup: cleanup

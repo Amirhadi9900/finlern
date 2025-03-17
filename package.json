@@ -6,12 +6,23 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-sitemap": "node scripts/generate-sitemap.js",
+    "submit-sitemap": "node scripts/submit-sitemap.js",
+    "build:with-sitemap": "npm run generate-sitemap && next build",
+    "deploy": "npm run build:with-sitemap && npm run submit-sitemap"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "finnish",
+    "language",
+    "learning",
+    "education",
+    "courses",
+    "finland"
+  ],
+  "author": "Finlern",
   "license": "ISC",
-  "description": "Professional website for Finlern",
+  "description": "Professional website for Finlern - Finnish Language Learning Platform",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
@@ -32,6 +43,7 @@
     "clsx": "^2.0.0"
   },
   "devDependencies": {
-    "@types/aos": "^3.0.7"
+    "@types/aos": "^3.0.7",
+    "prettier": "^3.2.5"
   }
 }

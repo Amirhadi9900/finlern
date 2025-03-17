@@ -348,8 +348,8 @@ export default function OurStory() {
                   <div className="absolute inset-0 rounded-full border-2 border-white p-1">
                     <div className="absolute inset-0 rounded-full border-2 border-aurora-blue/50 animate-[spin_20s_linear_infinite_reverse]">
                       <div className="absolute -top-1 left-1/2 w-2 h-2 bg-aurora-blue rounded-full transform -translate-x-1/2"></div>
-                    </div>
-                  </div>
+              </div>
+            </div>
 
                   {/* Image container */}
                   <div className="absolute inset-2 rounded-full overflow-hidden border-2 border-white shadow-xl transform group-hover:scale-105 transition-transform duration-700">
@@ -368,11 +368,11 @@ export default function OurStory() {
                     {/* Overlay shine effect */}
                     <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
               </div>
-                </div>
+            </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Sanna Alavillamo</h3>
-                <div className="px-3 py-1 bg-gradient-to-r from-aurora-green/20 to-aurora-blue/20 text-aurora-green rounded-full text-sm font-medium inline-block mb-4 border border-aurora-green/10">
+                <div className="px-3 py-1 bg-gradient-to-r from-aurora-green/20 to-aurora-blue/20 text-aurora-teal rounded-full text-sm font-medium inline-block mb-4 border border-aurora-green/10">
                 Head Teacher
-                </div>
+              </div>
                 <p className="text-gray-700">
                 With 20+ years of language teaching experience, Sanna's innovative approach to Finnish language education forms the foundation of Finlern's online courses.
                 </p>
@@ -395,8 +395,8 @@ export default function OurStory() {
                   <div className="absolute inset-0 rounded-full border-2 border-white p-1">
                     <div className="absolute inset-0 rounded-full border-2 border-aurora-green/50 animate-[spin_25s_linear_infinite]">
                       <div className="absolute -top-1 left-1/2 w-2 h-2 bg-aurora-green rounded-full transform -translate-x-1/2"></div>
-                    </div>
-                  </div>
+          </div>
+        </div>
                   
                   {/* Image container */}
                   <div className="absolute inset-2 rounded-full overflow-hidden border-2 border-white shadow-xl transform group-hover:scale-105 transition-transform duration-700">
@@ -417,7 +417,7 @@ export default function OurStory() {
               </div>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Amirhadi Borjian</h3>
-                <div className="px-3 py-1 bg-gradient-to-r from-aurora-green/20 to-aurora-blue/20 text-aurora-green rounded-full text-sm font-medium inline-block mb-4 border border-aurora-green/10">
+                <div className="px-3 py-1 bg-gradient-to-r from-aurora-green/20 to-aurora-blue/20 text-aurora-teal rounded-full text-sm font-medium inline-block mb-4 border border-aurora-green/10">
                   ICT
                 </div>
                 <p className="text-gray-700">
@@ -464,7 +464,7 @@ export default function OurStory() {
               </div>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Saghar Kazemi</h3>
-                <div className="px-3 py-1 bg-gradient-to-r from-aurora-purple/20 to-aurora-blue/20 text-aurora-purple rounded-full text-sm font-medium inline-block mb-4 border border-aurora-purple/10">
+                <div className="px-3 py-1 bg-gradient-to-r from-aurora-purple/20 to-aurora-blue/20 text-aurora-teal rounded-full text-sm font-medium inline-block mb-4 border border-aurora-purple/10">
                   Graphic Designer & Social Media Specialist
                 </div>
                 <p className="text-gray-700">

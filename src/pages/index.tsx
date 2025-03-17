@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react'
-import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../components/layout/Layout'
 import ClientOnly from '@/components/ClientOnly'
+import SEO from '@/components/SEO'
 
 // Add type declaration for window.scrollAnimations
 declare global {
@@ -48,12 +48,42 @@ export default function Home() {
     }
   };
 
+  // Schema.org structured data for the homepage
+  const homePageSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Finlern",
+    "url": "https://finlern.com",
+    "logo": "https://finlern.com/images/finlern.png",
+    "description": "Learn Finnish language with Finlern's interactive online courses, designed for all levels from beginner to advanced. Join our community and discover Finland's language and culture.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Helsinki",
+      "addressRegion": "Uusimaa",
+      "addressCountry": "Finland"
+    },
+    "sameAs": [
+      "https://facebook.com/finlern",
+      "https://instagram.com/finlern",
+      "https://linkedin.com/company/finlern"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+358-XX-XXX-XXXX",
+      "contactType": "customer service",
+      "availableLanguage": ["English", "Finnish"]
+    }
+  };
+
   return (
     <Layout>
-      <Head>
-        <title>Finlern - Finnish Language Learning Platform</title>
-        <meta name="description" content="Learn Finnish language, culture and working life with Finlern's interactive and effective courses." />
-      </Head>
+      <SEO 
+        title="Finnish Language Learning Made Easy"
+        description="Learn Finnish language with Finlern's interactive online courses, designed for all levels from beginner to advanced. Join our community and discover Finland's language and culture."
+        canonical="https://finlern.com"
+        ogImage="/images/finlern.png"
+        structuredData={homePageSchema}
+      />
 
       {/* Hero Section - Enhanced with Modern Design */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -414,7 +444,7 @@ export default function Home() {
                   </div>
                   
                   <p className="text-gray-700 italic border-l-4 border-aurora-blue/30 pl-4 py-2 mb-6">
-                    "I had tried learning Finnish on my own for months without much progress. After just 8 weeks with Finlern, I can now have basic conversations and understand simple texts. The teachers are amazing!"
+                    &ldquo;I had tried learning Finnish on my own for months without much progress. After just 8 weeks with Finlern, I can now have basic conversations and understand simple texts. The teachers are amazing!&rdquo;
                   </p>
                   
                   <div className="mt-4 flex text-yellow-400">
@@ -466,7 +496,7 @@ export default function Home() {
                   </div>
                   
                   <p className="text-gray-700 italic border-l-4 border-aurora-green/30 pl-4 py-2 mb-6">
-                    "The cultural aspects integrated into the lessons made learning Finnish so much more interesting. I not only improved my language skills but also gained a deeper understanding of Finland."
+                    &ldquo;The cultural aspects integrated into the lessons made learning Finnish so much more interesting. I not only improved my language skills but also gained a deeper understanding of Finland.&rdquo;
                   </p>
                   
                   <div className="mt-4 flex text-yellow-400">
@@ -518,7 +548,7 @@ export default function Home() {
                   </div>
                   
                   <p className="text-gray-700 italic border-l-4 border-aurora-violet/30 pl-4 py-2 mb-6">
-                    "The advanced course helped me refine my Finnish to a professional level. The teachers are incredibly knowledgeable and supportive. I now use Finnish confidently in my work environment."
+                    &ldquo;The advanced course helped me refine my Finnish to a professional level. The teachers are incredibly knowledgeable and supportive. I now use Finnish confidently in my work environment.&rdquo;
                   </p>
                   
                   <div className="mt-4 flex text-yellow-400">

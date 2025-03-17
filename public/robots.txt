@@ -1,0 +1,11 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow development/staging environments (if needed)
+# User-agent: *
+# Disallow: /dev/
+# Disallow: /staging/
+
+# Sitemap location
+Sitemap: https://finlern.com/sitemap.xml 

@@ -1,1 +1,1 @@
-{"extends": "next/core-web-vitals", "rules": {"@next/next/no-head-element": "off"}}
+{"extends": "next/core-web-vitals", "rules": {"@next/next/no-head-element": "off", "react/no-unescaped-entities": "off"}}

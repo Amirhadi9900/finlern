@@ -8,7 +8,8 @@ export default function Document() {
       <Head>
         <meta charSet="utf-8" />
         <meta name="description" content="Finlern - Finnish Language Learning" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         
         {/* iOS Safari compatibility script */}

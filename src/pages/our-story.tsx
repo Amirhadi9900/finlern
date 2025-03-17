@@ -331,6 +331,7 @@ export default function OurStory() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
             {/* Team Member 1 - Enhanced */}
             <div 
               className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100"
@@ -347,32 +348,33 @@ export default function OurStory() {
                   <div className="absolute inset-0 rounded-full border-2 border-white p-1">
                     <div className="absolute inset-0 rounded-full border-2 border-aurora-blue/50 animate-[spin_20s_linear_infinite_reverse]">
                       <div className="absolute -top-1 left-1/2 w-2 h-2 bg-aurora-blue rounded-full transform -translate-x-1/2"></div>
-              </div>
-            </div>
+                    </div>
+                  </div>
 
-                  {/* Image placeholder with stylish design */}
-                  <div className="absolute inset-2 rounded-full overflow-hidden border-2 border-white shadow-xl flex items-center justify-center bg-gradient-to-br from-aurora-blue/10 to-aurora-purple/10 transform group-hover:scale-105 transition-transform duration-700">
-                    <div className="relative w-full h-full flex items-center justify-center bg-aurora-blue/5 overflow-hidden">
-                      <div className="text-aurora-blue font-bold text-3xl z-10 select-none">SA</div>
-                      
-                      {/* Decorative background pattern */}
-                      <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#6B8AFD_1px,transparent_1px)] [background-size:8px_8px]"></div>
-                      
-                      {/* Animated circle */}
-                      <div className="absolute top-1/2 left-1/2 w-32 h-32 rounded-full border border-dashed border-aurora-blue/30 -translate-x-1/2 -translate-y-1/2 animate-[spin_15s_linear_infinite]"></div>
-                      <div className="absolute top-1/2 left-1/2 w-24 h-24 rounded-full border border-dashed border-aurora-purple/30 -translate-x-1/2 -translate-y-1/2 animate-[spin_25s_linear_infinite_reverse]"></div>
-            </div>
-
+                  {/* Image container */}
+                  <div className="absolute inset-2 rounded-full overflow-hidden border-2 border-white shadow-xl transform group-hover:scale-105 transition-transform duration-700">
+                    <Image
+                      src="/images/Sanna-Alavillamo.jpg"
+                      alt="Sanna Alavillamo"
+                      width={160}
+                      height={160}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-3"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' className='h-12 w-12 text-aurora-green' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath strokeLinecap='round' strokeLinejoin='round' strokeWidth='1.5' d='M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z' /%3E%3C/svg%3E";
+                      }}
+                    />
+                    
                     {/* Overlay shine effect */}
                     <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                  </div>
+              </div>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Sanna Alavillamo</h3>
-                <div className="px-3 py-1 bg-gradient-to-r from-aurora-blue/20 to-aurora-purple/20 text-aurora-blue rounded-full text-sm font-medium inline-block mb-4 border border-aurora-blue/10">
-                  Head Teacher
-              </div>
+                <div className="px-3 py-1 bg-gradient-to-r from-aurora-green/20 to-aurora-blue/20 text-aurora-green rounded-full text-sm font-medium inline-block mb-4 border border-aurora-green/10">
+                Head Teacher
+                </div>
                 <p className="text-gray-700">
-                  With 20+ years of language teaching experience, Sanna's innovative approach to Finnish language education forms the foundation of Finlern's online courses.
+                With 20+ years of language teaching experience, Sanna's innovative approach to Finnish language education forms the foundation of Finlern's online courses.
                 </p>
               </div>
             </div>
@@ -393,8 +395,8 @@ export default function OurStory() {
                   <div className="absolute inset-0 rounded-full border-2 border-white p-1">
                     <div className="absolute inset-0 rounded-full border-2 border-aurora-green/50 animate-[spin_25s_linear_infinite]">
                       <div className="absolute -top-1 left-1/2 w-2 h-2 bg-aurora-green rounded-full transform -translate-x-1/2"></div>
-          </div>
-        </div>
+                    </div>
+                  </div>
                   
                   {/* Image container */}
                   <div className="absolute inset-2 rounded-full overflow-hidden border-2 border-white shadow-xl transform group-hover:scale-105 transition-transform duration-700">
@@ -494,7 +496,7 @@ export default function OurStory() {
                   <div className="absolute inset-2 rounded-full overflow-hidden border-2 border-white shadow-xl transform group-hover:scale-105 transition-transform duration-700">
                     <Image
                       src="/images/Sudabeh-Sadeghi-Mihan.JPG"
-                      alt="Sudabeh Sadeghi Mihan"
+                      alt="Soodabeh Sadeghi Mihan"
                       width={160}
                       height={160}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-3"
@@ -508,12 +510,12 @@ export default function OurStory() {
                     <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
               </div>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Sudabeh Sadeghi Mihan</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Soodabeh Sadeghi Mihan</h3>
                 <div className="px-3 py-1 bg-gradient-to-r from-aurora-teal/20 to-aurora-green/20 text-aurora-teal rounded-full text-sm font-medium inline-block mb-4 border border-aurora-teal/10">
                   Event Organizer & Communication Specialist
                 </div>
                 <p className="text-gray-700">
-                  Sudabeh is a professional event organizer and communication specialist who organizes all the events and keeps the communication lines open between Finlern and its students.
+                  Soodabeh is a professional event organizer and communication specialist who organizes all the events and keeps the communication lines open between Finlern and its students.
                 </p>
               </div>
             </div>

@@ -72,16 +72,6 @@ export default function App({ Component, pageProps }: AppProps) {
       <ClientOnly>
         <AosInitializer />
         
-        {/* iOS Safari compatibility script - must load before animations */}
-        <Script 
-          id="ios-fixes" 
-          strategy="beforeInteractive"
-          src="/ios-compatibility.js"
-          onError={(e) => {
-            console.error('Failed to load iOS compatibility script:', e);
-          }}
-        />
-        
         {/* Add animation scripts with safeguards for iOS Safari */}
         <Script 
           id="animation-script" 

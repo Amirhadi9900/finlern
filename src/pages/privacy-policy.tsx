@@ -111,7 +111,7 @@ export default function PrivacyPolicy() {
                     <li>Educational background and progress</li>
                     <li>Language learning preferences and goals</li>
                     <li>Course enrollment and attendance records</li>
-                  </ul>
+            </ul>
                 </div>
 
                 <div className="bg-aurora-snow/50 rounded-lg p-6 border border-aurora-blue/10">
@@ -125,7 +125,7 @@ export default function PrivacyPolicy() {
                     <li>Learning progress and assessment results</li>
                     <li>Interaction with learning materials</li>
                     <li>Communication logs with teachers</li>
-                  </ul>
+            </ul>
                 </div>
               </div>
             </div>
@@ -145,7 +145,7 @@ export default function PrivacyPolicy() {
                   <li>Legal obligation (Article 6(1)(c)) - To comply with Finnish educational and tax laws</li>
                   <li>Legitimate interests (Article 6(1)(f)) - For improving our services and preventing fraud</li>
                   <li>Consent (Article 6(1)(a)) - For marketing communications and optional features</li>
-                </ul>
+            </ul>
               </div>
             </div>
 
@@ -165,7 +165,7 @@ export default function PrivacyPolicy() {
                     <li>Respond to your inquiries and support requests</li>
                     <li>Track and report your learning progress</li>
                     <li>Issue certificates and educational documentation</li>
-                  </ul>
+            </ul>
                 </div>
 
                 <div className="bg-aurora-snow/50 rounded-lg p-6 border border-aurora-blue/10">
@@ -177,7 +177,7 @@ export default function PrivacyPolicy() {
                     <li>Comply with Finnish educational regulations</li>
                     <li>Generate anonymous statistics for reporting</li>
                     <li>Conduct research on learning effectiveness</li>
-                  </ul>
+            </ul>
                 </div>
               </div>
             </div>
@@ -197,7 +197,7 @@ export default function PrivacyPolicy() {
                   <li>Payment processors for secure transactions</li>
                   <li>Legal authorities when required by law</li>
                   <li>Business partners with your explicit consent</li>
-                </ul>
+            </ul>
               </div>
             </div>
 
@@ -216,7 +216,7 @@ export default function PrivacyPolicy() {
                   <li>Regular security assessments</li>
                   <li>Access controls and authentication</li>
                   <li>Secure data storage and transmission</li>
-                </ul>
+            </ul>
               </div>
             </div>
 
@@ -238,7 +238,7 @@ export default function PrivacyPolicy() {
                   <li>Right to data portability (Article 20) - Receive your data in a machine-readable format</li>
                   <li>Right to object (Article 21) - Object to processing based on legitimate interests</li>
                   <li>Right to withdraw consent (Article 7) - Revoke consent at any time</li>
-                </ul>
+            </ul>
                 <p className="text-gray-700 leading-relaxed mt-4">
                   To exercise these rights, please contact us at info@finlern.fi. We will respond within one month, as required by GDPR. If you are not satisfied with our response, you have the right to lodge a complaint with the Finnish Data Protection Authority (Tietosuojavaltuutetun toimisto).
                 </p>
@@ -315,7 +315,7 @@ export default function PrivacyPolicy() {
                   <li>Teachers or admins must ensure proper consent is obtained</li>
                   <li>We implement additional safeguards for children's data</li>
                   <li>We provide clear information about data processing to both children and parents</li>
-                </ul>
+            </ul>
               </div>
             </div>
 

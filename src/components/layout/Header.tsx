@@ -91,8 +91,8 @@ const Header: React.FC = () => {
     >
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          {/* Logo */}
-          <Link href="/" className="flex items-center relative z-10 group">
+          {/* Logo - moved more to the left with negative margin */}
+          <Link href="/" className="flex items-center relative z-10 group -ml-3 md:-ml-5">
             <div className="overflow-hidden">
               <Image 
                 src="/images/finlern.png" 
@@ -120,25 +120,33 @@ const Header: React.FC = () => {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation - Updated with gorgeous styles */}
           <nav className="hidden lg:flex items-center">
-            <ul className="flex space-x-2">
+            <ul className="flex space-x-3">
               {NAV_LINKS.map((link) => {
                 const isActive = router.pathname === link.href
                 return (
                   <li key={link.href}>
                     <Link 
                       href={link.href}
-                      className={`relative px-5 py-3 text-base font-medium rounded-md transition-all duration-300 group inline-flex items-center ${
+                      className={`relative px-5 py-3 text-base font-medium rounded-lg transition-all duration-300 group overflow-hidden flex items-center justify-center ${
                         isActive 
-                          ? 'text-aurora-blue font-semibold' 
-                          : 'text-gray-700 hover:text-aurora-blue'
+                          ? 'bg-gradient-to-r from-aurora-blue/10 to-aurora-purple/10 text-aurora-blue font-semibold shadow-sm' 
+                          : 'text-gray-700 hover:text-aurora-blue hover:bg-gradient-to-r hover:from-aurora-blue/5 hover:to-aurora-purple/5'
                       }`}
                     >
+                      {/* Animated background gradient on hover */}
+                      <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-aurora-blue/10 via-aurora-purple/10 to-aurora-green/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></span>
+                      
                       {/* Animated underline effect */}
-                      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-aurora-blue rounded-full transition-all duration-300 ease-out group-hover:w-4/5 w-0" style={{ 
-                        width: isActive ? '80%' : '0%' 
+                      <span className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-aurora-blue via-aurora-purple to-aurora-green rounded-full transition-all duration-300 ease-out group-hover:w-full w-0" style={{ 
+                        width: isActive ? '100%' : '0%' 
                       }}></span>
+
+                      {/* Subtle glow effect on active or hover */}
+                      <span className={`absolute inset-0 rounded-lg transition-opacity duration-300 ${
+                        isActive ? 'shadow-inner-glow opacity-40' : 'opacity-0 group-hover:opacity-20'
+                      }`}></span>
                       
                       {link.label}
                     </Link>
@@ -150,7 +158,7 @@ const Header: React.FC = () => {
             {/* Call to Action Button */}
             <Link 
               href="/classes" 
-              className="ml-8 bg-aurora-blue hover:bg-blue-600 text-white font-medium py-2.5 px-6 rounded-md transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="ml-8 bg-gradient-to-r from-aurora-blue via-aurora-purple to-blue-600 text-white font-medium py-2.5 px-6 rounded-md transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform"
             >
               Start Learning
             </Link>
@@ -241,7 +249,7 @@ const Header: React.FC = () => {
                       href={link.href}
                       className={`block text-xl font-medium transition-colors duration-300 ${
                         isActive 
-                          ? 'text-aurora-blue font-semibold' 
+                          ? 'text-transparent bg-clip-text bg-gradient-to-r from-aurora-blue to-aurora-purple font-semibold' 
                           : 'text-gray-700 hover:text-aurora-blue'
                       }`}
                       onClick={toggleMenu}
@@ -257,7 +265,7 @@ const Header: React.FC = () => {
           <div className="mt-8 pt-4 border-t border-gray-100">
             <Link 
               href="/classes" 
-              className="block w-full bg-aurora-blue hover:bg-blue-600 text-white font-medium py-3 px-4 rounded-md text-center transition-all duration-300"
+              className="block w-full bg-gradient-to-r from-aurora-blue via-aurora-purple to-blue-600 text-white font-medium py-3 px-4 rounded-md text-center transition-all duration-300 shadow-md"
               onClick={toggleMenu}
             >
               Start Learning

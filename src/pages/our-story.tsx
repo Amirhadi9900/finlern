@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Layout from '../components/layout/Layout'
@@ -14,7 +14,18 @@ declare global {
   }
 }
 
+// Define team member detailed info type
+interface TeamMemberDetail {
+  id: string;
+  name: string;
+  bio: string;
+  linkedin?: string; // Optional LinkedIn profile URL
+}
+
 export default function OurStory() {
+  // State to track which team member popup is open
+  const [activeTeamMember, setActiveTeamMember] = useState<string | null>(null);
+  
   // Initialize animations on component mount
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -31,6 +42,62 @@ export default function OurStory() {
       };
     }
   }, []);
+
+  // Detailed information about team members
+  const teamMembersDetails: TeamMemberDetail[] = [
+    {
+      id: "sanna",
+      name: "Sanna Alavillamo",
+      bio: ""
+    },
+    {
+      id: "amirhadi",
+      name: "Amirhadi Borjian",
+      bio: "Amirhadi Borjian is a talented software developer at Finlern, where he mixes superb technical skills with a knack for collaboration. His problem-solving prowess and proactive attitude shine through in how he refines Finlern’s digital tools, making them intuitive and efficient for users. Curious and creative, Amirhadi’s ideas push the company forward in the fast-evolving education tech world. His teamwork and fresh perspective play a remarkable role in boosting Finlern’s growth and keeping users happy.",
+      linkedin: "https://linkedin.com/in/amirhadi-borjian-yazdi-5108431a1"
+    },
+    {
+      id: "hamid",
+      name: "Hamid Reza Ghorbani",
+      bio: "Hamid Reza Gorbani is the creative force behind Finlern Oy. Armed with a degree in International Business, he's a pro at sales, team-leading, and connecting people. Through Finlern, he's building smart, impactful learning solutions and dreaming big—think skill-boosting courses beyond just languages. He's also hosted a ton of events in Finland to sharpen speaking skills and celebrate different cultures. Oh, and when he's not running the show, he's a mean classical violinist!",
+      linkedin: "https://www.linkedin.com/in/hamid-reza-ghorbani-salesassistant"
+    },
+    {
+      id: "saghar",
+      name: "Saghar Kazemi",
+      bio: "Saghar Kazemi is an architect with over 15 years of designing and building under her belt. Right now, she's studying International Business at HAMK in Finland. At Finlern, she's rocking the marketing team with her design and graphic art skills. Her architecture chops, creative spark, and business smarts make her a genius at mixing stunning visuals with clever marketing ideas.",
+      linkedin: "https://linkedin.com/in/saghar-kazemi-6b7516177"
+    },
+    {
+      id: "soodabeh",
+      name: "Soodabeh Sadeghi Mihan",
+      bio: "Soodabeh Sadeghi Mihan brings over 23 years of event-planning and communication magic to the table. With a Teaching Diploma and a Bachelor's in Translation Studies from Iran National Public University, she kicked off as an English teacher in Tehran before spending 18 years at Ivan Sepid Art Gallery, organizing exhibitions and cultural gigs that linked artists and communities. Now at HAMK studying International Business and working at Finlern, she's all about running cross-cultural events and global networks. She's obsessed with using language and culture to bring people together.",
+      linkedin: "https://www.linkedin.com/in/soodabeh-sadeghi-mihan-9273852b4"
+    }
+  ];
+
+  // Function to open a team member's popup
+  const openTeamMemberPopup = (memberId: string) => {
+    setActiveTeamMember(memberId);
+    // Prevent body scrolling when popup is open
+    if (typeof document !== 'undefined') {
+      document.body.style.overflow = 'hidden';
+    }
+  };
+
+  // Function to close the popup
+  const closeTeamMemberPopup = () => {
+    setActiveTeamMember(null);
+    // Re-enable body scrolling
+    if (typeof document !== 'undefined') {
+      document.body.style.overflow = 'auto';
+    }
+  };
+
+  // Get the active team member details
+  const getActiveMemberDetails = () => {
+    return teamMembersDetails.find(member => member.id === activeTeamMember);
+  };
 
   return (
     <Layout>
@@ -151,7 +218,7 @@ export default function OurStory() {
                           style={{ objectFit: 'cover' }}
                           onError={(e) => {
                             const target = e.target as HTMLImageElement;
-                            target.src = "https://placehold.co/600x600?text=Founder+Image";
+                            target.src = "/images/placeholder-avatar.png";
                             target.onerror = null;
                           }}
                         />
@@ -348,8 +415,8 @@ export default function OurStory() {
                   <div className="absolute inset-0 rounded-full border-2 border-white p-1">
                     <div className="absolute inset-0 rounded-full border-2 border-aurora-blue/50 animate-[spin_20s_linear_infinite_reverse]">
                       <div className="absolute -top-1 left-1/2 w-2 h-2 bg-aurora-blue rounded-full transform -translate-x-1/2"></div>
-              </div>
-            </div>
+                    </div>
+                  </div>
 
                   {/* Image container */}
                   <div className="absolute inset-2 rounded-full overflow-hidden border-2 border-white shadow-xl transform group-hover:scale-105 transition-transform duration-700">
@@ -361,7 +428,8 @@ export default function OurStory() {
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-3"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
-                        target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' className='h-12 w-12 text-aurora-green' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath strokeLinecap='round' strokeLinejoin='round' strokeWidth='1.5' d='M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z' /%3E%3C/svg%3E";
+                        target.src = "/images/placeholder-avatar.png";
+                        target.onerror = null;
                       }}
                     />
                     
@@ -376,6 +444,18 @@ export default function OurStory() {
                 <p className="text-gray-700">
                 With 20+ years of language teaching experience, Sanna's innovative approach to Finnish language education forms the foundation of Finlern's online courses.
                 </p>
+                <button 
+                  onClick={() => openTeamMemberPopup('sanna')}
+                  className="mt-6 px-4 py-2.5 bg-gradient-to-r from-aurora-blue to-aurora-purple text-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group"
+                  aria-label="Learn more about Sanna Alavillamo"
+                >
+                  <span className="flex items-center justify-center">
+                    <span>Here you can know me better!</span>
+                    <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </span>
+                </button>
               </div>
             </div>
 
@@ -395,9 +475,69 @@ export default function OurStory() {
                   <div className="absolute inset-0 rounded-full border-2 border-white p-1">
                     <div className="absolute inset-0 rounded-full border-2 border-aurora-green/50 animate-[spin_25s_linear_infinite]">
                       <div className="absolute -top-1 left-1/2 w-2 h-2 bg-aurora-green rounded-full transform -translate-x-1/2"></div>
-          </div>
-        </div>
+                    </div>
+                  </div>
                   
+                  {/* Image container */}
+                  <div className="absolute inset-2 rounded-full overflow-hidden border-2 border-white shadow-xl transform group-hover:scale-105 transition-transform duration-700">
+                    <Image
+                      src="/images/Hamidreza-Ghorbani.png"
+                      alt="Hamid Reza Ghorbani"
+                      width={160}
+                      height={160}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-3"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = "/images/placeholder-avatar.png";
+                        target.onerror = null;
+                      }}
+                    />
+                    
+                    {/* Overlay shine effect */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              </div>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Hamid Reza Ghorbani</h3>
+                <div className="px-3 py-1 bg-gradient-to-r from-aurora-green/20 to-aurora-blue/20 text-aurora-teal rounded-full text-sm font-medium inline-block mb-4 border border-aurora-green/10">
+                  CEO & Founder
+                </div>
+                <p className="text-gray-700">
+                Hamid Reza Gorbani is the founder and leader of Finlern Oy, where he leverages his leadership and management skills to ensure the organization operates smoothly.
+              </p>
+              <button 
+                onClick={() => openTeamMemberPopup('hamid')}
+                className="mt-6 px-4 py-2.5 bg-gradient-to-r from-aurora-green to-aurora-blue text-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group"
+                aria-label="Learn more about Hamid Reza Ghorbani"
+              >
+                <span className="flex items-center justify-center">
+                  <span>Here you can know me better!</span>
+                  <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </div>
+            
+            {/* Team Member 3 - Enhanced */}
+            <div 
+              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div className="h-3 bg-gradient-to-r from-aurora-green to-aurora-blue w-full"></div>
+              <div className="p-8 text-center">
+                <div className="relative w-40 h-40 mx-auto mb-6 group">
+                  {/* Decorative background */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-aurora-green/30 to-aurora-blue/30 rounded-full blur-md transform scale-110 group-hover:scale-125 transition-all duration-700"></div>
+                  
+                  {/* Outer ring */}
+                  <div className="absolute inset-0 rounded-full border-2 border-white p-1">
+                    <div className="absolute inset-0 rounded-full border-2 border-aurora-green/50 animate-[spin_25s_linear_infinite]">
+                      <div className="absolute -top-1 left-1/2 w-2 h-2 bg-aurora-green rounded-full transform -translate-x-1/2"></div>
+        </div>
+          </div>
+
                   {/* Image container */}
                   <div className="absolute inset-2 rounded-full overflow-hidden border-2 border-white shadow-xl transform group-hover:scale-105 transition-transform duration-700">
                     <Image
@@ -408,7 +548,8 @@ export default function OurStory() {
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-3"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
-                        target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' className='h-12 w-12 text-aurora-green' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath strokeLinecap='round' strokeLinejoin='round' strokeWidth='1.5' d='M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z' /%3E%3C/svg%3E";
+                        target.src = "/images/placeholder-avatar.png";
+                        target.onerror = null;
                       }}
                     />
                     
@@ -423,10 +564,22 @@ export default function OurStory() {
                 <p className="text-gray-700">
                   Amirhadi is a dedicated ICT specialist who fosters and maintains the strong presence of Finlern in the digital world.
                 </p>
+                <button 
+                  onClick={() => openTeamMemberPopup('amirhadi')}
+                  className="mt-6 px-4 py-2.5 bg-gradient-to-r from-aurora-green to-aurora-blue text-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group"
+                  aria-label="Learn more about Amirhadi Borjian"
+                >
+                  <span className="flex items-center justify-center">
+                    <span>Here you can know me better!</span>
+                    <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </span>
+                </button>
               </div>
             </div>
 
-            {/* Team Member 3 - Enhanced */}
+            {/* Team Member 4 - Enhanced */}
             <div 
               className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100"
               data-aos="fade-up"
@@ -455,7 +608,8 @@ export default function OurStory() {
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-3"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
-                        target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' className='h-12 w-12 text-aurora-purple' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath strokeLinecap='round' strokeLinejoin='round' strokeWidth='1.5' d='M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z' /%3E%3C/svg%3E";
+                        target.src = "/images/placeholder-avatar.png";
+                        target.onerror = null;
                       }}
                     />
                     
@@ -470,10 +624,22 @@ export default function OurStory() {
                 <p className="text-gray-700">
                   Saghar is an experienced graphic designer and social media specialist who designs all the glamorous visual content for Finlern on different social media platforms.
                 </p>
+                <button 
+                  onClick={() => openTeamMemberPopup('saghar')}
+                  className="mt-6 px-4 py-2.5 bg-gradient-to-r from-aurora-purple to-aurora-blue text-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group"
+                  aria-label="Learn more about Saghar Kazemi"
+                >
+                  <span className="flex items-center justify-center">
+                    <span>Here you can know me better!</span>
+                    <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </span>
+                </button>
               </div>
             </div>
 
-            {/* Team Member 4 - Enhanced */}
+            {/* Team Member 5 - Enhanced */}
             <div 
               className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100"
               data-aos="fade-up"
@@ -502,7 +668,8 @@ export default function OurStory() {
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-3"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
-                        target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' className='h-12 w-12 text-aurora-teal' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath strokeLinecap='round' strokeLinejoin='round' strokeWidth='1.5' d='M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z' /%3E%3C/svg%3E";
+                        target.src = "/images/placeholder-avatar.png";
+                        target.onerror = null;
                       }}
                     />
                     
@@ -517,11 +684,121 @@ export default function OurStory() {
                 <p className="text-gray-700">
                   Soodabeh is a professional event organizer and communication specialist who organizes all the events and keeps the communication lines open between Finlern and its students.
                 </p>
+                <button 
+                  onClick={() => openTeamMemberPopup('soodabeh')}
+                  className="mt-6 px-4 py-2.5 bg-gradient-to-r from-aurora-teal to-aurora-green text-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group"
+                  aria-label="Learn more about Soodabeh Sadeghi Mihan"
+                >
+                  <span className="flex items-center justify-center">
+                    <span>Here you can know me better!</span>
+                    <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </span>
+                </button>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Team Member Popup */}
+      {activeTeamMember && (
+        <div className="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+          <div className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            {/* Background overlay */}
+            <div 
+              className="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity backdrop-blur-sm"
+              aria-hidden="true"
+              onClick={closeTeamMemberPopup}
+            ></div>
+
+            {/* Modal panel */}
+            <div className="inline-block align-bottom bg-white rounded-2xl text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-2xl sm:w-full">
+              <div className="relative">
+                {/* Close button */}
+                <button 
+                  onClick={closeTeamMemberPopup}
+                  className="absolute top-4 right-4 z-10 bg-white rounded-full p-2 shadow-md hover:shadow-lg transition-all duration-300 focus:outline-none"
+                  aria-label="Close popup"
+                >
+                  <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+
+                {/* Modal content */}
+                <div className="relative">
+                  {/* Decorative header */}
+                  <div className="h-3 bg-gradient-to-r from-aurora-blue via-aurora-purple to-aurora-night w-full"></div>
+                  
+                  {/* Content */}
+                  <div className="px-8 py-10">
+                    <div className="mb-8">
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                        <span className="bg-gradient-to-r from-aurora-blue to-aurora-purple bg-clip-text text-transparent">{getActiveMemberDetails()?.name}</span>
+                        <span className="ml-3 h-px flex-grow bg-gradient-to-r from-aurora-blue/30 to-transparent"></span>
+                      </h3>
+                      
+                      {/* Bio with decorative elements */}
+                      <div className="relative">
+                        {/* Decorative elements */}
+                        <div className="absolute -top-4 -left-4 w-16 h-16 bg-aurora-blue/5 rounded-full blur-xl -z-10"></div>
+                        <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-aurora-purple/5 rounded-full blur-xl -z-10"></div>
+                        
+                        <div className="bg-gray-50/50 rounded-xl p-6 border border-gray-100 relative">
+                          <span className="absolute -top-2 left-4 bg-aurora-blue/20 w-8 h-8 rounded-full blur-md"></span>
+                          <span className="absolute -bottom-2 right-4 bg-aurora-purple/20 w-6 h-6 rounded-full blur-md"></span>
+                          
+                          <div className="relative z-10">
+                            <p className="text-lg text-gray-700 leading-relaxed">
+                              {getActiveMemberDetails()?.bio}
+                            </p>
+                            
+                            {/* LinkedIn Profile Link */}
+                            {getActiveMemberDetails()?.linkedin && (
+                              <div className="mt-8 flex justify-center">
+                                <a 
+                                  href={getActiveMemberDetails()?.linkedin}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="group inline-flex items-center gap-2 px-6 py-3 bg-white rounded-lg shadow-md border border-gray-200 hover:border-[#0a66c2] transition-all duration-300 hover:shadow-lg"
+                                  aria-label={`Visit ${getActiveMemberDetails()?.name}'s LinkedIn profile`}
+                                >
+                                  <span className="text-gray-800 font-medium group-hover:text-[#0a66c2] transition-colors duration-300">Connect on</span>
+                                  <span className="flex items-center">
+                                    <svg className="w-5 h-5 fill-[#0a66c2]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                      <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
+                                    </svg>
+                                    <span className="ml-1 font-semibold text-[#0a66c2]">LinkedIn</span>
+                                  </span>
+                                </a>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Footer with decorative elements */}
+                    <div className="flex justify-center mt-8">
+                      <div className="relative">
+                        <button
+                          onClick={closeTeamMemberPopup}
+                          className="px-6 py-3 bg-gradient-to-r from-aurora-blue to-aurora-purple text-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                        >
+                          Close
+                        </button>
+                        <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-aurora-blue to-aurora-purple rounded-full"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Call to Action - Enhanced */}
       <section className="py-16 md:py-24 relative overflow-hidden">

@@ -113,6 +113,9 @@ module.exports = {
         'cover': 'cover',
         'contain': 'contain',
         '200%': '200%'
+      },
+      boxShadow: {
+        'inner-glow': 'inset 0 0 10px 2px rgba(62, 138, 193, 0.3)'
       }
     },
   },

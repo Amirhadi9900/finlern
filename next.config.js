@@ -22,7 +22,7 @@ const nextConfig = {
     optimizePackageImports: ['@/components']
   },
   // Disable file size measurement during builds
-  webpack: (config) => {
+  webpack: (config, { webpack }) => {
     // Reduce unnecessary processing during development
     config.optimization.runtimeChunk = false;
     
@@ -31,6 +31,12 @@ const nextConfig = {
       // Optimize production builds
       config.optimization.minimize = true;
     }
+    
+    // Fix punycode deprecation warning
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      punycode: 'punycode/'
+    };
     
     return config;
   },
@@ -58,18 +64,53 @@ const nextConfig = {
       {
         source: '/(.*)',
         headers: [
+          // Security Headers
           {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff',
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on'
           },
           {
-            key: 'X-XSS-Protection',
-            value: '1; mode=block',
+            key: 'Strict-Transport-Security',
+            value: 'max-age=31536000; includeSubDomains; preload'
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff'
           },
           {
             key: 'X-Frame-Options',
-            value: 'SAMEORIGIN',
+            value: 'SAMEORIGIN'
           },
+          {
+            key: 'X-XSS-Protection',
+            value: '1; mode=block'
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'strict-origin-when-cross-origin'
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()'
+          },
+          {
+            key: 'Content-Security-Policy',
+            value: process.env.NODE_ENV === 'production'
+              ? "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: https:; font-src 'self' data: https:; connect-src 'self' https:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;"
+              : "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: https:; font-src 'self' data: https:; connect-src 'self' https: localhost:*; frame-src 'self';"
+          },
+          {
+            key: 'Cross-Origin-Embedder-Policy',
+            value: 'require-corp'
+          },
+          {
+            key: 'Cross-Origin-Opener-Policy',
+            value: 'same-origin'
+          },
+          {
+            key: 'Cross-Origin-Resource-Policy',
+            value: 'same-origin'
+          }
         ],
       },
     ]

@@ -147,7 +147,7 @@ export default function Events() {
                   <div className="text-center text-white relative z-10">
                     <div className="flex flex-col items-center">
                       <div className="w-24 h-24 flex items-center justify-center mb-2 bg-white/20 backdrop-blur-sm rounded-full">
-                        <div className="text-6xl font-bold leading-none">15</div>
+                        <div className="text-6xl font-bold leading-none">29</div>
                       </div>
                       <div className="text-2xl uppercase tracking-wider font-medium">March</div>
                     </div>
@@ -157,8 +157,7 @@ export default function Events() {
               <div className="p-6 md:p-8">
                 <h3 className="text-2xl font-bold mb-4 text-gray-900">Finnish Conversation Club</h3>
                 <p className="text-gray-700 mb-6 leading-relaxed">
-                  Practice your Finnish in a relaxed environment with native speakers and fellow learners. 
-                  This month's theme: Spring traditions in Finland.
+                  Practice your Finnish in a relaxed, charming environment with native speakers and fellow learners. 
                 </p>
                 <div className="flex items-center text-gray-700 mb-4">
                   <div className="w-10 h-10 rounded-full bg-aurora-blue/10 flex items-center justify-center mr-3">
@@ -166,7 +165,7 @@ export default function Events() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <span>6:00 PM - 8:30 PM</span>
+                  <span>4:30 PM - 7:30 PM</span>
                 </div>
                 <div className="flex items-center text-gray-700 mb-8">
                   <div className="w-10 h-10 rounded-full bg-aurora-blue/10 flex items-center justify-center mr-3">
@@ -175,7 +174,7 @@ export default function Events() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                   </div>
-                  <span>Moro Sky Bar, Tampere</span>
+                  <span>Espresso House, IdeaPark</span>
                 </div>
                 <div className="border-t border-gray-100 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
                   <span className="inline-block px-4 py-2 rounded-full bg-aurora-blue/10 text-aurora-blue font-bold">

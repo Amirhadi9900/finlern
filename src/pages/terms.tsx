@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import Head from 'next/head'
 import Layout from '../components/layout/Layout'
+import Link from 'next/link'
 
 // Add type declaration for window.scrollAnimations
 declare global {
@@ -33,107 +34,150 @@ export default function Terms() {
   return (
     <Layout>
       <Head>
-        <title>Terms of Service | Finlern - Finnish Language Learning</title>
-        <meta name="description" content="Terms of Service for Finlern - Learn about our terms and conditions for using our Finnish language learning platform." />
+        <title>Terms of Service | Finlern</title>
+        <meta name="description" content="Terms of Service for Finlern - Finnish Language Learning Platform" />
       </Head>
 
       <main className="min-h-screen bg-white">
-        {/* Hero Section */}
-        <section className="relative bg-aurora-night text-white py-20">
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute inset-0 bg-[url('/images/pattern-dark.svg')] opacity-20"></div>
-          </div>
-          <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
+        {/* Updated header section */}
+        <div className="bg-gray-900 relative overflow-hidden">
+          {/* Replace SVG pattern with gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-aurora-blue via-aurora-purple to-blue-600 opacity-20"></div>
+          <div className="container mx-auto px-4 py-16 relative z-10">
             <h1 
               className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-6"
-              data-aos="fade-up" 
-              data-aos-duration="800"
             >
               Terms of Service
             </h1>
-            <p 
-              className="text-lg md:text-xl text-center max-w-3xl mx-auto text-gray-300"
-              data-aos="fade-up" 
-              data-aos-duration="800" 
-              data-aos-delay="100"
-            >
-              Learn about our terms and conditions for using our Finnish language learning platform.
+            <p className="text-xl text-gray-300 text-center max-w-3xl mx-auto">
+              Please read these terms carefully before using Finlern's services
             </p>
           </div>
-        </section>
+        </div>
 
         {/* Main Content */}
-        <section className="py-12 md:py-16 lg:py-20">
-          <div className="container mx-auto px-4 md:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto bg-white shadow-sm rounded-lg p-6 md:p-8 lg:p-10">
-              
-              <div className="prose prose-lg max-w-none">
-                <h2>1. Acceptance of Terms</h2>
-                <p>
-                  By accessing or using the Finlern website and services, you agree to be bound by these Terms of Service. 
-                  If you do not agree to these terms, please do not use our services.
-                </p>
-                
-                <h2>2. Description of Service</h2>
-                <p>
-                  Finlern provides Finnish language learning services including online classes, educational resources, 
-                  and cultural events. We reserve the right to modify, suspend, or discontinue any part of our services at any time.
-                </p>
-                
-                <h2>3. User Accounts</h2>
-                <p>
-                  When you create an account with us, you must provide accurate and complete information. You are responsible 
-                  for maintaining the confidentiality of your account information and for all activities that occur under your account.
-                </p>
-                
-                <h2>4. User Conduct</h2>
-                <p>
-                  You agree not to use our services for any illegal or unauthorized purpose. You must not violate any laws 
-                  in your jurisdiction or interfere with the use of our services by others.
-                </p>
-                
-                <h2>5. Payment Terms</h2>
-                <p>
-                  Payment for our services must be made in accordance with the prices and terms displayed on our website. 
-                  All payments are non-refundable unless otherwise specified in our refund policy.
-                </p>
-                
-                <h2>6. Intellectual Property</h2>
-                <p>
-                  All content on the Finlern website, including text, graphics, logos, images, audio, and video, is the property 
-                  of Finlern or its licensors and is protected by copyright and other intellectual property laws.
-                </p>
-                
-                <h2>7. Limitation of Liability</h2>
-                <p>
-                  Finlern shall not be liable for any indirect, incidental, special, consequential, or punitive damages 
-                  resulting from your use of or inability to use our services.
-                </p>
-                
-                <h2>8. Changes to Terms</h2>
-                <p>
-                  We reserve the right to modify these Terms of Service at any time. We will provide notice of any significant changes 
-                  by posting the new Terms on our website. Your continued use of our services after such changes constitutes your acceptance of the new Terms.
-                </p>
-                
-                <h2>9. Governing Law</h2>
-                <p>
-                  These Terms shall be governed by and construed in accordance with the laws of Finland, without regard to its conflict of law provisions.
-                </p>
-                
-                <h2>10. Contact Information</h2>
-                <p>
-                  If you have any questions about these Terms of Service, please contact us at info@finlern.fi.
-                </p>
-                
-                <p className="text-sm text-gray-500 mt-10">
-                  Last updated: January 2024
-                </p>
-              </div>
-              
+        <div className="container mx-auto px-4 py-12">
+          <div className="max-w-4xl mx-auto prose prose-lg">
+            <section className="mb-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Acceptance of Terms</h2>
+              <p className="text-gray-700 mb-4">
+                By accessing and using Finlern's website and services, you agree to be bound by these Terms of Service. If you do not agree with any part of these terms, please do not use our services.
+              </p>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">2. Service Description</h2>
+              <p className="text-gray-700 mb-4">
+                Finlern provides Finnish language learning services, including but not limited to:
+              </p>
+              <ul className="list-disc pl-6 text-gray-700 mb-4">
+                <li>Online Finnish language courses</li>
+                <li>Interactive learning materials</li>
+                <li>Practice exercises and assessments</li>
+                <li>Progress tracking and certificates</li>
+                <li>Community features and discussion forums</li>
+              </ul>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">3. User Accounts</h2>
+              <p className="text-gray-700 mb-4">
+                To access certain features of our service, you must register for an account. You agree to:
+              </p>
+              <ul className="list-disc pl-6 text-gray-700 mb-4">
+                <li>Provide accurate and complete information</li>
+                <li>Maintain the security of your account</li>
+                <li>Accept responsibility for all activities under your account</li>
+                <li>Notify us immediately of any security breaches</li>
+              </ul>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">4. Course Materials and Intellectual Property</h2>
+              <p className="text-gray-700 mb-4">
+                All content provided through Finlern's services, including but not limited to:
+              </p>
+              <ul className="list-disc pl-6 text-gray-700 mb-4">
+                <li>Course materials and lessons</li>
+                <li>Practice exercises and assessments</li>
+                <li>Images, videos, and audio content</li>
+                <li>Website design and layout</li>
+              </ul>
+              <p className="text-gray-700 mb-4">
+                is the property of Finlern or its content creators and is protected by copyright laws. You may not:
+              </p>
+              <ul className="list-disc pl-6 text-gray-700 mb-4">
+                <li>Copy or reproduce any content without permission</li>
+                <li>Share your account credentials with others</li>
+                <li>Use the content for commercial purposes</li>
+                <li>Modify or create derivative works</li>
+              </ul>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">5. Payment Terms</h2>
+              <p className="text-gray-700 mb-4">
+                For paid services:
+              </p>
+              <ul className="list-disc pl-6 text-gray-700 mb-4">
+                <li>All prices are in euros (€) unless otherwise stated</li>
+                <li>Payments are processed securely through our payment providers</li>
+                <li>Course fees are non-refundable unless required by law</li>
+                <li>We reserve the right to modify prices with notice</li>
+              </ul>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">6. User Conduct</h2>
+              <p className="text-gray-700 mb-4">
+                Users must not:
+              </p>
+              <ul className="list-disc pl-6 text-gray-700 mb-4">
+                <li>Violate any applicable laws or regulations</li>
+                <li>Impersonate others or provide false information</li>
+                <li>Harass, abuse, or harm others</li>
+                <li>Interfere with the proper functioning of our services</li>
+                <li>Attempt to gain unauthorized access to our systems</li>
+                <li>Use our services for any illegal or unauthorized purpose</li>
+              </ul>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">7. Termination</h2>
+              <p className="text-gray-700 mb-4">
+                We reserve the right to terminate or suspend your account and access to our services:
+              </p>
+              <ul className="list-disc pl-6 text-gray-700 mb-4">
+                <li>For violations of these terms</li>
+                <li>For suspicious or fraudulent activity</li>
+                <li>At our sole discretion, with or without cause</li>
+              </ul>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">8. Limitation of Liability</h2>
+              <p className="text-gray-700 mb-4">
+                Finlern shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use our services.
+              </p>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">9. Changes to Terms</h2>
+              <p className="text-gray-700 mb-4">
+                We reserve the right to modify these terms at any time. We will notify users of any material changes through our website or via email.
+              </p>
+            </section>
+
+            <div className="mt-12 text-center">
+              <Link 
+                href="/contact" 
+                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-aurora-blue to-aurora-purple hover:from-aurora-purple hover:to-aurora-blue focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-aurora-blue transition-all duration-200"
+              >
+                Contact Support
+              </Link>
             </div>
           </div>
-        </section>
+        </div>
       </main>
     </Layout>
   )

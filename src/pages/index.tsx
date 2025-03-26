@@ -148,11 +148,11 @@ export default function Home() {
           </div>
         </div>
         
-        {/* Floating scroll indicator */}
+        {/* Modern Floating scroll indicator */}
         <ClientOnly>
           <div 
             onClick={handleScrollDown}
-            className="absolute bottom-12 w-full flex justify-center items-center cursor-pointer z-10"
+            className="absolute bottom-4 w-full flex justify-center items-center cursor-pointer z-10 mt-8"
             aria-label="Scroll to stats section"
             role="button"
             tabIndex={0}
@@ -165,8 +165,11 @@ export default function Home() {
             data-aos-duration="800"
             data-aos-delay="300"
           >
-            <div className="w-10 h-14 border-2 border-white/70 rounded-full flex justify-center items-start p-2 hover:border-white transition-colors duration-300">
-              <div className="w-1.5 h-3 bg-white rounded-full animate-bounce"></div>
+            <div className="group relative flex flex-col items-center">
+              <div className="relative w-6 h-10 rounded-full border-2 border-white/70 group-hover:border-white transition-colors duration-300">
+                <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-white rounded-full animate-scroll"></div>
+                <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-white rounded-full animate-scroll-delayed"></div>
+              </div>
             </div>
           </div>
         </ClientOnly>
@@ -189,9 +192,9 @@ export default function Home() {
               >
                 <div className="absolute inset-0 bg-aurora-blue/5 rounded-2xl transform transition-transform group-hover:scale-105 duration-500"></div>
                 <div className="relative z-10">
-                  <ClientOnly fallback={<h3 className="text-4xl font-bold text-aurora-blue mb-2">15+</h3>}>
+                  <ClientOnly fallback={<h3 className="text-4xl font-bold text-aurora-blue mb-2">20+</h3>}>
                     <div className="flex justify-center items-baseline">
-                      <h3 className="counter text-5xl font-bold text-aurora-blue mb-2" data-target="15">15</h3>
+                      <h3 className="counter text-5xl font-bold text-aurora-blue mb-2" data-target="20">20</h3>
                       <span className="text-2xl font-bold text-aurora-blue">+</span>
                     </div>
                   </ClientOnly>

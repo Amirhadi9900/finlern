@@ -81,6 +81,32 @@
   }
 }
 
+/* Modern scroll indicator animations */
+@keyframes scroll {
+  0% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 20px);
+    opacity: 0;
+  }
+}
+
+@keyframes scroll-delayed {
+  0% {
+    transform: translate(-50%, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 20px);
+    opacity: 0;
+  }
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -495,4 +521,12 @@ html {
   .bg-gradient-to-br {
     background-size: 100% 100% !important;
   }
+}
+
+.animate-scroll {
+  animation: scroll 1.5s ease-in-out infinite;
+}
+
+.animate-scroll-delayed {
+  animation: scroll-delayed 1.5s ease-in-out infinite;
 } 

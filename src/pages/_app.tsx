@@ -19,6 +19,40 @@ const poppins = Poppins({
   variable: '--font-poppins',
 })
 
+// Define the SessionProvider type
+type SessionProviderComponent = React.ComponentType<{
+  children: React.ReactNode;
+  session: any;
+}>;
+
+// We ONLY want to import NextAuth on the client to prevent SSR issues
+// We'll wrap this in a component that only renders on the client
+function AuthProvider({ children, pageProps }: { children: React.ReactNode; pageProps: any }) {
+  const [SessionProvider, setSessionProvider] = React.useState<SessionProviderComponent | null>(null);
+
+  React.useEffect(() => {
+    // Only try to load NextAuth on the client side
+    try {
+      const { SessionProvider: Provider } = require('next-auth/react');
+      setSessionProvider(() => Provider);
+    } catch (e) {
+      console.warn('NextAuth not available:', e);
+    }
+  }, []);
+
+  // If SessionProvider is not loaded or unavailable, just render children
+  if (!SessionProvider) {
+    return <>{children}</>;
+  }
+
+  // If SessionProvider is available, wrap children with it
+  return (
+    <SessionProvider session={pageProps.session}>
+      {children}
+    </SessionProvider>
+  );
+}
+
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
@@ -62,11 +96,18 @@ export default function App({ Component, pageProps }: AppProps) {
     };
   }, [router]);
 
+  // The main app content
+  const AppContent = (
+    <main className={`${inter.variable} ${poppins.variable} font-sans`}>
+      <Component {...pageProps} />
+    </main>
+  );
+
   return (
     <>
-      <main className={`${inter.variable} ${poppins.variable} font-sans`}>
-        <Component {...pageProps} />
-      </main>
+      <AuthProvider pageProps={pageProps}>
+        {AppContent}
+      </AuthProvider>
       
       {/* Client-only components */}
       <ClientOnly>

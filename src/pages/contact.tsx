@@ -138,7 +138,7 @@ export default function Contact() {
                 <div className="text-center">
                   <p className="text-gray-600 mb-3">Finlern Language Center</p>
                   <p className="text-xl font-medium text-gray-800">
-                    Mannerheimintie 123<br />
+                    Kaakonojantie<br />
                     Valkeakoski, Finland
                   </p>
                   <p className="text-sm text-gray-500 mt-3">Open Mon-Fri 9:00-17:00</p>

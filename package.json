@@ -24,6 +24,8 @@
   "license": "ISC",
   "description": "Professional website for Finlern - Finnish Language Learning Platform",
   "dependencies": {
+    "@auth/core": "^0.34.2",
+    "@auth/firebase-adapter": "^2.8.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.15.0",
@@ -32,18 +34,25 @@
     "@types/react-dom": "^18.2.22",
     "aos": "^2.3.4",
     "autoprefixer": "^10.4.19",
+    "clsx": "^2.0.0",
     "eslint": "^8.57.0",
     "eslint-config-next": "^15.2.0",
+    "express-rate-limit": "^7.5.0",
+    "firebase": "^11.5.0",
     "next": "^14.0.4",
+    "next-auth": "^4.24.11",
+    "nodemailer": "^6.10.0",
     "postcss": "^8.4.38",
+    "punycode": "^2.3.1",
+    "rate-limiter-flexible": "^6.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5.7.3",
-    "clsx": "^2.0.0"
+    "typescript": "^5.7.3"
   },
   "devDependencies": {
     "@types/aos": "^3.0.7",
+    "cross-env": "^7.0.3",
     "prettier": "^3.2.5"
   }
 }

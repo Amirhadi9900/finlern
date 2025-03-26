@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
             </Link>
             <p className="text-sm text-gray-300 mt-4 leading-relaxed">
               Finlern is dedicated to making Finnish language learning accessible, 
-              engaging, and effective for everyone.
+              engaging, and effective for internationals in Finland.
             </p>
             <div className="mt-6 flex space-x-4">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" 

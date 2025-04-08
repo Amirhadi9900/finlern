@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Layout from '../components/layout/Layout'
@@ -26,6 +26,9 @@ export default function OurStory() {
   // State to track which team member popup is open
   const [activeTeamMember, setActiveTeamMember] = useState<string | null>(null);
   
+  // Reference for the "Our Beginning" section
+  const beginningRef = useRef<HTMLDivElement>(null);
+
   // Initialize animations on component mount
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -43,6 +46,16 @@ export default function OurStory() {
     }
   }, []);
 
+  // Function to scroll to Our Beginning section
+  const scrollToBeginning = () => {
+    if (beginningRef.current) {
+      beginningRef.current.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   // Detailed information about team members
   const teamMembersDetails: TeamMemberDetail[] = [
     {
@@ -53,7 +66,7 @@ export default function OurStory() {
     {
       id: "amirhadi",
       name: "Amirhadi Borjian",
-      bio: "Amirhadi Borjian is a talented software developer at Finlern, where he mixes superb technical skills with a knack for collaboration. His problem-solving prowess and proactive attitude shine through in how he refines Finlern’s digital tools, making them intuitive and efficient for users. Curious and creative, Amirhadi’s ideas push the company forward in the fast-evolving education tech world. His teamwork and fresh perspective play a remarkable role in boosting Finlern’s growth and keeping users happy.",
+      bio: "Amirhadi Borjian is a talented software developer at Finlern, where he mixes superb technical skills with a knack for collaboration. His problem-solving prowess and proactive attitude shine through in how he refines Finlern's digital tools, making them intuitive and efficient for users. Curious and creative, Amirhadi's ideas push the company forward in the fast-evolving education tech world. His teamwork and fresh perspective play a remarkable role in boosting Finlern's growth and keeping users happy.",
       linkedin: "https://linkedin.com/in/amirhadi-borjian-yazdi-5108431a1"
     },
     {
@@ -140,12 +153,28 @@ export default function OurStory() {
               className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
               How Finlern was born and our mission to share the beauty of the Finnish language
             </p>
+            <div 
+              data-aos="fade-up" 
+              data-aos-duration="800"
+              data-aos-delay="300"
+              className="flex justify-center"
+            >
+              <button 
+                onClick={scrollToBeginning}
+                className="px-8 py-3 bg-white text-aurora-blue rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex items-center"
+              >
+                <span>Read Our Story</span>
+                <svg className="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Our Beginning - Enhanced Further */}
-      <section className="py-20 md:py-28 relative overflow-hidden">
+      <section ref={beginningRef} className="py-20 md:py-28 relative overflow-hidden">
         {/* Subtle background pattern */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-blue-50/20 opacity-50"></div>
         <div className="absolute inset-0 opacity-5 bg-[radial-gradient(#6B8AFD_1px,transparent_1px)] [background-size:20px_20px]"></div>

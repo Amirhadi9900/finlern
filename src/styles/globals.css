@@ -335,6 +335,7 @@ html {
   .gradient-text {
     background: linear-gradient(90deg, rgba(var(--aurora-purple), 1), rgba(var(--aurora-blue), 1));
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
   }
 
@@ -486,10 +487,8 @@ html {
 
 /* Hardware acceleration helper */
 .hw-accelerated {
+  -webkit-transform: translateZ(0);
   transform: translateZ(0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-  will-change: transform, opacity;
 }
 
 /* Make all animated elements hardware accelerated */
@@ -529,4 +528,116 @@ html {
 
 .animate-scroll-delayed {
   animation: scroll-delayed 1.5s ease-in-out infinite;
+}
+
+@layer utilities {
+  /* Add the new utility class here */
+  .aurora-wave-bg {
+    background: linear-gradient(to bottom, transparent, rgba(157, 78, 221, 0.2), rgba(62, 138, 193, 0.2), rgba(71, 167, 106, 0.2));
+    clip-path: url(#wave-path); /* Ensure #wave-path SVG is defined in the component */
+  }
+
+  /* Example of another utility if needed */
+  .filter-drop-shadow-lg {
+    filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  }
+}
+
+/* Custom font definition */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'); */
+
+/* Apply base font */
+/* body {
+  font-family: 'Inter', sans-serif;
+} */
+
+/* Responsive text sizes (example) */
+h1 {
+  @apply text-4xl md:text-5xl lg:text-6xl font-bold;
+}
+
+h2 {
+  @apply text-3xl md:text-4xl font-bold;
+}
+
+h3 {
+  @apply text-2xl md:text-3xl font-semibold;
+}
+
+/* Fix for Safari rendering bugs */
+.transform-gpu {
+  transform: translate3d(0, 0, 0);
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Add custom animation classes here */
+.animate-gradient-x {
+  animation: gradient-x 10s ease infinite;
+  background-size: 200% 200%;
+}
+
+.animate-gradient-y {
+  animation: gradient-y 10s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradient-x {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes gradient-y {
+  0%, 100% { background-position: 50% 0%; }
+  50% { background-position: 50% 100%; }
+}
+
+/* Add other custom styles */
+.shadow-inner-glow {
+  box-shadow: inset 0 0 15px 5px rgba(var(--aurora-blue-rgb), 0.2), inset 0 0 5px 1px rgba(var(--aurora-purple-rgb), 0.1);
+}
+
+/* Ensure smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Aurora effect for 404 page */
+.aurora-top {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
+  animation: aurora 15s ease infinite;
+  opacity: 0.5;
+}
+
+.aurora-bottom {
+  clip-path: polygon(0 30%, 100% 0, 100% 100%, 0 100%);
+  animation: aurora 10s ease infinite reverse;
+  opacity: 0.5;
+  animation-delay: 2s;
+}
+
+@keyframes aurora {
+  0% {
+    transform: translateX(-30%) translateY(10%);
+  }
+  50% {
+    transform: translateX(30%) translateY(-10%);
+  }
+  100% {
+    transform: translateX(-30%) translateY(10%);
+  }
 } 

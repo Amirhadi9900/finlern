@@ -127,7 +127,7 @@ export default function Events() {
               data-aos="fade-up" 
               data-aos-delay="200"
             >
-              Join us for these exciting opportunities to practice your Finnish and connect with fellow learners.
+              Join us for these exciting opportunities to practice your Finnish, connect with fellow learners, expand your social networks, and learn some tips & tricks about working life in Finland.
             </p>
           </div>
 
@@ -174,7 +174,7 @@ export default function Events() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                   </div>
-                  <span>Espresso House, IdeaPark</span>
+                  <span>Espresso House, IdeaPark, Lempäälä</span>
                 </div>
                 <div className="border-t border-gray-100 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
                   <span className="inline-block px-4 py-2 rounded-full bg-aurora-blue/10 text-aurora-blue font-bold">
@@ -205,7 +205,7 @@ export default function Events() {
                   <div className="text-center text-white relative z-10">
                     <div className="flex flex-col items-center">
                       <div className="w-24 h-24 flex items-center justify-center mb-2 bg-white/20 backdrop-blur-sm rounded-full">
-                        <div className="text-6xl font-bold leading-none">22</div>
+                        <div className="text-6xl font-bold leading-none">12</div>
                       </div>
                       <div className="text-2xl uppercase tracking-wider font-medium">April</div>
                     </div>
@@ -213,10 +213,9 @@ export default function Events() {
                 </div>
               </div>
               <div className="p-6 md:p-8">
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">Finnish Film Night</h3>
+                <h3 className="text-2xl font-bold mb-4 text-gray-900">Finnish Conversation Club</h3>
                 <p className="text-gray-700 mb-6 leading-relaxed">
-                  Join us for a screening of the award-winning Finnish film "Miekkailija" (The Fencer) 
-                  with English subtitles, followed by a discussion in Finnish and English.
+                  Practice your Finnish in a relaxed, charming environment with native speakers and fellow learners. 
                 </p>
                 <div className="flex items-center text-gray-700 mb-4">
                   <div className="w-10 h-10 rounded-full bg-aurora-purple/10 flex items-center justify-center mr-3">
@@ -224,7 +223,7 @@ export default function Events() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <span>7:00 PM - 10:00 PM</span>
+                  <span>4:00 PM - 7:00 PM</span>
                 </div>
                 <div className="flex items-center text-gray-700 mb-8">
                   <div className="w-10 h-10 rounded-full bg-aurora-purple/10 flex items-center justify-center mr-3">
@@ -233,11 +232,11 @@ export default function Events() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                   </div>
-                  <span>Cultural Center, Helsinki</span>
+                  <span>Espresso House, IdeaPark, Lempäälä</span>
                 </div>
                 <div className="border-t border-gray-100 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
                   <span className="inline-block px-4 py-2 rounded-full bg-aurora-purple/10 text-aurora-purple font-bold">
-                    €5 (Students free)
+                    Free Entrance!
                   </span>
                   <a href="mailto:info@finlern.fi" className="inline-flex items-center font-medium text-aurora-purple hover:text-aurora-blue transition-colors">
                     Register via Email

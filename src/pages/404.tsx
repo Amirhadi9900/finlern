@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import Head from 'next/head';
 
 const Custom404 = () => {
@@ -16,20 +15,9 @@ const Custom404 = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-aurora-blue via-aurora-purple to-blue-600 opacity-30"></div>
         
         {/* Northern Lights animation effect */}
-        <div className="absolute top-0 w-full h-64 bg-gradient-to-r from-aurora-blue via-purple-500 to-aurora-purple" 
-             style={{ 
-               clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 70%)',
-               animation: 'aurora 15s ease infinite',
-               opacity: 0.5
-             }}></div>
+        <div className="absolute top-0 w-full h-64 bg-gradient-to-r from-aurora-blue via-purple-500 to-aurora-purple aurora-top"></div>
         
-        <div className="absolute bottom-0 w-full h-64 bg-gradient-to-r from-aurora-purple via-blue-400 to-aurora-blue" 
-             style={{ 
-               clipPath: 'polygon(0 30%, 100% 0, 100% 100%, 0 100%)',
-               animation: 'aurora 10s ease infinite reverse',
-               opacity: 0.5,
-               animationDelay: '2s'
-             }}></div>
+        <div className="absolute bottom-0 w-full h-64 bg-gradient-to-r from-aurora-purple via-blue-400 to-aurora-blue aurora-bottom"></div>
         
         <div className="relative z-10 max-w-2xl mx-auto px-4 py-8 text-center">
           <div className="mb-8">
@@ -71,20 +59,6 @@ const Custom404 = () => {
           </div>
         </div>
       </div>
-      
-      <style jsx global>{`
-        @keyframes aurora {
-          0% {
-            transform: translateX(-30%) translateY(10%);
-          }
-          50% {
-            transform: translateX(30%) translateY(-10%);
-          }
-          100% {
-            transform: translateX(-30%) translateY(10%);
-          }
-        }
-      `}</style>
     </>
   );
 };

@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../components/layout/Layout'
 import ClientOnly from '@/components/ClientOnly'
@@ -65,7 +64,7 @@ export default function Home() {
     "sameAs": [
       "https://facebook.com/finlern",
       "https://instagram.com/finlern",
-      "https://linkedin.com/company/finlern"
+      "https://www.linkedin.com/company/finlern-oy/"
     ],
     "contactPoint": {
       "@type": "ContactPoint",
@@ -211,9 +210,9 @@ export default function Home() {
               >
                 <div className="absolute inset-0 bg-aurora-green/5 rounded-2xl transform transition-transform group-hover:scale-105 duration-500"></div>
                 <div className="relative z-10">
-                  <ClientOnly fallback={<h3 className="text-4xl font-bold text-aurora-green mb-2">2+</h3>}>
+                  <ClientOnly fallback={<h3 className="text-4xl font-bold text-aurora-green mb-2">3+</h3>}>
                     <div className="flex justify-center items-baseline">
-                      <h3 className="counter text-5xl font-bold text-aurora-green mb-2" data-target="2">2</h3>
+                      <h3 className="counter text-5xl font-bold text-aurora-green mb-2" data-target="3">3</h3>
                       <span className="text-2xl font-bold text-aurora-green">+</span>
                     </div>
                   </ClientOnly>
@@ -605,7 +604,7 @@ export default function Home() {
                 </p>
                 <Link 
                   href="/classes" 
-                  className="relative overflow-hidden group px-10 py-4 bg-white text-aurora-blue rounded-xl font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex items-center justify-center inline-flex"
+                  className="relative overflow-hidden group px-10 py-4 bg-white text-aurora-blue rounded-xl font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 items-center justify-center inline-flex"
                   data-aos="fade-up" 
                   data-aos-duration="800"
                   data-aos-delay="100"

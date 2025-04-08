@@ -177,7 +177,7 @@ export default function OurStory() {
                     Finlern was founded in 2024 by Hamid Reza Ghorbani. Finlern Oy is more than just a language school—it's a labor of love, built from passion, dedication, and the belief that language can change lives.
                   </p>
                   <p className="text-lg leading-relaxed">
-                    Our journey started with a dream: to help people find their place in Finland through the power of language. We poured our hearts into Finlern, crafting it with care, patience, and the deep desire 
+                    Our journey started with a dream: to help you find your place in Finland through the power of language. We poured our hearts into Finlern, crafting it with care, patience, and the deep desire 
                     to make learning Finnish not just easier, but truly meaningful. Every lesson, every interaction, and every student's progress fills us with pride because we know that we are not just teaching words;
                     we are opening doors to new opportunities, friendships, and a brighter future.
                   </p>
@@ -559,7 +559,7 @@ export default function OurStory() {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Amirhadi Borjian</h3>
                 <div className="px-3 py-1 bg-gradient-to-r from-aurora-green/20 to-aurora-blue/20 text-aurora-teal rounded-full text-sm font-medium inline-block mb-4 border border-aurora-green/10">
-                  ICT
+                  ICT & Co-founder
                 </div>
                 <p className="text-gray-700">
                   Amirhadi is a dedicated ICT specialist who fosters and maintains the strong presence of Finlern in the digital world.

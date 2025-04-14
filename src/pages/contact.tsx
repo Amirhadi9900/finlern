@@ -18,19 +18,17 @@ export default function Contact() {
   // Initialize animations on component mount
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      // Trigger scroll animations with a slight delay to ensure DOM is ready
-      setTimeout(() => {
-        const cleanup = window.scrollAnimations?.init();
-        
-        // Clean up animations when component unmounts
-        return () => {
-          if (cleanup && typeof cleanup === 'function') {
-            cleanup();
-          } else if (window.scrollAnimations?.cleanup) {
-            window.scrollAnimations.cleanup();
-          }
-        };
-      }, 100);
+      // Trigger scroll animations
+      const cleanup = window.scrollAnimations?.init();
+      
+      // Clean up animations when component unmounts
+      return () => {
+        if (cleanup && typeof cleanup === 'function') {
+          cleanup();
+        } else if (window.scrollAnimations?.cleanup) {
+          window.scrollAnimations.cleanup();
+        }
+      };
     }
   }, []);
 
@@ -73,7 +71,7 @@ export default function Contact() {
               data-aos="fade-up" 
               data-aos-duration="800"
               data-aos-delay="200"
-              className="text-xl text-white/90 mb-10 max-w-2xl mx-auto"
+              className="text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed"
             >
               We're here to help you on your Finnish language journey. Reach out to us with any questions.
             </p>
@@ -104,25 +102,25 @@ export default function Contact() {
         
         <div className="container mx-auto px-5 md:px-8 lg:px-12 relative z-10">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-20" data-aos="fade-up" data-aos-once="true">
+            <div className="text-center mb-20" data-aos="fade-up" data-aos-duration="800">
               <div className="inline-block mb-4">
                 <span className="px-4 py-1 rounded-full text-sm font-medium bg-aurora-purple/10 text-aurora-purple">
                   Get in Touch
                 </span>
-              </div>
+                  </div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Get in Touch</h2>
               <div className="w-24 h-1 bg-gradient-to-r from-aurora-blue to-aurora-purple mx-auto rounded-full mb-8"></div>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto px-4">
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto px-4 leading-relaxed">
                 We'd love to hear from you! Whether you have questions about our courses, want to discuss custom learning solutions, or just want to say hello.
               </p>
-            </div>
+                </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-20 px-4">
               {/* Phone Contact Card - Enhanced */}
               <div 
                 className="bg-white rounded-xl shadow-xl overflow-hidden border border-gray-100 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
                 data-aos="fade-up"
-                data-aos-once="true"
+                data-aos-duration="800"
                 data-aos-delay="0"
               >
                 <div className="h-3 bg-gradient-to-r from-aurora-blue to-aurora-purple w-full"></div>
@@ -134,20 +132,20 @@ export default function Contact() {
                   </div>
                   <h3 className="text-2xl font-semibold text-center mb-4">Call Us</h3>
                   <div className="text-center">
-                    <p className="text-gray-600 mb-3">Main Office</p>
+                    <p className="text-lg text-gray-600 mb-3">Main Office</p>
                     <a href="tel:+358417567339" className="text-xl font-medium text-gray-800 block hover:text-aurora-blue transition-colors">
                       +358 41 756 7339
                     </a>
                     <p className="text-sm text-gray-500 mt-3">Mon-Fri 9:00-17:00</p>
                   </div>
+                  </div>
                 </div>
-              </div>
 
               {/* Email Contact Card - Enhanced */}
               <div 
                 className="bg-white rounded-xl shadow-xl overflow-hidden border border-gray-100 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
                 data-aos="fade-up"
-                data-aos-once="true"
+                data-aos-duration="800"
                 data-aos-delay="150"
               >
                 <div className="h-3 bg-gradient-to-r from-aurora-green to-aurora-teal w-full"></div>
@@ -159,20 +157,20 @@ export default function Contact() {
                   </div>
                   <h3 className="text-2xl font-semibold text-center mb-4">Email Us</h3>
                   <div className="text-center">
-                    <p className="text-gray-600 mb-3">General Inquiries</p>
+                    <p className="text-lg text-gray-600 mb-3">General Inquiries</p>
                     <a href="mailto:info@finlern.fi" className="text-xl font-medium text-gray-800 block hover:text-aurora-green transition-colors">
                       info@finlern.fi
                     </a>
                     <p className="text-sm text-gray-500 mt-3">We respond within 24 hours</p>
                   </div>
+                  </div>
                 </div>
-              </div>
 
               {/* Location Contact Card - Enhanced */}
               <div 
                 className="bg-white rounded-xl shadow-xl overflow-hidden border border-gray-100 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl md:col-span-2 lg:col-span-1"
                 data-aos="fade-up"
-                data-aos-once="true"
+                data-aos-duration="800"
                 data-aos-delay="300"
               >
                 <div className="h-3 bg-gradient-to-r from-aurora-purple to-aurora-violet w-full"></div>
@@ -185,7 +183,7 @@ export default function Contact() {
                   </div>
                   <h3 className="text-2xl font-semibold text-center mb-4">Visit Us</h3>
                   <div className="text-center">
-                    <p className="text-gray-600 mb-3">Finlern Language Center</p>
+                    <p className="text-lg text-gray-600 mb-3">Finlern Language Center</p>
                     <p className="text-xl font-medium text-gray-800">
                       Kaakonojantie<br />
                       Valkeakoski, Finland
@@ -200,7 +198,7 @@ export default function Contact() {
             <div 
               className="relative rounded-2xl overflow-hidden my-16 mx-4"
               data-aos="fade-up"
-              data-aos-once="true"
+              data-aos-duration="800"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-aurora-blue/10 to-aurora-purple/10">
                 <div className="absolute inset-0 opacity-50 bg-[radial-gradient(#6B8AFD_1px,transparent_1px)] [background-size:20px_20px]"></div>
@@ -219,11 +217,11 @@ export default function Contact() {
                           <div className="w-16 h-16 bg-gradient-to-br from-aurora-green to-aurora-blue rounded-full flex items-center justify-center">
                             <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg>
+                    </svg>
                           </div>
                         </div>
                         <div>
-                          <p className="text-gray-800 font-medium mb-2">
+                          <p className="text-lg font-semibold text-gray-800 mb-2">
                             Send us an email at:
                           </p>
                           <a 
@@ -231,10 +229,10 @@ export default function Contact() {
                             className="text-2xl font-bold text-aurora-blue hover:text-aurora-purple transition-colors"
                           >
                             info@finlern.fi
-                          </a>
-                        </div>
-                      </div>
-                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
                   </div>
                   <div className="relative hidden md:block">
                     <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-aurora-blue to-aurora-purple blur-lg opacity-30"></div>
@@ -248,8 +246,8 @@ export default function Contact() {
                         style={{ objectFit: 'cover' }}
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
-                          target.src = "https://placehold.co/500x300?text=Finlern";
-                          target.onerror = null;
+                          target.src = "https://via.placeholder.com/500x300?text=Finlern";
+                          target.onerror = null; // Prevent infinite loop
                         }}
                       />
                     </div>
@@ -259,8 +257,8 @@ export default function Contact() {
             </div>
 
             {/* Social Media Section - Enhanced */}
-            <div className="mt-20 text-center px-4" data-aos="fade-up" data-aos-once="true">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Connect With Us</h3>
+            <div className="mt-20 text-center px-4" data-aos="fade-up" data-aos-duration="800">
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Connect With Us</h3>
               <div className="w-20 h-1 bg-gradient-to-r from-aurora-blue to-aurora-purple mx-auto rounded-full mb-8"></div>
               <div className="flex justify-center items-center space-x-8">
                 <a 
@@ -317,7 +315,7 @@ export default function Contact() {
         
         <div className="container mx-auto px-5 md:px-8 lg:px-12 relative z-10">
           <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-16" data-aos="fade-up" data-aos-once="true">
+            <div className="text-center mb-16" data-aos="fade-up" data-aos-duration="800">
               <div className="inline-block mb-4">
                 <span className="px-4 py-1 rounded-full text-sm font-medium bg-aurora-blue/10 text-aurora-blue">
                   FAQ
@@ -325,44 +323,44 @@ export default function Contact() {
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
               <div className="w-24 h-1 bg-gradient-to-r from-aurora-blue to-aurora-purple mx-auto rounded-full mb-8"></div>
-              <p className="text-lg text-gray-600 px-4">
+              <p className="text-lg text-gray-600 px-4 leading-relaxed">
                 Have questions? Find quick answers to common inquiries about our services.
+            </p>
+          </div>
+          
+            <div className="space-y-8 px-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+              <div className="bg-white rounded-xl shadow-md p-8 transition-all duration-300 hover:shadow-xl border border-gray-100 transform hover:-translate-y-1">
+                <h3 className="text-xl font-bold text-aurora-blue mb-4">How quickly will I receive a response to my inquiry?</h3>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                We aim to respond to all inquiries within 24 hours during business days. For urgent matters, 
+                we recommend calling our office directly.
               </p>
             </div>
-          
-            <div className="space-y-8 px-4" data-aos="fade-up" data-aos-once="true">
-              <div className="bg-white rounded-xl shadow-md p-8 transition-all duration-300 hover:shadow-xl border border-gray-100 transform hover:-translate-y-1">
-                <h3 className="text-xl font-semibold text-aurora-blue mb-4">How quickly will I receive a response to my inquiry?</h3>
-                <p className="text-gray-700">
-                  We aim to respond to all inquiries within 24 hours during business days. For urgent matters, 
-                  we recommend calling our office directly.
-                </p>
-              </div>
             
               <div className="bg-white rounded-xl shadow-md p-8 transition-all duration-300 hover:shadow-xl border border-gray-100 transform hover:-translate-y-1">
-                <h3 className="text-xl font-semibold text-aurora-blue mb-4">Do you offer virtual consultations for prospective students?</h3>
-                <p className="text-gray-700">
-                  Yes! We offer 15-minute free consultations via Zoom or phone to discuss your Finnish learning 
-                  goals and help you choose the right course.
-                </p>
-              </div>
-            
-              <div className="bg-white rounded-xl shadow-md p-8 transition-all duration-300 hover:shadow-xl border border-gray-100 transform hover:-translate-y-1">
-                <h3 className="text-xl font-semibold text-aurora-blue mb-4">Can I visit the language center before signing up for a class?</h3>
-                <p className="text-gray-700">
-                  Absolutely! We encourage prospective students to visit our center, meet our teachers, 
-                  and get a feel for our learning environment. Contact us to schedule a visit.
-                </p>
-              </div>
-            
-              <div className="bg-white rounded-xl shadow-md p-8 transition-all duration-300 hover:shadow-xl border border-gray-100 transform hover:-translate-y-1">
-                <h3 className="text-xl font-semibold text-aurora-blue mb-4">Do you have other locations besides Helsinki?</h3>
-                <p className="text-gray-700">
-                  Currently, our physical language center is only in Helsinki, but we offer online classes 
-                  that are accessible from anywhere in the world.
-                </p>
-              </div>
+                <h3 className="text-xl font-bold text-aurora-blue mb-4">Do you offer virtual consultations for prospective students?</h3>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                Yes! We offer 15-minute free consultations via Zoom or phone to discuss your Finnish learning 
+                goals and help you choose the right course.
+              </p>
             </div>
+            
+              <div className="bg-white rounded-xl shadow-md p-8 transition-all duration-300 hover:shadow-xl border border-gray-100 transform hover:-translate-y-1">
+                <h3 className="text-xl font-bold text-aurora-blue mb-4">Can I visit the language center before signing up for a class?</h3>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                Absolutely! We encourage prospective students to visit our center, meet our teachers, 
+                and get a feel for our learning environment. Contact us to schedule a visit.
+              </p>
+            </div>
+            
+              <div className="bg-white rounded-xl shadow-md p-8 transition-all duration-300 hover:shadow-xl border border-gray-100 transform hover:-translate-y-1">
+                <h3 className="text-xl font-bold text-aurora-blue mb-4">Do you have other locations besides Helsinki?</h3>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                Currently, our physical language center is only in Helsinki, but we offer online classes 
+                that are accessible from anywhere in the world.
+              </p>
+            </div>
+          </div>
           </div>
         </div>
       </section>

@@ -46,10 +46,16 @@ export default function Terms() {
           <div className="container mx-auto px-4 py-16 relative z-10">
             <h1 
               className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-6"
+              data-aos="fade-up" 
+              data-aos-duration="800"
             >
               Terms of Service
             </h1>
-            <p className="text-xl text-gray-300 text-center max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 text-center max-w-3xl mx-auto"
+               data-aos="fade-up" 
+               data-aos-duration="800" 
+               data-aos-delay="100"
+            >
               Please read these terms carefully before using Finlern's services
             </p>
           </div>
@@ -58,14 +64,14 @@ export default function Terms() {
         {/* Main Content */}
         <div className="container mx-auto px-4 py-12">
           <div className="max-w-4xl mx-auto prose prose-lg">
-            <section className="mb-8">
+            <section className="mb-8" data-aos="fade-up" data-aos-duration="800">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Acceptance of Terms</h2>
               <p className="text-gray-700 mb-4">
                 By accessing and using Finlern's website and services, you agree to be bound by these Terms of Service. If you do not agree with any part of these terms, please do not use our services.
               </p>
             </section>
 
-            <section className="mb-8">
+            <section className="mb-8" data-aos="fade-up" data-aos-duration="800">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">2. Service Description</h2>
               <p className="text-gray-700 mb-4">
                 Finlern provides Finnish language learning services, including but not limited to:
@@ -79,7 +85,7 @@ export default function Terms() {
               </ul>
             </section>
 
-            <section className="mb-8">
+            <section className="mb-8" data-aos="fade-up" data-aos-duration="800">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">3. User Accounts</h2>
               <p className="text-gray-700 mb-4">
                 To access certain features of our service, you must register for an account. You agree to:
@@ -92,7 +98,7 @@ export default function Terms() {
               </ul>
             </section>
 
-            <section className="mb-8">
+            <section className="mb-8" data-aos="fade-up" data-aos-duration="800">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">4. Course Materials and Intellectual Property</h2>
               <p className="text-gray-700 mb-4">
                 All content provided through Finlern's services, including but not limited to:
@@ -114,7 +120,7 @@ export default function Terms() {
               </ul>
             </section>
 
-            <section className="mb-8">
+            <section className="mb-8" data-aos="fade-up" data-aos-duration="800">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">5. Payment Terms</h2>
               <p className="text-gray-700 mb-4">
                 For paid services:
@@ -127,7 +133,7 @@ export default function Terms() {
               </ul>
             </section>
 
-            <section className="mb-8">
+            <section className="mb-8" data-aos="fade-up" data-aos-duration="800">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">6. User Conduct</h2>
               <p className="text-gray-700 mb-4">
                 Users must not:
@@ -142,7 +148,7 @@ export default function Terms() {
               </ul>
             </section>
 
-            <section className="mb-8">
+            <section className="mb-8" data-aos="fade-up" data-aos-duration="800">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">7. Termination</h2>
               <p className="text-gray-700 mb-4">
                 We reserve the right to terminate or suspend your account and access to our services:
@@ -154,21 +160,21 @@ export default function Terms() {
               </ul>
             </section>
 
-            <section className="mb-8">
+            <section className="mb-8" data-aos="fade-up" data-aos-duration="800">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">8. Limitation of Liability</h2>
               <p className="text-gray-700 mb-4">
                 Finlern shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use our services.
               </p>
             </section>
 
-            <section className="mb-8">
+            <section className="mb-8" data-aos="fade-up" data-aos-duration="800">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">9. Changes to Terms</h2>
               <p className="text-gray-700 mb-4">
                 We reserve the right to modify these terms at any time. We will notify users of any material changes through our website or via email.
               </p>
             </section>
 
-            <div className="mt-12 text-center">
+            <div className="mt-12 text-center" data-aos="fade-up" data-aos-duration="800">
               <Link 
                 href="/contact" 
                 className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-aurora-blue to-aurora-purple hover:from-aurora-purple hover:to-aurora-blue focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-aurora-blue transition-all duration-200"

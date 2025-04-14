@@ -47,10 +47,10 @@ export default function PrivacyPolicy() {
         {/* Content */}
         <div className="relative container mx-auto px-4 py-16 md:py-24">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up" data-aos-duration="800">
               Privacy Policy
             </h1>
-            <p className="text-lg text-aurora-snow/80">
+            <p className="text-lg text-aurora-snow/80" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
               Last updated: March 26, 2025
             </p>
           </div>
@@ -62,7 +62,7 @@ export default function PrivacyPolicy() {
         <div className="container mx-auto px-4 py-12 md:py-16">
           <div className="max-w-3xl mx-auto">
             {/* Introduction */}
-            <div className="mb-12">
+            <div className="mb-12" data-aos="fade-up" data-aos-duration="800">
               <p className="text-gray-700 leading-relaxed mb-6">
                 Welcome to Finlern, an educational platform based in Finland. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services. We are committed to protecting your privacy and ensuring compliance with the General Data Protection Regulation (GDPR), the Finnish Data Protection Act (1050/2018), and other applicable Finnish and EU privacy laws.
               </p>
@@ -72,7 +72,7 @@ export default function PrivacyPolicy() {
             </div>
 
             {/* Data Controller Information */}
-            <div className="mb-12">
+            <div className="mb-12" data-aos="fade-up" data-aos-duration="800">
               <h2 className="text-2xl md:text-3xl font-bold text-aurora-purple mb-6 flex items-center">
                 <span className="w-1 h-8 bg-gradient-to-b from-aurora-blue to-aurora-purple rounded-full mr-4"></span>
                 Data Controller Information
@@ -94,7 +94,7 @@ export default function PrivacyPolicy() {
             </div>
 
             {/* Information We Collect */}
-            <div className="mb-12">
+            <div className="mb-12" data-aos="fade-up" data-aos-duration="800">
               <h2 className="text-2xl md:text-3xl font-bold text-aurora-purple mb-6 flex items-center">
                 <span className="w-1 h-8 bg-gradient-to-b from-aurora-blue to-aurora-purple rounded-full mr-4"></span>
                 Information We Collect
@@ -131,7 +131,7 @@ export default function PrivacyPolicy() {
             </div>
 
             {/* Legal Basis for Processing */}
-            <div className="mb-12">
+            <div className="mb-12" data-aos="fade-up" data-aos-duration="800">
               <h2 className="text-2xl md:text-3xl font-bold text-aurora-purple mb-6 flex items-center">
                 <span className="w-1 h-8 bg-gradient-to-b from-aurora-blue to-aurora-purple rounded-full mr-4"></span>
                 Legal Basis for Processing
@@ -150,7 +150,7 @@ export default function PrivacyPolicy() {
             </div>
 
             {/* How We Use Your Information */}
-            <div className="mb-12">
+            <div className="mb-12" data-aos="fade-up" data-aos-duration="800">
               <h2 className="text-2xl md:text-3xl font-bold text-aurora-purple mb-6 flex items-center">
                 <span className="w-1 h-8 bg-gradient-to-b from-aurora-blue to-aurora-purple rounded-full mr-4"></span>
                 How We Use Your Information
@@ -183,7 +183,7 @@ export default function PrivacyPolicy() {
             </div>
 
             {/* Information Sharing */}
-            <div className="mb-12">
+            <div className="mb-12" data-aos="fade-up" data-aos-duration="800">
               <h2 className="text-2xl md:text-3xl font-bold text-aurora-purple mb-6 flex items-center">
                 <span className="w-1 h-8 bg-gradient-to-b from-aurora-blue to-aurora-purple rounded-full mr-4"></span>
                 Information Sharing
@@ -202,7 +202,7 @@ export default function PrivacyPolicy() {
             </div>
 
             {/* Data Security */}
-            <div className="mb-12">
+            <div className="mb-12" data-aos="fade-up" data-aos-duration="800">
               <h2 className="text-2xl md:text-3xl font-bold text-aurora-purple mb-6 flex items-center">
                 <span className="w-1 h-8 bg-gradient-to-b from-aurora-blue to-aurora-purple rounded-full mr-4"></span>
                 Data Security
@@ -221,7 +221,7 @@ export default function PrivacyPolicy() {
             </div>
 
             {/* Your Rights Under GDPR */}
-            <div className="mb-12">
+            <div className="mb-12" data-aos="fade-up" data-aos-duration="800">
               <h2 className="text-2xl md:text-3xl font-bold text-aurora-purple mb-6 flex items-center">
                 <span className="w-1 h-8 bg-gradient-to-b from-aurora-blue to-aurora-purple rounded-full mr-4"></span>
                 Your Rights Under GDPR
@@ -246,7 +246,7 @@ export default function PrivacyPolicy() {
             </div>
 
             {/* Data Retention */}
-            <div className="mb-12">
+            <div className="mb-12" data-aos="fade-up" data-aos-duration="800">
               <h2 className="text-2xl md:text-3xl font-bold text-aurora-purple mb-6 flex items-center">
                 <span className="w-1 h-8 bg-gradient-to-b from-aurora-blue to-aurora-purple rounded-full mr-4"></span>
                 Data Retention
@@ -282,7 +282,7 @@ export default function PrivacyPolicy() {
             </div>
 
             {/* International Data Transfers */}
-            <div className="mb-12">
+            <div className="mb-12" data-aos="fade-up" data-aos-duration="800">
               <h2 className="text-2xl md:text-3xl font-bold text-aurora-purple mb-6 flex items-center">
                 <span className="w-1 h-8 bg-gradient-to-b from-aurora-blue to-aurora-purple rounded-full mr-4"></span>
                 International Data Transfers
@@ -301,7 +301,7 @@ export default function PrivacyPolicy() {
             </div>
 
             {/* Children's Privacy */}
-            <div className="mb-12">
+            <div className="mb-12" data-aos="fade-up" data-aos-duration="800">
               <h2 className="text-2xl md:text-3xl font-bold text-aurora-purple mb-6 flex items-center">
                 <span className="w-1 h-8 bg-gradient-to-b from-aurora-blue to-aurora-purple rounded-full mr-4"></span>
                 Children's Privacy
@@ -320,7 +320,7 @@ export default function PrivacyPolicy() {
             </div>
 
             {/* Changes to This Privacy Policy */}
-            <div className="mb-12">
+            <div className="mb-12" data-aos="fade-up" data-aos-duration="800">
               <h2 className="text-2xl md:text-3xl font-bold text-aurora-purple mb-6 flex items-center">
                 <span className="w-1 h-8 bg-gradient-to-b from-aurora-blue to-aurora-purple rounded-full mr-4"></span>
                 Changes to This Privacy Policy

@@ -640,4 +640,16 @@ html {
   100% {
     transform: translateX(-30%) translateY(10%);
   }
+}
+
+/* ScrollToTop Button Styles */
+.scroll-to-top-btn {
+  @apply fixed right-5 bottom-5 z-50 transition-all duration-300;
+}
+
+/* Mobile optimization for scroll to top button */
+@media screen and (max-width: 768px) {
+  .scroll-to-top-btn {
+    @apply right-3 bottom-16 z-50;
+  }
 } 

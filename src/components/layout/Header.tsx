@@ -21,7 +21,6 @@ const AURORA_COLORS = [
 ]
 
 const Header: React.FC = () => {
-  // Removed isMenuOpen state
   const [isScrolled, setIsScrolled] = useState(false)
   const router = useRouter()
 
@@ -39,7 +38,18 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [handleScroll])
 
-  // Removed useEffects for route change and scroll lock
+  // Check if a link is active
+  const isLinkActive = (href: string) => router.pathname === href
+
+  // Mobile nav button style function
+  const getNavButtonStyle = (href: string) => {
+    const isActive = isLinkActive(href)
+    return `px-2 py-1 text-xs font-medium rounded-md transition-all duration-300 ${
+      isActive 
+        ? 'bg-gradient-to-r from-aurora-blue/20 to-aurora-purple/20 text-aurora-blue font-semibold' 
+        : 'text-gray-700 hover:text-aurora-blue'
+    }`
+  }
 
   return (
     <header 
@@ -50,10 +60,20 @@ const Header: React.FC = () => {
       } transition-all duration-300`}
     >
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
-        {/* Modified flex container for centering on small screens */}
-        <div className="flex justify-center lg:justify-between items-center">
-          {/* Logo - No changes needed, ensure it's not hidden */}
-          <Link href="/" className="flex items-center relative group -ml-3 md:-ml-5 lg:ml-0">
+        {/* Flex container for mobile navigation and logo */}
+        <div className="flex justify-between items-center">
+          {/* Left side navigation buttons */}
+          <div className="flex space-x-1 items-center lg:hidden">
+            <Link href="/classes" className={getNavButtonStyle('/classes')}>
+              Classes
+            </Link>
+            <Link href="/events" className={getNavButtonStyle('/events')}>
+              Events
+            </Link>
+          </div>
+          
+          {/* Logo */}
+          <Link href="/" className="flex items-center relative group">
             <div className="overflow-hidden">
               <Image 
                 src="/images/finlern.png" 
@@ -62,11 +82,11 @@ const Header: React.FC = () => {
                 height={560} 
                 className={`w-auto transition-all duration-300 ease-in-out group-hover:scale-105 ${
                   isScrolled ? 'h-14' : 'h-16'
-                } max-w-[170px]`}
+                } max-w-[130px]`}
                 priority
               />
             </div>
-            {/* Removed the Finlern text part next to the logo for simplicity on mobile */}
+            {/* Finlern text hidden on mobile */}
             <div className="ml-3 relative overflow-hidden hidden lg:block">
               <span className="absolute top-0 left-0 font-bold text-2xl md:text-3xl tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 animate-gradient-x">
                 Finlern
@@ -79,7 +99,17 @@ const Header: React.FC = () => {
             </div>
           </Link>
 
-          {/* Desktop Navigation - Ensure it remains hidden on small screens */}
+          {/* Right side navigation buttons */}
+          <div className="flex space-x-1 items-center lg:hidden">
+            <Link href="/our-story" className={getNavButtonStyle('/our-story')}>
+              Our Story
+            </Link>
+            <Link href="/contact" className={getNavButtonStyle('/contact')}>
+              Contact
+            </Link>
+          </div>
+
+          {/* Desktop Navigation - only visible on large screens */}
           <nav className="hidden lg:flex items-center">
             <ul className="flex space-x-3">
               {NAV_LINKS.map((link) => {
@@ -112,12 +142,8 @@ const Header: React.FC = () => {
               Start Learning
             </Link>
           </nav>
-
-          {/* Removed Mobile Menu Buttons */}
         </div>
       </div>
-
-      {/* Removed Mobile Menu Overlay and Panel */}
     </header>
   )
 }

@@ -46,10 +46,16 @@ export default function Cookies() {
           <div className="container mx-auto px-4 py-16 relative z-10">
             <h1 
               className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-6"
+              data-aos="fade-up" 
+              data-aos-duration="800"
             >
               Cookie Policy
             </h1>
-            <p className="text-xl text-gray-300 text-center max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 text-center max-w-3xl mx-auto"
+               data-aos="fade-up" 
+               data-aos-duration="800" 
+               data-aos-delay="100"
+            >
               Learn about how we use cookies to enhance your Finnish learning experience
             </p>
           </div>
@@ -58,7 +64,7 @@ export default function Cookies() {
         {/* Main Content */}
         <div className="container mx-auto px-4 py-12">
           <div className="max-w-4xl mx-auto prose prose-lg">
-            <section className="mb-8">
+            <section className="mb-8" data-aos="fade-up" data-aos-duration="800">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">What Are Cookies?</h2>
               <p className="text-gray-700 mb-4">
                 Cookies are small text files that are placed on your computer or mobile device when you visit our website. They help us provide you with a better experience by:
@@ -71,7 +77,7 @@ export default function Cookies() {
               </ul>
             </section>
 
-            <section className="mb-8">
+            <section className="mb-8" data-aos="fade-up" data-aos-duration="800">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Types of Cookies We Use</h2>
               
               <div className="mb-6">
@@ -123,7 +129,7 @@ export default function Cookies() {
               </div>
             </section>
 
-            <section className="mb-8">
+            <section className="mb-8" data-aos="fade-up" data-aos-duration="800">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">How We Use Cookies</h2>
               <p className="text-gray-700 mb-4">
                 We use cookies to:
@@ -138,7 +144,7 @@ export default function Cookies() {
               </ul>
             </section>
 
-            <section className="mb-8">
+            <section className="mb-8" data-aos="fade-up" data-aos-duration="800">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Managing Cookies</h2>
               <p className="text-gray-700 mb-4">
                 You can control and/or delete cookies as you wish. You can delete all cookies that are already on your computer and you can set most browsers to prevent them from being placed. However, if you do this, you may have to manually adjust some preferences every time you visit a site and some services and functionalities may not work.
@@ -154,7 +160,7 @@ export default function Cookies() {
               </div>
             </section>
 
-            <section className="mb-8">
+            <section className="mb-8" data-aos="fade-up" data-aos-duration="800">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Third-Party Cookies</h2>
               <p className="text-gray-700 mb-4">
                 We use services from third parties that may also set cookies on your device:
@@ -167,14 +173,14 @@ export default function Cookies() {
               </ul>
             </section>
 
-            <section className="mb-8">
+            <section className="mb-8" data-aos="fade-up" data-aos-duration="800">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Updates to This Policy</h2>
               <p className="text-gray-700 mb-4">
                 We may update this Cookie Policy from time to time. We will notify you of any changes by posting the new Cookie Policy on this page and updating the "Last Updated" date.
               </p>
             </section>
 
-            <div className="mt-12 text-center">
+            <div className="mt-12 text-center" data-aos="fade-up" data-aos-duration="800">
               <Link 
                 href="/contact" 
                 className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-aurora-blue to-aurora-purple hover:from-aurora-purple hover:to-aurora-blue focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-aurora-blue transition-all duration-200"

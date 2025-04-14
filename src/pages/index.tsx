@@ -121,7 +121,7 @@ export default function Home() {
               data-aos-delay="100"
               className="text-xl md:text-2xl text-white/90 mb-10 leading-relaxed max-w-2xl mx-auto"
             >
-              The most effective, accessible, and engaging way to learn Finnish language, culture, and working life.
+              The most effective, accessible, and affordable way to learn Finnish language, culture, and working life for international students and alumni.
             </p>
             <div 
               className="flex flex-col sm:flex-row justify-center gap-4"
@@ -294,12 +294,12 @@ export default function Home() {
               data-aos-delay="150"
             ></div>
             <p 
-              className="text-lg text-gray-700 max-w-3xl mx-auto"
+              className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed"
               data-aos="fade-up" 
               data-aos-duration="800"
               data-aos-delay="200"
             >
-              We provide networking opportunities for internationals interested in building connections and expanding their professional and social circles through specialized networking events.
+              We provide a comprehensive and hands-on Finnish language learning experience that enhances social integration and improves job opportunities for internationals in Tampere, Valkeakoski, and Hämeenlinna.
             </p>
           </div>
 
@@ -319,9 +319,9 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Expert Teachers</h3>
-                  <p className="text-gray-700 text-center leading-relaxed">
-                    Learn from native Finnish speakers with years of teaching experience and a passion for the language.
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Weekly Learning Support</h3>
+                  <p className="text-lg text-gray-700 text-center leading-relaxed">
+                    Receive personalized Finnish learning materials every Monday and Thursday to keep your studies structured and consistent.
                   </p>
                 </div>
               </div>
@@ -342,9 +342,9 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Small Group Classes</h3>
-                  <p className="text-gray-700 text-center leading-relaxed">
-                    Enjoy personalized attention in our small group settings, ensuring you get the support you need.
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Cafe Lingua Events</h3>
+                  <p className="text-lg text-gray-700 text-center leading-relaxed">
+                    Join our weekly social gatherings in public spaces like cafés and libraries to practice Finnish in real-life settings.
                   </p>
                 </div>
               </div>
@@ -362,12 +362,12 @@ export default function Home() {
                 <div className="p-8">
                   <div className="w-16 h-16 mx-auto mb-6 bg-aurora-violet/10 rounded-full flex items-center justify-center">
                     <svg className="w-8 h-8 text-aurora-violet" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Cultural Immersion</h3>
-                  <p className="text-gray-700 text-center leading-relaxed">
-                    Learn not just the language but also Finnish culture, traditions, and working life.
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Working Life Guidance</h3>
+                  <p className="text-lg text-gray-700 text-center leading-relaxed">
+                    Access specialized events with our partner companies to build professional networks and enhance your career opportunities in Finland.
                   </p>
                 </div>
               </div>
@@ -408,7 +408,7 @@ export default function Home() {
               data-aos-delay="150"
             ></div>
             <p 
-              className="text-lg text-gray-700 max-w-3xl mx-auto"
+              className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed"
               data-aos="fade-up" 
               data-aos-duration="800"
               data-aos-delay="200"
@@ -440,12 +440,12 @@ export default function Home() {
                       M
                     </div>
                     <div className="ml-4">
-                      <h4 className="font-semibold text-gray-800">Maria K.</h4>
-                      <p className="text-sm text-gray-700">Beginner Course</p>
+                      <h4 className="text-lg font-semibold text-gray-800">Maria K.</h4>
+                      <p className="text-base text-gray-700">Beginner Course</p>
                     </div>
                   </div>
                   
-                  <p className="text-gray-700 italic border-l-4 border-aurora-blue/30 pl-4 py-2 mb-6">
+                  <p className="text-lg text-gray-700 italic border-l-4 border-aurora-blue/30 pl-4 py-2 mb-6 leading-relaxed">
                     &ldquo;I had tried learning Finnish on my own for months without much progress. After just 8 weeks with Finlern, I can now have basic conversations and understand simple texts. The teachers are amazing!&rdquo;
                   </p>
                   
@@ -492,12 +492,12 @@ export default function Home() {
                       J
                     </div>
                     <div className="ml-4">
-                      <h4 className="font-semibold text-gray-800">John T.</h4>
-                      <p className="text-sm text-gray-700">Intermediate Course</p>
+                      <h4 className="text-lg font-semibold text-gray-800">John T.</h4>
+                      <p className="text-base text-gray-700">Intermediate Course</p>
                     </div>
                   </div>
                   
-                  <p className="text-gray-700 italic border-l-4 border-aurora-green/30 pl-4 py-2 mb-6">
+                  <p className="text-lg text-gray-700 italic border-l-4 border-aurora-green/30 pl-4 py-2 mb-6 leading-relaxed">
                     &ldquo;The cultural aspects integrated into the lessons made learning Finnish so much more interesting. I not only improved my language skills but also gained a deeper understanding of Finland.&rdquo;
                   </p>
                   
@@ -544,12 +544,12 @@ export default function Home() {
                       S
                     </div>
                     <div className="ml-4">
-                      <h4 className="font-semibold text-gray-800">Sarah L.</h4>
-                      <p className="text-sm text-gray-700">Advanced Course</p>
+                      <h4 className="text-lg font-semibold text-gray-800">Sarah L.</h4>
+                      <p className="text-base text-gray-700">Advanced Course</p>
                     </div>
                   </div>
                   
-                  <p className="text-gray-700 italic border-l-4 border-aurora-violet/30 pl-4 py-2 mb-6">
+                  <p className="text-lg text-gray-700 italic border-l-4 border-aurora-violet/30 pl-4 py-2 mb-6 leading-relaxed">
                     &ldquo;The advanced course helped me refine my Finnish to a professional level. The teachers are incredibly knowledgeable and supportive. I now use Finnish confidently in my work environment.&rdquo;
                   </p>
                   
@@ -599,7 +599,7 @@ export default function Home() {
                 <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
                   Ready to Start Your Finnish Journey?
                 </h2>
-                <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+                <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
                   Join our community of Finnish language learners and take the first step towards fluency.
                 </p>
                 <Link 

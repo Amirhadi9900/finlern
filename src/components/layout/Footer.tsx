@@ -75,16 +75,9 @@ const Footer: React.FC = () => {
               
               {/* Beautiful Finlern text */}
               <div className="ml-4 relative">
-                {/* Main text with gradient and glow */}
+                {/* Main text with solid color for better contrast */}
                 <h2 className="relative text-3xl md:text-4xl font-bold tracking-wider z-10">
-                  {/* Background layer with gradient animation */}
-                  <span className="absolute inset-0 bg-clip-text text-transparent bg-gradient-to-r from-aurora-blue via-aurora-violet to-aurora-green animate-gradient-x opacity-80 blur-[2px]">Finlern</span>
-                  
-                  {/* Middle layer with different gradient animation */}
-                  <span className="absolute inset-0 bg-clip-text text-transparent bg-gradient-to-br from-aurora-purple via-white to-aurora-blue-light animate-gradient-y opacity-90 blur-[1px]">Finlern</span>
-                  
-                  {/* Front layer - crisp text */}
-                  <span className="relative bg-clip-text text-transparent bg-gradient-to-r from-white via-aurora-blue-light to-aurora-green-light">Finlern</span>
+                  <span className="text-[#00E5FF]">Finlern</span>
                 </h2>
                 
                 {/* Animated glow */}
@@ -97,7 +90,7 @@ const Footer: React.FC = () => {
                 <span className="block text-xl font-semibold mb-3 text-white bg-clip-text bg-gradient-to-r from-aurora-blue to-aurora-violet">Our Mission</span>
                 Finlern is dedicated to making Finnish language learning accessible, 
                 engaging, and effective for internationals in Finland. Our innovative 
-                approach combines cultural immersion with practical language skills.
+                approach combines cultural immersion with practical language courses.
               </p>
               
               {/* Decorative elements */}

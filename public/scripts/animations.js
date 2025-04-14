@@ -109,7 +109,7 @@
     // Safeguard for all browsers
     try {
       if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
           safeTimeout(initAnimations, 200); // Delay to ensure hydration
         });
       } else {
@@ -271,40 +271,40 @@
         });
       }
     
-      // Fade-in elements on scroll
+  // Fade-in elements on scroll
       try {
-        const fadeElements = document.querySelectorAll('.fade-in');
+  const fadeElements = document.querySelectorAll('.fade-in');
         applyHardwareAcceleration(fadeElements);
-        
+  
         // Use safer approach for all mobile devices
         if (fadeElements.length > 0) {
-          const fadeObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
                 try {
-                  entry.target.classList.add('appear');
+        entry.target.classList.add('appear');
                   // On low-end devices, immediately stop observing to save resources
                   if (animationReductionLevel > 0) {
                     fadeObserver.unobserve(entry.target);
                   } else {
                     // Give time for the animation to complete before unobserving
                     safeTimeout(() => {
-                      fadeObserver.unobserve(entry.target);
+        fadeObserver.unobserve(entry.target);
                     }, 1000);
                   }
                 } catch (e) {
                   console.warn('Error in fade animation:', e);
                 }
-              }
-            });
-          }, {
+      }
+    });
+  }, {
             threshold: animationReductionLevel >= 2 ? 0.01 : 0.1, // Use lower threshold on low-end devices
             rootMargin: '0px 0px -50px 0px'
-          });
-          
-          fadeElements.forEach(element => {
+  });
+  
+  fadeElements.forEach(element => {
             try {
-              fadeObserver.observe(element);
+    fadeObserver.observe(element);
             } catch (e) {
               console.warn('Error observing fade element:', e);
             }
@@ -380,42 +380,42 @@
         }
 
         // Stagger animations for list items - simplified for Safari
-        const animateStaggered = (elements, delay = 100) => {
-          elements.forEach((el, index) => {
+  const animateStaggered = (elements, delay = 100) => {
+    elements.forEach((el, index) => {
             try {
-              el.style.opacity = '0';
-              el.style.transform = 'translateY(20px)';
-              el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-              
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      
               safeTimeout(() => {
-                el.style.opacity = '1';
-                el.style.transform = 'translateY(0)';
-              }, index * delay);
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+      }, index * delay);
             } catch (e) {
               console.warn('Error in staggered animation:', e);
             }
-          });
-        };
+    });
+  };
 
-        // Apply staggered animations to list items
-        const listSections = document.querySelectorAll('.stagger-list');
-        listSections.forEach(section => {
-          const listObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
+  // Apply staggered animations to list items
+  const listSections = document.querySelectorAll('.stagger-list');
+  listSections.forEach(section => {
+    const listObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
                 try {
-                  const items = entry.target.querySelectorAll('li');
-                  animateStaggered(items);
-                  listObserver.unobserve(entry.target);
+          const items = entry.target.querySelectorAll('li');
+          animateStaggered(items);
+          listObserver.unobserve(entry.target);
                 } catch (e) {
                   console.warn('Error in list observer:', e);
                 }
-              }
-            });
-          }, { threshold: 0.1 });
-          
+        }
+      });
+    }, { threshold: 0.1 });
+    
           try {
-            listObserver.observe(section);
+    listObserver.observe(section);
             observers.push(listObserver);
           } catch (e) {
             console.warn('Error observing list section:', e);
@@ -433,8 +433,8 @@
       // Skip animation on mobile or just show values immediately if already animated
       if (counters.length > 0 && !countersAnimated) {
         // For all devices, set the values with animation as appropriate
-        const counterObserver = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
             if (entry.isIntersecting && !countersAnimated) {
               try {
                 counters.forEach(counter => {
@@ -447,22 +447,22 @@
                     counter.textContent = target.toString() + (hasPercentage ? '%' : '');
                   } else {
                     // Simple animation for all devices
-                    let current = 0;
+        let current = 0;
                     const increment = Math.ceil(target / 20); // Faster animation
                     const duration = 1000; // 1 second total
                     const frameDuration = duration / (target / increment);
-                    
-                    const updateCounter = () => {
+        
+        const updateCounter = () => {
                       current += increment;
                       if (current > target) current = target;
                       counter.textContent = current.toString() + (hasPercentage ? '%' : '');
                       
-                      if (current < target) {
+          if (current < target) {
                         safeTimeout(updateCounter, frameDuration);
-                      }
-                    };
-                    
-                    updateCounter();
+          }
+        };
+        
+        updateCounter();
                   }
                 });
                 

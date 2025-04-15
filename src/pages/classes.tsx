@@ -150,11 +150,11 @@ export default function Classes() {
                data-aos="fade-up" 
                data-aos-delay="300">
             <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-100 flex flex-col items-center text-center">
-              <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-blue to-aurora-purple mb-2">20+</div>
+              <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-blue to-aurora-purple mb-2">25+</div>
               <p className="text-gray-700">Years of language teaching</p>
             </div>
             <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-100 flex flex-col items-center text-center">
-              <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-purple to-aurora-green mb-2">1000+</div>
+              <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-purple to-aurora-green mb-2">20+</div>
               <p className="text-gray-700">Students taught</p>
             </div>
             <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-100 flex flex-col items-center text-center">
@@ -179,7 +179,7 @@ export default function Classes() {
                       <svg className="w-7 h-7 text-aurora-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
                       </svg>
-                    </div>
+                </div>
                     <span className="inline-block px-3 py-1 bg-aurora-green/10 text-aurora-green rounded-full text-sm font-medium">Level A1-A2</span>
                   </div>
                   
@@ -187,9 +187,9 @@ export default function Classes() {
                   
                   <div className="bg-gray-50 p-4 rounded-lg mb-5">
                     <p className="text-gray-700">
-                      Perfect for those with no prior knowledge of Finnish. Learn the basics of pronunciation, 
-                      essential vocabulary, and simple conversational phrases.
-                    </p>
+                  Perfect for those with no prior knowledge of Finnish. Learn the basics of pronunciation, 
+                  essential vocabulary, and simple conversational phrases.
+                </p>
                   </div>
                   
                   <div className="space-y-3 mb-6">
@@ -201,14 +201,14 @@ export default function Classes() {
                       <div className="flex items-center bg-gray-50 rounded-lg p-3">
                         <svg className="w-5 h-5 text-aurora-green mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
+                    </svg>
                         <span className="text-gray-700 text-sm">8-week course</span>
                       </div>
                       <div className="flex items-center bg-gray-50 rounded-lg p-3">
                         <svg className="w-5 h-5 text-aurora-green mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                         </svg>
-                        <span className="text-gray-700 text-sm">32 hours lessons</span>
+                        <span className="text-gray-700 text-sm">32 hours lessons + 12 hours conversation club</span>
                       </div>
                       <div className="flex items-center bg-gray-50 rounded-lg p-3">
                         <svg className="w-5 h-5 text-aurora-green mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -241,34 +241,34 @@ export default function Classes() {
                       <ul className="space-y-2">
                         <li className="flex items-center text-sm text-gray-700">
                           <svg className="w-4 h-4 text-aurora-green mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
                           Basic vocabulary & phrases
-                        </li>
+                  </li>
                         <li className="flex items-center text-sm text-gray-700">
                           <svg className="w-4 h-4 text-aurora-green mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
                           Pronunciation fundamentals
-                        </li>
+                  </li>
                         <li className="flex items-center text-sm text-gray-700">
                           <svg className="w-4 h-4 text-aurora-green mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
                           Everyday conversations
-                        </li>
-                      </ul>
+                  </li>
+                </ul>
                     </div>
                   </div>
                   
                   <div className="pt-4 border-t border-gray-100">
                     <div className="flex items-center justify-between">
                       <div className="flex items-baseline">
-                        <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-green to-aurora-blue">€219</span>
+                        <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-green to-aurora-blue">€199</span>
                         <span className="text-gray-500 ml-2">/ course</span>
                       </div>
                       <a href="mailto:info@finlern.fi" className="inline-flex items-center justify-center px-5 py-2 bg-gradient-to-r from-aurora-green to-aurora-blue text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-green/30 transform hover:scale-[1.02]">
-                        Enroll Now
+                    Enroll Now
                         <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
@@ -305,9 +305,9 @@ export default function Classes() {
                   
                   <div className="bg-gray-50 p-4 rounded-lg mb-5">
                     <p className="text-gray-700">
-                      For learners who can already handle basic conversations. Expand your vocabulary, 
-                      improve your grammar, and learn to express more complex ideas.
-                    </p>
+                  For learners who can already handle basic conversations. Expand your vocabulary, 
+                  improve your grammar, and learn to express more complex ideas.
+                </p>
                   </div>
                   
                   <div className="space-y-3 mb-6">
@@ -319,14 +319,14 @@ export default function Classes() {
                       <div className="flex items-center bg-gray-50 rounded-lg p-3">
                         <svg className="w-5 h-5 text-aurora-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
+                    </svg>
                         <span className="text-gray-700 text-sm">8-week course</span>
                       </div>
                       <div className="flex items-center bg-gray-50 rounded-lg p-3">
                         <svg className="w-5 h-5 text-aurora-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                         </svg>
-                        <span className="text-gray-700 text-sm">32 hours lessons</span>
+                        <span className="text-gray-700 text-sm">32 hours lessons + 12 hours conversation club</span>
                       </div>
                       <div className="flex items-center bg-gray-50 rounded-lg p-3">
                         <svg className="w-5 h-5 text-aurora-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -359,34 +359,34 @@ export default function Classes() {
                       <ul className="space-y-2">
                         <li className="flex items-center text-sm text-gray-700">
                           <svg className="w-4 h-4 text-aurora-blue mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
                           Complex grammatical structures
-                        </li>
+                  </li>
                         <li className="flex items-center text-sm text-gray-700">
                           <svg className="w-4 h-4 text-aurora-blue mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
                           Expanded vocabulary
-                        </li>
+                  </li>
                         <li className="flex items-center text-sm text-gray-700">
                           <svg className="w-4 h-4 text-aurora-blue mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
                           Fluent discussions & debates
-                        </li>
-                      </ul>
+                  </li>
+                </ul>
                     </div>
                   </div>
                   
                   <div className="pt-4 border-t border-gray-100">
                     <div className="flex items-center justify-between">
                       <div className="flex items-baseline">
-                        <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-blue to-aurora-purple">€279</span>
+                        <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-blue to-aurora-purple">€249</span>
                         <span className="text-gray-500 ml-2">/ course</span>
                       </div>
                       <a href="mailto:info@finlern.fi" className="inline-flex items-center justify-center px-5 py-2 bg-gradient-to-r from-aurora-blue to-aurora-purple text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-blue/30 transform hover:scale-[1.02]">
-                        Enroll Now
+                    Enroll Now
                         <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
@@ -412,7 +412,7 @@ export default function Classes() {
                       <svg className="w-7 h-7 text-aurora-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
                       </svg>
-                    </div>
+                </div>
                     <span className="inline-block px-3 py-1 bg-aurora-purple/10 text-aurora-purple rounded-full text-sm font-medium">Level C1-C2</span>
                   </div>
                   
@@ -420,9 +420,9 @@ export default function Classes() {
                   
                   <div className="bg-gray-50 p-4 rounded-lg mb-5">
                     <p className="text-gray-700">
-                      For proficient Finnish speakers who want to refine their skills. Focus on nuanced expression, 
-                      cultural subtleties, and professional language usage.
-                    </p>
+                  For proficient Finnish speakers who want to refine their skills. Focus on nuanced expression, 
+                  cultural subtleties, and professional language usage.
+                </p>
                   </div>
                   
                   <div className="space-y-3 mb-6">
@@ -441,7 +441,7 @@ export default function Classes() {
                         <svg className="w-5 h-5 text-aurora-purple mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                         </svg>
-                        <span className="text-gray-700 text-sm">32 hours lessons</span>
+                        <span className="text-gray-700 text-sm">32 hours lessons + 12 hours conversation club</span>
                       </div>
                       <div className="flex items-center bg-gray-50 rounded-lg p-3">
                         <svg className="w-5 h-5 text-aurora-purple mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -474,22 +474,22 @@ export default function Classes() {
                       <ul className="space-y-2">
                         <li className="flex items-center text-sm text-gray-700">
                           <svg className="w-4 h-4 text-aurora-purple mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
                           Professional & academic Finnish
-                        </li>
+                  </li>
                         <li className="flex items-center text-sm text-gray-700">
                           <svg className="w-4 h-4 text-aurora-purple mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
                           Cultural nuances & idioms
-                        </li>
+                  </li>
                         <li className="flex items-center text-sm text-gray-700">
                           <svg className="w-4 h-4 text-aurora-purple mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
                           Native-like fluency
-                        </li>
+                  </li>
                       </ul>
                     </div>
                   </div>
@@ -497,7 +497,7 @@ export default function Classes() {
                   <div className="pt-4 border-t border-gray-100">
                     <div className="flex items-center justify-between">
                       <div className="flex items-baseline">
-                        <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-purple to-aurora-night">€345</span>
+                        <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-purple to-aurora-night">€299</span>
                         <span className="text-gray-500 ml-2">/ course</span>
                       </div>
                       <a href="mailto:info@finlern.fi" className="inline-flex items-center justify-center px-5 py-2 bg-gradient-to-r from-aurora-purple to-aurora-night text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-purple/30 transform hover:scale-[1.02]">
@@ -555,8 +555,8 @@ export default function Classes() {
                       <ul className="space-y-2">
                         <li className="flex items-center text-sm text-gray-700">
                           <svg className="w-4 h-4 text-aurora-blue mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
                           Tailored to your learning level
                         </li>
                         <li className="flex items-center text-sm text-gray-700">
@@ -570,27 +570,27 @@ export default function Classes() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
                           Part of monthly subscription
-                        </li>
-                      </ul>
+                  </li>
+                </ul>
                     </div>
                   </div>
                   
                   <div className="pt-4 border-t border-gray-100">
                     <div className="flex flex-col space-y-4">
                       <div className="bg-gray-50 rounded-lg p-4">
-                        <div className="flex justify-between items-center">
+                <div className="flex justify-between items-center">
                           <div className="flex items-center">
                             <div className="flex items-center justify-center w-10 h-10 rounded-full bg-aurora-blue/10 mr-3 flex-shrink-0">
                               <svg className="w-5 h-5 text-aurora-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                               </svg>
-                            </div>
+                </div>
                             <div>
                               <span className="font-medium text-gray-900">Included with All Courses!</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+              </div>
+            </div>
+          </div>
+        </div>
                     </div>
                   </div>
                 </div>
@@ -612,17 +612,17 @@ export default function Classes() {
                       <svg className="w-7 h-7 text-aurora-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                       </svg>
-                    </div>
+          </div>
                     <span className="inline-block px-3 py-1 bg-aurora-green/10 text-aurora-green rounded-full text-sm font-medium">Practice Events</span>
-                  </div>
+        </div>
                   
                   <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-aurora-green transition-colors duration-300">Finnish Conversation Club</h3>
                   
                   <div className="bg-gray-50 p-4 rounded-lg mb-5">
                     <p className="text-gray-700">
                       Weekly social gatherings in public spaces like cafés and libraries where learners can practice Finnish in real-life settings with native speakers.
-                    </p>
-                  </div>
+              </p>
+            </div>
                   
                   <div className="mb-6">
                     <div className="flex items-center justify-between mb-2">
@@ -778,13 +778,13 @@ export default function Classes() {
                         <svg className="w-4 h-4 text-aurora-violet mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                         </svg>
-                        TechFin Oy
+                        NPE Kulplan Oy
                       </div>
                       <div className="bg-gray-800 rounded-lg px-3 py-1.5 text-sm flex items-center">
                         <svg className="w-4 h-4 text-aurora-violet mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                         </svg>
-                        Nordic Solutions
+                        Valkeakosken Kaupunki
                       </div>
                       <div className="bg-gray-800 rounded-lg px-3 py-1.5 text-sm flex items-center">
                         <svg className="w-4 h-4 text-aurora-violet mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -841,81 +841,231 @@ export default function Classes() {
       </section>
 
       {/* Explore Our Other Courses Section */}
-      <section className="py-16 md:py-24 bg-gray-50">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+      <section className="py-16 md:py-24 relative overflow-hidden">
+        {/* Dynamic background with animated gradients */}
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-blue-50/10 to-purple-50/20"></div>
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#6B8AFD_1px,transparent_1px)] [background-size:20px_20px]"></div>
+        
+        {/* Animated blob decorations */}
+        <div className="absolute -top-20 -left-20 w-96 h-96 bg-aurora-blue/5 rounded-full blur-3xl animate-float opacity-70"></div>
+        <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-aurora-purple/5 rounded-full blur-3xl animate-float-delayed opacity-70"></div>
+        
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-block mb-2 bg-aurora-blue/10 px-4 py-1 rounded-full text-aurora-blue text-sm font-medium">
-              More Learning Opportunities
+            <div 
+              className="inline-flex items-center gap-2 mb-3 px-5 py-2 bg-white shadow-md rounded-full text-aurora-blue text-sm font-medium border border-gray-100" 
+              data-aos="fade-up"
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+              <span>More Learning Opportunities</span>
             </div>
+            
             <h2 
-              className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900"
+              className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-aurora-blue via-aurora-purple to-aurora-green"
               data-aos="fade-up" 
               data-aos-duration="800"
             >
               Explore Our Other Courses
             </h2>
+            
+            <div 
+              className="w-32 h-1.5 bg-gradient-to-r from-aurora-blue via-aurora-purple to-aurora-green mx-auto rounded-full mb-6"
+              data-aos="fade-up" 
+              data-aos-delay="100"
+            ></div>
+            
             <p 
               className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed"
               data-aos="fade-up" 
               data-aos-delay="200"
               data-aos-duration="800"
             >
-              Beyond Finnish language, we offer other enriching educational experiences to expand your skills.
+              Beyond Finnish language, we offer other enriching educational experiences to expand your skills and broaden your horizons.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
-            {/* English Courses */}
-            <div 
-              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100"
-              data-aos="fade-up"
-              data-aos-delay="100"
-              data-aos-duration="800"
-            >
-              <div className="h-3 bg-gradient-to-r from-aurora-blue to-aurora-green w-full"></div>
-              <div className="p-8">
-                <div className="mb-4 text-aurora-blue">
-                  <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+              {/* English Courses - Enhanced */}
+              <div 
+                className="group relative bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100/60"
+                data-aos="fade-up"
+                data-aos-delay="100"
+                data-aos-duration="800"
+              >
+                {/* Decorative top gradient with animation */}
+                <div className="absolute top-0 inset-x-0 h-2 bg-gradient-to-r from-aurora-blue via-aurora-green to-aurora-blue bg-[length:200%_auto] animate-gradient"></div>
+                
+                {/* Decorative corner shape */}
+                <div className="absolute top-0 right-0 w-24 h-24 bg-aurora-blue/5 -translate-y-1/2 translate-x-1/2 rounded-full"></div>
+                
+                <div className="p-8 md:p-10">
+                  <div className="flex items-start justify-between mb-8">
+                    <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-aurora-blue to-aurora-green p-0.5 shadow-lg group-hover:shadow-aurora-blue/30 transition-all duration-500 transform group-hover:scale-105">
+                      <div className="absolute inset-0 rounded-2xl bg-white p-3.5">
+                        <svg className="w-full h-full text-aurora-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">English Language Courses</h3>
-                <p className="text-gray-700 mb-6">
-                  Master English with our specialized courses designed for Finnish speakers. From business English to everyday conversation, we help you communicate with confidence.
-                </p>
-                <Link href="/english-courses" className="inline-flex items-center justify-center px-6 py-3 bg-aurora-blue text-white rounded-lg font-medium transition-all duration-300 hover:bg-aurora-blue-dark">
-                  <span>Explore English Courses</span>
-                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </Link>
+                    </div>
+                    
+                    <div className="bg-aurora-blue/10 backdrop-blur-sm px-4 py-1.5 rounded-full text-aurora-blue text-sm font-medium">
+                      For All Levels
+                    </div>
+                  </div>
+                  
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 group-hover:text-aurora-blue transition-colors duration-300">English Language Courses</h3>
+                  
+                  <p className="text-gray-700 mb-6 leading-relaxed">
+                    Master English with our specialized courses designed for everyone! From business English to everyday conversation, we help you communicate with confidence.
+                  </p>
+                  
+                  <div className="space-y-4 mb-8">
+                    <div className="flex items-center">
+                      <div className="w-6 h-6 rounded-full bg-aurora-blue/10 flex items-center justify-center mr-3">
+                        <svg className="w-3.5 h-3.5 text-aurora-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <span className="text-gray-700">Business English</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-6 h-6 rounded-full bg-aurora-blue/10 flex items-center justify-center mr-3">
+                        <svg className="w-3.5 h-3.5 text-aurora-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <span className="text-gray-700">Conversation Skills</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-6 h-6 rounded-full bg-aurora-blue/10 flex items-center justify-center mr-3">
+                        <svg className="w-3.5 h-3.5 text-aurora-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <span className="text-gray-700">Presentation Skills</span>
               </div>
             </div>
             
-            {/* Violin Courses */}
+                  <Link 
+                    href="/english-courses" 
+                    className="group/btn relative inline-flex w-full items-center justify-center px-8 py-3.5 bg-gradient-to-r from-aurora-blue to-aurora-green text-white rounded-xl font-medium shadow-lg hover:shadow-xl hover:shadow-aurora-blue/20 transition-all duration-300"
+                  >
+                    <span className="relative z-10">Explore English Courses</span>
+                    <span className="absolute right-4 w-6 h-6 rounded-full bg-white/20 flex items-center justify-center transition-all duration-300 group-hover/btn:bg-white/30 group-hover/btn:translate-x-1">
+                      <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                    </span>
+                  </Link>
+                </div>
+              </div>
+              
+              {/* Violin Courses - Enhanced */}
+              <div 
+                className="group relative bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100/60"
+                data-aos="fade-up"
+                data-aos-delay="200"
+                data-aos-duration="800"
+              >
+                {/* Decorative top gradient with animation */}
+                <div className="absolute top-0 inset-x-0 h-2 bg-gradient-to-r from-aurora-purple via-aurora-night to-aurora-purple bg-[length:200%_auto] animate-gradient"></div>
+                
+                {/* Decorative corner shape */}
+                <div className="absolute top-0 right-0 w-24 h-24 bg-aurora-purple/5 -translate-y-1/2 translate-x-1/2 rounded-full"></div>
+                
+                <div className="p-8 md:p-10">
+                  <div className="flex items-start justify-between mb-8">
+                    <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-aurora-purple to-aurora-night p-0.5 shadow-lg group-hover:shadow-aurora-purple/30 transition-all duration-500 transform group-hover:scale-105">
+                      <div className="absolute inset-0 rounded-2xl bg-white p-3.5">
+                        <svg className="w-full h-full text-aurora-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2zM9 10l12-3" />
+                        </svg>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-aurora-purple/10 backdrop-blur-sm px-4 py-1.5 rounded-full text-aurora-purple text-sm font-medium">
+                      All Ages Welcome
+                    </div>
+                  </div>
+                  
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 group-hover:text-aurora-purple transition-colors duration-300">Violin Lessons</h3>
+                  
+                  <p className="text-gray-700 mb-6 leading-relaxed">
+                    Discover the joy of music with our violin courses for all ages and skill levels. From classical to Finnish folk music, our experienced instructors guide you through every note.
+                  </p>
+                  
+                  <div className="space-y-4 mb-8">
+                    <div className="flex items-center">
+                      <div className="w-6 h-6 rounded-full bg-aurora-purple/10 flex items-center justify-center mr-3">
+                        <svg className="w-3.5 h-3.5 text-aurora-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <span className="text-gray-700">Beginner to Advanced</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-6 h-6 rounded-full bg-aurora-purple/10 flex items-center justify-center mr-3">
+                        <svg className="w-3.5 h-3.5 text-aurora-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <span className="text-gray-700">Classical & Folk Techniques</span>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-6 h-6 rounded-full bg-aurora-purple/10 flex items-center justify-center mr-3">
+                        <svg className="w-3.5 h-3.5 text-aurora-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <span className="text-gray-700">Performance Opportunities</span>
+              </div>
+            </div>
+            
+                  <Link 
+                    href="/violin-courses" 
+                    className="group/btn relative inline-flex w-full items-center justify-center px-8 py-3.5 bg-gradient-to-r from-aurora-purple to-aurora-night text-white rounded-xl font-medium shadow-lg hover:shadow-xl hover:shadow-aurora-purple/20 transition-all duration-300"
+                  >
+                    <span className="relative z-10">Discover Violin Courses</span>
+                    <span className="absolute right-4 w-6 h-6 rounded-full bg-white/20 flex items-center justify-center transition-all duration-300 group-hover/btn:bg-white/30 group-hover/btn:translate-x-1">
+                      <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                    </span>
+                  </Link>
+                </div>
+              </div>
+            </div>
+            
+            {/* Coming Soon card - New */}
             <div 
-              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100"
+              className="mt-12 bg-white/70 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg border border-gray-100/60 p-8 max-w-3xl mx-auto"
               data-aos="fade-up"
-              data-aos-delay="200"
-              data-aos-duration="800"
+              data-aos-delay="300"
             >
-              <div className="h-3 bg-gradient-to-r from-aurora-purple to-aurora-night w-full"></div>
-              <div className="p-8">
-                <div className="mb-4 text-aurora-purple">
-                  <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2zM9 10l12-3" />
+              <div className="flex flex-col md:flex-row items-center gap-6">
+                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-aurora-blue/30 to-aurora-purple/30 flex items-center justify-center">
+                  <svg className="w-8 h-8 text-aurora-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Violin Lessons</h3>
-                <p className="text-gray-700 mb-6">
-                  Discover the joy of music with our violin courses for all ages and skill levels. From classical to Finnish folk music, our experienced instructors guide you through every note.
-                </p>
-                <Link href="/violin-courses" className="inline-flex items-center justify-center px-6 py-3 bg-aurora-purple text-white rounded-lg font-medium transition-all duration-300 hover:bg-aurora-purple-dark">
-                  <span>Discover Violin Courses</span>
-                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </Link>
+                <div className="text-center md:text-left">
+                  <h3 className="text-xl md:text-2xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-aurora-blue to-aurora-purple">Coming Soon: Art Workshops</h3>
+                  <p className="text-gray-700">We're expanding our offerings with creative art workshops. Join our mailing list to be the first to know when these courses launch.</p>
+                </div>
+                <div className="flex-shrink-0">
+                  <Link 
+                    href="/contact" 
+                    className="inline-flex items-center px-5 py-2 bg-gradient-to-r from-aurora-blue/20 to-aurora-purple/20 text-aurora-purple rounded-full font-medium transition-all duration-300 hover:from-aurora-blue/30 hover:to-aurora-purple/30"
+                  >
+                    <span>Stay Updated</span>
+                    <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -934,7 +1084,7 @@ export default function Classes() {
               <span className="px-4 py-1 rounded-full text-sm font-medium bg-aurora-blue/10 text-aurora-blue">
                 Our Approach
               </span>
-            </div>
+                </div>
             <h2 
               className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
               data-aos="fade-up" 
@@ -954,7 +1104,7 @@ export default function Classes() {
             >
               We combine proven teaching methods with engaging content and a supportive environment to make learning Finnish effective and enjoyable.
             </p>
-          </div>
+                    </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Feature 1 - Enhanced */}
@@ -969,13 +1119,13 @@ export default function Classes() {
                   <svg className="w-8 h-8 text-aurora-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4" />
                   </svg>
-                </div>
+                    </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Native Finnish Teachers</h3>
                 <p className="text-lg text-gray-700 text-center leading-relaxed">
                   Learn from experienced native Finnish speakers who understand the challenges faced by learners.
                 </p>
-              </div>
-            </div>
+                  </div>
+                    </div>
             
             {/* Feature 2 - Enhanced */}
             <div 
@@ -989,13 +1139,13 @@ export default function Classes() {
                   <svg className="w-8 h-8 text-aurora-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
                   </svg>
-                </div>
+                    </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Practical & Relevant</h3>
                 <p className="text-lg text-gray-700 text-center leading-relaxed">
                   Our curriculum focuses on practical language skills you can use in everyday situations.
                 </p>
-              </div>
-            </div>
+                  </div>
+                    </div>
             
             {/* Feature 3 - Enhanced */}
             <div 
@@ -1009,13 +1159,13 @@ export default function Classes() {
                   <svg className="w-8 h-8 text-aurora-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
                   </svg>
-                </div>
+                    </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Cultural Immersion</h3>
                 <p className="text-lg text-gray-700 text-center leading-relaxed">
                   Learn not just the language but also the cultural context that gives Finnish its unique flavor.
                 </p>
-              </div>
-            </div>
+                  </div>
+                </div>
             
             {/* Feature 4 - Enhanced */}
             <div 
@@ -1034,82 +1184,6 @@ export default function Classes() {
                 <p className="text-lg text-gray-700 text-center leading-relaxed">
                   Join a community of fellow learners for practice, support, and friendship beyond the classroom.
                 </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Teaching Approach - Enhanced */}
-      <section className="py-16 md:py-24 relative overflow-hidden">
-        {/* Background pattern */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-white opacity-80"></div>
-        <div className="absolute inset-0 opacity-5 bg-[linear-gradient(rgba(107,138,253,0.1)_1px,transparent_1px),linear-gradient(to_right,rgba(107,138,253,0.1)_1px,transparent_1px)] bg-[size:72px_72px]"></div>
-        
-        <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
-          <div className="max-w-6xl mx-auto">
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-500 hover:shadow-2xl border border-gray-100" data-aos="fade-up">
-            <div className="flex flex-col md:flex-row">
-                {/* Image section with overlay */}
-                <div className="w-full md:w-1/2 relative overflow-hidden bg-gradient-to-br from-aurora-blue to-aurora-purple">
-                  <div className="absolute inset-0">
-                    <div className="w-full h-full flex items-center justify-center">
-                      <div className="p-8 text-white text-center">
-                        <svg className="w-16 h-16 mx-auto mb-4 opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                        </svg>
-                        <h3 className="text-xl font-semibold">Our Approach</h3>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Content section */}
-                <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Our Teaching Approach</h3>
-                  <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-                  At Finlern, we believe in a communicative approach to language learning. Our classes are designed 
-                  to get you speaking Finnish from day one in practical, real-world contexts.
-                </p>
-                  
-                  <div className="space-y-6">
-                  <div className="flex items-start">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-r from-aurora-blue to-aurora-purple flex items-center justify-center text-white shadow-md mr-5">
-                        <span className="font-bold">1</span>
-                    </div>
-                    <div>
-                        <h4 className="text-lg font-semibold text-gray-900 mb-2">Immersive Learning</h4>
-                        <p className="text-lg text-gray-700 leading-relaxed">
-                          Finnish is spoken as much as possible during classes to improve your listening skills for the language.
-                        </p>
-                      </div>
-                    </div>
-                    
-                  <div className="flex items-start">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-r from-aurora-green to-aurora-blue flex items-center justify-center text-white shadow-md mr-5">
-                        <span className="font-bold">2</span>
-                    </div>
-                    <div>
-                        <h4 className="text-lg font-semibold text-gray-900 mb-2">Practical Focus</h4>
-                        <p className="text-lg text-gray-700 leading-relaxed">
-                          We emphasize vocabulary and phrases you'll actually use in everyday situations.
-                        </p>
-                      </div>
-                    </div>
-                    
-                  <div className="flex items-start">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-r from-aurora-purple to-aurora-night flex items-center justify-center text-white shadow-md mr-5">
-                        <span className="font-bold">3</span>
-                    </div>
-                    <div>
-                        <h4 className="text-lg font-semibold text-gray-900 mb-2">Interactive Sessions</h4>
-                        <p className="text-lg text-gray-700 leading-relaxed">
-                          Classes involve role-playing, games, and conversation practice to make learning engaging.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

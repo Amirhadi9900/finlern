@@ -428,7 +428,7 @@ export default function OurStory() {
               data-aos="fade-up" 
               data-aos-delay="200"
             >
-              Our dedicated team of native Finnish teachers combines linguistic expertise with a passion for teaching.
+              Let's meet the people who make Finlern possible!  
             </p>
           </div>
 

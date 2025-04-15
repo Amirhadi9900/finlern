@@ -127,7 +127,7 @@ const ViolinCourses: React.FC = () => {
           {/* Stats Section */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-16">
             <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-100 flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
-              <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-purple to-aurora-blue mb-2">4+</div>
+              <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-purple to-aurora-blue mb-2">5+</div>
               <p className="text-gray-700">Years of teaching excellence</p>
             </div>
             <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-100 flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
@@ -185,7 +185,7 @@ const ViolinCourses: React.FC = () => {
                         <svg className="w-5 h-5 text-aurora-purple mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        <span className="text-gray-700 text-sm">Sundays, 14:00-14:45</span>
+                        <span className="text-gray-700 text-sm">Sundays, 17:00-17:45</span>
                       </div>
                       <div className="flex items-center bg-gray-50 rounded-lg p-3">
                         <svg className="w-5 h-5 text-aurora-purple mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -198,7 +198,7 @@ const ViolinCourses: React.FC = () => {
                         <svg className="w-5 h-5 text-aurora-purple mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2z" />
                         </svg>
-                        <span className="text-gray-700 text-sm">€45 • Materials included</span>
+                        <span className="text-gray-700 text-sm">€39 • Materials included</span>
                       </div>
                     </div>
                   </div>
@@ -296,7 +296,7 @@ const ViolinCourses: React.FC = () => {
                         <svg className="w-5 h-5 text-aurora-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        <span className="text-gray-700 text-sm">Tuesdays, 17:00-17:45</span>
+                        <span className="text-gray-700 text-sm">Mondays, 17:00-17:45</span>
                       </div>
                       <div className="flex items-center bg-gray-50 rounded-lg p-3">
                         <svg className="w-5 h-5 text-aurora-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -309,7 +309,7 @@ const ViolinCourses: React.FC = () => {
                         <svg className="w-5 h-5 text-aurora-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2z" />
                         </svg>
-                        <span className="text-gray-700 text-sm">€55 • Materials included</span>
+                        <span className="text-gray-700 text-sm">€49 • Materials included</span>
                       </div>
                     </div>
                   </div>
@@ -404,7 +404,7 @@ const ViolinCourses: React.FC = () => {
                         <svg className="w-5 h-5 text-aurora-green mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        <span className="text-gray-700 text-sm">Mondays, 18:00-18:45</span>
+                        <span className="text-gray-700 text-sm">Tuesdays, 17:00-17:45</span>
                       </div>
                       <div className="flex items-center bg-gray-50 rounded-lg p-3">
                         <svg className="w-5 h-5 text-aurora-green mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -417,7 +417,7 @@ const ViolinCourses: React.FC = () => {
                         <svg className="w-5 h-5 text-aurora-green mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2z" />
                         </svg>
-                        <span className="text-gray-700 text-sm">€65 • Materials included</span>
+                        <span className="text-gray-700 text-sm">€59 • Materials included</span>
                       </div>
                     </div>
                   </div>

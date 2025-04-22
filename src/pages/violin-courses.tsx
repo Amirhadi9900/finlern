@@ -76,10 +76,10 @@ const ViolinCourses: React.FC = () => {
               <div className="relative">
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-aurora-purple/30 to-aurora-blue/30 rounded-lg backdrop-blur-sm -rotate-3"></div>
                 <Image 
-                  src="/images/violin-hero.jpg" 
+                  src="/images/violin.png" 
                   alt="Violin learning environment" 
-                  width={500}
-                  height={350}
+                  width={600}
+                  height={400}
                   className="rounded-lg shadow-lg z-10 relative rotate-3 border-4 border-white/20"
                 />
               </div>

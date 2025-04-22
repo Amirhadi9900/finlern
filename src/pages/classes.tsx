@@ -895,69 +895,73 @@ export default function Classes() {
                 data-aos-delay="100"
                 data-aos-duration="800"
               >
-                {/* Decorative top gradient with animation */}
-                <div className="absolute top-0 inset-x-0 h-2 bg-gradient-to-r from-aurora-blue via-aurora-green to-aurora-blue bg-[length:200%_auto] animate-gradient"></div>
-                
-                {/* Decorative corner shape */}
+                {/* Decorative elements */}
+                <div className="absolute top-0 inset-x-0 h-3 bg-gradient-to-r from-aurora-blue via-aurora-green to-aurora-blue bg-[length:200%_auto] animate-gradient"></div>
+                <div className="absolute -bottom-24 -right-24 w-48 h-48 bg-aurora-blue/5 rounded-full"></div>
+                <div className="absolute -top-16 -left-16 w-40 h-40 bg-aurora-green/5 rounded-full"></div>
                 <div className="absolute top-0 right-0 w-24 h-24 bg-aurora-blue/5 -translate-y-1/2 translate-x-1/2 rounded-full"></div>
                 
-                <div className="p-8 md:p-10">
+                <div className="p-8 md:p-10 relative z-10">
                   <div className="flex items-start justify-between mb-8">
                     <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-aurora-blue to-aurora-green p-0.5 shadow-lg group-hover:shadow-aurora-blue/30 transition-all duration-500 transform group-hover:scale-105">
-                      <div className="absolute inset-0 rounded-2xl bg-white p-3.5">
+                      <div className="absolute inset-0 rounded-2xl bg-white p-3.5 flex items-center justify-center">
                         <svg className="w-full h-full text-aurora-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
-                  </svg>
-                </div>
+                        </svg>
+                      </div>
                     </div>
                     
-                    <div className="bg-aurora-blue/10 backdrop-blur-sm px-4 py-1.5 rounded-full text-aurora-blue text-sm font-medium">
+                    <div className="bg-gradient-to-r from-aurora-blue/20 to-aurora-green/20 backdrop-blur-sm px-4 py-1.5 rounded-full text-aurora-blue text-sm font-medium border border-aurora-blue/10 shadow-sm">
                       For All Levels
                     </div>
                   </div>
                   
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 group-hover:text-aurora-blue transition-colors duration-300">English Language Courses</h3>
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 group-hover:text-aurora-blue transition-colors duration-300 relative">
+                    English Language Courses
+                    <span className="block h-1 w-16 bg-gradient-to-r from-aurora-blue to-aurora-green mt-3 rounded-full transform origin-left group-hover:scale-x-125 transition-transform duration-300"></span>
+                  </h3>
                   
                   <p className="text-gray-700 mb-6 leading-relaxed">
                     Master English with our specialized courses designed for everyone! From business English to everyday conversation, we help you communicate with confidence.
                   </p>
                   
-                  <div className="space-y-4 mb-8">
-                    <div className="flex items-center">
-                      <div className="w-6 h-6 rounded-full bg-aurora-blue/10 flex items-center justify-center mr-3">
+                  <div className="space-y-5 mb-8">
+                    <div className="flex items-center transform transition-transform duration-300 hover:translate-x-1">
+                      <div className="w-7 h-7 rounded-full bg-gradient-to-br from-aurora-blue/20 to-aurora-green/20 flex items-center justify-center mr-3 shadow-sm">
                         <svg className="w-3.5 h-3.5 text-aurora-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
-                      <span className="text-gray-700">Business English</span>
+                      <span className="text-gray-700 font-medium">Business English alongside Presentation Skills</span>
                     </div>
-                    <div className="flex items-center">
-                      <div className="w-6 h-6 rounded-full bg-aurora-blue/10 flex items-center justify-center mr-3">
+                    <div className="flex items-center transform transition-transform duration-300 hover:translate-x-1">
+                      <div className="w-7 h-7 rounded-full bg-gradient-to-br from-aurora-blue/20 to-aurora-green/20 flex items-center justify-center mr-3 shadow-sm">
                         <svg className="w-3.5 h-3.5 text-aurora-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
-                      <span className="text-gray-700">Conversation Skills</span>
+                      <span className="text-gray-700 font-medium">Conversational Skills alongside Daily-Life Vocabularies</span>
                     </div>
-                    <div className="flex items-center">
-                      <div className="w-6 h-6 rounded-full bg-aurora-blue/10 flex items-center justify-center mr-3">
+                    <div className="flex items-center transform transition-transform duration-300 hover:translate-x-1">
+                      <div className="w-7 h-7 rounded-full bg-gradient-to-br from-aurora-blue/20 to-aurora-green/20 flex items-center justify-center mr-3 shadow-sm">
                         <svg className="w-3.5 h-3.5 text-aurora-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
-                      <span className="text-gray-700">Presentation Skills</span>
-              </div>
-            </div>
+                      <span className="text-gray-700 font-medium">Formal & Academic English Skills</span>
+                    </div>
+                  </div>
             
                   <Link 
                     href="/english-courses" 
-                    className="group/btn relative inline-flex w-full items-center justify-center px-8 py-3.5 bg-gradient-to-r from-aurora-blue to-aurora-green text-white rounded-xl font-medium shadow-lg hover:shadow-xl hover:shadow-aurora-blue/20 transition-all duration-300"
+                    className="group/btn relative inline-flex w-full items-center justify-center px-8 py-4 bg-gradient-to-r from-aurora-blue to-aurora-green text-white rounded-xl font-medium shadow-lg hover:shadow-xl hover:shadow-aurora-blue/20 transition-all duration-300 overflow-hidden"
                   >
+                    <span className="absolute inset-0 bg-white/10 scale-x-0 group-hover/btn:scale-x-100 origin-left transition-transform duration-500"></span>
                     <span className="relative z-10">Explore English Courses</span>
-                    <span className="absolute right-4 w-6 h-6 rounded-full bg-white/20 flex items-center justify-center transition-all duration-300 group-hover/btn:bg-white/30 group-hover/btn:translate-x-1">
-                      <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <span className="absolute right-4 w-7 h-7 rounded-full bg-white/20 flex items-center justify-center transition-all duration-300 group-hover/btn:bg-white/30 group-hover/btn:translate-x-1">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+                      </svg>
                     </span>
                   </Link>
                 </div>
@@ -970,69 +974,73 @@ export default function Classes() {
                 data-aos-delay="200"
                 data-aos-duration="800"
               >
-                {/* Decorative top gradient with animation */}
-                <div className="absolute top-0 inset-x-0 h-2 bg-gradient-to-r from-aurora-purple via-aurora-night to-aurora-purple bg-[length:200%_auto] animate-gradient"></div>
-                
-                {/* Decorative corner shape */}
+                {/* Decorative elements */}
+                <div className="absolute top-0 inset-x-0 h-3 bg-gradient-to-r from-aurora-purple via-aurora-night to-aurora-purple bg-[length:200%_auto] animate-gradient"></div>
+                <div className="absolute -bottom-24 -right-24 w-48 h-48 bg-aurora-purple/5 rounded-full"></div>
+                <div className="absolute -top-16 -left-16 w-40 h-40 bg-aurora-night/5 rounded-full"></div>
                 <div className="absolute top-0 right-0 w-24 h-24 bg-aurora-purple/5 -translate-y-1/2 translate-x-1/2 rounded-full"></div>
                 
-                <div className="p-8 md:p-10">
+                <div className="p-8 md:p-10 relative z-10">
                   <div className="flex items-start justify-between mb-8">
                     <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-aurora-purple to-aurora-night p-0.5 shadow-lg group-hover:shadow-aurora-purple/30 transition-all duration-500 transform group-hover:scale-105">
-                      <div className="absolute inset-0 rounded-2xl bg-white p-3.5">
+                      <div className="absolute inset-0 rounded-2xl bg-white p-3.5 flex items-center justify-center">
                         <svg className="w-full h-full text-aurora-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2zM9 10l12-3" />
                         </svg>
                       </div>
                     </div>
                     
-                    <div className="bg-aurora-purple/10 backdrop-blur-sm px-4 py-1.5 rounded-full text-aurora-purple text-sm font-medium">
+                    <div className="bg-gradient-to-r from-aurora-purple/20 to-aurora-night/20 backdrop-blur-sm px-4 py-1.5 rounded-full text-aurora-purple text-sm font-medium border border-aurora-purple/10 shadow-sm">
                       All Ages Welcome
                     </div>
                   </div>
                   
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 group-hover:text-aurora-purple transition-colors duration-300">Violin Lessons</h3>
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 group-hover:text-aurora-purple transition-colors duration-300 relative">
+                    Violin Lessons
+                    <span className="block h-1 w-16 bg-gradient-to-r from-aurora-purple to-aurora-night mt-3 rounded-full transform origin-left group-hover:scale-x-125 transition-transform duration-300"></span>
+                  </h3>
                   
                   <p className="text-gray-700 mb-6 leading-relaxed">
                     Discover the joy of music with our violin courses for all ages and skill levels. From classical to Finnish folk music, our experienced instructors guide you through every note.
                   </p>
                   
-                  <div className="space-y-4 mb-8">
-                    <div className="flex items-center">
-                      <div className="w-6 h-6 rounded-full bg-aurora-purple/10 flex items-center justify-center mr-3">
+                  <div className="space-y-5 mb-8">
+                    <div className="flex items-center transform transition-transform duration-300 hover:translate-x-1">
+                      <div className="w-7 h-7 rounded-full bg-gradient-to-br from-aurora-purple/20 to-aurora-night/20 flex items-center justify-center mr-3 shadow-sm">
                         <svg className="w-3.5 h-3.5 text-aurora-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
-                      <span className="text-gray-700">Beginner to Advanced</span>
+                      <span className="text-gray-700 font-medium">Beginner to Advanced</span>
                     </div>
-                    <div className="flex items-center">
-                      <div className="w-6 h-6 rounded-full bg-aurora-purple/10 flex items-center justify-center mr-3">
+                    <div className="flex items-center transform transition-transform duration-300 hover:translate-x-1">
+                      <div className="w-7 h-7 rounded-full bg-gradient-to-br from-aurora-purple/20 to-aurora-night/20 flex items-center justify-center mr-3 shadow-sm">
                         <svg className="w-3.5 h-3.5 text-aurora-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
-                      <span className="text-gray-700">Classical & Folk Techniques</span>
+                      <span className="text-gray-700 font-medium">Classical & Folk Techniques</span>
                     </div>
-                    <div className="flex items-center">
-                      <div className="w-6 h-6 rounded-full bg-aurora-purple/10 flex items-center justify-center mr-3">
+                    <div className="flex items-center transform transition-transform duration-300 hover:translate-x-1">
+                      <div className="w-7 h-7 rounded-full bg-gradient-to-br from-aurora-purple/20 to-aurora-night/20 flex items-center justify-center mr-3 shadow-sm">
                         <svg className="w-3.5 h-3.5 text-aurora-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
-                      <span className="text-gray-700">Performance Opportunities</span>
-              </div>
-            </div>
+                      <span className="text-gray-700 font-medium">Performance Opportunities</span>
+                    </div>
+                  </div>
             
                   <Link 
                     href="/violin-courses" 
-                    className="group/btn relative inline-flex w-full items-center justify-center px-8 py-3.5 bg-gradient-to-r from-aurora-purple to-aurora-night text-white rounded-xl font-medium shadow-lg hover:shadow-xl hover:shadow-aurora-purple/20 transition-all duration-300"
+                    className="group/btn relative inline-flex w-full items-center justify-center px-8 py-4 bg-gradient-to-r from-aurora-purple to-aurora-night text-white rounded-xl font-medium shadow-lg hover:shadow-xl hover:shadow-aurora-purple/20 transition-all duration-300 overflow-hidden"
                   >
+                    <span className="absolute inset-0 bg-white/10 scale-x-0 group-hover/btn:scale-x-100 origin-left transition-transform duration-500"></span>
                     <span className="relative z-10">Discover Violin Courses</span>
-                    <span className="absolute right-4 w-6 h-6 rounded-full bg-white/20 flex items-center justify-center transition-all duration-300 group-hover/btn:bg-white/30 group-hover/btn:translate-x-1">
-                      <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <span className="absolute right-4 w-7 h-7 rounded-full bg-white/20 flex items-center justify-center transition-all duration-300 group-hover/btn:bg-white/30 group-hover/btn:translate-x-1">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+                      </svg>
                     </span>
                   </Link>
                 </div>

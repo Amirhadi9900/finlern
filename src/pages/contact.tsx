@@ -332,31 +332,31 @@ export default function Contact() {
               <div className="bg-white rounded-xl shadow-md p-8 transition-all duration-300 hover:shadow-xl border border-gray-100 transform hover:-translate-y-1">
                 <h3 className="text-xl font-bold text-aurora-blue mb-4">How quickly will I receive a response to my inquiry?</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  We aim to respond to all inquiries within 24 hours during business days. For urgent matters, 
+                We aim to respond to all inquiries within 24 hours during business days. For urgent matters, 
                   we recommend calling our office directly at +358 41 756 7339.
-                </p>
-              </div>
+              </p>
+            </div>
             
               <div className="bg-white rounded-xl shadow-md p-8 transition-all duration-300 hover:shadow-xl border border-gray-100 transform hover:-translate-y-1">
                 <h3 className="text-xl font-bold text-aurora-blue mb-4">What types of courses do you offer?</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
                   We offer Finnish language courses (starting from €199), English language courses (private from €39-49 per session, group from €29-39 per session), and violin lessons (ranging from €39-59 per session). You can choose between private 1-on-1 instruction or small group classes (3-6 students) for English courses.
-                </p>
-              </div>
-              
+              </p>
+            </div>
+            
               <div className="bg-white rounded-xl shadow-md p-8 transition-all duration-300 hover:shadow-xl border border-gray-100 transform hover:-translate-y-1">
                 <h3 className="text-xl font-bold text-aurora-blue mb-4">What is the difference between private and group courses?</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
                   Private 1-on-1 courses offer personalized instruction tailored exactly to your needs and pace, while our small group courses (3-6 students) provide a collaborative learning environment at a more affordable price (saving €10 per session). Both options deliver high-quality content with expert instruction.
-                </p>
-              </div>
+              </p>
+            </div>
             
               <div className="bg-white rounded-xl shadow-md p-8 transition-all duration-300 hover:shadow-xl border border-gray-100 transform hover:-translate-y-1">
                 <h3 className="text-xl font-bold text-aurora-blue mb-4">Where are your physical locations?</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
                   Our main language center is in Valkeakoski, Finland. We also hold regular Café Lingua events in Tampere. All our courses are available online with flexible scheduling for students anywhere in the world.
-                </p>
-              </div>
+              </p>
+            </div>
               
               <div className="bg-white rounded-xl shadow-md p-8 transition-all duration-300 hover:shadow-xl border border-gray-100 transform hover:-translate-y-1">
                 <h3 className="text-xl font-bold text-aurora-blue mb-4">Do you offer free consultation before signing up?</h3>

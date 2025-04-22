@@ -122,7 +122,7 @@ const EnglishCourses: React.FC = () => {
               data-aos-delay="200"
               data-aos-duration="800"
             >
-              Personalized instruction tailored specifically to your goals, learning style, and pace
+              Personalized instruction tailored specifically to your goals, learning style, and pace!
             </p>
           </div>
 
@@ -255,7 +255,7 @@ const EnglishCourses: React.FC = () => {
                   
                   <div className="bg-gray-50 p-4 rounded-lg mb-5">
                     <p className="text-gray-700">
-                      Master everyday English with personalized 1-on-1 lessons. Focus on practical expressions, slang, and cultural nuances for social settings. Includes optional Cafe Lingua in-person practice events.
+                      Master everyday English with personalized 1-on-1 lessons. Focus on practical expressions, slang, idioms, and cultural nuances for social settings. Includes optional Cafe Lingua in-person events to practice your English in a real-life environment.
                     </p>
                   </div>
                   
@@ -374,7 +374,7 @@ const EnglishCourses: React.FC = () => {
                     </h4>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       <div className="flex items-center bg-gray-50 rounded-lg p-3">
-                        <svg className="w-5 h-5 text-aurora-purple mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-aurora-purple mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                         </svg>
                         <span className="text-gray-700 text-sm">Start anytime • Flexible</span>
@@ -512,7 +512,7 @@ const EnglishCourses: React.FC = () => {
               data-aos-delay="200"
               data-aos-duration="800"
             >
-              Learn with peers at a more affordable price while still receiving quality instruction
+              Don't like learning English alone? Then team up for top-notch, budget-friendly lessons in just 2 hours!
             </p>
           </div>
           
@@ -541,7 +541,7 @@ const EnglishCourses: React.FC = () => {
               </div>
               <div className="text-center md:text-left">
                 <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                  At Finlern, we understand that some students prefer the dynamics and affordability of group learning. Our small group courses provide the same high-quality content at a more accessible price point, with 3-6 students per group.
+                  At Finlern, we understand that some students prefer the dynamics and affordability of group learning. Our small group courses provide the same high-quality content at a more accessible price point, with 3-6 students per group. Each session lasts for 2 hours, giving you ample time to practice and learn.
                 </p>
               </div>
             </div>
@@ -765,9 +765,9 @@ const EnglishCourses: React.FC = () => {
                     </tr>
                     <tr className="bg-gray-50">
                       <td className="py-4 px-6 text-sm font-medium text-gray-900">Session Duration</td>
-                      <td className="py-4 px-6 text-sm text-gray-700 text-center">60-75 minutes</td>
-                      <td className="py-4 px-6 text-sm text-gray-700 text-center">60-75 minutes</td>
-                      <td className="py-4 px-6 text-sm text-gray-700 text-center">60-75 minutes</td>
+                      <td className="py-4 px-6 text-sm text-gray-700 text-center">2 hours</td>
+                      <td className="py-4 px-6 text-sm text-gray-700 text-center">2 hours</td>
+                      <td className="py-4 px-6 text-sm text-gray-700 text-center">2 hours</td>
                     </tr>
                     <tr>
                       <td className="py-4 px-6 text-sm font-medium text-gray-900">Materials Included</td>
@@ -808,7 +808,7 @@ const EnglishCourses: React.FC = () => {
                     <tr className="bg-gray-50">
                       <td className="py-4 px-6 text-sm font-medium text-gray-900">Cafe Lingua Events</td>
                       <td className="py-4 px-6 text-sm text-gray-700 text-center">Optional</td>
-                      <td className="py-4 px-6 text-sm text-gray-700 text-center">Included</td>
+                      <td className="py-4 px-6 text-sm text-gray-700 text-center">Optional</td>
                       <td className="py-4 px-6 text-sm text-gray-700 text-center">Optional</td>
                     </tr>
                     <tr>

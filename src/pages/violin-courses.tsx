@@ -58,7 +58,7 @@ const ViolinCourses: React.FC = () => {
                 Master the Violin with Finlern  
               </h1>
               <p className="text-lg md:text-xl opacity-90 mb-8 max-w-2xl">
-                From first notes to advanced techniques, our expert instructors provide personalized violin education for students of all ages and skill levels.
+                From first notes to advanced techniques, our expert instructor provides personalized violin education in Finnish, English, Kurdish, and Persian for students of all ages and skill levels.
               </p>
               <div className="flex flex-wrap gap-4">
                 <button onClick={scrollToUpcomingCourses} className="px-6 py-3 bg-white text-aurora-purple rounded-lg font-medium transition-all duration-300 hover:bg-gray-100 flex items-center">
@@ -120,7 +120,7 @@ const ViolinCourses: React.FC = () => {
               data-aos-delay="200"
               data-aos-duration="800"
             >
-              Specialized instruction for every skill level, from first-time players to advanced violinists
+              Specialized instruction for every skill level, from first-time players to advanced violinists!
             </p>
           </div>
 
@@ -577,6 +577,18 @@ const ViolinCourses: React.FC = () => {
                   <div className="ml-3">
                     <h3 className="font-semibold text-gray-900">Personalized Curriculum</h3>
                     <p className="text-gray-700">Customized learning paths that address individual goals, learning styles, and musical interests.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 p-1">
+                    <svg className="w-6 h-6 text-aurora-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div className="ml-3">
+                    <h3 className="font-semibold text-gray-900">Multilingual Instruction</h3>
+                    <p className="text-gray-700">Our instructor speaks fluent Finnish, English, Kurdish, and Persian, making lessons accessible to students from diverse backgrounds.</p>
                   </div>
                 </div>
               </div>

@@ -1,4 +1,4 @@
-// Animation utilities for FinLern website - Mobile Compatible Version
+// Animation utilities for FinLern website - Performance Optimized Version
 
 // Only run animations in browser environment
 (function() {
@@ -15,15 +15,15 @@
       if (animatedElements) {
         Array.from(animatedElements).forEach(el => {
           if (el) {
-            el.style.opacity = '1';
-            el.style.transform = 'translateY(0)';
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
           }
         });
       }
     };
     
     // Set a safety timeout to ensure content is visible regardless of animation status
-    setTimeout(ensureContentVisible, 1500);
+    setTimeout(ensureContentVisible, 1200); // Reduced timeout for faster visibility
   } catch (e) {
     console.warn("Error ensuring content visibility:", e);
   }
@@ -34,21 +34,30 @@
   const isSafari = /^((?!chrome|android).)*safari/i.test(userAgent);
   const isIOSSafari = isIOS && isSafari;
   const isAndroid = /android/i.test(userAgent);
-  const isOldAndroid = /Android 4\.|Android 5\./.test(userAgent);
+  const isOldAndroid = /Android [4-6]\./.test(userAgent);
+  const isMobile = isIOS || isAndroid || window.innerWidth < 768;
+  
+  // Enhanced performance detection
   const isLowEndDevice = isOldAndroid || 
                          (typeof navigator.deviceMemory !== 'undefined' && navigator.deviceMemory < 4) || 
                          (typeof navigator.hardwareConcurrency !== 'undefined' && navigator.hardwareConcurrency < 4);
   
-  // For Android devices, use a simpler animation approach
-  const useSimpleAnimations = isAndroid || isLowEndDevice;
+  // Check if the browser supports prefers-reduced-motion
+  const prefersReducedMotion = typeof window.matchMedia === 'function' && 
+                               window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                        
+  // For Android devices or when reduced motion is preferred, use a simpler animation approach
+  const useSimpleAnimations = isAndroid || isLowEndDevice || prefersReducedMotion;
   
   // Reduce animation complexity based on device capability
-  let animationReductionLevel = 0; // 0 = full, 1 = medium, 2 = minimal
+  let animationReductionLevel = 0;
   
-  if (isLowEndDevice || isAndroid) {
-    animationReductionLevel = 2; // Use minimal animations on Android or low-end devices
-  } else if ((typeof window.innerWidth === 'number' && window.innerWidth < 768)) {
-    animationReductionLevel = 1; // Use medium animations on small screens
+  if (prefersReducedMotion) {
+    animationReductionLevel = 3; // Minimal animations when user prefers reduced motion
+  } else if (isLowEndDevice || isOldAndroid) {
+    animationReductionLevel = 2; // Use minimal animations on low-end devices
+  } else if (isMobile) {
+    animationReductionLevel = 1; // Use medium animations on mobile devices
   }
   
   // Store all observers for cleanup
@@ -67,7 +76,9 @@
   function safeTimeout(callback, delay) {
     // Scale delay based on device capability
     if (animationReductionLevel > 0) {
-      delay = Math.max(delay, 50); // Ensure minimum delay on slower devices
+      // Reduce animation delays on lower-end devices for faster perceived performance
+      delay = Math.floor(delay / (1 + animationReductionLevel * 0.5));
+      delay = Math.max(delay, 16); // Ensure minimum delay for stability
     }
     
     try {
@@ -109,20 +120,21 @@
     // Safeguard for all browsers
     try {
       if (document.readyState === 'loading') {
-document.addEventListener('DOMContentLoaded', () => {
-          safeTimeout(initAnimations, 200); // Delay to ensure hydration
+        document.addEventListener('DOMContentLoaded', () => {
+          // Reduced delay for faster initialization
+          safeTimeout(initAnimations, 100);
         });
       } else {
-        // If DOMContentLoaded already fired, initialize with a small delay
-        safeTimeout(initAnimations, 200);
+        // If DOMContentLoaded already fired, initialize faster
+        safeTimeout(initAnimations, 50);
       }
     } catch (err) {
       console.error('Error in animation initialization:', err);
     }
   };
 
-  // Delay initialization to ensure hydration is complete
-  safeTimeout(initWhenReady, 300); // Longer delay for all devices to ensure proper hydration
+  // Reduced initialization delay for faster perceived performance
+  safeTimeout(initWhenReady, 200);
 
   // Complete cleanup function to prevent memory leaks
   function cleanup() {
@@ -153,7 +165,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Remove event listeners we've added
       try {
-        document.removeEventListener('scroll', scrollHandler, { passive: true });
+        if (scrollHandler) {
+          document.removeEventListener('scroll', scrollHandler, { passive: true });
+        }
       } catch (e) {
         // Ignore errors here
       }
@@ -198,6 +212,13 @@ document.addEventListener('DOMContentLoaded', () => {
       if (el && el.classList && typeof el.classList.add === 'function') {
         try {
           el.classList.add('hw-accelerated');
+          
+          // Apply optimized styles for hardware acceleration
+          if (el.style) {
+            el.style.willChange = 'transform';
+            el.style.transform = 'translateZ(0)';
+            el.style.backfaceVisibility = 'hidden';
+          }
         } catch (e) {
           // Ignore errors
         }
@@ -206,7 +227,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function initAnimations() {
-    // Modified to optimize performance
     // Clean up any existing observers first
     cleanup();
     
@@ -219,9 +239,47 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     try {
-      // For Android, use a much simpler approach to guarantee content visibility
-      if (isAndroid) {
-        // Make all elements visible immediately
+      // Optimize the Hero section first for perceived performance
+      const optimizeHeroSection = () => {
+        // Apply hardware acceleration to hero elements
+        const heroSection = document.querySelector('section');
+        if (heroSection) {
+          // Apply fixed background for better performance
+          const heroBackground = heroSection.querySelector('div[class*="bg-gradient-to-br"]');
+          if (heroBackground) {
+            applyHardwareAcceleration([heroBackground]);
+          }
+          
+          // Apply optimizations to animated elements in the hero
+          const heroAnimatedElements = heroSection.querySelectorAll('[class*="animate-"]');
+          applyHardwareAcceleration(heroAnimatedElements);
+          
+          // Reduce blur intensity on mobile/low-end devices
+          if (animationReductionLevel >= 1) {
+            const blurredElements = heroSection.querySelectorAll('.blur-3xl, .blur-2xl');
+            blurredElements.forEach(el => {
+              try {
+                if (el.classList.contains('blur-3xl')) {
+                  el.classList.remove('blur-3xl');
+                  el.classList.add('blur-xl');
+                } else if (el.classList.contains('blur-2xl')) {
+                  el.classList.remove('blur-2xl');
+                  el.classList.add('blur-lg');
+                }
+              } catch (e) {
+                // Ignore errors
+              }
+            });
+          }
+        }
+      };
+      
+      // Optimize hero section immediately
+      optimizeHeroSection();
+      
+      // For Android or when reduced motion is preferred, use a much simpler approach
+      if (useSimpleAnimations || animationReductionLevel >= 2) {
+        // Make all elements visible immediately for fast loading perception
         const allAnimatedElements = document.querySelectorAll('.fade-in, .scroll-reveal, [class*="animate-"]');
         if (allAnimatedElements) {
           Array.from(allAnimatedElements).forEach(el => {
@@ -243,86 +301,108 @@ document.addEventListener('DOMContentLoaded', () => {
           });
         }
         
-        // Set final counter values
+        // Set final counter values immediately
         setFinalCounterValues();
         
-        // Minimal hardware acceleration for Android
-        const hwElements = document.querySelectorAll('.animate-float, .animate-float-delayed, .animate-float-slow, .animate-bounce');
-        applyHardwareAcceleration(hwElements);
+        // Apply minimal hardware acceleration for essential animations
+        const essentialAnimations = document.querySelectorAll('.animate-float, .animate-float-delayed, .animate-float-slow');
+        applyHardwareAcceleration(essentialAnimations);
         
-        return; // Skip the rest of the animations for Android
+        return; // Skip the rest of the animations for low-end devices
       }
       
-      // Standard animation path for non-Android devices
+      // Standard animation path for better devices
       // Add hardware acceleration to all animated elements
-      applyHardwareAcceleration(document.querySelectorAll('.animate-float, .animate-float-delayed, .animate-float-slow, .animate-bounce'));
       applyHardwareAcceleration(document.querySelectorAll('[class*="animate-"]'));
       
-      // On low-end devices, remove some animations completely to improve performance
-      if (animationReductionLevel >= 2) {
-        const heavyAnimations = document.querySelectorAll('.blur-3xl');
-        heavyAnimations.forEach(el => {
+      // On lower-end devices, reduce animation complexity
+      if (animationReductionLevel >= 1) {
+        // Find and optimize heavy blur effects
+        const heavyBlurs = document.querySelectorAll('.blur-3xl, .blur-2xl');
+        heavyBlurs.forEach(el => {
           try {
-            el.classList.remove('blur-3xl');
-            el.classList.add('blur-xl'); // Use lighter blur
+            if (el.classList.contains('blur-3xl')) {
+              el.classList.remove('blur-3xl');
+              el.classList.add('blur-xl');
+            } else if (el.classList.contains('blur-2xl')) {
+              el.classList.remove('blur-2xl');
+              el.classList.add('blur-lg');
+            }
           } catch (e) {
             // Ignore errors
           }
         });
       }
     
-  // Fade-in elements on scroll
+      // Implement fade-in animations with optimized thresholds
       try {
-  const fadeElements = document.querySelectorAll('.fade-in');
+        const fadeElements = document.querySelectorAll('.fade-in');
         applyHardwareAcceleration(fadeElements);
   
-        // Use safer approach for all mobile devices
-        if (fadeElements.length > 0) {
-  const fadeObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
+        if (fadeElements.length > 0 && hasIntersectionObserver) {
+          // Adjust threshold based on device capability
+          const fadeThreshold = animationReductionLevel >= 2 ? 0.01 : 
+                               (animationReductionLevel === 1 ? 0.05 : 0.1);
+          
+          const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
                 try {
-        entry.target.classList.add('appear');
-                  // On low-end devices, immediately stop observing to save resources
-                  if (animationReductionLevel > 0) {
+                  entry.target.classList.add('appear');
+                  
+                  // Unobserve faster on lower-end devices
+                  const unobserveDelay = animationReductionLevel >= 2 ? 0 : 
+                                        (animationReductionLevel === 1 ? 500 : 800);
+                  
+                  if (unobserveDelay === 0) {
                     fadeObserver.unobserve(entry.target);
                   } else {
-                    // Give time for the animation to complete before unobserving
                     safeTimeout(() => {
-        fadeObserver.unobserve(entry.target);
-                    }, 1000);
+                      fadeObserver.unobserve(entry.target);
+                    }, unobserveDelay);
                   }
                 } catch (e) {
                   console.warn('Error in fade animation:', e);
+                  fadeObserver.unobserve(entry.target);
                 }
-      }
-    });
-  }, {
-            threshold: animationReductionLevel >= 2 ? 0.01 : 0.1, // Use lower threshold on low-end devices
+              }
+            });
+          }, {
+            threshold: fadeThreshold,
             rootMargin: '0px 0px -50px 0px'
-  });
+          });
   
-  fadeElements.forEach(element => {
+          fadeElements.forEach(element => {
             try {
-    fadeObserver.observe(element);
+              fadeObserver.observe(element);
             } catch (e) {
               console.warn('Error observing fade element:', e);
+              element.classList.add('appear');
             }
           });
+          
           observers.push(fadeObserver);
+        } else {
+          // Fallback: make elements visible immediately
+          fadeElements.forEach(el => {
+            if (el) el.classList.add('appear');
+          });
         }
 
-        // Handle scroll-reveal elements
+        // Handle scroll-reveal animations with optimized processing
         const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
         applyHardwareAcceleration(scrollRevealElements);
       
-        if (scrollRevealElements.length > 0) {
+        if (scrollRevealElements.length > 0 && hasIntersectionObserver) {
+          // Adjust threshold based on device capability
+          const scrollThreshold = animationReductionLevel >= 2 ? 0.01 : 
+                                 (animationReductionLevel === 1 ? 0.05 : 0.1);
+          
           const scrollRevealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
               if (entry.isIntersecting) {
                 try {
                   entry.target.classList.add('revealed');
-                  // Unobserve immediately after revealing
                   scrollRevealObserver.unobserve(entry.target);
                 } catch (e) {
                   console.warn('Error in scroll reveal:', e);
@@ -330,170 +410,175 @@ document.addEventListener('DOMContentLoaded', () => {
               }
             });
           }, {
-            threshold: animationReductionLevel >= 2 ? 0.01 : 0.1, // Lower threshold for low-end devices
+            threshold: scrollThreshold,
             rootMargin: '0px 0px -50px 0px'
           });
           
-          // Process in smaller batches on Android to prevent jank
-          const processInBatches = (elements, batchSize, callback) => {
-            const totalElements = elements.length;
-            let processed = 0;
+          // Process elements in batches for smoother loading
+          const batchSize = isMobile ? 5 : 10;
+          let processed = 0;
+          
+          const processBatch = () => {
+            const end = Math.min(processed + batchSize, scrollRevealElements.length);
             
-            const processBatch = () => {
-              const end = Math.min(processed + batchSize, totalElements);
-              for (let i = processed; i < end; i++) {
-                callback(elements[i], i);
+            for (let i = processed; i < end; i++) {
+              const element = scrollRevealElements[i];
+              try {
+                // Add initial styles
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                
+                // Apply delay if specified (but limit delay on low-end devices)
+                const delay = element.getAttribute('data-delay');
+                if (delay) {
+                  const maxDelay = animationReductionLevel >= 2 ? 300 : 
+                                  (animationReductionLevel === 1 ? 500 : 800);
+                  element.style.transitionDelay = Math.min(parseInt(delay), maxDelay) + 'ms';
+                }
+                
+                // Add the element to the observer
+                scrollRevealObserver.observe(element);
+              } catch (e) {
+                console.warn('Error setting up scroll reveal element:', e);
+                if (element) {
+                  element.style.opacity = '1';
+                  element.style.transform = 'translateY(0)';
+                }
               }
-              processed = end;
-              
-              if (processed < totalElements) {
-                safeTimeout(processBatch, 100); // Process next batch after a small delay
-              }
-            };
+            }
             
-            processBatch();
+            processed = end;
+            
+            if (processed < scrollRevealElements.length) {
+              safeTimeout(processBatch, 50);
+            }
           };
           
-          const batchSize = isAndroid ? 5 : 20; // Smaller batches for Android
-          
-          processInBatches(scrollRevealElements, batchSize, (element) => {
-            try {
-              // Add initial styles
-              element.style.opacity = '0';
-              element.style.transform = 'translateY(20px)';
-              element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-              
-              // Apply delay if specified
-              const delay = element.getAttribute('data-delay');
-              if (delay) {
-                element.style.transitionDelay = delay + 'ms';
-              }
-              
-              // Add the element to the observer
-              scrollRevealObserver.observe(element);
-            } catch (e) {
-              console.warn('Error setting up scroll reveal element:', e);
-            }
-          });
+          // Start processing the batches
+          processBatch();
           
           observers.push(scrollRevealObserver);
-        }
-
-        // Stagger animations for list items - simplified for Safari
-  const animateStaggered = (elements, delay = 100) => {
-    elements.forEach((el, index) => {
-            try {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-      
-              safeTimeout(() => {
-        el.style.opacity = '1';
-        el.style.transform = 'translateY(0)';
-      }, index * delay);
-            } catch (e) {
-              console.warn('Error in staggered animation:', e);
-            }
-    });
-  };
-
-  // Apply staggered animations to list items
-  const listSections = document.querySelectorAll('.stagger-list');
-  listSections.forEach(section => {
-    const listObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-                try {
-          const items = entry.target.querySelectorAll('li');
-          animateStaggered(items);
-          listObserver.unobserve(entry.target);
-                } catch (e) {
-                  console.warn('Error in list observer:', e);
-                }
-        }
-      });
-    }, { threshold: 0.1 });
-    
-          try {
-    listObserver.observe(section);
-            observers.push(listObserver);
-          } catch (e) {
-            console.warn('Error observing list section:', e);
-          }
-        });
-
-      } catch (e) {
-        console.warn('Error setting up animations:', e);
-      }
-
-      // For counter animations: keep most of the code but add optimization for Android
-      // Animate counters - simplified for mobile
-      const counters = document.querySelectorAll('.counter');
-      
-      // Skip animation on mobile or just show values immediately if already animated
-      if (counters.length > 0 && !countersAnimated) {
-        // For all devices, set the values with animation as appropriate
-  const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-            if (entry.isIntersecting && !countersAnimated) {
-              try {
-                counters.forEach(counter => {
-                  const targetText = counter.getAttribute('data-target') || '0';
-                  const hasPercentage = targetText.includes('%');
-                  const target = parseInt(targetText.replace('%', ''));
-                  
-                  // For low-end devices, just set the final value
-                  if (isLowEndDevice || animationReductionLevel >= 2) {
-                    counter.textContent = target.toString() + (hasPercentage ? '%' : '');
-                  } else {
-                    // Simple animation for all devices
-        let current = 0;
-                    const increment = Math.ceil(target / 20); // Faster animation
-                    const duration = 1000; // 1 second total
-                    const frameDuration = duration / (target / increment);
-        
-        const updateCounter = () => {
-                      current += increment;
-                      if (current > target) current = target;
-                      counter.textContent = current.toString() + (hasPercentage ? '%' : '');
-                      
-          if (current < target) {
-                        safeTimeout(updateCounter, frameDuration);
-          }
-        };
-        
-        updateCounter();
-                  }
-                });
-                
-                // Mark as animated
-                setCounterAnimated(true);
-                counterObserver.disconnect();
-              } catch (e) {
-                console.warn('Error animating counters:', e);
-                setFinalCounterValues(); // Fallback
-              }
+        } else {
+          // Fallback: make elements visible immediately
+          scrollRevealElements.forEach(el => {
+            if (el) {
+              el.style.opacity = '1';
+              el.style.transform = 'translateY(0)';
             }
           });
-        }, { threshold: 0.2 });
-        
-        try {
-          // Observe the first counter's parent element
-          if (counters[0] && counters[0].parentElement) {
-            counterObserver.observe(counters[0].parentElement);
-            observers.push(counterObserver);
-          }
-        } catch (e) {
-          console.warn('Error setting up counter observer:', e);
-          setFinalCounterValues(); // Fallback
         }
-      } else if (counters.length > 0 && countersAnimated) {
-        // If already animated, just set final values
-        setFinalCounterValues();
-      }
 
+        // Simplified counter animations for better performance
+        const counters = document.querySelectorAll('.counter');
+        
+        if (counters.length > 0 && !countersAnimated) {
+          // Immediate counter animation for mobile/low-end devices
+          if (isMobile || animationReductionLevel >= 1) {
+            setFinalCounterValues();
+            return;
+          }
+          
+          // Use IntersectionObserver for counter animations on higher-end devices
+          if (hasIntersectionObserver) {
+            const counterObserver = new IntersectionObserver((entries) => {
+              if (entries.some(entry => entry.isIntersecting)) {
+                try {
+                  counters.forEach(counter => {
+                    const targetText = counter.getAttribute('data-target') || '0';
+                    const hasPercentage = targetText.includes('%');
+                    const target = parseInt(targetText.replace('%', ''));
+                    
+                    // Start at a value closer to the target for faster perception
+                    let start = animationReductionLevel >= 1 ? Math.floor(target * 0.5) : 0;
+                    let current = start;
+                    
+                    // Accelerated animation duration based on device
+                    const duration = animationReductionLevel >= 1 ? 800 : 1200;
+                    const fps = animationReductionLevel >= 1 ? 20 : 30;
+                    const interval = 1000 / fps;
+                    
+                    // More efficient simple counter animation
+                    const incrementValue = () => {
+                      const remaining = target - current;
+                      // Accelerate towards the end for smoother finish
+                      const increment = Math.max(1, Math.ceil(remaining / 10));
+                      
+                      current = Math.min(current + increment, target);
+                      counter.textContent = current.toString() + (hasPercentage ? '%' : '');
+                      
+                      if (current < target) {
+                        safeTimeout(incrementValue, interval);
+                      } else {
+                        // Mark as completed
+                        setCounterAnimated(true);
+                      }
+                    };
+                    
+                    // Start the animation
+                    safeTimeout(incrementValue, 100);
+                  });
+                  
+                  // Unobserve after animation starts
+                  counterObserver.disconnect();
+                } catch (e) {
+                  console.warn('Error in counter animation:', e);
+                  // Fallback
+                  setFinalCounterValues();
+                }
+              }
+            }, {
+              threshold: 0.1,
+              rootMargin: '0px 0px -20% 0px'
+            });
+            
+            // Observe the first counter's parent
+            if (counters[0] && counters[0].parentElement) {
+              counterObserver.observe(counters[0].parentElement);
+              observers.push(counterObserver);
+            } else {
+              // Fallback
+              setFinalCounterValues();
+            }
+          } else {
+            // Fallback for browsers without IntersectionObserver
+            setFinalCounterValues();
+          }
+        } else if (counters.length > 0 && countersAnimated) {
+          // If already animated, just set final values
+          setFinalCounterValues();
+        }
+      } catch (e) {
+        console.warn('Error setting up animations:', e);
+        // Ensure everything is visible even if there's an error
+        ensureAllVisible();
+      }
     } catch (e) {
       console.error('Error initializing animations:', e);
+      // Ensure content visibility on error
+      ensureAllVisible();
+    }
+  }
+  
+  // Helper to ensure all content is visible
+  function ensureAllVisible() {
+    try {
+      const elements = document.querySelectorAll('.fade-in, .scroll-reveal');
+      elements.forEach(el => {
+        if (el.classList.contains('fade-in')) {
+          el.classList.add('appear');
+        }
+        if (el.classList.contains('scroll-reveal')) {
+          el.classList.add('revealed');
+        }
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+      });
+      
+      // Set final counter values
+      setFinalCounterValues();
+    } catch (e) {
+      console.warn('Error ensuring all visible:', e);
     }
   }
 

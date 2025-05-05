@@ -209,7 +209,7 @@ export default function OurStory() {
                 
                 <div className="space-y-6 text-gray-700">
                   <p className="text-lg leading-relaxed">
-                    Finlern was founded in 2024 by Hamid Reza Ghorbani. Finlern Oy is more than just a language school—it's a labor of love, built from passion, dedication, and the belief that language can change lives.
+                    Finlern Oy was founded in 2024 by Hamid Reza Ghorbani. Finlern is more than just a language school! It's a labor of love, built from passion, dedication, and the belief that language can change lives.
                   </p>
                   <p className="text-lg leading-relaxed">
                     Our journey started with a dream: to help you find your place in Finland through the power of language. We poured our hearts into Finlern, crafting it with care, patience, and the deep desire 
@@ -219,14 +219,14 @@ export default function OurStory() {
                   <div className="pl-5 border-l-4 border-aurora-blue/50 py-2">
                     <p className="text-lg leading-relaxed">
                       The love we have given to Finlern is the same love that Finlern now gives to every student. We understand the struggles, the small victories, and the joy of finally expressing yourself in a new language.
-                      That's why we don't just teach—we support, encourage, and walk alongside our students in their journey.
+                      That's why we don't just teach; we support, encourage, and walk alongside our students in their journey.
                     </p>
                   </div>
                   <p className="text-lg leading-relaxed">
-                    At Finlern, you're not just learning Finnish. You're becoming part of a story—one filled with growth, belonging, and endless possibilities.
+                    At Finlern, you're not just learning Finnish. You're becoming part of a story. A story filled with growth, belonging, and endless possibilities.
                   </p>
                   <p className="text-xl font-bold text-aurora-blue mt-8 px-6 py-4 bg-aurora-blue/5 rounded-lg border-l-4 border-aurora-blue inline-block">
-                    Welcome to Finlern. Welcome to your new beginning!
+                    Welcome to Finlern... your new beginning!!
               </p>
             </div>
               </div>

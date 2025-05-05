@@ -183,7 +183,7 @@ const EnglishCourses: React.FC = () => {
                         <svg className="w-5 h-5 text-aurora-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2z" />
                         </svg>
-                        <span className="text-gray-700 text-sm">€49 per session</span>
+                        <span className="text-gray-700 text-sm">€44 per session</span>
                       </div>
                     </div>
                   </div>
@@ -288,7 +288,7 @@ const EnglishCourses: React.FC = () => {
                         <svg className="w-5 h-5 text-aurora-green mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2z" />
                         </svg>
-                        <span className="text-gray-700 text-sm">€39 per session</span>
+                        <span className="text-gray-700 text-sm">€34 per session</span>
                       </div>
                     </div>
                   </div>
@@ -395,7 +395,7 @@ const EnglishCourses: React.FC = () => {
                         <svg className="w-5 h-5 text-aurora-purple mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2z" />
                         </svg>
-                        <span className="text-gray-700 text-sm">€49 per session</span>
+                        <span className="text-gray-700 text-sm">€44 per session</span>
                       </div>
                     </div>
                   </div>
@@ -577,6 +577,7 @@ const EnglishCourses: React.FC = () => {
             {/* Course Cards View */}
             {activeTab === 'cards' && (
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+
                 {/* Business English Card */}
                 <div 
                   className="group rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2"
@@ -619,8 +620,8 @@ const EnglishCourses: React.FC = () => {
                     <div className="mt-auto">
                       <div className="flex justify-between items-center py-3 border-t border-gray-100">
                         <div>
-                          <span className="text-2xl font-bold text-aurora-blue">€39</span>
-                          <span className="text-sm text-gray-500 line-through ml-2">€49</span>
+                          <span className="text-2xl font-bold text-aurora-blue">€34</span>
+                          <span className="text-sm text-gray-500 line-through ml-2">€44</span>  
                         </div>
                         <span className="px-3 py-1 bg-aurora-blue/10 text-aurora-blue rounded-full text-sm font-medium">Save €10</span>
                       </div>
@@ -673,8 +674,8 @@ const EnglishCourses: React.FC = () => {
                     <div className="mt-auto">
                       <div className="flex justify-between items-center py-3 border-t border-gray-100">
                         <div>
-                          <span className="text-2xl font-bold text-aurora-green">€29</span>
-                          <span className="text-sm text-gray-500 line-through ml-2">€39</span>
+                          <span className="text-2xl font-bold text-aurora-green">€24</span>
+                          <span className="text-sm text-gray-500 line-through ml-2">€34</span>
                         </div>
                         <span className="px-3 py-1 bg-aurora-green/10 text-aurora-green rounded-full text-sm font-medium">Save €10</span>
                       </div>
@@ -724,8 +725,8 @@ const EnglishCourses: React.FC = () => {
                     <div className="mt-auto">
                       <div className="flex justify-between items-center py-3 border-t border-gray-100">
                         <div>
-                          <span className="text-2xl font-bold text-aurora-purple">€39</span>
-                          <span className="text-sm text-gray-500 line-through ml-2">€49</span>
+                          <span className="text-2xl font-bold text-aurora-purple">€34</span>
+                          <span className="text-sm text-gray-500 line-through ml-2">€44</span>
                         </div>
                         <span className="px-3 py-1 bg-aurora-purple/10 text-aurora-purple rounded-full text-sm font-medium">Save €10</span>
                       </div>
@@ -744,15 +745,15 @@ const EnglishCourses: React.FC = () => {
                       <th className="py-4 px-6 text-left font-medium text-gray-500 uppercase tracking-wider">Features</th>
                       <th className="py-4 px-6 text-center">
                         <span className="block text-aurora-blue font-bold">Business English</span>
-                        <span className="text-sm text-gray-500">€39 per session</span>
+                        <span className="text-sm text-gray-500">€34 per session</span>
                       </th>
                       <th className="py-4 px-6 text-center">
                         <span className="block text-aurora-green font-bold">Conversation Skills</span>
-                        <span className="text-sm text-gray-500">€29 per session</span>
+                        <span className="text-sm text-gray-500">€24 per session</span>
                       </th>
                       <th className="py-4 px-6 text-center">
                         <span className="block text-aurora-purple font-bold">Academic Writing</span>
-                        <span className="text-sm text-gray-500">€39 per session</span>
+                        <span className="text-sm text-gray-500">€34 per session</span>  
                       </th>
                     </tr>
                   </thead>

@@ -156,17 +156,17 @@ export default function Events() {
                 <div className="bg-gradient-to-br from-aurora-blue to-aurora-green p-8 md:p-10 flex justify-between items-start text-white">
                   <div className="relative z-10">
                     <div className="bg-white/20 backdrop-blur-sm rounded-lg px-4 py-1 inline-block mb-4 text-sm font-medium">
-                      April 2025
+                      May 2025
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-bold mb-2">Cafe Lingua Tampere</h3>
+                    <h3 className="text-2xl md:text-3xl font-bold mb-2">Hiking Event Tampere</h3>
                     <p className="text-white/90 max-w-xs">
-                      Practice Finnish conversation with locals and fellow learners
+                      Practice Finnish conversation with locals and peers while exploring the picturesque and idyllic nature of Tampere.
                     </p>
                   </div>
                   
                   <div className="flex flex-col items-center">
                     <div className="w-20 h-20 flex items-center justify-center bg-white/20 backdrop-blur-sm rounded-xl shadow-lg transition-transform group-hover:scale-110">
-                      <div className="text-5xl font-bold leading-none">26</div>
+                      <div className="text-5xl font-bold leading-none">10</div>
                     </div>
                     <span className="mt-2 text-sm font-medium">Saturday</span>
                   </div>
@@ -194,7 +194,7 @@ export default function Events() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
                     </div>
-                    <span>Moro SkyBar, Tampere</span>
+                    <span>Tredu, Santalahdentie 10, Tampere</span>
                   </div>
                   
                   <div className="flex items-center text-gray-700">
@@ -203,15 +203,15 @@ export default function Events() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                       </svg>
                     </div>
-                    <span>15-30 participants expected</span>
+                    <span>Minimum 15 participants are expected!</span>
                   </div>
                 </div>
                 
                 <div className="border-t border-gray-100 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
                   <div className="bg-gradient-to-r from-aurora-blue/10 to-aurora-green/10 rounded-full px-6 py-2 text-aurora-blue font-bold">
-                    Free Entrance
+                    Free Entrance!
                   </div>
-                  <Link href="mailto:info@finlern.fi?subject=Cafe Lingua Tampere Registration" className="inline-flex items-center justify-center bg-gradient-to-r from-aurora-blue to-aurora-green text-white rounded-full px-6 py-2.5 font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-blue/30">
+                  <Link href="mailto:info@finlern.fi?subject=Hiking Event Tampere Registration" className="inline-flex items-center justify-center bg-gradient-to-r from-aurora-blue to-aurora-green text-white rounded-full px-6 py-2.5 font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-blue/30">
                     Register Now
                     <svg className="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -238,7 +238,7 @@ export default function Events() {
                     </div>
                     <h3 className="text-2xl md:text-3xl font-bold mb-2">Cafe Lingua Valkeakoski</h3>
                     <p className="text-white/90 max-w-xs">
-                      Informal conversation practice with Finnish students
+                      Informal conversation practice with Finnish students.
                     </p>
                   </div>
                   
@@ -287,7 +287,7 @@ export default function Events() {
                 
                 <div className="border-t border-gray-100 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
                   <div className="bg-gradient-to-r from-aurora-purple/10 to-aurora-blue/10 rounded-full px-6 py-2 text-aurora-purple font-bold">
-                    Free Entrance
+                    Free Entrance!
                   </div>
                   <Link href="mailto:info@finlern.fi?subject=Cafe Lingua Valkeakoski Registration" className="inline-flex items-center justify-center bg-gradient-to-r from-aurora-purple to-aurora-blue text-white rounded-full px-6 py-2.5 font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-purple/30">
                     Register Now

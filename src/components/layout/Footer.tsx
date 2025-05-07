@@ -88,9 +88,8 @@ const Footer: React.FC = () => {
             <div className="relative">
               <p className="text-base text-white mt-4 leading-relaxed bg-aurora-night/60 p-6 rounded-xl backdrop-blur-sm border border-white/10 shadow-inner shadow-aurora-purple/5">
                 <span className="block text-xl font-semibold mb-3 text-white bg-clip-text bg-gradient-to-r from-aurora-blue to-aurora-violet">Our Mission</span>
-                Finlern is dedicated to making Finnish language learning accessible, 
-                engaging, and effective for internationals in Finland. Our innovative 
-                approach combines cultural immersion with practical language courses.
+                Finlern is dedicated to making Finnish language learning effective, accessible, and enjoyable 
+                for internationals in Finland. Our innovative approach combines cultural immersion with practical language courses.
               </p>
               
               {/* Decorative elements */}

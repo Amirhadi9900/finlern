@@ -670,11 +670,6 @@ export default function Home() {
           {/* Premium atmospheric glow */}
           <div className="absolute inset-0 bg-[conic-gradient(at_80%_20%,rgba(71,167,106,0.15),rgba(62,138,193,0.15),rgba(157,78,221,0.15),rgba(255,97,239,0.2),rgba(71,167,106,0.15))] opacity-70"></div>
           
-          {/* Sophisticated lighting effects */}
-          <div className="absolute inset-0 opacity-70 bg-[radial-gradient(circle_at_20%_25%,rgba(71,167,106,0.3)_0%,transparent_45%)]"></div>
-          <div className="absolute inset-0 opacity-60 bg-[radial-gradient(circle_at_80%_60%,rgba(157,78,221,0.35)_0%,transparent_45%)]"></div>
-          <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_50%_100%,rgba(62,138,193,0.25)_0%,transparent_40%)]"></div>
-          
           {/* Luxury floating orbs */}
           <div className="absolute top-[15%] left-[15%] w-[30vw] max-w-[500px] aspect-square rounded-full bg-gradient-to-br from-aurora-blue/25 via-aurora-purple/15 to-transparent blur-[80px] animate-float"></div>
           <div className="absolute bottom-[20%] right-[10%] w-[25vw] max-w-[400px] aspect-square rounded-full bg-gradient-to-tl from-aurora-purple/20 via-aurora-violet/15 to-transparent blur-[70px] animate-float-delayed"></div>
@@ -685,15 +680,6 @@ export default function Home() {
           
           {/* Elegant grid overlay */}
           <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:100px_100px] scale-y-[1.2] origin-top"></div>
-          
-          {/* Light rays */}
-          <div className="absolute top-0 left-[35%] w-[1px] h-[40vh] bg-gradient-to-b from-transparent via-white/30 to-transparent opacity-60 blur-[0.5px]"></div>
-          <div className="absolute top-0 right-[45%] w-[1px] h-[30vh] bg-gradient-to-b from-transparent via-white/25 to-transparent opacity-50 blur-[0.5px]"></div>
-          
-          {/* Dynamic light sweep */}
-          <div className="absolute inset-0 opacity-20">
-            <div className="absolute top-0 -left-[100%] w-[60%] h-full bg-gradient-to-r from-transparent via-white/10 to-transparent rotate-[15deg] animate-sweep-slow"></div>
-          </div>
           
           {/* Premium vignette */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,transparent_45%,rgba(5,2,26,0.5)_100%)]"></div>

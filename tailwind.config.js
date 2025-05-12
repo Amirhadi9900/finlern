@@ -29,6 +29,18 @@ module.exports = {
           'pink-bright': '#FF69B4',
           'teal': '#20C997'
         },
+        // Luxury colors
+        'luxury': {
+          'gold': '#FFD700',
+          'rose-gold': '#B76E79',
+          'platinum': '#E5E4E2',
+          'royal-purple': '#7851A9',
+          'burgundy': '#800020',
+          'emerald': '#50C878',
+          'sapphire': '#0F52BA',
+          'ruby': '#E0115F',
+          'pearl': '#F0EAD6'
+        },
         'brand': {
           'red': '#5E0B15',
           'purple': {
@@ -184,6 +196,77 @@ module.exports = {
             transform: 'translateY(-20px) translateX(-7px)',
             opacity: '0'
           }
+        },
+        // New animations
+        'pulse-slow': {
+          '0%, 100%': {
+            opacity: '0.6',
+          },
+          '50%': {
+            opacity: '0.9',
+          },
+        },
+        'pulse-slower': {
+          '0%, 100%': {
+            opacity: '0.5',
+          },
+          '50%': {
+            opacity: '0.8',
+          },
+        },
+        'float-slow': {
+          '0%, 100%': {
+            transform: 'translateY(0px)',
+          },
+          '50%': {
+            transform: 'translateY(-20px)',
+          },
+        },
+        'float-slower': {
+          '0%, 100%': {
+            transform: 'translateY(0px)',
+          },
+          '50%': {
+            transform: 'translateY(-15px)',
+          },
+        },
+        'beam-slow': {
+          '0%': {
+            transform: 'translateX(-100%)',
+          },
+          '100%': {
+            transform: 'translateX(100%)',
+          },
+        },
+        'scroll': {
+          '0%': {
+            transform: 'translateY(0)',
+          },
+          '50%': {
+            transform: 'translateY(5px)',
+          },
+          '100%': {
+            transform: 'translateY(0)',
+          },
+        },
+        'letter-expand': {
+          '0%': {
+            'letter-spacing': 'normal',
+          },
+          '100%': {
+            'letter-spacing': '0.15em',
+          },
+        },
+        'color-shift': {
+          '0%': {
+            'background-position': '0% 50%',
+          },
+          '50%': {
+            'background-position': '100% 50%',
+          },
+          '100%': {
+            'background-position': '0% 50%',
+          },
         }
       },
       animation: {
@@ -195,7 +278,16 @@ module.exports = {
         'float-particle-1': 'float-particle-1 4s ease-in-out infinite',
         'float-particle-2': 'float-particle-2 3.5s ease-in-out infinite',
         'float-particle-3': 'float-particle-3 4.5s ease-in-out infinite',
-        'float-particle-4': 'float-particle-4 3s ease-in-out infinite'
+        'float-particle-4': 'float-particle-4 3s ease-in-out infinite',
+        // New animation timings
+        'pulse-slow': 'pulse-slow 6s ease-in-out infinite',
+        'pulse-slower': 'pulse-slower 8s ease-in-out infinite',
+        'float-slow': 'float-slow 10s ease-in-out infinite',
+        'float-slower': 'float-slower 15s ease-in-out infinite',
+        'beam-slow': 'beam-slow 8s ease-in-out infinite',
+        'scroll': 'scroll 1.5s ease-in-out infinite',
+        'letter-expand': 'letter-expand 1.5s ease-in-out infinite',
+        'color-shift': 'color-shift 6s ease-in-out infinite',
       },
       backgroundSize: {
         'auto': 'auto',
@@ -205,7 +297,9 @@ module.exports = {
       },
       boxShadow: {
         'inner-glow': 'inset 0 0 10px 2px rgba(62, 138, 193, 0.3)',
-        'inner-luxury': 'inset 0 0 8px 0 rgba(255, 255, 255, 0.3)'
+        'inner-luxury': 'inset 0 0 8px 0 rgba(255, 255, 255, 0.3)',
+        'gold-glow': '0 0 15px 2px rgba(255, 215, 0, 0.6)',
+        'ruby-glow': '0 0 15px 2px rgba(224, 17, 95, 0.5)',
       },
       perspective: {
         '1000': '1000px',
@@ -213,11 +307,29 @@ module.exports = {
       rotate: {
         'y-15': 'rotateY(15deg)',
         'x-10': 'rotateX(10deg)',
+      },
+      // New background gradients
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gold-gradient': 'linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C)',
+        'luxury-gradient': 'linear-gradient(to right, #FFD700, #FF1493, #9932CC)',
+        'royal-gradient': 'linear-gradient(to right, #7851A9, #0F52BA, #50C878)',
+      },
+      // New transition delays
+      transitionDelay: {
+        '50': '50ms',
+        '100': '100ms',
+        '150': '150ms',
+        '200': '200ms',
+        '250': '250ms',
+        '300': '300ms',
+        '350': '350ms',
+        '400': '400ms',
       }
     },
   },
   plugins: [
-    function({ addUtilities }) {
+    function({ addUtilities, theme }) {
       const newUtilities = {
         '.perspective-1000': {
           perspective: '1000px'
@@ -229,7 +341,17 @@ module.exports = {
           transform: 'rotateX(10deg)'
         }
       }
-      addUtilities(newUtilities)
+      
+      // Generate delay utilities for index-based delays
+      const delayUtilities = {};
+      for (let i = 0; i < 10; i++) {
+        delayUtilities[`.delay-idx-${i}`] = {
+          'transition-delay': `${i * 50}ms`
+        };
+      }
+      
+      addUtilities(newUtilities);
+      addUtilities(delayUtilities);
     }
   ],
 } 

@@ -255,7 +255,7 @@ const EnglishCourses: React.FC = () => {
                   
                   <div className="bg-gray-50 p-4 rounded-lg mb-5">
                     <p className="text-gray-700">
-                      Master everyday English with personalized 1-on-1 lessons. Focus on practical expressions, slang, idioms, and cultural nuances for social settings. Includes optional Cafe Lingua in-person events to practice your English in a real-life environment.
+                      Master everyday English with personalized 1-on-1 lessons. Focus on practical expressions, slang, idioms, and cultural nuances for social settings. Includes optional Conversation Club events to practice your English in a real-life environment.
                     </p>
                   </div>
                   
@@ -282,7 +282,7 @@ const EnglishCourses: React.FC = () => {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
-                        <span className="text-gray-700 text-sm">Online + Cafe Lingua</span>
+                        <span className="text-gray-700 text-sm">Online + Conversation Club</span>
                       </div>
                       <div className="flex items-center bg-gray-50 rounded-lg p-3">
                         <svg className="w-5 h-5 text-aurora-green mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -667,7 +667,7 @@ const EnglishCourses: React.FC = () => {
                         <svg className="w-5 h-5 text-aurora-green mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
-                        <span className="text-sm text-gray-600">Cafe Lingua events included</span>
+                        <span className="text-sm text-gray-600">Daily-life vocabularies</span>
                       </div>
                     </div>
                     
@@ -807,7 +807,7 @@ const EnglishCourses: React.FC = () => {
                       </td>
                     </tr>
                     <tr className="bg-gray-50">
-                      <td className="py-4 px-6 text-sm font-medium text-gray-900">Cafe Lingua Events</td>
+                      <td className="py-4 px-6 text-sm font-medium text-gray-900">Conversation Club Events</td>
                       <td className="py-4 px-6 text-sm text-gray-700 text-center">Optional</td>
                       <td className="py-4 px-6 text-sm text-gray-700 text-center">Optional</td>
                       <td className="py-4 px-6 text-sm text-gray-700 text-center">Optional</td>

@@ -8,17 +8,23 @@ interface ClientOnlyProps {
 /**
  * ClientOnly component ensures content is only rendered on the client side
  * This helps prevent hydration errors when server and client renders differ
+ * Optimized to reduce reflow and improve performance
  */
 export default function ClientOnly({ children, fallback = null }: ClientOnlyProps) {
   const [hasMounted, setHasMounted] = useState(false);
   
   useEffect(() => {
-    // Set mounted state to true when component mounts on client
-    setHasMounted(true);
+    // Use requestAnimationFrame to delay mounting until after paint
+    // This helps prevent layout shifts and improve perceived performance
+    const handle = requestAnimationFrame(() => {
+      setHasMounted(true);
+    });
+    
+    // Clean up the animation frame if the component unmounts
+    return () => cancelAnimationFrame(handle);
   }, []);
   
-  // On first render (server-side), don't render anything (or render fallback if provided)
-  // This prevents hydration mismatch between server and client
+  // On first render (server-side), show fallback
   if (!hasMounted) {
     return <>{fallback}</>;
   }

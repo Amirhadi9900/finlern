@@ -48,7 +48,7 @@ export default function Classes() {
   return (
     <Layout>
       <Head>
-        <title>Finnish Classes | Finlern - Finnish Language Learning</title>
+        <title>Finnish Courses | Finlern - Finnish Language Learning</title>
         <meta name="description" content="Join our Finnish language classes for all levels, from beginner to advanced. Learn Finnish with native teachers in a supportive environment." />
       </Head>
 
@@ -78,7 +78,7 @@ export default function Classes() {
               data-aos-delay="100"
               className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight"
             >
-              Our Finnish Language Classes
+              Our Finnish Language Courses
             </h1>
             <p 
               data-aos="fade-up" 
@@ -141,7 +141,7 @@ export default function Classes() {
               data-aos="fade-up" 
               data-aos-delay="200"
             >
-              We combine structured language learning, cultural immersion, and professional networking to offer a well-rounded educational experience at affordable prices.
+              We combine structured language learning, cultural immersion, and proactive networking to offer a well-rounded educational experience. These courses are carefully designed to meet your personal and professional objectives.
             </p>
           </div>
           
@@ -1372,7 +1372,7 @@ export default function Classes() {
                     <svg className="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                     </svg>
-                    <span>Explore Our Classes</span>
+                    <span>Explore Our Courses</span>
                   </Link>
                   <Link href="/contact" className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-xl font-medium hover:bg-white/10 transition-all duration-300 flex items-center justify-center">
                     <svg className="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">

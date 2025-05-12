@@ -123,7 +123,7 @@ const Footer: React.FC = () => {
                 <Link href="/classes" className="group flex items-center py-2 transition-all duration-300">
                   <div className="flex items-center overflow-hidden">
                     <span className="w-0 h-0.5 bg-gradient-to-r from-aurora-blue to-aurora-purple mr-0 group-hover:w-5 group-hover:mr-3 transition-all duration-300 rounded-full"></span>
-                    <span className="text-white group-hover:text-aurora-blue-light font-medium transition-colors duration-300">Our Classes</span>
+                    <span className="text-white group-hover:text-aurora-blue-light font-medium transition-colors duration-300">Our Courses</span>
                   </div>
                   <span className="ml-auto transform translate-x-3 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-aurora-blue">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

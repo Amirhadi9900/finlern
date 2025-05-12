@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 // Define nav links outside the component
 const NAV_LINKS = [
   { href: '/', label: 'Home' },
-  { href: '/classes', label: 'Our Classes' },
+  { href: '/classes', label: 'Our Courses' },
   { href: '/events', label: 'Events' },
   { href: '/our-story', label: 'Our Story' },
   { href: '/contact', label: 'Contact' },
@@ -65,7 +65,7 @@ const Header: React.FC = () => {
           {/* Left side navigation buttons */}
           <div className="flex space-x-1 items-center lg:hidden">
             <Link href="/classes" className={getNavButtonStyle('/classes')}>
-              Classes
+              Courses
             </Link>
             <Link href="/events" className={getNavButtonStyle('/events')}>
               Events

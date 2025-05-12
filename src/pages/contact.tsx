@@ -356,7 +356,7 @@ export default function Contact() {
               <div className="bg-white rounded-xl shadow-md p-8 transition-all duration-300 hover:shadow-xl border border-gray-100 transform hover:-translate-y-1">
                 <h3 className="text-xl font-bold text-aurora-blue mb-4">Where are your physical locations?</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Our main language center is in Valkeakoski, Finland. We also hold regular Café Lingua events in Tampere, Lempäälä, and Valkeakoski. All our courses are available online with flexible scheduling for students anywhere in the world.
+                  Our main language center is in Valkeakoski, Finland. We also hold regular Conversation Club events in Tampere, Lempäälä, and Valkeakoski. All our courses are available online with flexible scheduling for students anywhere in the world.
               </p>
             </div>
               
@@ -370,7 +370,7 @@ export default function Contact() {
               <div className="bg-white rounded-xl shadow-md p-8 transition-all duration-300 hover:shadow-xl border border-gray-100 transform hover:-translate-y-1">
                 <h3 className="text-xl font-bold text-aurora-blue mb-4">Are there any additional benefits with your courses?</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Yes! All our language courses include weekly learning support materials, access to our Language Conversation Club events, and working life guidance with our partner companies. These benefits are provided free of charge to all enrolled language students.
+                  Yes! All our language courses include weekly learning support materials, access to our Language Conversation Club events, and working life guidance with our partner companies. These benefits are provided free of charge to all our language students.
                 </p>
               </div>
             </div>

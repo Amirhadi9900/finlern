@@ -61,7 +61,7 @@ export default function OurStory() {
     {
       id: "sanna",
       name: "Sanna Alavillamo",
-      bio: ""
+      bio: "With over 20 years of experience in language teaching, Sanna Alavillamo brings a deep understanding of effective, student-centered learning to Finlern’s online Finnish language courses. Her innovative methods and dedication to practical, real-life language use are key to the success of our programs. We are proud to have Sanna as part of our team through a valuable collaboration with NPE Kulplan Oy, whose partnership helps us ensure high-quality teaching for every learner."
     },
     {
       id: "amirhadi",
@@ -473,7 +473,7 @@ export default function OurStory() {
               </div>
             </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Sanna Alavillamo</h3>
-                <div className="px-3 py-1 bg-gradient-to-r from-aurora-green/20 to-aurora-blue/20 text-aurora-teal rounded-full text-sm font-medium inline-block mb-4 border border-aurora-green/10">
+                <div className="px-3 py-1 bg-gradient-to-r from-aurora-green/20 to-aurora-blue/20 text-purple-900 rounded-full text-sm font-medium inline-block mb-4 border border-aurora-green/10">
                 Head Teacher
               </div>
                 <p className="text-lg text-gray-700 leading-relaxed">
@@ -533,7 +533,7 @@ export default function OurStory() {
               </div>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Hamid Reza Ghorbani</h3>
-                <div className="px-3 py-1 bg-gradient-to-r from-aurora-green/20 to-aurora-blue/20 text-aurora-teal rounded-full text-sm font-medium inline-block mb-4 border border-aurora-green/10">
+                <div className="px-3 py-1 bg-gradient-to-r from-aurora-green/20 to-aurora-blue/20 text-purple-900 rounded-full text-sm font-medium inline-block mb-4 border border-aurora-green/10">
                   CEO & Founder
                 </div>
                 <p className="text-lg text-gray-700 leading-relaxed">
@@ -593,7 +593,7 @@ export default function OurStory() {
               </div>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Amirhadi Borjian</h3>
-                <div className="px-3 py-1 bg-gradient-to-r from-aurora-green/20 to-aurora-blue/20 text-aurora-teal rounded-full text-sm font-medium inline-block mb-4 border border-aurora-green/10">
+                <div className="px-3 py-1 bg-gradient-to-r from-aurora-green/20 to-aurora-blue/20 text-purple-900 rounded-full text-sm font-medium inline-block mb-4 border border-aurora-green/10">
                   ICT & Co-founder
                 </div>
                 <p className="text-lg text-gray-700 leading-relaxed">
@@ -653,7 +653,7 @@ export default function OurStory() {
               </div>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Saghar Kazemi</h3>
-                <div className="px-3 py-1 bg-gradient-to-r from-aurora-purple/20 to-aurora-blue/20 text-aurora-teal rounded-full text-sm font-medium inline-block mb-4 border border-aurora-purple/10">
+                <div className="px-3 py-1 bg-gradient-to-r from-aurora-purple/20 to-aurora-blue/20 text-purple-900 rounded-full text-sm font-medium inline-block mb-4 border border-aurora-purple/10">
                   Graphic Designer & Social Media Specialist
                 </div>
                 <p className="text-lg text-gray-700 leading-relaxed">
@@ -713,7 +713,7 @@ export default function OurStory() {
               </div>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Soodabeh Sadeghi Mihan</h3>
-                <div className="px-3 py-1 bg-gradient-to-r from-aurora-teal/20 to-aurora-green/20 text-aurora-teal rounded-full text-sm font-medium inline-block mb-4 border border-aurora-teal/10">
+                <div className="px-3 py-1 bg-gradient-to-r from-aurora-teal/20 to-aurora-green/20 text-purple-900 rounded-full text-sm font-medium inline-block mb-4 border border-aurora-teal/10">
                   Event Organizer & Communication Specialist
                 </div>
                 <p className="text-lg text-gray-700 leading-relaxed">
@@ -773,7 +773,7 @@ export default function OurStory() {
                   </div>  
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Likun</h3>
-                <div className="px-3 py-1 bg-gradient-to-r from-aurora-blue/20 to-aurora-purple/20 text-aurora-teal rounded-full text-sm font-medium inline-block mb-4 border border-aurora-blue/10">
+                <div className="px-3 py-1 bg-gradient-to-r from-aurora-blue/20 to-aurora-purple/20 text-purple-900 rounded-full text-sm font-medium inline-block mb-4 border border-aurora-blue/10">
                   Cultural Connector & Educational Support
                 </div>
                 <p className="text-lg text-gray-700 leading-relaxed">
@@ -925,7 +925,7 @@ export default function OurStory() {
                     <svg className="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                     </svg>
-                    <span>Explore Our Classes</span>
+                    <span>Explore Our Courses</span>
                   </Link>
                   <Link href="/contact" className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-xl font-medium hover:bg-white/10 transition-all duration-300 flex items-center justify-center">
                     <svg className="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">

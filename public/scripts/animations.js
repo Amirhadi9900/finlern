@@ -1,5 +1,62 @@
 // Animation utilities for FinLern website - Performance Optimized Version
 
+// Optimization: Use passive event listeners for touch and scroll events
+let passiveSupported = false;
+try {
+  window.addEventListener("test", null, 
+    Object.defineProperty({}, "passive", { 
+      get: function() { passiveSupported = true; return true; } 
+    })
+  );
+} catch(e) {}
+
+// Optimization: Defer animation initialization and use requestIdleCallback when available
+function deferInit(fn) {
+  if (typeof window === 'undefined') return;
+  
+  if ('requestIdleCallback' in window) {
+    window.requestIdleCallback(fn, { timeout: 2000 });
+  } else if ('requestAnimationFrame' in window) {
+    window.requestAnimationFrame(() => {
+      setTimeout(fn, 100);
+    });
+  } else {
+    setTimeout(fn, 200);
+  }
+}
+
+// Optimization: Quickly detect device performance level
+function detectPerformanceLevel() {
+  let performanceLevel = 0; // 0 = low, 1 = medium, 2 = high
+  
+  // Check for mobile
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
+                  (window.innerWidth <= 768);
+  
+  // Use navigator.deviceMemory if available (Chrome)
+  if ('deviceMemory' in navigator) {
+    if (navigator.deviceMemory <= 2) performanceLevel = 0;
+    else if (navigator.deviceMemory <= 4) performanceLevel = 1;
+    else performanceLevel = 2;
+  } 
+  // Fallback to screen size as a rough heuristic
+  else {
+    if (window.innerWidth <= 768) performanceLevel = 0;
+    else if (window.innerWidth <= 1366) performanceLevel = 1;
+    else performanceLevel = 2;
+  }
+  
+  // Check for reduced motion preference
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    performanceLevel = Math.min(performanceLevel, 1);
+  }
+  
+  return {
+    performanceLevel,
+    isMobile
+  };
+}
+
 // Only run animations in browser environment
 (function() {
   // Check if we're in a browser environment and avoid errors
@@ -227,6 +284,21 @@
   }
 
   function initAnimations() {
+    // Check if document is loaded
+    if (document.readyState !== 'complete') {
+      window.addEventListener('load', () => deferInit(initAnimationsCore));
+      return () => {};
+    } else {
+      return deferInit(initAnimationsCore);
+    }
+  }
+
+  function initAnimationsCore() {
+    const { performanceLevel, isMobile } = detectPerformanceLevel();
+    
+    // Use performanceLevel to adjust animation complexity
+    const animationReductionLevel = 2 - performanceLevel; // 0 = full, 1 = medium, 2 = minimal
+    
     // Clean up any existing observers first
     cleanup();
     

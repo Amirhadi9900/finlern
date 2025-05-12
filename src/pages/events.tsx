@@ -126,7 +126,7 @@ export default function Events() {
               data-aos="fade-up" 
               data-aos-delay="100"
             >
-              Cafe Lingua Events
+              Conversation Club Events
             </h2>
             <div 
               className="w-24 h-1.5 bg-gradient-to-r from-aurora-blue to-aurora-purple mx-auto rounded-full mb-6"
@@ -138,7 +138,7 @@ export default function Events() {
               data-aos="fade-up" 
               data-aos-delay="200"
             >
-              Join our Cafe Lingua events to practice your Finnish, connect with fellow learners, and meet native speakers in a relaxed environment. Our events are held regularly in Tampere, Valkeakoski, and Lempäälä (IdeaPark).
+              Join our Conversation Club events to practice your Finnish, connect with fellow learners, and meet native speakers in a relaxed environment. Our events are held regularly in Tampere, Valkeakoski, and Lempäälä (IdeaPark).
             </p>
           </div>
 
@@ -339,7 +339,7 @@ export default function Events() {
                   Ready to Immerse Yourself in Finnish Culture?
                 </h2>
                 <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-                  Join our events to practice your Finnish language skills in real-world settings throughout Tampere, Valkeakoski, and Hämeenlinna regions.
+                  Join our events to practice your Finnish language skills in real-world environments throughout Tampere, Valkeakoski, and Lempäälä regions.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4 mt-10">
                   <button className="px-8 py-4 bg-white text-aurora-blue rounded-xl font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex items-center justify-center">

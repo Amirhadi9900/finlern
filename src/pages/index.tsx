@@ -775,13 +775,6 @@ export default function Home() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,transparent_45%,rgba(5,2,26,0.5)_100%)]"></div>
         </div>
         
-        {/* Single simplified beam animation */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -inset-[20%] w-[140%] h-[140%] opacity-15">
-            <div className="absolute top-1/2 left-0 right-0 h-32 bg-gradient-to-r from-transparent via-white/30 to-transparent -rotate-45 transform -translate-y-1/2 animate-beam-slow"></div>
-          </div>
-        </div>
-        
         <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-10 md:p-16 shadow-[0_10px_50px_-12px_rgba(0,0,0,0.4)] border border-white/20 relative overflow-hidden" data-aos="fade-up" data-aos-duration="800">

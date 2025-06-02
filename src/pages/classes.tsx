@@ -110,56 +110,112 @@ export default function Classes() {
 
       {/* Course Section - Enhanced */}
       <section className="py-16 md:py-24 relative overflow-hidden" ref={courseSectionRef}>
-        {/* Decorative background elements */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-blue-50/20 opacity-50"></div>
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#6B8AFD_1px,transparent_1px)] [background-size:20px_20px]"></div>
-        <div className="absolute top-40 -right-32 w-96 h-96 rounded-full bg-gradient-to-br from-aurora-blue/5 to-aurora-purple/5 blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-32 w-96 h-96 rounded-full bg-gradient-to-br from-aurora-green/5 to-aurora-blue/5 blur-3xl"></div>
+        {/* Stunning Background Design */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-white to-green-50/30"></div>
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-aurora-blue/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-aurora-green/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-0 w-64 h-64 bg-aurora-purple/5 rounded-full blur-2xl"></div>
         
         <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <div 
-              className="inline-block mb-4 px-4 py-1 rounded-full text-sm font-medium bg-gradient-to-r from-aurora-blue to-aurora-purple text-white shadow-sm transform hover:scale-105 transition-all duration-300"
-              data-aos="fade-up"
+          {/* Enhanced Header */}
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center justify-center mb-6 bg-gradient-to-r from-aurora-blue to-aurora-purple px-6 py-2 rounded-full text-white text-sm font-medium shadow-lg transform hover:scale-105 transition-all duration-300"
+              data-aos="fade-up" 
+              data-aos-duration="800"
             >
+              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
               Language Courses
             </div>
             <h2 
-              className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-aurora-blue via-aurora-purple to-aurora-green"
+              className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-aurora-blue via-aurora-purple to-aurora-green"
               data-aos="fade-up" 
-              data-aos-delay="100"
+              data-aos-duration="800"
             >
               Our Finnish Learning Programs
             </h2>
-            <div 
-              className="w-20 h-1 bg-gradient-to-r from-aurora-blue to-aurora-purple mx-auto rounded-full mb-6"
-              data-aos="fade-up" 
-              data-aos-delay="150"
-            ></div>
+            <div className="w-32 h-1 bg-gradient-to-r from-aurora-blue via-aurora-purple to-aurora-green mx-auto rounded-full mb-6"></div>
             <p 
-              className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed"
+              className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed"
               data-aos="fade-up" 
               data-aos-delay="200"
+              data-aos-duration="800"
             >
               We combine structured language learning, cultural immersion, and proactive networking to offer a well-rounded educational experience. These courses are carefully designed to meet your personal and professional objectives.
             </p>
           </div>
           
-          {/* Stats Section */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-16"
-               data-aos="fade-up" 
-               data-aos-delay="300">
-            <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-100 flex flex-col items-center text-center">
-              <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-blue to-aurora-purple mb-2">20+</div>
-              <p className="text-gray-700">Years of language teaching</p>
+          {/* Enhanced Stats Section */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-20">
+            <div 
+              className="group relative"
+              data-aos="fade-up" 
+              data-aos-delay="100"
+              data-aos-duration="800"
+            >
+              {/* Glow Effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-aurora-blue/20 to-aurora-purple/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
+              
+              {/* Card */}
+              <div className="relative bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-gray-100/50 group-hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2 h-full flex flex-col items-center text-center">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-aurora-blue to-aurora-purple mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-blue to-aurora-purple mb-2 group-hover:scale-110 transition-transform duration-300">15+</div>
+                <p className="text-gray-700 font-medium">Years of language teaching</p>
+              </div>
             </div>
-            <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-100 flex flex-col items-center text-center">
-              <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-purple to-aurora-green mb-2">20+</div>
-              <p className="text-gray-700">Students taught</p>
+            
+            <div 
+              className="group relative"
+              data-aos="fade-up" 
+              data-aos-delay="200"
+              data-aos-duration="800"
+            >
+              {/* Featured Badge */}
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
+                <div className="bg-gradient-to-r from-aurora-purple to-aurora-green text-white text-sm font-bold px-6 py-2 rounded-full shadow-lg">
+                  ⭐ Growing Community
+                </div>
+              </div>
+              
+              {/* Glow Effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-aurora-purple/20 to-aurora-green/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
+              
+              {/* Card */}
+              <div className="relative bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-gray-100/50 group-hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2 h-full flex flex-col items-center text-center mt-4">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-aurora-purple to-aurora-green mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-purple to-aurora-green mb-2 group-hover:scale-110 transition-transform duration-300">20+</div>
+                <p className="text-gray-700 font-medium">Students taught</p>
+              </div>
             </div>
-            <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-100 flex flex-col items-center text-center">
-              <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-green to-aurora-blue mb-2">98%</div>
-              <p className="text-gray-700">Satisfaction rate</p>
+            
+            <div 
+              className="group relative"
+              data-aos="fade-up" 
+              data-aos-delay="300"
+              data-aos-duration="800"
+            >
+              {/* Glow Effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-aurora-green/20 to-aurora-blue/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
+              
+              {/* Card */}
+              <div className="relative bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-gray-100/50 group-hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2 h-full flex flex-col items-center text-center">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-aurora-green to-aurora-blue mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                </div>
+                <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-green to-aurora-blue mb-2 group-hover:scale-110 transition-transform duration-300">98%</div>
+                <p className="text-gray-700 font-medium">Satisfaction rate</p>
+              </div>
             </div>
           </div>
           
@@ -674,7 +730,7 @@ export default function Classes() {
                             </svg>
                           </div>
                           <div>
-                            <span className="font-medium text-gray-900 text-sm">Café Lingua Tampere</span>
+                            <span className="font-medium text-gray-900 text-sm">Conversation Club</span>
                             <p className="text-xs text-gray-500">Sat, 17:00 • Moro SkyBar</p>
                           </div>
                         </div>
@@ -1094,9 +1150,9 @@ export default function Classes() {
               </span>
                 </div>
             <h2 
-              className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+              className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-aurora-blue via-aurora-purple to-aurora-green"
               data-aos="fade-up" 
-              data-aos-delay="100"
+              data-aos-duration="800" 
             >
               Why Choose Our Finnish Classes
             </h2>
@@ -1213,9 +1269,9 @@ export default function Classes() {
               </span>
             </div>
             <h2 
-              className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+              className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-aurora-blue via-aurora-purple to-aurora-green"
               data-aos="fade-up" 
-              data-aos-delay="100"
+              data-aos-duration="800"  
             >
               What Our Students Say
             </h2>

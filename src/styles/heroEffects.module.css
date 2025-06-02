@@ -34,6 +34,15 @@
   100% { transform: translate(200%, 0) rotate(15deg); }
 }
 
+/* Luxurious gradient flow animation for Finlern text */
+@keyframes gradient-flow {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 50%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 .animateFloat {
   animation: float 8s ease-in-out infinite;
 }
@@ -44,4 +53,23 @@
 
 .animateSweepSlow {
   animation: sweepSlow 18s linear infinite;
+}
+
+/* Luxurious text effects */
+.gradientFlow {
+  animation: gradient-flow 4s ease-in-out infinite;
+}
+
+.gradientFlowFast {
+  animation: gradient-flow 1.5s ease-in-out infinite;
+}
+
+/* Finlern text with hover effect */
+.finlernText {
+  animation: gradient-flow 4s ease-in-out infinite;
+  transition: all 0.5s ease;
+}
+
+.finlernText:hover {
+  animation: gradient-flow 1.5s ease-in-out infinite;
 } 

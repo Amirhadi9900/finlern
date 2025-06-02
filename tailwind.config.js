@@ -312,7 +312,7 @@ module.exports = {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gold-gradient': 'linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C)',
-        'luxury-gradient': 'linear-gradient(to right, #FFD700, #FF1493, #9932CC)',
+        'luxury-gradient': 'linear-gradient(to right, #FFD700, #E0115F, #7851A9)',
         'royal-gradient': 'linear-gradient(to right, #7851A9, #0F52BA, #50C878)',
       },
       // New transition delays

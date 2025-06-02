@@ -57,11 +57,11 @@ const Footer: React.FC = () => {
               <div className="relative overflow-hidden rounded-xl p-1 bg-gradient-to-br from-aurora-blue/20 via-aurora-purple/20 to-aurora-green/20 shadow-lg group-hover:shadow-aurora-blue/20 transition-all duration-500">
                 <div className="absolute inset-0 bg-gradient-to-r from-aurora-blue via-aurora-purple to-aurora-green opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
                 <div className="overflow-hidden rounded-lg bg-aurora-night p-3">
-                  <Image 
-                    src="/images/finlern.png" 
-                    alt="Finlern Logo" 
-                    width={800} 
-                    height={280} 
+                <Image 
+                  src="/images/finlern.png" 
+                  alt="Finlern Logo" 
+                  width={800} 
+                  height={280} 
                     className="h-20 md:h-24 w-auto filter drop-shadow-lg"
                     onError={(e) => {
                       // Set fallback image if the logo fails to load
@@ -190,9 +190,9 @@ const Footer: React.FC = () => {
                   <div className="mr-4 p-3 rounded-full bg-gradient-to-br from-aurora-blue/20 to-aurora-purple/20 group-hover:from-aurora-blue/30 group-hover:to-aurora-purple/30 transition-all duration-300">
                     <svg className="h-6 w-6 text-aurora-blue-light" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <div>
+                  </svg>
+                </div>
+                <div>
                     <p className="text-sm text-gray-200 font-medium">Email Us</p>
                     <a href="mailto:info@finlern.fi" className="text-white hover:text-aurora-blue-light transition-colors duration-300 font-medium">info@finlern.fi</a>
                   </div>
@@ -254,9 +254,9 @@ const Footer: React.FC = () => {
                   <svg className="h-5 w-5 relative z-10" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                   </svg>
-                </div>
+          </div>
               </a>
-            </div>
+              </div>
           </div>
         </div>
 
@@ -278,7 +278,7 @@ const Footer: React.FC = () => {
                     <span className="absolute inset-0 text-aurora-pink animate-pulse opacity-70 blur-sm">❤</span>
                     ❤
                   </span>
-                  in Finland
+            in Finland
                 </span>
               </p>
             </div>
@@ -292,15 +292,15 @@ const Footer: React.FC = () => {
               <Link href="/privacy-policy" className="group relative px-1 py-1">
                 <span className="relative z-10 text-sm text-white group-hover:text-aurora-blue-light transition-colors duration-300">Privacy</span>
                 <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-aurora-blue to-aurora-purple scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-              </Link>
+            </Link>
               <Link href="/cookies" className="group relative px-1 py-1">
                 <span className="relative z-10 text-sm text-white group-hover:text-aurora-blue-light transition-colors duration-300">Cookies</span>
                 <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-aurora-blue to-aurora-purple scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-              </Link>
+            </Link>
               <Link href="/contact" className="group relative px-1 py-1">
                 <span className="relative z-10 text-sm text-white group-hover:text-aurora-blue-light transition-colors duration-300">Contact</span>
                 <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-aurora-blue to-aurora-purple scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-              </Link>
+            </Link>
             </div>
           </div>
         </div>

@@ -47,49 +47,148 @@ const ViolinCourses: React.FC = () => {
       </Head>
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-aurora-purple to-aurora-blue pt-28 pb-20 md:pt-32 md:pb-28 overflow-hidden">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <div className="grid md:grid-cols-12 gap-8 items-center">
-            <div className="md:col-span-7 text-white" data-aos="fade-right" data-aos-duration="800">
-              <div className="inline-block mb-3 bg-white/10 px-4 py-1 rounded-full text-sm font-medium">
-                Violin Education
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Clean Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-aurora-purple via-aurora-blue to-aurora-green">
+          {/* Creative wave pattern */}
+          <div className="absolute inset-0 opacity-30">
+            <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <path d="M0,50 Q25,30 50,50 T100,50 L100,100 L0,100 Z" fill="url(#violinWaveGradient)" opacity="0.3">
+                <animateTransform 
+                  attributeName="transform" 
+                  type="translate" 
+                  values="0,0;5,0;0,0" 
+                  dur="4s" 
+                  repeatCount="indefinite"
+                />
+              </path>
+              <defs>
+                <linearGradient id="violinWaveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="rgba(157,78,221,0.2)" />
+                  <stop offset="50%" stopColor="rgba(62,138,193,0.2)" />
+                  <stop offset="100%" stopColor="rgba(71,167,106,0.2)" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            {/* Content Section - Creative */}
+            <div className="lg:col-span-7 text-white">
+              {/* Creative Badge */}
+              <div className="inline-flex items-center mb-6 group" data-aos="fade-up" data-aos-duration="600">
+                <div className="relative">
+                  <div className="bg-white/10 backdrop-blur-sm border border-white/30 px-6 py-3 rounded-2xl text-sm font-medium shadow-lg transform hover:rotate-2 hover:scale-105 transition-all duration-300">
+                    <span className="flex items-center">
+                      <div className="w-2 h-2 bg-aurora-purple rounded-full mr-3 animate-pulse"></div>
+                      Violin Music Education
+                      <div className="w-2 h-2 bg-aurora-green rounded-full ml-3 animate-pulse animation-delay-500"></div>
+                    </span>
+                  </div> 
+                </div>
               </div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-shadow-sm">
-                Master the Violin with Finlern  
-              </h1>
-              <p className="text-lg opacity-90 mb-8 max-w-2xl">
-                From first notes to advanced techniques, our expert instructor provides personalized violin education in Finnish, English, Kurdish, and Persian for students of all ages and skill levels.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <button onClick={scrollToUpcomingCourses} className="px-6 py-3 bg-white text-aurora-purple rounded-lg font-medium transition-all duration-300 hover:bg-gray-100 flex items-center">
-                  View Upcoming Courses
-                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
+
+              {/* Creative Heading */}
+              <div className="mb-8" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6 leading-tight">
+                  <span className="relative inline-block">
+                    {/* Creative text with multiple effects */}
+                    <span className="relative z-10 text-white drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]">
+                      Master the Violin for Every
+                    </span>
+                  </span>
+                  <br />
+                  <span className="relative inline-block">
+                    <span className="relative z-10 bg-gradient-to-r from-purple-100 via-blue-100 to-green-100 bg-clip-text text-transparent font-black drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">
+                      Musical Journey
+                    </span>
+                    {/* Creative animated underline */}
+                    <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-aurora-purple to-aurora-blue rounded-full">
+                      <div className="h-full bg-white/50 rounded-full animate-pulse"></div>
+                    </div>
+                  </span>
+                </h1>
+              </div>
+
+              {/* Creative Description */}
+              <div 
+                className="text-xl md:text-2xl mb-10 leading-relaxed max-w-3xl"
+                data-aos="fade-up" 
+                data-aos-duration="800"
+                data-aos-delay="200"
+              >
+                <div className="relative">
+                  <p className="text-purple-50/95 font-light">
+                    From first notes to advanced techniques, our expert instructor provides personalized violin education in Finnish, English, Kurdish, and Persian. Perfect for students of all ages and skill levels with flexible scheduling and passionate instruction.
+                  </p>
+                </div>
+              </div>
+
+              {/* Creative Action Buttons */}
+              <div className="flex flex-col sm:flex-row gap-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                <button 
+                  onClick={scrollToUpcomingCourses} 
+                  className="group relative overflow-hidden px-8 py-4 bg-white text-aurora-purple rounded-2xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-rotate-1 flex items-center justify-center"
+                >
+                  <span className="relative z-10 flex items-center">
+                    <svg className="w-5 h-5 mr-3 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+                    </svg>
+                    View All Courses
+                  </span>
+                  {/* Creative ripple effect */}
+                  <div className="absolute inset-0 bg-aurora-purple/20 rounded-2xl scale-0 group-hover:scale-100 transition-transform duration-500"></div>
                 </button>
-                <a href="mailto:info@finlern.fi" className="px-6 py-3 bg-transparent border-2 border-white text-white rounded-lg font-medium transition-all duration-300 hover:bg-white/10">
-                  Contact Us
+
+                <a 
+                  href="mailto:info@finlern.fi" 
+                  className="group relative overflow-hidden px-8 py-4 bg-transparent border-2 border-white text-white rounded-2xl font-semibold hover:bg-white hover:text-aurora-purple transition-all duration-300 hover:scale-105 hover:rotate-1 flex items-center justify-center"
+                >
+                  <span className="relative z-10 flex items-center">
+                    <svg className="w-5 h-5 mr-3 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    Contact Us
+                  </span>
                 </a>
               </div>
             </div>
-            <div className="md:col-span-5 hidden md:block" data-aos="fade-left" data-aos-duration="800">
+
+            {/* Creative Image Section */}
+            <div className="lg:col-span-5 hidden lg:block" data-aos="fade-left" data-aos-duration="800" data-aos-delay="400">
               <div className="relative">
-                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-aurora-purple/30 to-aurora-blue/30 rounded-lg backdrop-blur-sm -rotate-3"></div>
-                <Image 
-                  src="/images/violin.png" 
-                  alt="Violin learning environment" 
-                  width={600}
-                  height={400}
-                  className="rounded-lg shadow-lg z-10 relative rotate-3 border-4 border-white/20"
-                />
+                {/* Creative background shapes */}
+                <div className="absolute -inset-8 bg-gradient-to-br from-white/20 to-white/5 rounded-full blur-2xl"></div>
+                
+                {/* Main image with creative frame */}
+                <div className="relative transform hover:rotate-2 transition-transform duration-500">
+                  <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-4 border border-white/30 shadow-2xl">
+                    {/* Creative corner decorations */}
+                    <div className="absolute -top-2 -left-2 w-6 h-6 border-l-4 border-t-4 border-aurora-purple rounded-tl-lg"></div>
+                    <div className="absolute -top-2 -right-2 w-6 h-6 border-r-4 border-t-4 border-aurora-blue rounded-tr-lg"></div>
+                    <div className="absolute -bottom-2 -left-2 w-6 h-6 border-l-4 border-b-4 border-aurora-green rounded-bl-lg"></div>
+                    <div className="absolute -bottom-2 -right-2 w-6 h-6 border-r-4 border-b-4 border-aurora-purple rounded-br-lg"></div>
+                    
+                    <div className="relative overflow-hidden rounded-2xl">
+                      <Image 
+                        src="/images/violin.png" 
+                        alt="Violin learning environment" 
+                        width={600}
+                        height={400}
+                        className="w-full h-auto rounded-2xl shadow-lg hover:scale-110 transition-transform duration-700"
+                      />
+                      
+                      {/* Creative overlay pattern */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-aurora-purple/10 via-transparent to-aurora-blue/10 rounded-2xl"></div>
+                    </div>
+                  </div>
+                  
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        
-        {/* Animated Background */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
-          <div className="aurora-wave-bg"></div>
         </div>
       </section>
 
@@ -653,220 +752,6 @@ const ViolinCourses: React.FC = () => {
         </div>
       </section>
       
-      {/* Testimonials Section */}
-      <section className="py-16 md:py-24 relative overflow-hidden">
-        {/* Stunning Background Design */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-purple-50/30"></div>
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-aurora-purple/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-aurora-blue/5 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-0 w-64 h-64 bg-aurora-green/5 rounded-full blur-2xl"></div>
-        
-        <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
-          {/* Enhanced Header */}
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center justify-center mb-6 bg-gradient-to-r from-aurora-purple to-aurora-blue px-6 py-2 rounded-full text-white text-sm font-medium shadow-lg transform hover:scale-105 transition-all duration-300"
-              data-aos="fade-up" 
-              data-aos-duration="800"
-            >
-              <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              Success Stories
-            </div>
-            <h2 
-              className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900 bg-clip-text text-transparent bg-gradient-to-r from-aurora-purple via-aurora-blue to-aurora-green"
-              data-aos="fade-up" 
-              data-aos-duration="800"
-            >
-              What Our Violin Students Say
-            </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-aurora-purple via-aurora-blue to-aurora-green mx-auto rounded-full mb-6"></div>
-            <p 
-              className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed"
-              data-aos="fade-up" 
-              data-aos-delay="200"
-              data-aos-duration="800"
-            >
-              Real stories from our students who have discovered the joy of violin with Finlern
-            </p>
-          </div>
-          
-          {/* Enhanced Testimonials Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {/* Testimonial 1 - Enhanced Design */}
-            <div 
-              className="group relative"
-              data-aos="fade-up"
-              data-aos-delay="100"
-              data-aos-duration="800"
-            >
-              {/* Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-aurora-purple/20 to-aurora-blue/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
-              
-              {/* Card */}
-              <div className="relative bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-gray-100/50 group-hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2 h-full flex flex-col">
-                {/* Quote Icon with Enhanced Design */}
-                <div className="flex justify-between items-start mb-6">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-aurora-purple/10 to-aurora-purple/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-8 h-8 text-aurora-purple" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M10 11H8.81A4 4 0 0 1 14 8.5a1 1 0 0 0 1-1 1 1 0 0 0-1-1 6 6 0 0 0-6 6v.5a3 3 0 0 0 3 3 3 3 0 0 0 3-3 2.997 2.997 0 0 0-3-3zm8 0h-1.19A4 4 0 0 1 22 8.5a1 1 0 0 0 1-1 1 1 0 0 0-1-1 6 6 0 0 0-6 6v.5a3 3 0 0 0 3 3 3 3 0 0 0 3-3 2.997 2.997 0 0 0-3-3z"></path>
-                    </svg>
-                  </div>
-                  {/* Rating Stars */}
-                  <div className="flex space-x-1">
-                    {[1,2,3,4,5].map((star) => (
-                      <svg key={star} className="w-5 h-5 text-aurora-green" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    ))}
-                  </div>
-                </div>
-                
-                {/* Testimonial Text */}
-                <p className="text-gray-700 mb-8 italic text-lg leading-relaxed flex-grow">
-                  "I never thought I could learn violin at my age, but the instructors at Finlern made it accessible and enjoyable. After just a few months, I'm already playing simple pieces!"
-                </p>
-                
-                {/* Author Info with Enhanced Design */}
-                <div className="flex items-center">
-                  <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-aurora-purple to-aurora-blue rounded-full blur-sm opacity-30"></div>
-                    <Image 
-                      src="" 
-                      alt="Matti Virtanen" 
-                      width={56}
-                      height={56}
-                      className="relative w-14 h-14 rounded-full object-cover border-3 border-white shadow-lg"
-                    />
-                  </div>
-                  <div className="ml-4">
-                    <h4 className="font-bold text-gray-900 text-lg">Matti Virtanen</h4>
-                    <p className="text-aurora-purple font-medium">Beginner Student</p>
-                    <p className="text-sm text-gray-500">Tampere</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Testimonial 2 - Enhanced Design */}
-            <div 
-              className="group relative"
-              data-aos="fade-up"
-              data-aos-delay="200"
-              data-aos-duration="800"
-            >
-              {/* Featured Badge */}
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
-                <div className="bg-gradient-to-r from-aurora-blue to-aurora-green text-white text-sm font-bold px-6 py-2 rounded-full shadow-lg">
-                  ⭐ Featured Review
-                </div>
-              </div>
-              
-              {/* Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-aurora-blue/20 to-aurora-purple/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
-              
-              {/* Card */}
-              <div className="relative bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-gray-100/50 group-hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2 h-full flex flex-col mt-4">
-                {/* Quote Icon with Enhanced Design */}
-                <div className="flex justify-between items-start mb-6">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-aurora-blue/10 to-aurora-blue/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-8 h-8 text-aurora-blue" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M10 11H8.81A4 4 0 0 1 14 8.5a1 1 0 0 0 1-1 1 1 0 0 0-1-1 6 6 0 0 0-6 6v.5a3 3 0 0 0 3 3 3 3 0 0 0 3-3 2.997 2.997 0 0 0-3-3zm8 0h-1.19A4 4 0 0 1 22 8.5a1 1 0 0 0 1-1 1 1 0 0 0-1-1 6 6 0 0 0-6 6v.5a3 3 0 0 0 3 3 3 3 0 0 0 3-3 2.997 2.997 0 0 0-3-3z"></path>
-                    </svg>
-                  </div>
-                  {/* Rating Stars */}
-                  <div className="flex space-x-1">
-                    {[1,2,3,4,5].map((star) => (
-                      <svg key={star} className="w-5 h-5 text-aurora-green" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    ))}
-                  </div>
-                </div>
-                
-                {/* Testimonial Text */}
-                <p className="text-gray-700 mb-8 italic text-lg leading-relaxed flex-grow">
-                  "The personalized feedback and encouragement from my violin teacher has helped me overcome technical challenges I've struggled with for years. Highly recommended!"
-                </p>
-                
-                {/* Author Info with Enhanced Design */}
-                <div className="flex items-center">
-                  <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-aurora-blue to-aurora-purple rounded-full blur-sm opacity-30"></div>
-                    <Image 
-                      src=""  
-                      alt="Liisa Korhonen" 
-                      width={56}
-                      height={56}
-                      className="relative w-14 h-14 rounded-full object-cover border-3 border-white shadow-lg"
-                    />
-                  </div>
-                  <div className="ml-4">
-                    <h4 className="font-bold text-gray-900 text-lg">Liisa Korhonen</h4>
-                    <p className="text-aurora-blue font-medium">Intermediate Student</p>
-                    <p className="text-sm text-gray-500">Hämeenlinna</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Testimonial 3 - Enhanced Design */}
-            <div 
-              className="group relative"
-              data-aos="fade-up"
-              data-aos-delay="300"
-              data-aos-duration="800"
-            >
-              {/* Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-aurora-green/20 to-aurora-blue/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
-              
-              {/* Card */}
-              <div className="relative bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-gray-100/50 group-hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2 h-full flex flex-col">
-                {/* Quote Icon with Enhanced Design */}
-                <div className="flex justify-between items-start mb-6">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-aurora-green/10 to-aurora-green/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-8 h-8 text-aurora-green" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M10 11H8.81A4 4 0 0 1 14 8.5a1 1 0 0 0 1-1 1 1 0 0 0-1-1 6 6 0 0 0-6 6v.5a3 3 0 0 0 3 3 3 3 0 0 0 3-3 2.997 2.997 0 0 0-3-3zm8 0h-1.19A4 4 0 0 1 22 8.5a1 1 0 0 0 1-1 1 1 0 0 0-1-1 6 6 0 0 0-6 6v.5a3 3 0 0 0 3 3 3 3 0 0 0 3-3 2.997 2.997 0 0 0-3-3z"></path>
-                    </svg>
-                  </div>
-                  {/* Rating Stars */}
-                  <div className="flex space-x-1">
-                    {[1,2,3,4,5].map((star) => (
-                      <svg key={star} className="w-5 h-5 text-aurora-green" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    ))}
-                  </div>
-                </div>
-                
-                {/* Testimonial Text */}
-                <p className="text-gray-700 mb-8 italic text-lg leading-relaxed flex-grow">
-                  "The advanced workshops have transformed how I approach musical interpretation. The instructors are not only excellent violinists but also exceptional teachers who can communicate complex concepts clearly."
-                </p>
-                
-                {/* Author Info with Enhanced Design */}
-                <div className="flex items-center">
-                  <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-aurora-green to-aurora-blue rounded-full blur-sm opacity-30"></div>
-                    <Image 
-                      src=""
-                      alt="Juha Nieminen" 
-                      width={56}
-                      height={56}
-                      className="relative w-14 h-14 rounded-full object-cover border-3 border-white shadow-lg"
-                    />
-                  </div>
-                  <div className="ml-4">
-                    <h4 className="font-bold text-gray-900 text-lg">Juha Nieminen</h4>
-                    <p className="text-aurora-green font-medium">Advanced Student</p>
-                    <p className="text-sm text-gray-500">Valkeakoski</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       
       {/* CTA Section */}
       <section className="py-16 md:py-24 relative overflow-hidden">

@@ -654,4 +654,9 @@ html {
   }
 }
 
+/* Animation delay utilities */
+.animation-delay-500 {
+  animation-delay: 0.5s;
+}
+
 /* CSS ends here */ 

@@ -125,8 +125,8 @@ export default function Home() {
             }>
               <div className="mb-8" data-aos="fade-up" data-aos-duration="600">
                 <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight drop-shadow-[0_2px_5px_rgba(0,0,0,0.2)]">
-                  <span className="inline-block text-white">Master Finnish with</span> 
-                  <span className="relative inline-block mt-2 md:mt-0">
+                  <span className="text-white whitespace-nowrap">Master Finnish Life with</span>{' '}
+                  <span className="relative inline-block">
                     {/* Luxurious Finlern Text with Premium Animations */}
                     <span className="relative z-10 group/finlern cursor-default">
                       <span className="inline-block pl-4 pr-3 relative overflow-hidden rounded-2xl">
@@ -172,7 +172,7 @@ export default function Home() {
               data-aos-delay="100"
               className="text-xl md:text-2xl mb-12 leading-relaxed max-w-2xl mx-auto text-blue-50/90"
             >
-              The most effective, accessible, and enjoyable way to learn Finnish language, culture, and working life tailored to your profession and needs.
+              Your trusted partner for Finnish language mastery, cultural integration, and flawless relocation!
             </p>
             <div 
               className="flex flex-col sm:flex-row justify-center gap-6"
@@ -375,6 +375,201 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Relocation Services Section - New */}
+      <section className="py-16 md:py-24 relative overflow-hidden bg-gradient-to-br from-aurora-night/95 via-aurora-purple/90 to-aurora-blue/85">
+        {/* Professional Background Effects */}
+        <div className="absolute inset-0 bg-[conic-gradient(at_70%_30%,rgba(71,167,106,0.1),rgba(62,138,193,0.1),rgba(157,78,221,0.1),rgba(255,97,239,0.15),rgba(71,167,106,0.1))] opacity-60"></div>
+        <div className="absolute top-0 right-1/4 w-80 h-80 bg-aurora-green/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-aurora-blue/10 rounded-full blur-3xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-aurora-night/20 to-transparent"></div>
+        
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center justify-center mb-6 bg-gradient-to-r from-aurora-green to-aurora-blue px-6 py-2 rounded-full text-white text-sm font-medium shadow-lg transform hover:scale-105 transition-all duration-300"
+              data-aos="fade-up" 
+              data-aos-duration="800"
+            >
+              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              Beyond Language Learning
+            </div>
+            <h2 
+              className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-white"
+              data-aos="fade-up" 
+              data-aos-duration="800"
+              data-aos-delay="100"
+            >
+              Your Complete <span className="text-transparent bg-clip-text bg-gradient-to-r from-aurora-green to-aurora-blue">Relocation Partner</span>
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-aurora-green to-aurora-blue mx-auto rounded-full mb-6" data-aos="fade-up" data-aos-delay="150"></div>
+            <p 
+              className="text-xl text-blue-50/90 max-w-4xl mx-auto leading-relaxed"
+              data-aos="fade-up" 
+              data-aos-duration="800"
+              data-aos-delay="200"
+            >
+              Finlern transcends traditional language education by offering comprehensive relocation services for international professionals and students. We bridge the gap between global talent and Finnish opportunities, providing continuous support for integration into Finnish society and workplace culture.
+            </p>
+          </div>
+
+          {/* Services Grid */}
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
+            {/* For International Professionals */}
+            <div 
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 group"
+              data-aos="fade-up" 
+              data-aos-duration="800"
+              data-aos-delay="300"
+            >
+              <div className="flex items-start mb-6">
+                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-aurora-green/20 to-aurora-blue/20 flex items-center justify-center mr-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-8 h-8 text-aurora-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-aurora-green transition-colors duration-300">For International Professionals</h3>
+                  <p className="text-blue-100/80 leading-relaxed">From mastering professional Finnish to understanding workplace dynamics, we provide end-to-end support for skilled professionals seeking to establish successful careers in Finland.</p>
+                </div>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-center text-blue-100/70">
+                  <svg className="w-5 h-5 text-aurora-green mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Professional Finnish language mastery
+                </div>
+                <div className="flex items-center text-blue-100/70">
+                  <svg className="w-5 h-5 text-aurora-green mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Workplace culture integration
+                </div>
+                <div className="flex items-center text-blue-100/70">
+                  <svg className="w-5 h-5 text-aurora-green mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Professional networking opportunities
+                </div>
+                <div className="flex items-center text-blue-100/70">
+                  <svg className="w-5 h-5 text-aurora-green mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Career development guidance
+                </div>
+              </div>
+            </div>
+
+            {/* For Finnish Employers */}
+            <div 
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 group"
+              data-aos="fade-up" 
+              data-aos-duration="800"
+              data-aos-delay="400"
+            >
+              <div className="flex items-start mb-6">
+                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-aurora-blue/20 to-aurora-purple/20 flex items-center justify-center mr-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-8 h-8 text-aurora-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-aurora-blue transition-colors duration-300">For Finnish Employers</h3>
+                  <p className="text-blue-100/80 leading-relaxed">We connect you with qualified international talent while providing comprehensive onboarding and cultural integration services for your new employees.</p>
+                </div>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-center text-blue-100/70">
+                  <svg className="w-5 h-5 text-aurora-green mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  International talent recruitment
+                </div>
+                <div className="flex items-center text-blue-100/70">
+                  <svg className="w-5 h-5 text-aurora-green mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Employee onboarding support
+                </div>
+                <div className="flex items-center text-blue-100/70">
+                  <svg className="w-5 h-5 text-aurora-green mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Cultural integration programs
+                </div>
+                <div className="flex items-center text-blue-100/70">
+                  <svg className="w-5 h-5 text-aurora-green mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  Long-term retention strategies
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Complete Integration Support */}
+          <div 
+            className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 md:p-12 text-center"
+            data-aos="fade-up" 
+            data-aos-duration="800"
+            data-aos-delay="500"
+          >
+            <div className="max-w-4xl mx-auto">
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-aurora-green to-aurora-blue mx-auto mb-6 flex items-center justify-center shadow-xl">
+                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </div>
+              <h3 className="text-3xl font-bold text-white mb-6">Complete Integration Support</h3>
+              <p className="text-xl text-blue-100/90 leading-relaxed mb-8">
+                Language proficiency, cultural immersion, workplace etiquette, and professional networking all in one place! We ensure you don't just relocate to Finland, <span className="text-aurora-green font-semibold">you blossom here</span>.
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-aurora-green mb-2">95%</div>
+                  <p className="text-sm text-blue-100/70">Success Rate</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-aurora-blue mb-2">3-6 Months</div>
+                  <p className="text-sm text-blue-100/70">Integration Time</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-aurora-purple mb-2">3+</div>
+                  <p className="text-sm text-blue-100/70">Partner Companies</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-aurora-green mb-2">24/7</div>
+                  <p className="text-sm text-blue-100/70">Support Available</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center mt-12" data-aos="fade-up" data-aos-delay="600" data-aos-duration="800">
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-aurora-green to-aurora-blue text-white rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-green/30 transform hover:scale-105 group">
+                <svg className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+                Start Your Finnish Journey
+              </Link>
+              <Link href="/our-story" className="inline-flex items-center justify-center px-8 py-4 bg-white/10 border-2 border-white/30 text-white rounded-xl font-medium transition-all duration-300 hover:bg-white/20 hover:shadow-lg transform hover:scale-105 group backdrop-blur-sm">
+                <svg className="w-5 h-5 mr-2 group-hover:-translate-y-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Learn About Our Mission
+              </Link>
+            </div>
+            <p className="text-sm text-blue-100/60 mt-4">
+              Professional relocation services • Complete cultural integration • Proven success rate
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section - Enhanced */}
       <section className="py-16 md:py-24 relative overflow-hidden">
         {/* Stunning Background Design */}
@@ -545,220 +740,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section - Enhanced */}
-      <section className="py-16 md:py-24 relative overflow-hidden">
-        {/* Stunning Background Design */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-purple-50/30"></div>
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-aurora-purple/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-aurora-blue/5 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 right-0 w-64 h-64 bg-aurora-green/5 rounded-full blur-2xl"></div>
-        
-        <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
-          {/* Enhanced Header */}
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center justify-center mb-6 bg-gradient-to-r from-aurora-purple to-aurora-blue px-6 py-2 rounded-full text-white text-sm font-medium shadow-lg transform hover:scale-105 transition-all duration-300"
-              data-aos="fade-up" 
-              data-aos-duration="800"
-            >
-              <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              Student Feedback
-            </div>
-            <h2 
-              className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-gray-900"
-              data-aos="fade-up" 
-              data-aos-duration="800"
-            >
-              What Our{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-aurora-purple via-aurora-blue to-aurora-green">
-                Students Say
-              </span>
-            </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-aurora-purple via-aurora-blue to-aurora-green mx-auto rounded-full mb-6"></div>
-            <p 
-              className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed"
-              data-aos="fade-up" 
-              data-aos-delay="200"
-              data-aos-duration="800"
-            >
-              Hear from our students who have successfully improved their Finnish language skills with Finlern.
-            </p>
-          </div>
-
-          {/* Enhanced Testimonials Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {/* Testimonial 1 - Enhanced Design */}
-            <ClientOnly>
-              <div 
-                className="group relative"
-                data-aos="fade-up"
-                data-aos-delay="100"
-                data-aos-duration="800"
-              >
-                {/* Glow Effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-aurora-blue/20 to-aurora-green/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
-                
-                {/* Card */}
-                <div className="relative bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-gray-100/50 group-hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2 h-full flex flex-col">
-                  {/* Enhanced Quote Icon */}
-                  <div className="flex justify-between items-start mb-6">
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-aurora-blue/10 to-aurora-blue/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <svg className="w-8 h-8 text-aurora-blue" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                      </svg>
-                    </div>
-                    {/* Rating Stars */}
-                    <div className="flex space-x-1">
-                      {[1,2,3,4,5].map((star) => (
-                        <svg key={star} className={`w-5 h-5 text-yellow-400 transform group-hover:scale-110 transition-transform duration-300 delay-[${star * 50}ms]`} fill="currentColor" viewBox="0 0 20 20">
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  {/* Enhanced Testimonial Quote */}
-                  <div className="mb-8 flex-grow">
-                    <p className="text-lg text-gray-700 italic leading-relaxed">
-                      &ldquo;I had tried learning Finnish on my own for months without much progress. After just 8 weeks with Finlern, I can now have basic conversations and understand simple texts. The teachers are amazing!&rdquo;
-                    </p>
-                  </div>
-                  
-                  {/* Enhanced Author Info */}
-                  <div className="flex items-center">
-                    <div className="relative">
-                      <div className="absolute inset-0 bg-gradient-to-r from-aurora-blue to-aurora-green rounded-full blur-sm opacity-30"></div>
-                      <div className="relative w-14 h-14 bg-gradient-to-br from-aurora-blue to-blue-400 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg border-2 border-white group-hover:shadow-aurora-blue/30 group-hover:scale-105 transition-all duration-300">
-                        M
-                      </div>
-                </div>
-                <div className="ml-4">
-                      <h4 className="text-lg font-bold text-gray-900 group-hover:text-aurora-blue transition-colors duration-300">Maria K.</h4>
-                      <p className="text-gray-600">Beginner Course</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </ClientOnly>
-            
-            {/* Testimonial 2 - Enhanced Design */}
-            <ClientOnly>
-              <div 
-                className="group relative"
-                data-aos="fade-up"
-                data-aos-delay="200"
-                data-aos-duration="800"
-              >
-                {/* Featured Badge */}
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
-                  <div className="bg-gradient-to-r from-aurora-green to-aurora-blue text-white text-sm font-bold px-6 py-2 rounded-full shadow-lg">
-                    ⭐ Featured Review
-                  </div>
-                </div>
-                
-                {/* Glow Effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-aurora-green/20 to-aurora-blue/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
-                
-                {/* Card */}
-                <div className="relative bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-gray-100/50 group-hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2 h-full flex flex-col mt-4">
-                  {/* Enhanced Quote Icon */}
-                  <div className="flex justify-between items-start mb-6">
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-aurora-green/10 to-aurora-green/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <svg className="w-8 h-8 text-aurora-green" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                </svg>
-                    </div>
-                    {/* Rating Stars */}
-                    <div className="flex space-x-1">
-                      {[1,2,3,4,5].map((star) => (
-                        <svg key={star} className={`w-5 h-5 text-yellow-400 transform group-hover:scale-110 transition-transform duration-300 delay-[${star * 50}ms]`} fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-                      ))}
-              </div>
-            </div>
-
-                  {/* Enhanced Testimonial Quote */}
-                  <div className="mb-8 flex-grow">
-                    <p className="text-lg text-gray-700 italic leading-relaxed">
-                      &ldquo;The cultural aspects integrated into the lessons made learning Finnish so much more interesting. I not only improved my language skills but also gained a deeper understanding of Finland.&rdquo;
-                    </p>
-                  </div>
-                  
-                  {/* Enhanced Author Info */}
-                  <div className="flex items-center">
-                    <div className="relative">
-                      <div className="absolute inset-0 bg-gradient-to-r from-aurora-green to-aurora-blue rounded-full blur-sm opacity-30"></div>
-                      <div className="relative w-14 h-14 bg-gradient-to-br from-aurora-green to-green-400 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg border-2 border-white group-hover:shadow-aurora-green/30 group-hover:scale-105 transition-all duration-300">
-                        J
-                      </div>
-                </div>
-                <div className="ml-4">
-                      <h4 className="text-lg font-bold text-gray-900 group-hover:text-aurora-green transition-colors duration-300">John T.</h4>
-                      <p className="text-gray-600">Intermediate Course</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </ClientOnly>
-            
-            {/* Testimonial 3 - Enhanced Design */}
-            <ClientOnly>
-              <div 
-                className="group relative"
-                data-aos="fade-up"
-                data-aos-delay="300"
-                data-aos-duration="800"
-              >
-                {/* Glow Effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-aurora-violet/20 to-aurora-purple/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
-                
-                {/* Card */}
-                <div className="relative bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-gray-100/50 group-hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2 h-full flex flex-col">
-                  {/* Enhanced Quote Icon */}
-                  <div className="flex justify-between items-start mb-6">
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-aurora-violet/10 to-aurora-violet/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <svg className="w-8 h-8 text-aurora-violet" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                </svg>
-                    </div>
-                    {/* Rating Stars */}
-                    <div className="flex space-x-1">
-                      {[1,2,3,4,5].map((star) => (
-                        <svg key={star} className={`w-5 h-5 text-yellow-400 transform group-hover:scale-110 transition-transform duration-300 delay-[${star * 50}ms]`} fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-                      ))}
-              </div>
-            </div>
-
-                  {/* Enhanced Testimonial Quote */}
-                  <div className="mb-8 flex-grow">
-                    <p className="text-lg text-gray-700 italic leading-relaxed">
-                      &ldquo;The advanced course helped me refine my Finnish to a professional level. The teachers are incredibly knowledgeable and supportive. I now use Finnish confidently in my work environment.&rdquo;
-                    </p>
-                  </div>
-                  
-                  {/* Enhanced Author Info */}
-                  <div className="flex items-center">
-                    <div className="relative">
-                      <div className="absolute inset-0 bg-gradient-to-r from-aurora-violet to-aurora-purple rounded-full blur-sm opacity-30"></div>
-                      <div className="relative w-14 h-14 bg-gradient-to-br from-aurora-violet to-purple-400 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg border-2 border-white group-hover:shadow-aurora-violet/30 group-hover:scale-105 transition-all duration-300">
-                        S
-                      </div>
-                </div>
-                <div className="ml-4">
-                      <h4 className="text-lg font-bold text-gray-900 group-hover:text-aurora-violet transition-colors duration-300">Sarah L.</h4>
-                      <p className="text-gray-600">Advanced Course</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </ClientOnly>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section - Enhanced */}
       <section className="py-16 md:py-24 relative overflow-hidden">

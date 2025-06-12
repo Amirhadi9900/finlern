@@ -124,7 +124,7 @@ export default function Home() {
             </h1>
             }>
               <div className="mb-8" data-aos="fade-up" data-aos-duration="600">
-                <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight drop-shadow-[0_2px_5px_rgba(0,0,0,0.2)]">
+                <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight drop-shadow-[0_2px_5px_rgba(0,0,0,0.2)]">
                   <span className="text-white whitespace-nowrap">Master Finnish Life with</span>{' '}
                   <span className="relative inline-block">
                     {/* Luxurious Finlern Text with Premium Animations */}

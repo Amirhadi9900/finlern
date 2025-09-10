@@ -320,7 +320,7 @@ export default function Classes() {
                   <div className="pt-4 border-t border-gray-100">
                     <div className="flex items-center justify-between">
                       <div className="flex items-baseline">
-                        <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-green to-aurora-blue">€199</span>
+                        <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-green to-aurora-blue">€99</span>
                         <span className="text-gray-500 ml-2">/ course</span>
                       </div>
                       <a href="mailto:info@finlern.fi" className="inline-flex items-center justify-center px-5 py-2 bg-gradient-to-r from-aurora-green to-aurora-blue text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-green/30 transform hover:scale-[1.02]">
@@ -438,7 +438,7 @@ export default function Classes() {
                   <div className="pt-4 border-t border-gray-100">
                     <div className="flex items-center justify-between">
                       <div className="flex items-baseline">
-                        <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-blue to-aurora-purple">€249</span>
+                        <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-blue to-aurora-purple">€119</span>
                         <span className="text-gray-500 ml-2">/ course</span>
                       </div>
                       <a href="mailto:info@finlern.fi" className="inline-flex items-center justify-center px-5 py-2 bg-gradient-to-r from-aurora-blue to-aurora-purple text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-blue/30 transform hover:scale-[1.02]">
@@ -553,7 +553,7 @@ export default function Classes() {
                   <div className="pt-4 border-t border-gray-100">
                     <div className="flex items-center justify-between">
                       <div className="flex items-baseline">
-                        <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-purple to-aurora-night">€299</span>
+                        <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-purple to-aurora-night">€129</span>
                         <span className="text-gray-500 ml-2">/ course</span>
                       </div>
                       <a href="mailto:info@finlern.fi" className="inline-flex items-center justify-center px-5 py-2 bg-gradient-to-r from-aurora-purple to-aurora-night text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-purple/30 transform hover:scale-[1.02]">

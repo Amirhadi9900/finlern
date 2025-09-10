@@ -59,15 +59,15 @@ export default function OurStory() {
   // Detailed information about team members
   const teamMembersDetails: TeamMemberDetail[] = [
     {
-      id: "sanna",
-      name: "Sanna Alavillamo",
-      bio: "With over 20 years of experience in language teaching, Sanna Alavillamo brings a deep understanding of effective, student-centered learning to Finlern’s online Finnish language courses. Her innovative methods and dedication to practical, real-life language use are key to the success of our programs. We are proud to have Sanna as part of our team through a valuable collaboration with NPE Kulplan Oy, whose partnership helps us ensure high-quality teaching for every learner."
+      id: "reeta",
+      name: "Reeta",
+      bio: "With over 20 years of experience in language teaching, Reeta brings a deep understanding of effective, student-centered learning to Finlern’s online Finnish language courses. Her innovative methods and dedication to practical, real-life language use are key to the success of our programs. We are proud to have Sanna as part of our team through a valuable collaboration with NPE Kulplan Oy, whose partnership helps us ensure high-quality teaching for every learner."
     },
     {
       id: "amirhadi",
       name: "Amirhadi Borjian",
       bio: "Amirhadi Borjian is a talented software developer at Finlern, where he mixes superb technical skills with a knack for collaboration. His problem solving prowess and proactive attitude shine through in how he refines Finlern's digital tools, making them intuitive and efficient for users. Curious and creative, Amirhadi's ideas push the company forward in the fast-evolving education tech world. His teamwork and fresh perspective play a remarkable role in boosting Finlern's growth and keeping users happy.",
-      linkedin: "https://linkedin.com/in/amirhadi-borjian-yazdi-5108431a1"
+      linkedin: "https://www.linkedin.com/in/amirhadi-borjian-yazdi-software-developer/"
     },
     {
       id: "hamid",
@@ -86,12 +86,6 @@ export default function OurStory() {
       name: "Soodabeh Sadeghi Mihan",
       bio: "Soodabeh Sadeghi Mihan brings over 23 years of event-planning and communication magic to the table. With a Teaching Diploma and a Bachelor's in Translation Studies from Iran National Public University, she kicked off as an English teacher in Tehran before spending 18 years at Ivan Sepid Art Gallery, organizing exhibitions and cultural gigs that linked artists and communities. Now at HAMK studying International Business and working at Finlern, she's all about running cross-cultural events and global networks. She's obsessed with using language and culture to bring people together.",
       linkedin: "https://www.linkedin.com/in/soodabeh-sadeghi-mihan-9273852b4"
-    },
-    {
-      id: "likun",
-      name: "Likun",
-      bio: "Likun is a vibrant go-getter who loves bringing Finnish and Chinese folks closer together through education and fascinating discussions. She’s been an English teaching assistant and a tutor for international students, so she’s great at connecting across cultures, keeping students excited, and lending a hand academically. She speaks English fluently, is picking up Finnish with enthusiasm, and dives into outreach, localization, and teamwork on global education projects with a big smile.",
-      linkedin: "https://www.linkedin.com/in/%E4%B8%BD%E5%9D%A4-%E5%AE%8B-96385a359?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
     }
   ];
 
@@ -456,8 +450,8 @@ export default function OurStory() {
                   {/* Image container */}
                   <div className="absolute inset-2 rounded-full overflow-hidden border-2 border-white shadow-xl transform group-hover:scale-105 transition-transform duration-700">
                     <Image
-                      src="/images/Sanna-Alavillamo.jpg"
-                      alt="Sanna Alavillamo"
+                      src="/images/"
+                      alt="Reeta"
                       width={160}
                       height={160}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-3"
@@ -472,17 +466,17 @@ export default function OurStory() {
                     <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
               </div>
             </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Sanna Alavillamo</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Reeta</h3>
                 <div className="px-3 py-1 bg-gradient-to-r from-aurora-green/20 to-aurora-blue/20 text-purple-900 rounded-full text-sm font-medium inline-block mb-4 border border-aurora-green/10">
                 Head Teacher
               </div>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                With 20+ years of language teaching experience, Sanna's innovative approach to Finnish language education forms the foundation of Finlern's online courses.
+                With 20+ years of language teaching experience, Reeta's innovative approach to Finnish language education forms the foundation of Finlern's online courses.
                 </p>
                 <button 
-                  onClick={() => openTeamMemberPopup('sanna')}
+                  onClick={() => openTeamMemberPopup('reeta')}
                   className="mt-6 px-4 py-2.5 bg-gradient-to-r from-aurora-blue to-aurora-purple text-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group"
-                  aria-label="Learn more about Sanna Alavillamo"
+                  aria-label="Learn more about Reeta"
                 >
                   <span className="flex items-center justify-center">
                     <span>Here you can know me better!</span>
@@ -730,66 +724,6 @@ export default function OurStory() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
                   </span>
-                </button>
-              </div>
-            </div>
-
-            {/* Team Member 6 - Enhanced */}
-            <div 
-              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100"
-              data-aos="fade-up"
-              data-aos-delay="500"
-            >
-              <div className="h-3 bg-gradient-to-r from-aurora-blue via-aurora-purple to-aurora-night w-full"></div>
-              <div className="p-8 text-center">
-                <div className="relative w-40 h-40 mx-auto mb-6 group">
-                  {/* Decorative background */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-aurora-blue/30 to-aurora-purple/30 rounded-full blur-md transform scale-110 group-hover:scale-125 transition-all duration-700"></div> 
-                  
-                  {/* Outer ring */}
-                  <div className="absolute inset-0 rounded-full border-2 border-white p-1">
-                    <div className="absolute inset-0 rounded-full border-2 border-aurora-blue/50 animate-[spin_25s_linear_infinite_reverse]">
-                      <div className="absolute -top-1 left-1/2 w-2 h-2 bg-aurora-blue rounded-full transform -translate-x-1/2"></div>
-                    </div>
-                  </div>
-                  
-                  {/* Image container */}
-                  <div className="absolute inset-2 rounded-full overflow-hidden border-2 border-white shadow-xl transform group-hover:scale-105 transition-transform duration-700">
-                    <Image
-                      src="/images/Likun.png"
-                      alt="Likun"
-                      width={160}
-                      height={160}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-3"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src = "/images/placeholder-avatar.png";
-                        target.onerror = null;
-                      }}
-                    />
-                    
-                    {/* Overlay shine effect */}
-                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                  </div>  
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Likun</h3>
-                <div className="px-3 py-1 bg-gradient-to-r from-aurora-blue/20 to-aurora-purple/20 text-purple-900 rounded-full text-sm font-medium inline-block mb-4 border border-aurora-blue/10">
-                  Cultural Connector & Educational Support
-                </div>
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  Likun is a young talented cultural connector and educational support who helps bridge Finnish and Chinese communities through education and communication.
-                </p>
-                <button 
-                  onClick={() => openTeamMemberPopup('likun')}
-                  className="mt-6 px-4 py-2.5 bg-gradient-to-r from-aurora-blue to-aurora-purple text-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group"
-                  aria-label="Learn more about Likun Song"
-                > 
-                  <span className="flex items-center justify-center">
-                    <span>Here you can know me better!</span>
-                    <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </span> 
                 </button>
               </div>
             </div>

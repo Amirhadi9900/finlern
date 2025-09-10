@@ -124,14 +124,17 @@ export default function Home() {
             </h1>
             }>
               <div className="mb-8" data-aos="fade-up" data-aos-duration="600">
-                <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight drop-shadow-[0_2px_5px_rgba(0,0,0,0.2)]">
-                  <span className="text-white whitespace-nowrap">Master Finnish Life with</span>{' '}
-                  <span className="relative inline-block">
+                <h2 className="text-3xl md:text-4xl lg:text-6xl text-white/90 mb-4 drop-shadow-[0_1px_4px_rgba(0,0,0,0.1)]">
+                  Tervetuloa Finlerniin
+                </h2>
+                <h1 className="text-xl md:text-2xl lg:text-4xl font-bold tracking-tight drop-shadow-[0_2px_5px_rgba(0,0,0,0.2)]">
+                  <span className="text-white whitespace-nowrap">Master Finnish Life with</span>
+                  <span className="relative block mt-2">
                     {/* Luxurious Finlern Text with Premium Animations */}
                     <span className="relative z-10 group/finlern cursor-default">
                       <span className="inline-block pl-4 pr-3 relative overflow-hidden rounded-2xl">
                         {/* Main Text with Flowing Gradient Animation */}
-                        <span className={`relative z-20 bg-gradient-to-r from-aurora-green via-emerald-400 to-aurora-blue bg-[length:300%_100%] bg-clip-text text-transparent font-black ${styles.finlernText} drop-shadow-[0_0_10px_rgba(71,167,106,0.3)]`}>
+                        <span className="relative z-20 bg-gradient-to-r from-aurora-green via-emerald-400 to-aurora-blue bg-[length:300%_100%] bg-clip-text text-transparent font-black text-4xl md:text-5xl lg:text-6xl drop-shadow-[0_0_10px_rgba(71,167,106,0.3)]">
                           Finlern
                         </span>
                         
@@ -426,7 +429,7 @@ export default function Home() {
               <div className="flex items-start mb-6">
                 <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-aurora-green/20 to-aurora-blue/20 flex items-center justify-center mr-6 group-hover:scale-110 transition-transform duration-300">
                   <svg className="w-8 h-8 text-aurora-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
                 <div>
@@ -509,12 +512,140 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Pricing Table Section - New */}
+          <div className="text-center mb-16"
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-delay="500"
+          >
+            <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-white">
+              Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-aurora-green to-aurora-blue">Services & Pricing</span>
+            </h3>
+            <div className="w-24 h-1 bg-gradient-to-r from-aurora-green to-aurora-blue mx-auto rounded-full mb-12"></div>
+
+            {/* Individual Services */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 group flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="100">
+                <div className="w-12 h-12 rounded-full bg-aurora-green/20 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-aurora-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684L10.5 9l2.592-2.592a1 1 0 01.684-.948H19a2 2 0 012 2v10a2 2 0 01-2 2h-3.28a1 1 0 01-.948-.684L13.5 15l-2.592 2.592a1 1 0 01-.684.948H5a2 2 0 01-2-2V5z"></path></svg>
+                </div>
+                <h4 className="text-xl font-semibold text-white mb-2">Accommodation & Housing</h4>
+                <p className="text-blue-100/70">Assistance with finding and securing housing.</p>
+                <p className="text-2xl font-bold text-aurora-blue mt-4">Single: €98 | Family: €299</p>
+              </div>
+
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 group flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="200">
+                <div className="w-12 h-12 rounded-full bg-aurora-blue/20 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-aurora-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                </div>
+                <h4 className="text-xl font-semibold text-white mb-2">School Enrollment for Children</h4>
+                <p className="text-blue-100/70">Guidance on choosing schools and documentation.</p>
+                <p className="text-2xl font-bold text-aurora-green mt-4">€76</p>
+              </div>
+
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 group flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="300">
+                <div className="w-12 h-12 rounded-full bg-aurora-purple/20 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-aurora-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg>
+                </div>
+                <h4 className="text-xl font-semibold text-white mb-2">Administrative & Gov. Affairs</h4>
+                <p className="text-blue-100/70">Help with Social Security, Kela, permits, etc.</p>
+                <p className="text-2xl font-bold text-aurora-violet mt-4">Single: €199 | Family: €298</p>
+              </div>
+
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 group flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="400">
+                <div className="w-12 h-12 rounded-full bg-aurora-violet/20 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-aurora-violet" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 10v6a2 2 0 002 2h14a2 2 0 002-2v-6M3 10V4a2 2 0 012-2h14a2 2 0 012 2v6M3 10h18M7 15h1m4 0h1"></path></svg>
+                </div>
+                <h4 className="text-xl font-semibold text-white mb-2">Car Purchase & Registration</h4>
+                <p className="text-blue-100/70">Advice and assistance for buying and registering a car.</p>
+                <p className="text-2xl font-bold text-aurora-green mt-4">€199</p>
+              </div>
+
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 group flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="500">
+                <div className="w-12 h-12 rounded-full bg-aurora-green/20 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-aurora-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 10a4 4 0 00-8 0v4a4 4 0 008 0v-4z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <h4 className="text-xl font-semibold text-white mb-2">Translation & Interpreter Services</h4>
+                <p className="text-blue-100/70">Finnish language support for various needs.</p>
+                <p className="text-2xl font-bold text-aurora-blue mt-4">Single: €99 | Family: €199</p>
+              </div>
+
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 group flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="600">
+                <div className="w-12 h-12 rounded-full bg-aurora-blue/20 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-aurora-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                </div>
+                <h4 className="text-xl font-semibold text-white mb-2">Residential & Social Integration</h4>
+                <p className="text-blue-100/70">Support for integrating into Finnish society and daily life.</p>
+                <p className="text-2xl font-bold text-aurora-purple mt-4">€149</p>
+              </div>
+
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 group flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="700">
+                <div className="w-12 h-12 rounded-full bg-aurora-purple/20 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-aurora-violet" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                </div>
+                <h4 className="text-xl font-semibold text-white mb-2">Special Residency Solutions</h4>
+                <p className="text-blue-100/70">Consultation for families with varied Social Security status.</p>
+                <p className="text-2xl font-bold text-aurora-violet mt-4">Single: €99 | Family: €249</p>
+              </div>
+
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 group flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="800">
+                <div className="w-12 h-12 rounded-full bg-aurora-green/20 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-aurora-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <h4 className="text-xl font-semibold text-white mb-2">Phone Consultation & Support (20 min)</h4>
+                <p className="text-blue-100/70">Comprehensive consultation regarding all legal procedures for moving to Finland.</p>
+                <p className="text-2xl font-bold text-aurora-blue mt-4">Free!</p>
+              </div>
+
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 group flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="900">
+                <div className="w-12 h-12 rounded-full bg-aurora-blue/20 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-aurora-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                </div>
+                <h4 className="text-xl font-semibold text-white mb-2">Airport Transfer & Transportation</h4>
+                <p className="text-blue-100/70">Pick-up from airport and other transportation needs.</p>
+                <p className="text-2xl font-bold text-aurora-purple mt-4">€39 per hour</p>
+              </div>
+            </div>
+
+            {/* Package Offers */}
+            <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+              <div className="bg-gradient-to-br from-aurora-green/10 to-aurora-blue/10 border border-white/20 rounded-2xl p-8 shadow-xl relative overflow-hidden group" data-aos="fade-up" data-aos-delay="1000">
+                <div className="absolute inset-0 bg-[conic-gradient(at_top_right,rgba(71,167,106,0.1),rgba(62,138,193,0.05),transparent_60%)] opacity-50"></div>
+                <div className="relative z-10 flex flex-col h-full">
+                  <h4 className="text-3xl font-bold text-white mb-4">Single Person Package</h4>
+                  <p className="text-blue-100/80 mb-6 flex-grow">All essential services for individuals moving to Finland, offering comprehensive support for a smooth transition.</p>
+                  <div className="flex items-baseline justify-center mb-6">
+                    <span className="text-4xl font-extrabold text-aurora-green group-hover:scale-105 transition-transform duration-300">€899</span>
+                    <span className="text-xl text-white/70 ml-2">all services included</span>
+                  </div>
+                  <Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-aurora-green to-aurora-blue text-white rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-green/30 transform hover:scale-105">
+                    Get Started
+                  </Link>
+                </div>
+              </div>
+              <div className="bg-gradient-to-br from-aurora-purple/10 to-aurora-violet/10 border border-white/20 rounded-2xl p-8 shadow-xl relative overflow-hidden group" data-aos="fade-up" data-aos-delay="1100">
+                <div className="absolute inset-0 bg-[conic-gradient(at_top_right,rgba(157,78,221,0.1),rgba(255,97,239,0.05),transparent_60%)] opacity-50"></div>
+                <div className="relative z-10 flex flex-col h-full">
+                  <h4 className="text-3xl font-bold text-white mb-4">Family Package</h4>
+                  <p className="text-blue-100/80 mb-6 flex-grow">A complete solution for families relocating to Finland, ensuring every member's needs are met with expert assistance.</p>
+                  <div className="flex items-baseline justify-center mb-6">
+                    <span className="text-4xl font-extrabold text-aurora-purple group-hover:scale-105 transition-transform duration-300">€1249</span>
+                    <span className="text-xl text-white/70 ml-2">all services included</span>
+                  </div>
+                  <Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-aurora-purple to-aurora-violet text-white rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-purple/30 transform hover:scale-105">
+                    Get Started
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Complete Integration Support */}
           <div 
             className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 md:p-12 text-center"
             data-aos="fade-up" 
             data-aos-duration="800"
-            data-aos-delay="500"
+            data-aos-delay="1200"
           >
             <div className="max-w-4xl mx-auto">
               <div className="w-20 h-20 rounded-full bg-gradient-to-br from-aurora-green to-aurora-blue mx-auto mb-6 flex items-center justify-center shadow-xl">
@@ -548,7 +679,7 @@ export default function Home() {
           </div>
 
           {/* Call to Action */}
-          <div className="text-center mt-12" data-aos="fade-up" data-aos-delay="600" data-aos-duration="800">
+          <div className="text-center mt-12" data-aos="fade-up" data-aos-delay="1300" data-aos-duration="800">
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-aurora-green to-aurora-blue text-white rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-green/30 transform hover:scale-105 group">
                 <svg className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -739,7 +870,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
 
       {/* CTA Section - Enhanced */}
       <section className="py-16 md:py-24 relative overflow-hidden">

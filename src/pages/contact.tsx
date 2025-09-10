@@ -120,13 +120,13 @@ export default function Contact() {
                   </svg>
                   Get in Touch
                 </span>
-              </div>
+                  </div>
               <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-aurora-blue to-aurora-purple">Get in Touch</h2>
               <div className="w-24 h-1.5 bg-gradient-to-r from-aurora-blue to-aurora-purple mx-auto rounded-full mb-6"></div>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
                 We'd love to hear from you! Whether you have questions about our language courses, need relocation assistance, want to discuss hiring international talent, or just want to say hello.
               </p>
-            </div>
+                </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
               {/* Phone Contact Card - Enhanced */}
@@ -153,8 +153,8 @@ export default function Contact() {
                     </a>
                     <p className="text-sm text-gray-500">Mon-Fri 9:00-17:00</p>
                   </div>
+                  </div>
                 </div>
-              </div>
 
               {/* Email Contact Card - Enhanced */}
               <div 
@@ -180,8 +180,8 @@ export default function Contact() {
                     </a>
                     <p className="text-sm text-gray-500">We respond within 24 hours</p>
                   </div>
+                  </div>
                 </div>
-              </div>
 
               {/* Location Contact Card - Enhanced */}
               <div 
@@ -375,7 +375,7 @@ export default function Contact() {
                           <div className="w-12 h-12 bg-gradient-to-br from-aurora-green to-aurora-blue rounded-full flex items-center justify-center">
                             <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg>
+                    </svg>
                           </div>
                         </div>
                         <div>
@@ -387,10 +387,10 @@ export default function Contact() {
                             className="text-2xl font-bold text-aurora-blue hover:text-aurora-purple transition-colors"
                           >
                             info@finlern.fi
-                          </a>
-                        </div>
-                      </div>
-                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
                   </div>
                   <div className="relative hidden md:block">
                     <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-aurora-blue to-aurora-purple blur-lg opacity-30"></div>
@@ -479,33 +479,57 @@ export default function Contact() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16" data-aos="fade-up" data-aos-duration="800">
               <div className="inline-block mb-4 bg-white/20 px-4 py-1 rounded-full text-white/90 backdrop-blur-sm">
-                FAQ
+                  FAQ
               </div>
               <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">Frequently Asked Questions</h2>
               <div className="w-24 h-1.5 bg-gradient-to-r from-aurora-blue to-aurora-purple mx-auto rounded-full mb-6"></div>
               <p className="text-lg text-white/90 leading-relaxed">
                 Have questions? Find quick answers to common inquiries about our services.
-              </p>
-            </div>
+            </p>
+          </div>
           
             <div className="space-y-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
               <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 shadow-xl border border-white/20 hover:bg-white/15 transition-all duration-300">
                 <h3 className="text-xl font-bold text-white mb-4">How quickly will I receive a response to my inquiry?</h3>
                 <p className="text-lg text-white/90 leading-relaxed">
-                  We aim to respond to all inquiries within 24 hours during business days. For urgent matters, 
+                We aim to respond to all inquiries within 24 hours during business days. For urgent matters, 
                   we recommend calling our office directly at +358 41 756 7339.
-                </p>
-              </div>
+              </p>
+            </div>
             
               <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 shadow-xl border border-white/20 hover:bg-white/15 transition-all duration-300">
                 <h3 className="text-xl font-bold text-white mb-4">What services do you offer?</h3>  
                 <p className="text-lg text-white/90 leading-relaxed">
-                  We offer Finnish language courses (starting from €199), English language courses (private from €34-44 per session, group from €24-34 per session), violin lessons (€35 per session), and comprehensive relocation services. You can choose between private 1-on-1 instruction or small group classes (3-6 students) for English courses.
+                  We offer a range of services designed to help you succeed in Finland:
                 </p>
+                <h4 className="text-lg font-bold text-white mb-2 mt-4">Language Services:</h4>
+                <ul className="list-disc list-inside text-lg text-white/90 leading-relaxed mt-2 pl-4">
+                  <li>Finnish language courses (starting from €99)</li>
+                  <li>English language courses (private from €34-44 per session, group from €24-34 per session)</li>
+                </ul>
                 <p className="text-lg text-white/90 leading-relaxed mt-4">
-                  Our relocation services include complete integration support for international professionals and talent acquisition assistance for Finnish employers.
+                  You can choose between private 1-on-1 instruction or small group classes (3-6 students) for English courses.
                 </p>
-              </div>
+                <h4 className="text-lg font-bold text-white mb-2 mt-4">Music Education:</h4>
+                <ul className="list-disc list-inside text-lg text-white/90 leading-relaxed mt-2 pl-4">
+                  <li>Violin lessons (€35 per session, online, private, available in Finnish, English, Kurdish, and Persian)</li>
+                </ul>
+                <h4 className="text-lg font-bold text-white mb-2 mt-4">VIP Relocation Services:</h4>
+                <ul className="list-disc list-inside text-lg text-white/90 leading-relaxed mt-2 pl-4">
+                  <li>Phone Consultation & Support (20 mins): Free!</li>
+                  <li>Accommodation & Housing: Single: €98 | Family: €299</li>
+                  <li>School Enrollment for Children: €76</li>
+                  <li>Special Residency Solutions: Single: €99 | Family: €249</li>
+                  <li>Administrative & Government Affairs: Single: €199 | Family: €298</li>
+                  <li>Car Purchase & Registration: €199</li>
+                  <li>Translation & Interpreter Services: Single: €99 | Family: €199</li>
+                  <li>Residential & Social Integration Support: €149</li>
+                  <li>Airport Transfer & Transportation Services: €39 per hour</li>
+                </ul>
+                <p className="text-lg text-white/90 leading-relaxed mt-4">
+                  We also offer comprehensive package deals: Single Person Package: €899 | Family Package: €1249.
+                </p>
+            </div>
             
               <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 shadow-xl border border-white/20 hover:bg-white/15 transition-all duration-300">
                 <h3 className="text-xl font-bold text-white mb-4">What is the difference between private and group courses?</h3>
@@ -513,21 +537,21 @@ export default function Contact() {
                   Private 1-on-1 courses offer personalized instruction tailored exactly to your needs and pace, while our small group courses (3-6 students) provide a collaborative learning environment at a more affordable price (saving €10 per session). Both options deliver high-quality content with expert instruction.
                 </p>
                 <p className="text-lg text-white/90 leading-relaxed mt-4">
-                  Our violin lessons are only available in online, private format. Furthermore, violin lessons are taught in Finnish, English, Kurdish, and Persian.
-                </p>
-              </div>
+                    Our violin lessons are only available in online, private format. Furthermore, violin lessons are taught in Finnish, English, Kurdish, and Persian.
+              </p>
+            </div>
             
               <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 shadow-xl border border-white/20 hover:bg-white/15 transition-all duration-300">
                 <h3 className="text-xl font-bold text-white mb-4">Where are your physical locations?</h3>
                 <p className="text-lg text-white/90 leading-relaxed">
                   Our main language center is in Valkeakoski, Finland. We also hold regular Conversation Club events in Tampere, Lempäälä, and Valkeakoski. All our courses are available online with flexible scheduling for students anywhere in the world.
-                </p>
-              </div>
+              </p>
+            </div>
               
               <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 shadow-xl border border-white/20 hover:bg-white/15 transition-all duration-300">
                 <h3 className="text-xl font-bold text-white mb-4">Do you offer free consultation before signing up?</h3>
                 <p className="text-lg text-white/90 leading-relaxed">
-                  Yes! We offer free 15-minute consultations to discuss your learning goals and help you choose the right course. Contact us at info@finlern.fi to schedule your consultation with one of our expert instructors.
+                  Yes! We offer free 20-minute consultations to discuss your learning goals and help you choose the right course. Contact us at info@finlern.fi to schedule your consultation with one of our expert instructors.
                 </p>
               </div>
               
@@ -541,10 +565,17 @@ export default function Contact() {
               <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 shadow-xl border border-white/20 hover:bg-white/15 transition-all duration-300">
                 <h3 className="text-xl font-bold text-white mb-4">How do your relocation services work?</h3>
                 <p className="text-lg text-white/90 leading-relaxed">
-                  Our relocation services are designed to bridge the gap between global talent and Finnish opportunities. For international professionals, we provide language mastery, cultural integration support, workplace culture navigation, and career development guidance with a 95% success rate. For Finnish employers, we offer international talent acquisition, employee language training programs, and cross-cultural integration workshops.
+                  Our comprehensive VIP relocation services are designed to support individuals and families moving to Finland, as well as Finnish employers hiring international talent. We offer a range of services including:
                 </p>
+                <ul className="list-disc list-inside text-lg text-white/90 leading-relaxed mt-2 pl-4">
+                  <li>Assistance with Accommodation & Housing, School Enrollment for Children, and Special Residency Solutions.</li>
+                  <li>Support for Administrative & Government Affairs (e.g., Social Security, Kela, permits, bank accounts, tax cards).</li>
+                  <li>Guidance for Car Purchase & Registration, and Translation & Interpreter Services.</li>
+                  <li>Comprehensive Residential & Social Integration Support, including access to libraries, cultural spaces, recreational activities, public transport, and shopping guidance.</li>
+                  <li>Phone Consultation & Support, and Airport Transfer & Transportation Services.</li>
+                </ul>
                 <p className="text-lg text-white/90 leading-relaxed mt-4">
-                  We support the complete integration process, typically taking 3-6 months, with 24/7 support available to ensure your success in Finland.
+                  We also provide complete integration support for international professionals, covering language mastery, cultural integration, workplace culture navigation, and career development. For Finnish employers, we assist with international talent acquisition, employee language training, cross-cultural integration workshops, and relocation support for new hires. Our services boast a 95% integration success rate, with an average integration time of 3-6 months, and 24/7 support available.
                 </p>
               </div>
             </div>

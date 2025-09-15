@@ -231,7 +231,7 @@ const Footer: React.FC = () => {
                   </svg>
                 </div>
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
+              <a href="https://www.instagram.com/finlernoy?igsh=amdobWp0NTlrYnFu" target="_blank" rel="noopener noreferrer" 
                 className="text-gray-200 hover:text-white transition-all duration-300 hover:scale-110 transform group"
                 title="Instagram"
               >

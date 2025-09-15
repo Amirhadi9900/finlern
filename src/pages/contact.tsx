@@ -429,7 +429,7 @@ export default function Contact() {
                   </svg>
                 </a>
                 <a 
-                  href="#" 
+                  href="https://www.instagram.com/finlernoy?igsh=amdobWp0NTlrYnFu" 
                   className="w-12 h-12 rounded-full bg-gradient-to-br from-pink-500 to-red-600 flex items-center justify-center text-white transform transition-all duration-300 hover:scale-110 hover:shadow-lg"
                   aria-label="Instagram"
                 >
@@ -516,18 +516,18 @@ export default function Contact() {
                 </ul>
                 <h4 className="text-lg font-bold text-white mb-2 mt-4">VIP Relocation Services:</h4>
                 <ul className="list-disc list-inside text-lg text-white/90 leading-relaxed mt-2 pl-4">
-                  <li>Phone Consultation & Support (20 mins): Free!</li>
-                  <li>Accommodation & Housing: Single: €98 | Family: €299</li>
-                  <li>School Enrollment for Children: €76</li>
-                  <li>Special Residency Solutions: Single: €99 | Family: €249</li>
-                  <li>Administrative & Government Affairs: Single: €199 | Family: €298</li>
-                  <li>Car Purchase & Registration: €199</li>
-                  <li>Translation & Interpreter Services: Single: €99 | Family: €199</li>
-                  <li>Residential & Social Integration Support: €149</li>
-                  <li>Airport Transfer & Transportation Services: €39 per hour</li>
+                  <li>Phone Consultation & Support (20 mins)</li>
+                  <li>Accommodation & Housing</li>
+                  <li>School Enrollment for Children</li>
+                  <li>Special Residency Solutions</li>
+                  <li>Administrative & Government Affairs</li>
+                  <li>Car Purchase & Registration</li>
+                  <li>Translation & Interpreter Services</li>
+                  <li>Residential & Social Integration Support</li>
+                  <li>Airport Transfer & Transportation Services</li>
                 </ul>
                 <p className="text-lg text-white/90 leading-relaxed mt-4">
-                  We also offer comprehensive package deals: Single Person Package: €899 | Family Package: €1249.
+                  We also offer comprehensive package deals: Single Person Package | Family Package.
                 </p>
             </div>
             

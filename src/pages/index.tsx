@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Layout from '../components/layout/Layout'
 import ClientOnly from '@/components/ClientOnly'
 import SEO from '@/components/SEO'
+import EventCarousel from '@/components/events/EventCarousel'
 import styles from '../styles/heroEffects.module.css'
 
 // Add type declaration for window.scrollAnimations
@@ -519,7 +520,7 @@ export default function Home() {
             data-aos-delay="500"
           >
             <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-white">
-              Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-aurora-green to-aurora-blue">Services & Pricing</span>
+              Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-aurora-green to-aurora-blue">Services</span>
             </h3>
             <div className="w-24 h-1 bg-gradient-to-r from-aurora-green to-aurora-blue mx-auto rounded-full mb-12"></div>
 
@@ -531,7 +532,6 @@ export default function Home() {
                 </div>
                 <h4 className="text-xl font-semibold text-white mb-2">Accommodation & Housing</h4>
                 <p className="text-blue-100/70">Assistance with finding and securing housing.</p>
-                <p className="text-2xl font-bold text-aurora-blue mt-4">Single: €98 | Family: €299</p>
               </div>
 
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 group flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="200">
@@ -540,7 +540,6 @@ export default function Home() {
                 </div>
                 <h4 className="text-xl font-semibold text-white mb-2">School Enrollment for Children</h4>
                 <p className="text-blue-100/70">Guidance on choosing schools and documentation.</p>
-                <p className="text-2xl font-bold text-aurora-green mt-4">€76</p>
               </div>
 
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 group flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="300">
@@ -549,7 +548,6 @@ export default function Home() {
                 </div>
                 <h4 className="text-xl font-semibold text-white mb-2">Administrative & Gov. Affairs</h4>
                 <p className="text-blue-100/70">Help with Social Security, Kela, permits, etc.</p>
-                <p className="text-2xl font-bold text-aurora-violet mt-4">Single: €199 | Family: €298</p>
               </div>
 
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 group flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="400">
@@ -558,7 +556,6 @@ export default function Home() {
                 </div>
                 <h4 className="text-xl font-semibold text-white mb-2">Car Purchase & Registration</h4>
                 <p className="text-blue-100/70">Advice and assistance for buying and registering a car.</p>
-                <p className="text-2xl font-bold text-aurora-green mt-4">€199</p>
               </div>
 
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 group flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="500">
@@ -567,7 +564,6 @@ export default function Home() {
                 </div>
                 <h4 className="text-xl font-semibold text-white mb-2">Translation & Interpreter Services</h4>
                 <p className="text-blue-100/70">Finnish language support for various needs.</p>
-                <p className="text-2xl font-bold text-aurora-blue mt-4">Single: €99 | Family: €199</p>
               </div>
 
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 group flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="600">
@@ -576,7 +572,6 @@ export default function Home() {
                 </div>
                 <h4 className="text-xl font-semibold text-white mb-2">Residential & Social Integration</h4>
                 <p className="text-blue-100/70">Support for integrating into Finnish society and daily life.</p>
-                <p className="text-2xl font-bold text-aurora-purple mt-4">€149</p>
               </div>
 
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 group flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="700">
@@ -585,7 +580,6 @@ export default function Home() {
                 </div>
                 <h4 className="text-xl font-semibold text-white mb-2">Special Residency Solutions</h4>
                 <p className="text-blue-100/70">Consultation for families with varied Social Security status.</p>
-                <p className="text-2xl font-bold text-aurora-violet mt-4">Single: €99 | Family: €249</p>
               </div>
 
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 group flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="800">
@@ -594,7 +588,6 @@ export default function Home() {
                 </div>
                 <h4 className="text-xl font-semibold text-white mb-2">Phone Consultation & Support (20 min)</h4>
                 <p className="text-blue-100/70">Comprehensive consultation regarding all legal procedures for moving to Finland.</p>
-                <p className="text-2xl font-bold text-aurora-blue mt-4">Free!</p>
               </div>
 
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 group flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="900">
@@ -603,7 +596,6 @@ export default function Home() {
                 </div>
                 <h4 className="text-xl font-semibold text-white mb-2">Airport Transfer & Transportation</h4>
                 <p className="text-blue-100/70">Pick-up from airport and other transportation needs.</p>
-                <p className="text-2xl font-bold text-aurora-purple mt-4">€39 per hour</p>
               </div>
             </div>
 
@@ -615,10 +607,12 @@ export default function Home() {
                   <h4 className="text-3xl font-bold text-white mb-4">Single Person Package</h4>
                   <p className="text-blue-100/80 mb-6 flex-grow">All essential services for individuals moving to Finland, offering comprehensive support for a smooth transition.</p>
                   <div className="flex items-baseline justify-center mb-6">
-                    <span className="text-4xl font-extrabold text-aurora-green group-hover:scale-105 transition-transform duration-300">€899</span>
                     <span className="text-xl text-white/70 ml-2">all services included</span>
                   </div>
                   <Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-aurora-green to-aurora-blue text-white rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-green/30 transform hover:scale-105">
+                    <svg className="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
                     Get Started
                   </Link>
                 </div>
@@ -629,10 +623,12 @@ export default function Home() {
                   <h4 className="text-3xl font-bold text-white mb-4">Family Package</h4>
                   <p className="text-blue-100/80 mb-6 flex-grow">A complete solution for families relocating to Finland, ensuring every member's needs are met with expert assistance.</p>
                   <div className="flex items-baseline justify-center mb-6">
-                    <span className="text-4xl font-extrabold text-aurora-purple group-hover:scale-105 transition-transform duration-300">€1249</span>
                     <span className="text-xl text-white/70 ml-2">all services included</span>
                   </div>
                   <Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-aurora-purple to-aurora-violet text-white rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-purple/30 transform hover:scale-105">
+                    <svg className="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
                     Get Started
                   </Link>
                 </div>
@@ -867,6 +863,21 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* Event Carousel */}
+          <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+            <EventCarousel 
+              images={[
+                '/images/events/IMG_0098.png',
+                '/images/events/IMG_2147.png',
+                '/images/events/IMG_2207.png',
+                '/images/events/IMG_2211.png',
+                '/images/events/IMG_2221.png',
+                '/images/events/IMG_3053.png',
+                '/images/events/IMG_4759.png',
+              ]}
+            />
           </div>
         </div>
       </section>

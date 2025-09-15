@@ -505,7 +505,7 @@ export default function Contact() {
                 <h4 className="text-lg font-bold text-white mb-2 mt-4">Language Services:</h4>
                 <ul className="list-disc list-inside text-lg text-white/90 leading-relaxed mt-2 pl-4">
                   <li>Finnish language courses (starting from €99)</li>
-                  <li>English language courses (private from €34-44 per session, group from €24-34 per session)</li>
+                  <li>English language courses (private from €19-29 per session, group from €14-24 per session)</li>
                 </ul>
                 <p className="text-lg text-white/90 leading-relaxed mt-4">
                   You can choose between private 1-on-1 instruction or small group classes (3-6 students) for English courses.
@@ -534,7 +534,7 @@ export default function Contact() {
               <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 shadow-xl border border-white/20 hover:bg-white/15 transition-all duration-300">
                 <h3 className="text-xl font-bold text-white mb-4">What is the difference between private and group courses?</h3>
                 <p className="text-lg text-white/90 leading-relaxed">
-                  Private 1-on-1 courses offer personalized instruction tailored exactly to your needs and pace, while our small group courses (3-6 students) provide a collaborative learning environment at a more affordable price (saving €10 per session). Both options deliver high-quality content with expert instruction.
+                  Private 1-on-1 courses offer personalized instruction tailored exactly to your needs and pace, while our small group courses (3-6 students) provide a collaborative learning environment at a more affordable price (saving €5 per session). Both options deliver high-quality content with expert instruction.
                 </p>
                 <p className="text-lg text-white/90 leading-relaxed mt-4">
                     Our violin lessons are only available in online, private format. Furthermore, violin lessons are taught in Finnish, English, Kurdish, and Persian.
@@ -575,7 +575,7 @@ export default function Contact() {
                   <li>Phone Consultation & Support, and Airport Transfer & Transportation Services.</li>
                 </ul>
                 <p className="text-lg text-white/90 leading-relaxed mt-4">
-                  We also provide complete integration support for international professionals, covering language mastery, cultural integration, workplace culture navigation, and career development. For Finnish employers, we assist with international talent acquisition, employee language training, cross-cultural integration workshops, and relocation support for new hires. Our services boast a 95% integration success rate, with an average integration time of 3-6 months, and 24/7 support available.
+                  We also provide complete integration support for international professionals, covering language mastery, cultural integration, workplace culture navigation, and career development. For Finnish employers, we assist with international talent acquisition, employee language training, cross-cultural integration workshops, and relocation support for new hires. Our services boast a 95% integration success rate and 24/7 support available.
                 </p>
               </div>
             </div>

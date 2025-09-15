@@ -653,15 +653,13 @@ export default function Home() {
               <p className="text-xl text-blue-100/90 leading-relaxed mb-8">
                 Language proficiency, cultural immersion, workplace etiquette, and professional networking all in one place! We ensure you don't just relocate to Finland, <span className="text-aurora-green font-semibold">you blossom here</span>.
               </p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-aurora-green mb-2">95%</div>
                   <p className="text-sm text-blue-100/70">Success Rate</p>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-aurora-blue mb-2">3-6 Months</div>
-                  <p className="text-sm text-blue-100/70">Integration Time</p>
-                </div>
+                
+                
                 <div className="text-center">
                   <div className="text-2xl font-bold text-aurora-purple mb-2">3+</div>
                   <p className="text-sm text-blue-100/70">Partner Companies</p>

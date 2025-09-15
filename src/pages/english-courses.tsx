@@ -283,7 +283,7 @@ const EnglishCourses: React.FC = () => {
                         <svg className="w-5 h-5 text-aurora-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2z" />
                         </svg>
-                        <span className="text-gray-700 text-sm">€44 per session</span>
+                        <span className="text-gray-700 text-sm">€29 per session</span>
                       </div>
                     </div>
                   </div>
@@ -388,7 +388,7 @@ const EnglishCourses: React.FC = () => {
                         <svg className="w-5 h-5 text-aurora-green mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2z" />
                         </svg>
-                        <span className="text-gray-700 text-sm">€34 per session</span>
+                        <span className="text-gray-700 text-sm">€19 per session</span>
                       </div>
                     </div>
                   </div>
@@ -495,7 +495,7 @@ const EnglishCourses: React.FC = () => {
                         <svg className="w-5 h-5 text-aurora-purple mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                         </svg>
-                        <span className="text-gray-700 text-sm">€44 per session</span>
+                        <span className="text-gray-700 text-sm">€29 per session</span>
                       </div>
                     </div>
                   </div>
@@ -623,7 +623,7 @@ const EnglishCourses: React.FC = () => {
               <p className="text-gray-700">Students per group</p>
             </div>
             <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-100 flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
-              <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-green to-aurora-purple mb-2">€10</div>
+              <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-green to-aurora-purple mb-2">€5</div>
               <p className="text-gray-700">Save on each session</p>
             </div>
             <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-100 flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
@@ -720,10 +720,10 @@ const EnglishCourses: React.FC = () => {
                     <div className="mt-auto">
                       <div className="flex justify-between items-center py-3 border-t border-gray-100">
                         <div>
-                          <span className="text-2xl font-bold text-aurora-blue">€34</span>
-                          <span className="text-sm text-gray-500 line-through ml-2">€44</span>  
+                          <span className="text-2xl font-bold text-aurora-blue">€24</span>
+                          <span className="text-sm text-gray-500 line-through ml-2">€29</span>  
                         </div>
-                        <span className="px-3 py-1 bg-aurora-blue/10 text-aurora-blue rounded-full text-sm font-medium">Save €10</span>
+                        <span className="px-3 py-1 bg-aurora-blue/10 text-aurora-blue rounded-full text-sm font-medium">Save €5</span>
                       </div>
                     </div>
                   </div>
@@ -774,10 +774,10 @@ const EnglishCourses: React.FC = () => {
                     <div className="mt-auto">
                       <div className="flex justify-between items-center py-3 border-t border-gray-100">
                         <div>
-                          <span className="text-2xl font-bold text-aurora-green">€24</span>
-                          <span className="text-sm text-gray-500 line-through ml-2">€34</span>
+                          <span className="text-2xl font-bold text-aurora-green">€14</span>
+                          <span className="text-sm text-gray-500 line-through ml-2">€19</span>
                         </div>
-                        <span className="px-3 py-1 bg-aurora-green/10 text-aurora-green rounded-full text-sm font-medium">Save €10</span>
+                        <span className="px-3 py-1 bg-aurora-green/10 text-aurora-green rounded-full text-sm font-medium">Save €5</span>
                       </div>
                     </div>
                   </div>
@@ -825,10 +825,10 @@ const EnglishCourses: React.FC = () => {
                     <div className="mt-auto">
                       <div className="flex justify-between items-center py-3 border-t border-gray-100">
                         <div>
-                          <span className="text-2xl font-bold text-aurora-purple">€34</span>
-                          <span className="text-sm text-gray-500 line-through ml-2">€44</span>
+                          <span className="text-2xl font-bold text-aurora-purple">€24</span>
+                          <span className="text-sm text-gray-500 line-through ml-2">€29</span>
                         </div>
-                        <span className="px-3 py-1 bg-aurora-purple/10 text-aurora-purple rounded-full text-sm font-medium">Save €10</span>
+                        <span className="px-3 py-1 bg-aurora-purple/10 text-aurora-purple rounded-full text-sm font-medium">Save €5</span>
                       </div>
                     </div>
                   </div>
@@ -845,15 +845,15 @@ const EnglishCourses: React.FC = () => {
                       <th className="py-4 px-6 text-left font-medium text-gray-500 uppercase tracking-wider">Features</th>
                       <th className="py-4 px-6 text-center">
                         <span className="block text-aurora-blue font-bold">Business English</span>
-                        <span className="text-sm text-gray-500">€34 per session</span>
-                      </th>
-                      <th className="py-4 px-6 text-center">
-                        <span className="block text-aurora-green font-bold">Conversation Skills</span>
                         <span className="text-sm text-gray-500">€24 per session</span>
                       </th>
                       <th className="py-4 px-6 text-center">
+                        <span className="block text-aurora-green font-bold">Conversation Skills</span>
+                        <span className="text-sm text-gray-500">€14 per session</span>
+                      </th>
+                      <th className="py-4 px-6 text-center">
                         <span className="block text-aurora-purple font-bold">Academic Writing</span>
-                        <span className="text-sm text-gray-500">€34 per session</span>  
+                        <span className="text-sm text-gray-500">€24 per session</span>  
                       </th>
                     </tr>
                   </thead>
@@ -920,9 +920,9 @@ const EnglishCourses: React.FC = () => {
                     </tr>
                     <tr className="bg-gray-50">
                       <td className="py-4 px-6 text-sm font-medium text-gray-900">Savings vs. Private</td>
-                      <td className="py-4 px-6 text-sm text-gray-700 text-center font-medium">€10 per session</td>
-                      <td className="py-4 px-6 text-sm text-gray-700 text-center font-medium">€10 per session</td>
-                      <td className="py-4 px-6 text-sm text-gray-700 text-center font-medium">€10 per session</td>
+                      <td className="py-4 px-6 text-sm text-gray-700 text-center font-medium">€5 per session</td>
+                      <td className="py-4 px-6 text-sm text-gray-700 text-center font-medium">€5 per session</td>
+                      <td className="py-4 px-6 text-sm text-gray-700 text-center font-medium">€5 per session</td>
                     </tr>
                   </tbody>
                 </table>

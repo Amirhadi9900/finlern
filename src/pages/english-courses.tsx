@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 import Layout from '../components/layout/Layout';
+import EnrollmentForm from '../components/classes/EnrollmentForm';
 
 // Global type declaration to make TypeScript happy
 declare global {
@@ -24,6 +25,8 @@ const EnglishCourses: React.FC = () => {
   };
 
   const [activeTab, setActiveTab] = useState('cards');
+  const [isFormOpen, setIsFormOpen] = useState(false);
+  const [selectedCourse, setSelectedCourse] = useState("");
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -40,6 +43,16 @@ const EnglishCourses: React.FC = () => {
       };
     }
   }, []);
+
+  const handleRegisterClick = (course: string) => {
+    setSelectedCourse(course);
+    setIsFormOpen(true);
+  };
+
+  const handleCloseForm = () => {
+    setIsFormOpen(false);
+    setSelectedCourse("");
+  };
 
   return (
     <Layout>
@@ -145,8 +158,8 @@ const EnglishCourses: React.FC = () => {
                   <div className="absolute inset-0 bg-aurora-green/20 rounded-2xl scale-0 group-hover:scale-100 transition-transform duration-500"></div>
                 </button>
 
-                <a 
-                  href="mailto:info@finlern.fi" 
+                <button 
+                  onClick={() => handleRegisterClick("English Language - General Inquiry")} 
                   className="group relative overflow-hidden px-8 py-4 bg-transparent border-2 border-white text-white rounded-2xl font-semibold hover:bg-white hover:text-aurora-blue transition-all duration-300 hover:scale-105 hover:rotate-1 flex items-center justify-center"
                 >
                   <span className="relative z-10 flex items-center">
@@ -155,7 +168,7 @@ const EnglishCourses: React.FC = () => {
                     </svg>
                     Contact Us
                   </span>
-                </a>
+                </button>
               </div>
             </div>
 
@@ -318,12 +331,12 @@ const EnglishCourses: React.FC = () => {
                     </div>
                   </div>
                   
-                  <a href="mailto:info@finlern.fi" className="inline-flex items-center justify-center px-5 py-3 bg-gradient-to-r from-aurora-blue to-aurora-green text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-blue/30 w-full transform hover:scale-[1.02]">
+                  <button onClick={() => handleRegisterClick("Business English Course")} className="inline-flex items-center justify-center px-5 py-3 bg-gradient-to-r from-aurora-blue to-aurora-green text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-blue/30 w-full transform hover:scale-[1.02]">
                     Register Now
                     <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -429,12 +442,12 @@ const EnglishCourses: React.FC = () => {
                     </div>
                   </div>
                   
-                  <a href="mailto:info@finlern.fi" className="inline-flex items-center justify-center px-5 py-3 bg-gradient-to-r from-aurora-green to-aurora-blue text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-green/30 w-full transform hover:scale-[1.02]">
+                  <button onClick={() => handleRegisterClick("Conversation Skills Course")} className="inline-flex items-center justify-center px-5 py-3 bg-gradient-to-r from-aurora-green to-aurora-blue text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-green/30 w-full transform hover:scale-[1.02]">
                     Register Now
                     <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -536,12 +549,12 @@ const EnglishCourses: React.FC = () => {
                     </div>
                   </div>
                   
-                  <a href="mailto:info@finlern.fi" className="inline-flex items-center justify-center px-5 py-3 bg-gradient-to-r from-aurora-purple to-aurora-blue text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-purple/30 w-full transform hover:scale-[1.02]">
+                  <button onClick={() => handleRegisterClick("Academic Writing Course")} className="inline-flex items-center justify-center px-5 py-3 bg-gradient-to-r from-aurora-purple to-aurora-blue text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-purple/30 w-full transform hover:scale-[1.02]">
                     Register Now
                     <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -930,12 +943,12 @@ const EnglishCourses: React.FC = () => {
             )}
             
             <div className="mt-12 text-center" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
-              <a href="mailto:info@finlern.fi" className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-aurora-green to-aurora-blue text-white rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-green/20 transform hover:scale-105">
+              <button onClick={() => handleRegisterClick("English Language - Group Course Inquiry")} className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-aurora-green to-aurora-blue text-white rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-green/20 transform hover:scale-105">
                 Inquire About Group Courses
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
-              </a>
+              </button>
             </div>
           </div>
           
@@ -1137,7 +1150,7 @@ const EnglishCourses: React.FC = () => {
             {/* Enhanced CTA Button */}
             <div className="text-center" data-aos="fade-up" data-aos-delay="500" data-aos-duration="800">
               <div className="inline-block">
-                <a href="mailto:info@finlern.fi" className="inline-flex items-center justify-center px-10 py-5 bg-gradient-to-r from-aurora-blue to-aurora-green text-white rounded-2xl font-medium text-lg transition-all duration-300 hover:shadow-lg hover:shadow-aurora-blue/30 transform hover:scale-105 group">
+                <button onClick={() => handleRegisterClick("English Language - Method Inquiry")} className="inline-flex items-center justify-center px-10 py-5 bg-gradient-to-r from-aurora-blue to-aurora-green text-white rounded-2xl font-medium text-lg transition-all duration-300 hover:shadow-lg hover:shadow-aurora-blue/30 transform hover:scale-105 group">
                   <svg className="w-6 h-6 mr-3 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                   </svg>
@@ -1145,7 +1158,7 @@ const EnglishCourses: React.FC = () => {
                   <svg className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -1298,12 +1311,12 @@ const EnglishCourses: React.FC = () => {
                 {/* Action Buttons */}
                 <div className="text-center" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
                   <div className="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="mailto:info@finlern.fi" className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-aurora-blue to-aurora-green text-white rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-blue/30 transform hover:scale-105 group">
+                    <button onClick={() => handleRegisterClick("English Language - CTA Inquiry")} className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-aurora-blue to-aurora-green text-white rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-blue/30 transform hover:scale-105 group">
                       <svg className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
-                      Contact Us Today
-                    </a>
+                      Register for English Courses
+                    </button>
                     <button onClick={scrollToUpcomingCourses} className="inline-flex items-center justify-center px-8 py-4 bg-white border-2 border-aurora-blue text-aurora-blue rounded-xl font-medium transition-all duration-300 hover:bg-aurora-blue/5 hover:shadow-lg transform hover:scale-105 group">
                       <svg className="w-5 h-5 mr-2 group-hover:-translate-y-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -1320,6 +1333,11 @@ const EnglishCourses: React.FC = () => {
           </div>
         </div>
       </section>
+      <EnrollmentForm
+        isOpen={isFormOpen}
+        onClose={handleCloseForm}
+        courseType={selectedCourse}
+      />
     </Layout>
   );
 };

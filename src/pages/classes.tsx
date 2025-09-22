@@ -1,8 +1,9 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../components/layout/Layout'
+import EnrollmentForm from '../components/classes/EnrollmentForm';
 
 // Add type declaration for window.scrollAnimations
 declare global {
@@ -17,6 +18,8 @@ declare global {
 export default function Classes() {
   // Reference for the course section
   const courseSectionRef = useRef<HTMLDivElement>(null);
+  const [isFormOpen, setIsFormOpen] = useState(false);
+  const [selectedCourse, setSelectedCourse] = useState("");
   
   // Initialize animations on component mount
   useEffect(() => {
@@ -43,6 +46,16 @@ export default function Classes() {
         block: 'start'
       });
     }
+  };
+
+  const handleEnrollClick = (course: string) => {
+    setSelectedCourse(course);
+    setIsFormOpen(true);
+  };
+
+  const handleCloseForm = () => {
+    setIsFormOpen(false);
+    setSelectedCourse("");
   };
 
   return (
@@ -323,12 +336,12 @@ export default function Classes() {
                         <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-green to-aurora-blue">€99</span>
                         <span className="text-gray-500 ml-2">/ course</span>
                       </div>
-                      <a href="mailto:info@finlern.fi" className="inline-flex items-center justify-center px-5 py-2 bg-gradient-to-r from-aurora-green to-aurora-blue text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-green/30 transform hover:scale-[1.02]">
+                      <button onClick={() => handleEnrollClick("Beginner Finnish")} className="inline-flex items-center justify-center px-5 py-2 bg-gradient-to-r from-aurora-green to-aurora-blue text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-green/30 transform hover:scale-[1.02]">
                     Enroll Now
                         <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
-                      </a>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -441,12 +454,12 @@ export default function Classes() {
                         <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-blue to-aurora-purple">€119</span>
                         <span className="text-gray-500 ml-2">/ course</span>
                       </div>
-                      <a href="mailto:info@finlern.fi" className="inline-flex items-center justify-center px-5 py-2 bg-gradient-to-r from-aurora-blue to-aurora-purple text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-blue/30 transform hover:scale-[1.02]">
+                      <button onClick={() => handleEnrollClick("Intermediate Finnish")} className="inline-flex items-center justify-center px-5 py-2 bg-gradient-to-r from-aurora-blue to-aurora-purple text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-blue/30 transform hover:scale-[1.02]">
                     Enroll Now
                         <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
-                      </a>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -556,12 +569,12 @@ export default function Classes() {
                         <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-purple to-aurora-night">€129</span>
                         <span className="text-gray-500 ml-2">/ course</span>
                       </div>
-                      <a href="mailto:info@finlern.fi" className="inline-flex items-center justify-center px-5 py-2 bg-gradient-to-r from-aurora-purple to-aurora-night text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-purple/30 transform hover:scale-[1.02]">
+                      <button onClick={() => handleEnrollClick("Advanced Finnish")} className="inline-flex items-center justify-center px-5 py-2 bg-gradient-to-r from-aurora-purple to-aurora-night text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-purple/30 transform hover:scale-[1.02]">
                         Enroll Now
                         <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
-                      </a>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -1466,6 +1479,11 @@ export default function Classes() {
         </div>
       </section>
 
+      <EnrollmentForm
+        isOpen={isFormOpen}
+        onClose={handleCloseForm}
+        courseType={selectedCourse}
+      />
     </Layout>
   )
 } 

@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 import Layout from '../components/layout/Layout';
+import EnrollmentForm from '../components/classes/EnrollmentForm';
 
 // Global type declaration to make TypeScript happy
 declare global {
@@ -23,6 +24,9 @@ const ViolinCourses: React.FC = () => {
     }
   };
 
+  const [isFormOpen, setIsFormOpen] = useState(false);
+  const [selectedCourse, setSelectedCourse] = useState("");
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
       // Trigger scroll animations
@@ -38,6 +42,16 @@ const ViolinCourses: React.FC = () => {
       };
     }
   }, []);
+
+  const handleRegisterClick = (course: string) => {
+    setSelectedCourse(course);
+    setIsFormOpen(true);
+  };
+
+  const handleCloseForm = () => {
+    setIsFormOpen(false);
+    setSelectedCourse("");
+  };
 
   return (
     <Layout>
@@ -142,8 +156,8 @@ const ViolinCourses: React.FC = () => {
                   <div className="absolute inset-0 bg-aurora-purple/20 rounded-2xl scale-0 group-hover:scale-100 transition-transform duration-500"></div>
                 </button>
 
-                <a 
-                  href="mailto:info@finlern.fi" 
+                <button
+                  onClick={() => handleRegisterClick("Violin Course - General Inquiry")}
                   className="group relative overflow-hidden px-8 py-4 bg-transparent border-2 border-white text-white rounded-2xl font-semibold hover:bg-white hover:text-aurora-purple transition-all duration-300 hover:scale-105 hover:rotate-1 flex items-center justify-center"
                 >
                   <span className="relative z-10 flex items-center">
@@ -152,7 +166,7 @@ const ViolinCourses: React.FC = () => {
                     </svg>
                     Contact Us
                   </span>
-                </a>
+                </button>
               </div>
             </div>
 
@@ -338,12 +352,12 @@ const ViolinCourses: React.FC = () => {
                     </div>
                   </div>
                   
-                  <a href="mailto:info@finlern.fi" className="inline-flex items-center justify-center px-5 py-3 bg-gradient-to-r from-aurora-purple to-aurora-blue text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-purple/30 w-full transform hover:scale-[1.02]">
+                  <button onClick={() => handleRegisterClick("Beginner Violin Course")} className="inline-flex items-center justify-center px-5 py-3 bg-gradient-to-r from-aurora-purple to-aurora-blue text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-purple/30 w-full transform hover:scale-[1.02]">
                     Register Now
                     <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -449,12 +463,12 @@ const ViolinCourses: React.FC = () => {
                     </div>
                   </div>
                   
-                  <a href="mailto:info@finlern.fi" className="inline-flex items-center justify-center px-5 py-3 bg-gradient-to-r from-aurora-blue to-aurora-purple text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-blue/30 w-full transform hover:scale-[1.02]">
+                  <button onClick={() => handleRegisterClick("Intermediate Violin Course")} className="inline-flex items-center justify-center px-5 py-3 bg-gradient-to-r from-aurora-blue to-aurora-purple text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-blue/30 w-full transform hover:scale-[1.02]">
                     Register Now
                     <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -557,12 +571,12 @@ const ViolinCourses: React.FC = () => {
                     </div>
                   </div>
                   
-                  <a href="mailto:info@finlern.fi" className="inline-flex items-center justify-center px-5 py-3 bg-gradient-to-r from-aurora-green to-aurora-blue text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-green/30 w-full transform hover:scale-[1.02]">
+                  <button onClick={() => handleRegisterClick("Advanced Violin Course")} className="inline-flex items-center justify-center px-5 py-3 bg-gradient-to-r from-aurora-green to-aurora-blue text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-green/30 w-full transform hover:scale-[1.02]">
                     Register Now
                     <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -578,12 +592,12 @@ const ViolinCourses: React.FC = () => {
               <div className="text-center md:text-left">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Not Sure Which Course Is Right For You?</h3>
                 <p className="text-gray-700 mb-4">We offer free consultation to help you choose the perfect violin course based on your experience level, goals, and schedule.</p>
-                <a href="mailto:info@finlern.fi" className="inline-flex items-center justify-center px-5 py-2 bg-gradient-to-r from-aurora-purple to-aurora-blue text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-purple/30 transform hover:scale-[1.02]">
+                <button onClick={() => handleRegisterClick("Violin Course - Consultation")} className="inline-flex items-center justify-center px-5 py-2 bg-gradient-to-r from-aurora-purple to-aurora-blue text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-purple/30 transform hover:scale-[1.02]">
                   Get Free Consultation
                   <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -956,6 +970,11 @@ const ViolinCourses: React.FC = () => {
           </div>
         </div>
       </section>
+      <EnrollmentForm
+        isOpen={isFormOpen}
+        onClose={handleCloseForm}
+        courseType={selectedCourse}
+      />
     </Layout>
   );
 };

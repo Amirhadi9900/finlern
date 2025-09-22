@@ -6,6 +6,8 @@ import { JWT } from 'next-auth/jwt';
 import type { NextAuthOptions } from 'next-auth';
 import { InMemoryAdapter } from '@/utils/inMemoryAdapter';
 
+export const runtime = 'nodejs';
+
 // Check if Firebase configuration is available
 const hasFirebaseConfig = 
   process.env.FIREBASE_PROJECT_ID &&
@@ -13,27 +15,26 @@ const hasFirebaseConfig =
   process.env.FIREBASE_PRIVATE_KEY;
 
 // We only import FirestoreAdapter and cert if Firebase config is available
-let FirestoreAdapter: any;
-let cert: any;
 let firebaseAdapter: any = null;
 
 // Only try to load Firebase adapter if configuration is available and we're not in development
 if (hasFirebaseConfig && process.env.NODE_ENV !== 'development') {
-  try {
-    FirestoreAdapter = require('@auth/firebase-adapter').FirestoreAdapter;
-    cert = require('firebase-admin/app').cert;
+  (async () => {
+    try {
+      const { FirestoreAdapter } = await import('@auth/firebase-adapter');
+      const { cert } = await import('firebase-admin/app');
 
-    // Create the Firebase adapter with proper configuration
-    firebaseAdapter = FirestoreAdapter({
-      credential: cert({
-        projectId: process.env.FIREBASE_PROJECT_ID,
-        clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-        privateKey: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
-      }),
-    });
-  } catch (e) {
-    console.warn('Firebase adapter could not be initialized:', e);
-  }
+      firebaseAdapter = FirestoreAdapter({
+        credential: cert({
+          projectId: process.env.FIREBASE_PROJECT_ID,
+          clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+          privateKey: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
+        }),
+      });
+    } catch (e) {
+      console.warn('Firebase adapter could not be initialized:', e);
+    }
+  })();
 }
 
 // Extend the session and user types

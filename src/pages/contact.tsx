@@ -334,6 +334,22 @@ export default function Contact() {
                   </div>
                 </div>
               </div>
+
+              {/* Success Stats for Relocation Services */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 max-w-4xl mx-auto">
+                <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-100 flex flex-col items-center text-center">
+                  <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-blue to-aurora-green mb-2">95%</div>
+                  <p className="text-gray-700 text-sm">Integration Success Rate</p>
+                </div>
+                <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-100 flex flex-col items-center text-center">
+                  <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-green to-aurora-purple mb-2">3-6</div>
+                  <p className="text-gray-700 text-sm">Months Average Integration</p>
+                </div>
+                <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-100 flex flex-col items-center text-center">
+                  <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-purple to-aurora-blue mb-2">24/7</div>
+                  <p className="text-gray-700 text-sm">Support Available</p>
+                </div>
+              </div>
             </div>
 
             {/* Alternative Contact Section - Enhanced */}

@@ -86,7 +86,7 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
         
         {/* Header */}
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 text-center bg-clip-text text-transparent bg-gradient-to-r from-aurora-blue to-aurora-purple">
-          Enroll in <span className="block text-xl sm:text-2xl md:text-3xl font-semibold mt-1 text-aurora-green">{displayCourseName} Course</span>
+          Enroll in <span className="block text-xl sm:text-2xl md:text-3xl font-semibold mt-1 text-aurora-green">{displayCourseName}</span>
         </h2>
         <p className="text-center text-gray-600 text-sm sm:text-base mb-8">Fill out the form below to begin your learning journey with Finlern.</p>
 

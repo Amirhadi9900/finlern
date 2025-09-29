@@ -1,6 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import fs from 'fs';
-import path from 'path';
+import { getEnrollmentBuffer, convertToCSV } from '@/lib/enrollmentLogger';
 
 export const runtime = 'nodejs';
 
@@ -17,19 +16,19 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    const csvPath = path.join(process.cwd(), 'logs', 'enrollments.csv');
+    const enrollments = getEnrollmentBuffer();
     
-    if (!fs.existsSync(csvPath)) {
-      return res.status(404).json({ message: 'No enrollment data found' });
+    if (enrollments.length === 0) {
+      return res.status(404).json({ message: 'No enrollment data found in current session' });
     }
 
-    const csvData = fs.readFileSync(csvPath, 'utf8');
+    const csvData = convertToCSV(enrollments);
     
     res.setHeader('Content-Type', 'text/csv');
     res.setHeader('Content-Disposition', 'attachment; filename=enrollments.csv');
     res.status(200).send(csvData);
   } catch (error) {
-    console.error('Error reading CSV:', error);
+    console.error('Error generating CSV:', error);
     res.status(500).json({ message: 'Error retrieving enrollment data' });
   }
 }

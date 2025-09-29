@@ -1,10 +1,3 @@
-import fs from 'fs';
-import path from 'path';
-import { promisify } from 'util';
-
-const appendFile = promisify(fs.appendFile);
-const mkdir = promisify(fs.mkdir);
-
 export interface EnrollmentData {
   fullName: string;
   email: string;
@@ -15,37 +8,37 @@ export interface EnrollmentData {
   timestamp: string;
 }
 
+// Simple in-memory storage for the current session
+// Note: This will reset on each deployment, but serves as a fallback
+let enrollmentBuffer: EnrollmentData[] = [];
+
 export async function logEnrollment(data: EnrollmentData): Promise<void> {
   try {
-    // Create logs directory if it doesn't exist
-    const logsDir = path.join(process.cwd(), 'logs');
-    await mkdir(logsDir, { recursive: true });
-
-    // Create CSV row
-    const csvRow = [
-      data.timestamp,
-      escapeCSV(data.fullName),
-      escapeCSV(data.email),
-      escapeCSV(data.phoneNumber),
-      escapeCSV(data.currentJobStatus),
-      escapeCSV(data.desiredOccupation),
-      escapeCSV(data.courseType)
-    ].join(',') + '\n';
-
-    // Append to CSV file (creates file if doesn't exist)
-    const csvPath = path.join(logsDir, 'enrollments.csv');
+    // Store in memory buffer (fallback)
+    enrollmentBuffer.push(data);
     
-    // Add header if file doesn't exist
-    if (!fs.existsSync(csvPath)) {
-      const header = 'Timestamp,Full Name,Email,Phone Number,Current Job Status,Desired Occupation,Course Type\n';
-      await appendFile(csvPath, header, 'utf8');
-    }
-
-    await appendFile(csvPath, csvRow, 'utf8');
+    // Log to console for debugging (visible in Vercel function logs)
+    console.log('New enrollment logged:', {
+      timestamp: data.timestamp,
+      course: data.courseType,
+      email: data.email.replace(/(.{3}).*(@.*)/, '$1***$2') // Partially mask email for privacy
+    });
+    
+    // For now, we'll rely on email notifications as the primary record
+    // In production, this would integrate with a database like Supabase or PlanetScale
+    
   } catch (error) {
     console.error('Failed to log enrollment:', error);
     throw new Error('Logging failed');
   }
+}
+
+export function getEnrollmentBuffer(): EnrollmentData[] {
+  return [...enrollmentBuffer];
+}
+
+export function clearEnrollmentBuffer(): void {
+  enrollmentBuffer = [];
 }
 
 function escapeCSV(field: string): string {
@@ -54,4 +47,19 @@ function escapeCSV(field: string): string {
     return '"' + field.replace(/"/g, '""') + '"';
   }
   return field;
+}
+
+export function convertToCSV(enrollments: EnrollmentData[]): string {
+  const header = 'Timestamp,Full Name,Email,Phone Number,Current Job Status,Desired Occupation,Course Type\n';
+  const rows = enrollments.map(data => [
+    data.timestamp,
+    escapeCSV(data.fullName),
+    escapeCSV(data.email),
+    escapeCSV(data.phoneNumber),
+    escapeCSV(data.currentJobStatus),
+    escapeCSV(data.desiredOccupation),
+    escapeCSV(data.courseType)
+  ].join(','));
+  
+  return header + rows.join('\n');
 }

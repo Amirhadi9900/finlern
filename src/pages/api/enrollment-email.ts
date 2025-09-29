@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import nodemailer from 'nodemailer';
 import { google } from 'googleapis';
-import { getAdminDb } from '@/lib/firebaseAdmin';
+import { logEnrollment } from '@/lib/enrollmentLogger';
 
 export const runtime = 'nodejs';
 
@@ -62,20 +62,19 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
   }
 
   try {
-    // 1) Persist to Firestore (primary record of truth)
+    // 1) Log enrollment to CSV (primary record of truth)
     try {
-      const db = getAdminDb();
-      await db.collection('enrollments').add({
+      await logEnrollment({
         fullName: trimmedFullName,
         email: trimmedEmail,
         phoneNumber: trimmedPhone,
         currentJobStatus: trimmedJob,
         desiredOccupation: trimmedOccupation,
         courseType: normalizedCourseType,
-        createdAt: new Date().toISOString(),
+        timestamp: new Date().toISOString(),
       });
-    } catch (dbErr) {
-      console.error('Firestore write failed:', dbErr);
+    } catch (logErr) {
+      console.error('CSV logging failed:', logErr);
       return res.status(500).json({ message: 'Unable to save enrollment. Please try again later.' });
     }
 
@@ -115,7 +114,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     return res.status(200).json({ message: 'Enrollment submitted successfully!' });
   } catch (error) {
     console.error('Error sending email:', error);
-    // Email failed, but data is already persisted. Return success with note to check email service.
+    // Email failed, but data is already logged. Return success with note to check email service.
     return res.status(200).json({ message: 'Enrollment saved. Notification email may be delayed.' });
   }
 }

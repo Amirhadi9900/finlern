@@ -179,13 +179,13 @@ export default function Home() {
               Your trusted partner for Finnish language mastery, cultural integration, and flawless relocation!
             </p>
             <div 
-              className="flex flex-col sm:flex-row justify-center gap-6"
+              className="flex flex-col sm:flex-row items-center justify-center gap-6"
               data-aos="fade-up" 
               data-aos-duration="600"
               data-aos-delay="150"
             >
               {/* Simplified Primary button */}
-              <Link href="/classes" className="relative overflow-hidden group px-8 py-4 bg-gradient-to-r from-aurora-green to-aurora-blue text-white uppercase font-semibold tracking-wide shadow-lg rounded-xl hover:-translate-y-1 transition-transform duration-300 flex items-center justify-center border border-white/10">
+              <Link href="/classes" className="relative overflow-hidden group w-full sm:w-80 px-8 py-4 bg-gradient-to-r from-aurora-green to-aurora-blue text-white uppercase font-semibold tracking-wide shadow-lg rounded-xl hover:-translate-y-1 transition-transform duration-300 flex items-center justify-center border border-white/10">
                 {/* Icon */}
                 <span className="relative z-10 flex items-center">
                   <span className="w-5 h-5 mr-2 flex items-center justify-center">
@@ -194,7 +194,7 @@ export default function Home() {
                     </svg>
                   </span>
                   
-                  <span className="relative z-10">Explore Our Courses</span>
+                  <span className="relative z-10 whitespace-nowrap">Explore Our Courses</span>
                 </span>
                 
                 {/* Simplified shine effect */}
@@ -202,7 +202,7 @@ export default function Home() {
               </Link>
               
               {/* Simplified Secondary button */}
-              <Link href="/contact" className="relative overflow-hidden group px-8 py-4 bg-gradient-to-r from-aurora-purple to-aurora-violet text-white uppercase font-semibold tracking-wide shadow-lg rounded-xl hover:-translate-y-1 transition-transform duration-300 flex items-center justify-center border border-white/10">
+              <Link href="/contact" className="relative overflow-hidden group w-full sm:w-80 px-8 py-4 bg-gradient-to-r from-aurora-purple to-aurora-violet text-white uppercase font-semibold tracking-wide shadow-lg rounded-xl hover:-translate-y-1 transition-transform duration-300 flex items-center justify-center border border-white/10">
                 {/* Icon */}
                 <span className="relative z-10 flex items-center">
                   <span className="w-5 h-5 mr-2 flex items-center justify-center">
@@ -211,7 +211,7 @@ export default function Home() {
                     </svg>
                   </span>
                   
-                  <span className="relative z-10">Contact Us</span>
+                  <span className="relative z-10 whitespace-nowrap">Contact Us</span>
                 </span>
                 
                 {/* Simplified shine effect */}

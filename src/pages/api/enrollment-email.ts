@@ -1,6 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import nodemailer from 'nodemailer';
 import { google } from 'googleapis';
+import { getAdminDb } from '@/lib/firebaseAdmin';
+
+export const runtime = 'nodejs';
 
 type Data = { 
   message: string;
@@ -59,6 +62,24 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
   }
 
   try {
+    // 1) Persist to Firestore (primary record of truth)
+    try {
+      const db = getAdminDb();
+      await db.collection('enrollments').add({
+        fullName: trimmedFullName,
+        email: trimmedEmail,
+        phoneNumber: trimmedPhone,
+        currentJobStatus: trimmedJob,
+        desiredOccupation: trimmedOccupation,
+        courseType: normalizedCourseType,
+        createdAt: new Date().toISOString(),
+      });
+    } catch (dbErr) {
+      console.error('Firestore write failed:', dbErr);
+      return res.status(500).json({ message: 'Unable to save enrollment. Please try again later.' });
+    }
+
+    // 2) Send notification email (secondary)
     const accessTokenResult = await oAuth2Client.getAccessToken();
     const accessToken = typeof accessTokenResult === 'string' ? accessTokenResult : accessTokenResult?.token ?? '';
     if (!accessToken) {
@@ -94,6 +115,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     return res.status(200).json({ message: 'Enrollment submitted successfully!' });
   } catch (error) {
     console.error('Error sending email:', error);
-    return res.status(500).json({ message: 'Error submitting enrollment.' });
+    // Email failed, but data is already persisted. Return success with note to check email service.
+    return res.status(200).json({ message: 'Enrollment saved. Notification email may be delayed.' });
   }
 }

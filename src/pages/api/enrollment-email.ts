@@ -2,6 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import nodemailer from 'nodemailer';
 import { google } from 'googleapis';
 import { logEnrollment } from '@/lib/enrollmentLogger';
+import he from 'he';
 
 export const runtime = 'nodejs';
 
@@ -100,14 +101,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     await transporter.sendMail({
       from: 'info@finlern.fi',
       to: 'info@finlern.fi',
-      subject: `New Enrollment for ${normalizedCourseType} Course`,
+      subject: `New Enrollment for ${he.escape(normalizedCourseType)} Course`,
       html: `
-        <p>You have a new enrollment for the <strong>${normalizedCourseType}</strong> course.</p>
-        <p><strong>Full Legal Name:</strong> ${trimmedFullName}</p>
-        <p><strong>Email:</strong> ${trimmedEmail}</p>
-        <p><strong>Phone Number:</strong> ${trimmedPhone}</p>
-        <p><strong>Current Job Status:</strong> ${trimmedJob}</p>
-        <p><strong>Desired Occupation:</strong> ${trimmedOccupation}</p>
+        <p>You have a new enrollment for the <strong>${he.escape(normalizedCourseType)}</strong> course.</p>
+        <p><strong>Full Legal Name:</strong> ${he.escape(trimmedFullName)}</p>
+        <p><strong>Email:</strong> ${he.escape(trimmedEmail)}</p>
+        <p><strong>Phone Number:</strong> ${he.escape(trimmedPhone)}</p>
+        <p><strong>Current Job Status:</strong> ${he.escape(trimmedJob)}</p>
+        <p><strong>Desired Occupation:</strong> ${he.escape(trimmedOccupation)}</p>
       `,
     });
 

@@ -1,69 +1,11 @@
 import React, { useState } from 'react';
+import { sanitizeInput, containsSuspiciousPattern } from '@/utils/inputSanitizer';
 
 interface EnrollmentFormProps {
   isOpen: boolean;
   onClose: () => void;
   courseType: string; // To differentiate between Beginner, Intermediate, Advanced
 }
-
-// Client-side input sanitization and validation
-const sanitizeInput = (input: string, type: 'name' | 'text' | 'email' | 'phone'): string => {
-  let sanitized = input.trim();
-  
-  // Remove null bytes and control characters
-  sanitized = sanitized.replace(/[\x00-\x1F\x7F]/g, '');
-  
-  // Remove common injection patterns
-  sanitized = sanitized.replace(/<script[^>]*>.*?<\/script>/gi, '');
-  sanitized = sanitized.replace(/<iframe[^>]*>.*?<\/iframe>/gi, '');
-  sanitized = sanitized.replace(/javascript:/gi, '');
-  sanitized = sanitized.replace(/on\w+\s*=/gi, '');
-  
-  // Type-specific sanitization
-  if (type === 'name') {
-    // Only allow letters, spaces, hyphens, apostrophes, and common international characters
-    sanitized = sanitized.replace(/[^a-zA-ZÀ-ÿ\s'\-]/g, '');
-    // Remove multiple consecutive spaces
-    sanitized = sanitized.replace(/\s+/g, ' ');
-  } else if (type === 'text') {
-    // Allow alphanumeric, spaces, and basic punctuation for job/occupation fields
-    sanitized = sanitized.replace(/[^a-zA-Z0-9À-ÿ\s.,\-'/()]/g, '');
-    sanitized = sanitized.replace(/\s+/g, ' ');
-  } else if (type === 'phone') {
-    // Only allow digits, +, spaces, parentheses, and hyphens
-    sanitized = sanitized.replace(/[^0-9+\s()\-]/g, '');
-  } else if (type === 'email') {
-    // Remove spaces and convert to lowercase
-    sanitized = sanitized.replace(/\s/g, '').toLowerCase();
-  }
-  
-  return sanitized.trim();
-};
-
-// Detect suspicious patterns that might indicate malicious input
-const containsSuspiciousPattern = (input: string): boolean => {
-  const suspiciousPatterns = [
-    /<script/i,
-    /<iframe/i,
-    /javascript:/i,
-    /on\w+\s*=/i,
-    /data:text\/html/i,
-    /vbscript:/i,
-    /<embed/i,
-    /<object/i,
-    /SELECT.*FROM/i,
-    /INSERT.*INTO/i,
-    /DELETE.*FROM/i,
-    /DROP.*TABLE/i,
-    /UNION.*SELECT/i,
-    /\.\.\//,  // Path traversal
-    /\.\.\\/, // Path traversal
-    /\\x[0-9a-f]{2}/i, // Hex encoding
-    /%[0-9a-f]{2}/i, // URL encoding of suspicious chars
-  ];
-  
-  return suspiciousPatterns.some(pattern => pattern.test(input));
-};
 
 const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, courseType }) => {
   // Real form fields

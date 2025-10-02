@@ -6,7 +6,67 @@ interface EnrollmentFormProps {
   courseType: string; // To differentiate between Beginner, Intermediate, Advanced
 }
 
+// Client-side input sanitization and validation
+const sanitizeInput = (input: string, type: 'name' | 'text' | 'email' | 'phone'): string => {
+  let sanitized = input.trim();
+  
+  // Remove null bytes and control characters
+  sanitized = sanitized.replace(/[\x00-\x1F\x7F]/g, '');
+  
+  // Remove common injection patterns
+  sanitized = sanitized.replace(/<script[^>]*>.*?<\/script>/gi, '');
+  sanitized = sanitized.replace(/<iframe[^>]*>.*?<\/iframe>/gi, '');
+  sanitized = sanitized.replace(/javascript:/gi, '');
+  sanitized = sanitized.replace(/on\w+\s*=/gi, '');
+  
+  // Type-specific sanitization
+  if (type === 'name') {
+    // Only allow letters, spaces, hyphens, apostrophes, and common international characters
+    sanitized = sanitized.replace(/[^a-zA-ZÀ-ÿ\s'\-]/g, '');
+    // Remove multiple consecutive spaces
+    sanitized = sanitized.replace(/\s+/g, ' ');
+  } else if (type === 'text') {
+    // Allow alphanumeric, spaces, and basic punctuation for job/occupation fields
+    sanitized = sanitized.replace(/[^a-zA-Z0-9À-ÿ\s.,\-'/()]/g, '');
+    sanitized = sanitized.replace(/\s+/g, ' ');
+  } else if (type === 'phone') {
+    // Only allow digits, +, spaces, parentheses, and hyphens
+    sanitized = sanitized.replace(/[^0-9+\s()\-]/g, '');
+  } else if (type === 'email') {
+    // Remove spaces and convert to lowercase
+    sanitized = sanitized.replace(/\s/g, '').toLowerCase();
+  }
+  
+  return sanitized.trim();
+};
+
+// Detect suspicious patterns that might indicate malicious input
+const containsSuspiciousPattern = (input: string): boolean => {
+  const suspiciousPatterns = [
+    /<script/i,
+    /<iframe/i,
+    /javascript:/i,
+    /on\w+\s*=/i,
+    /data:text\/html/i,
+    /vbscript:/i,
+    /<embed/i,
+    /<object/i,
+    /SELECT.*FROM/i,
+    /INSERT.*INTO/i,
+    /DELETE.*FROM/i,
+    /DROP.*TABLE/i,
+    /UNION.*SELECT/i,
+    /\.\.\//,  // Path traversal
+    /\.\.\\/, // Path traversal
+    /\\x[0-9a-f]{2}/i, // Hex encoding
+    /%[0-9a-f]{2}/i, // URL encoding of suspicious chars
+  ];
+  
+  return suspiciousPatterns.some(pattern => pattern.test(input));
+};
+
 const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, courseType }) => {
+  // Real form fields
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -15,12 +75,123 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
 
+  // 🍯 HONEYPOT FIELDS (Anti-Bot Protection)
+  // 1. Classic honeypot - hidden field with attractive name
+  const [website, setWebsite] = useState(''); // Bots love filling "website" fields
+  
+  // 2. Time-based detection - track when form was opened
+  const [formOpenTime] = useState(Date.now());
+  
+  // 3. Interaction tracking - detect if user actually interacted with form
+  const [userInteracted, setUserInteracted] = useState(false);
+  
+  // 4. Field fill order tracking - humans don't fill forms in DOM order
+  const [fieldFillOrder, setFieldFillOrder] = useState<string[]>([]);
+
   if (!isOpen) return null;
+
+  // Track field interactions (humans interact with fields, bots don't)
+  const handleFieldInteraction = (fieldName: string) => {
+    if (!userInteracted) {
+      setUserInteracted(true);
+    }
+    // Track the order in which fields are filled
+    if (!fieldFillOrder.includes(fieldName)) {
+      setFieldFillOrder(prev => [...prev, fieldName]);
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitStatus('loading');
     setErrorMessage('');
+
+    // 🍯 BOT DETECTION - Multi-layered honeypot checks
+    
+    // Check 1: Classic honeypot field (if filled, it's a bot)
+    if (website && website.trim().length > 0) {
+      console.warn('Bot detected: Honeypot field filled');
+      setErrorMessage('There was an error submitting your enrollment. Please try again.');
+      setSubmitStatus('error');
+      return;
+    }
+
+    // Check 2: Time-based detection (humans need at least 2 seconds to fill a form)
+    const timeSpent = Date.now() - formOpenTime;
+    if (timeSpent < 2000) {
+      console.warn('Bot detected: Form submitted too quickly', { timeSpent });
+      setErrorMessage('Please take your time filling out the form.');
+      setSubmitStatus('error');
+      return;
+    }
+
+    // Check 3: Interaction detection (humans interact with form fields)
+    if (!userInteracted) {
+      console.warn('Bot detected: No user interaction detected');
+      setErrorMessage('Please fill out all form fields.');
+      setSubmitStatus('error');
+      return;
+    }
+
+    // Check 4: Field fill order (optional - too strict may cause false positives)
+    // Humans typically don't fill all fields in exact DOM order
+    const expectedOrder = ['fullName', 'email', 'phoneNumber', 'currentJobStatus', 'desiredOccupation'];
+    const isExactOrder = fieldFillOrder.length === expectedOrder.length && 
+                         fieldFillOrder.every((field, index) => field === expectedOrder[index]);
+    
+    if (isExactOrder && timeSpent < 10000) {
+      // If filled in exact order AND very quickly, likely a bot
+      console.warn('Bot detected: Suspicious fill order pattern');
+      setErrorMessage('There was an error submitting your enrollment. Please try again.');
+      setSubmitStatus('error');
+      return;
+    }
+
+    // Sanitize all inputs before validation
+    const sanitizedFullName = sanitizeInput(fullName, 'name');
+    const sanitizedEmail = sanitizeInput(email, 'email');
+    const sanitizedPhone = sanitizeInput(phoneNumber, 'phone');
+    const sanitizedJob = sanitizeInput(currentJobStatus, 'text');
+    const sanitizedOccupation = sanitizeInput(desiredOccupation, 'text');
+
+    // Client-side validation for security
+    if (sanitizedFullName.length < 2 || sanitizedFullName.length > 100) {
+      setErrorMessage('Full name must be between 2 and 100 characters.');
+      setSubmitStatus('error');
+      return;
+    }
+
+    if (sanitizedEmail.length > 254) {
+      setErrorMessage('Email address is too long.');
+      setSubmitStatus('error');
+      return;
+    }
+
+    if (sanitizedPhone.length < 7 || sanitizedPhone.length > 25) {
+      setErrorMessage('Phone number must be between 7 and 25 characters.');
+      setSubmitStatus('error');
+      return;
+    }
+
+    if (sanitizedJob.length < 2 || sanitizedJob.length > 100) {
+      setErrorMessage('Current job status must be between 2 and 100 characters.');
+      setSubmitStatus('error');
+      return;
+    }
+
+    if (sanitizedOccupation.length < 2 || sanitizedOccupation.length > 100) {
+      setErrorMessage('Desired occupation must be between 2 and 100 characters.');
+      setSubmitStatus('error');
+      return;
+    }
+
+    // Check for suspicious patterns
+    const allInputs = [sanitizedFullName, sanitizedEmail, sanitizedPhone, sanitizedJob, sanitizedOccupation, courseType];
+    if (allInputs.some(input => containsSuspiciousPattern(input))) {
+      setErrorMessage('Invalid input detected. Please check your information and try again.');
+      setSubmitStatus('error');
+      return;
+    }
 
     try {
       const response = await fetch('/api/enrollment-email', {
@@ -28,7 +199,21 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ fullName, email, phoneNumber, currentJobStatus, desiredOccupation, courseType }),
+        body: JSON.stringify({ 
+          fullName: sanitizedFullName, 
+          email: sanitizedEmail, 
+          phoneNumber: sanitizedPhone, 
+          currentJobStatus: sanitizedJob, 
+          desiredOccupation: sanitizedOccupation, 
+          courseType,
+          // 🍯 Honeypot metadata for server-side verification
+          _honeypot: {
+            website: website, // Should always be empty
+            timeSpent: timeSpent, // Time spent filling form
+            userInteracted: userInteracted, // Did user interact with fields
+            fieldFillOrder: fieldFillOrder // Order in which fields were filled
+          }
+        }),
       });
 
       if (response.ok) {
@@ -92,6 +277,31 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
 
         {/* Form Fields */}
         <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
+          
+          {/* 🍯 HONEYPOT FIELD - INVISIBLE TO HUMANS, ATTRACTIVE TO BOTS */}
+          {/* eslint-disable-next-line @next/next/no-css-tags */}
+          <div 
+            style={{
+              position: 'absolute',
+              left: '-9999px',
+              width: '1px',
+              height: '1px',
+              overflow: 'hidden'
+            }}
+            aria-hidden="true"
+          >
+            <label htmlFor="website">Website (leave blank)</label>
+            <input
+              type="text"
+              id="website"
+              name="website"
+              value={website}
+              onChange={(e) => setWebsite(e.target.value)}
+              tabIndex={-1}
+              autoComplete="off"
+            />
+          </div>
+
           <div>
             <label htmlFor="fullName" className="block text-sm font-semibold text-gray-700 mb-1">Full Legal Name</label>
             <input
@@ -100,8 +310,13 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
               name="fullName"
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
+              onFocus={() => handleFieldInteraction('fullName')}
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-aurora-blue focus:border-aurora-blue text-base sm:text-sm placeholder-gray-400 text-gray-900 bg-white"
               placeholder="John Doe"
+              pattern="^[a-zA-ZÀ-ÿ\s'\-]{2,100}$"
+              title="Please enter your full legal name (2-100 characters, letters only)"
+              minLength={2}
+              maxLength={100}
               required
             />
           </div>
@@ -113,10 +328,12 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
               name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              onFocus={() => handleFieldInteraction('email')}
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-aurora-blue focus:border-aurora-blue text-base sm:text-sm placeholder-gray-400 text-gray-900 bg-white"
               placeholder="john.doe@example.com"
               pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
               title="Please enter a valid email address (e.g., john.doe@example.com)"
+              maxLength={254}
               required
             />
           </div>
@@ -128,10 +345,13 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
               name="phoneNumber"
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
+              onFocus={() => handleFieldInteraction('phoneNumber')}
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-aurora-blue focus:border-aurora-blue text-base sm:text-sm placeholder-gray-400 text-gray-900 bg-white"
               placeholder="+358 123 4567"
               pattern="^[+]?[0-9\s()-]{7,25}$"
-              title="Please enter a valid phone number (e.g., +358 123 4567)"
+              title="Please enter a valid phone number (7-25 characters, e.g., +358 123 4567)"
+              minLength={7}
+              maxLength={25}
               required
             />
           </div>
@@ -143,8 +363,13 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
               name="currentJobStatus"
               value={currentJobStatus}
               onChange={(e) => setCurrentJobStatus(e.target.value)}
+              onFocus={() => handleFieldInteraction('currentJobStatus')}
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-aurora-blue focus:border-aurora-blue text-base sm:text-sm placeholder-gray-400 text-gray-900 bg-white"
               placeholder="Student, Employed, Unemployed, etc."
+              pattern="^[a-zA-Z0-9À-ÿ\s.,\-'/()]{2,100}$"
+              title="Please enter your current job status (2-100 characters)"
+              minLength={2}
+              maxLength={100}
               required
             />
           </div>
@@ -156,8 +381,13 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
               name="desiredOccupation"
               value={desiredOccupation}
               onChange={(e) => setDesiredOccupation(e.target.value)}
+              onFocus={() => handleFieldInteraction('desiredOccupation')}
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-aurora-blue focus:border-aurora-blue text-base sm:text-sm placeholder-gray-400 text-gray-900 bg-white"
               placeholder="Software Developer, Nurse, Entrepreneur, etc."
+              pattern="^[a-zA-Z0-9À-ÿ\s.,\-'/()]{2,100}$"
+              title="Please enter your desired occupation (2-100 characters)"
+              minLength={2}
+              maxLength={100}
               required
             />
           </div>

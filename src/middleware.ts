@@ -33,6 +33,29 @@ export default function middleware(req: NextRequest) {
   // Otherwise, this is a protected route without a valid session
   // For API routes, return a JSON error
   if (req.nextUrl.pathname.startsWith('/api/')) {
+    // Security: Define allowed origins (no wildcard)
+    const allowedOrigins = [
+      'https://finlern.vercel.app',
+      'https://www.finlern.fi',
+      'https://finlern.fi',
+      // Allow localhost only in development
+      process.env.NODE_ENV !== 'production' ? 'http://localhost:3000' : null,
+      process.env.NODE_ENV !== 'production' ? 'http://127.0.0.1:3000' : null,
+    ].filter(Boolean) as string[];
+
+    const origin = req.headers.get('origin');
+    const responseHeaders: Record<string, string> = {
+      'content-type': 'application/json',
+    };
+
+    // Only set CORS headers if origin is in whitelist
+    if (origin && allowedOrigins.includes(origin)) {
+      responseHeaders['Access-Control-Allow-Origin'] = origin;
+      responseHeaders['Access-Control-Allow-Methods'] = 'GET, POST, OPTIONS, PUT, DELETE';
+      responseHeaders['Access-Control-Allow-Headers'] = 'Content-Type, Authorization';
+      responseHeaders['Access-Control-Allow-Credentials'] = 'true';
+    }
+
     return new NextResponse(
       JSON.stringify({ 
         error: 'Unauthorized', 
@@ -40,13 +63,7 @@ export default function middleware(req: NextRequest) {
       }),
       { 
         status: 401, 
-        headers: { 
-          'content-type': 'application/json',
-          // Add proper CORS headers to ensure error responses work cross-domain
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, DELETE',
-          'Access-Control-Allow-Headers': 'Content-Type, Authorization'
-        } 
+        headers: responseHeaders
       }
     );
   }

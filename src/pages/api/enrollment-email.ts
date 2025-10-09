@@ -15,6 +15,7 @@ const CLIENT_ID = process.env.GOOGLE_CLIENT_ID || '';
 const CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET || '';
 const REDIRECT_URI = process.env.GOOGLE_REDIRECT_URI || '';
 const REFRESH_TOKEN = process.env.GOOGLE_REFRESH_TOKEN || '';
+const NOTIFICATION_EMAIL = process.env.NOTIFICATION_EMAIL || 'info@finlern.fi';
 
 const oAuth2Client = new google.auth.OAuth2(
   CLIENT_ID,
@@ -339,7 +340,11 @@ async function handler(req: NextApiRequest, res: NextApiResponse<Data>): Promise
         timestamp: new Date().toISOString(),
       });
     } catch (logErr) {
-      console.error('CSV logging failed:', logErr);
+      // Security: Only log error message in production, full stack in development
+      console.error('CSV logging failed:', process.env.NODE_ENV === 'production' 
+        ? (logErr instanceof Error ? logErr.message : 'Unknown error')
+        : logErr
+      );
       res.status(500).json({ message: 'Unable to save enrollment. Please try again later.' });
       return;
     }
@@ -356,7 +361,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse<Data>): Promise
       service: 'gmail',
       auth: {
         type: 'OAuth2',
-        user: 'info@finlern.fi',
+        user: NOTIFICATION_EMAIL,
         clientId: CLIENT_ID,
         clientSecret: CLIENT_SECRET,
         refreshToken: REFRESH_TOKEN,
@@ -365,8 +370,8 @@ async function handler(req: NextApiRequest, res: NextApiResponse<Data>): Promise
     });
 
     await transporter.sendMail({
-      from: 'info@finlern.fi',
-      to: 'info@finlern.fi',
+      from: NOTIFICATION_EMAIL,
+      to: NOTIFICATION_EMAIL,
       subject: `New Enrollment for ${he.escape(normalizedCourseType)} Course`,
       html: `
         <p>You have a new enrollment for the <strong>${he.escape(normalizedCourseType)}</strong> course.</p>
@@ -380,7 +385,11 @@ async function handler(req: NextApiRequest, res: NextApiResponse<Data>): Promise
 
     res.status(200).json({ message: 'Enrollment submitted successfully!' });
   } catch (error) {
-    console.error('Error sending email:', error);
+    // Security: Only log error message in production, full stack in development
+    console.error('Error sending email:', process.env.NODE_ENV === 'production' 
+      ? (error instanceof Error ? error.message : 'Email service error')
+      : error
+    );
     // Email failed, but data is already logged. Return success with note to check email service.
     res.status(200).json({ message: 'Enrollment saved. Notification email may be delayed.' });
   }

@@ -131,8 +131,11 @@ export const withRateLimit = (limiter: any) => {
           retryAfter: retryAfterSeconds
         });
       } else {
-        // For other errors, log but don't block the request
-        console.error('Rate limiter error:', error);
+        // Security: Only log error message in production, full stack in development
+        console.error('Rate limiter error:', process.env.NODE_ENV === 'production' 
+          ? (error instanceof Error ? error.message : 'Rate limit check failed')
+          : error
+        );
         next();
       }
     }

@@ -28,7 +28,11 @@ export async function logEnrollment(data: EnrollmentData): Promise<void> {
     // In production, this would integrate with a database like Supabase or PlanetScale
     
   } catch (error) {
-    console.error('Failed to log enrollment:', error);
+    // Security: Only log error message in production, full stack in development
+    console.error('Failed to log enrollment:', process.env.NODE_ENV === 'production' 
+      ? (error instanceof Error ? error.message : 'Enrollment logging error')
+      : error
+    );
     throw new Error('Logging failed');
   }
 }

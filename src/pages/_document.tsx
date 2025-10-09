@@ -35,8 +35,9 @@ export default function Document() {
       frame-src 'self';
     `.replace(/\s{2,}/g, ' ').trim()
 
-  // Use CSP header to protect the site, but only after it's working correctly
-  const enableCspHeader = false;
+  // Security: Enable CSP meta tag as fallback to HTTP headers
+  // Note: HTTP headers in next.config.js are primary, this is a fallback
+  const enableCspMetaTag = true;
 
   return (
     <Html lang="en">
@@ -55,8 +56,8 @@ export default function Document() {
           nonce={nonce}
         />
 
-        {/* Add CSP meta tag */}
-        {enableCspHeader && (
+        {/* Security: CSP meta tag (fallback to HTTP headers) */}
+        {enableCspMetaTag && (
           <meta httpEquiv="Content-Security-Policy" content={cspContent} />
         )}
         

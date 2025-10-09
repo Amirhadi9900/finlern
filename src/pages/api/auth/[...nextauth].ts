@@ -98,13 +98,14 @@ const authOptions: NextAuthOptions = {
   ],
   session: {
     strategy: 'jwt',
-    maxAge: 30 * 24 * 60 * 60, // 30 days
+    maxAge: 7 * 24 * 60 * 60, // 7 days (improved security from 30 days)
+    updateAge: 24 * 60 * 60, // Update session every 24 hours (rolling sessions)
   },
   jwt: {
     // Use a secure secret at least 32 characters long in production
     secret: process.env.NEXTAUTH_SECRET,
     // Set short expiry time to improve security
-    maxAge: 60 * 60, // 1 hour
+    maxAge: 24 * 60 * 60, // 24 hours (improved from 1 hour for better UX)
   },
   pages: {
     signIn: '/auth/signin',

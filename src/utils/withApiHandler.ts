@@ -34,8 +34,11 @@ const applyMiddleware = (middleware: any) => (handler: ApiHandler) => {
       
       return handler(req, res);
     } catch (error: unknown) {
-      // This catch is for issues with the middleware itself
-      console.error('Middleware error:', error);
+      // Security: Only log error message in production, full stack in development
+      console.error('Middleware error:', process.env.NODE_ENV === 'production' 
+        ? (error instanceof Error ? error.message : 'Middleware failure')
+        : error
+      );
       return res.status(500).json({ error: 'Internal Server Error' });
     }
   };
@@ -155,7 +158,11 @@ export const withApiHandler = (handler: ApiHandler, options: HandlerOptions = {}
             });
           }
         } catch (authError: unknown) {
-          console.error('Authentication error:', authError);
+          // Security: Only log error message in production, full stack in development
+          console.error('Authentication error:', process.env.NODE_ENV === 'production' 
+            ? (authError instanceof Error ? authError.message : 'Auth validation failed')
+            : authError
+          );
           return res.status(401).json({ 
             error: 'Authentication Error', 
             message: 'Failed to validate authentication' 
@@ -166,7 +173,11 @@ export const withApiHandler = (handler: ApiHandler, options: HandlerOptions = {}
       // Execute the handler with all middleware applied
       return enhancedHandler(req, res);
     } catch (error: unknown) {
-      console.error('API Error:', error);
+      // Security: Only log error message in production, full stack in development
+      console.error('API Error:', process.env.NODE_ENV === 'production' 
+        ? (error instanceof Error ? error.message : 'Request processing failed')
+        : error
+      );
       return res.status(500).json({ error: 'Internal Server Error' });
     }
   };

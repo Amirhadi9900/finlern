@@ -61,7 +61,7 @@ export default function OurStory() {
     {
       id: "reeta",
       name: "Reeta",
-      bio: "With over 20 years of experience in language teaching, Reeta brings a deep understanding of effective, student-centered learning to Finlern’s online Finnish language courses. Her innovative methods and dedication to practical, real-life language use are key to the success of our programs. We are proud to have Sanna as part of our team through a valuable collaboration with NPE Kulplan Oy, whose partnership helps us ensure high-quality teaching for every learner."
+      bio: "With over 20 years of experience in language teaching, Reeta brings a deep understanding of effective, student-centered learning to Finlern's online Finnish language courses. Her innovative methods and dedication to practical, real-life language use are key to the success of our programs. We are proud to have Reeta as part of our team through a valuable collaboration with NPE Kulplan Oy, whose partnership helps us ensure high-quality teaching for every learner."
     },
     {
       id: "amirhadi",
@@ -72,7 +72,7 @@ export default function OurStory() {
     {
       id: "hamid",
       name: "Hamid Reza Ghorbani",
-      bio: "Hamid Reza Gorbani is the creative force behind Finlern Oy. Armed with a degree in International Business, he's a pro at sales, team-leading, and connecting people. Through Finlern, he's building smart, impactful learning solutions and dreaming big—think skill-boosting courses beyond just languages. He's also hosted a ton of events in Finland to sharpen speaking skills and celebrate different cultures. Oh, and when he's not running the show, he's a mean classical violinist!",
+      bio: "Hamid Reza Ghorbani is the creative force behind Finlern Oy. Armed with a degree in International Business, he's a pro at sales, team-leading, and connecting people. Through Finlern, he's building smart, impactful learning solutions and dreaming big—think skill-boosting courses beyond just languages. He's also hosted a ton of events in Finland to sharpen speaking skills and celebrate different cultures. Oh, and when he's not running the show, he's a mean classical violinist!",
       linkedin: "https://www.linkedin.com/in/hamid-reza-ghorbani-salesassistant"
     },
     {
@@ -450,7 +450,7 @@ export default function OurStory() {
                   {/* Image container */}
                   <div className="absolute inset-2 rounded-full overflow-hidden border-2 border-white shadow-xl transform group-hover:scale-105 transition-transform duration-700">
                     <Image
-                      src="/images/"
+                      src="/images/placeholder-avatar.png"
                       alt="Reeta"
                       width={160}
                       height={160}
@@ -531,7 +531,7 @@ export default function OurStory() {
                   CEO & Founder
                 </div>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                Hamid Reza Gorbani is the founder and leader of Finlern Oy, where he leverages his leadership and management skills to ensure the organization operates smoothly.
+                Hamid Reza Ghorbani is the founder and leader of Finlern Oy, where he leverages his leadership and management skills to ensure the organization operates smoothly.
               </p>
               <button 
                 onClick={() => openTeamMemberPopup('hamid')}
@@ -731,6 +731,499 @@ export default function OurStory() {
         </div>
       </section>
 
+      {/* Business Model Canvas Section - ELEGANT VERSION */}
+      <section className="py-16 md:py-24 relative overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+        {/* Simple Static Background Effects */}
+        <div className="absolute inset-0">
+          {/* Static gradient orbs */}
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500 rounded-full filter blur-[128px] opacity-20"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500 rounded-full filter blur-[128px] opacity-20"></div>
+          
+          {/* Static grid overlay */}
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+        </div>
+        
+        <style jsx>{`
+          :root {
+            --aurora-blue: #3E8AC1;
+            --aurora-purple: #6650a4;
+            --aurora-green: #47A76A;
+            --aurora-night: #05021A;
+            --finnish-blue: #002F6C;
+          }
+          
+          .bmc-container {
+            max-width: 1500px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 24px;
+            box-shadow: 
+              0 25px 50px -12px rgba(0, 0, 0, 0.5),
+              0 0 0 1px rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          }
+          
+          .bmc-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+              0 35px 60px -15px rgba(0, 0, 0, 0.6),
+              0 0 0 1px rgba(255, 255, 255, 0.2),
+              0 20px 40px rgba(147, 51, 234, 0.3);
+          }
+          
+          .bmc-header {
+            background: linear-gradient(135deg, rgba(147, 51, 234, 0.9) 0%, rgba(59, 130, 246, 0.9) 50%, rgba(16, 185, 129, 0.9) 100%);
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+          }
+          
+          .bmc-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+          }
+          
+          .bmc-header h1 {
+            color: white;
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            letter-spacing: -0.5px;
+          }
+          
+          .bmc-header .subtitle {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 20px;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+          }
+          
+          .flag {
+            font-size: 42px;
+            display: inline-block;
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+          }
+          
+          .canvas-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 60px;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(10px);
+            position: relative;
+          }
+          
+          .canvas-grid::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, transparent 0%, rgba(147, 51, 234, 0.1) 100%);
+            pointer-events: none;
+          }
+          
+          .canvas-box {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 32px;
+            min-height: 260px;
+            position: relative;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 
+              0 8px 32px rgba(0, 0, 0, 0.1),
+              inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+          }
+          
+          .canvas-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--aurora-blue), var(--aurora-purple), var(--aurora-green));
+            opacity: 0;
+            transition: opacity 0.2s ease;
+          }
+          
+          .canvas-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+              0 25px 60px rgba(147, 51, 234, 0.3),
+              inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+            border-color: rgba(147, 51, 234, 0.5);
+            background: rgba(255, 255, 255, 0.98);
+          }
+          
+          .canvas-box:hover::before {
+            opacity: 1;
+          }
+          
+          .canvas-box .icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: inline-block;
+            filter: drop-shadow(0 5px 10px rgba(147, 51, 234, 0.2));
+            position: relative;
+            z-index: 2;
+            transition: transform 0.2s ease;
+          }
+          
+          .canvas-box:hover .icon {
+            transform: scale(1.1);
+            filter: drop-shadow(0 10px 20px rgba(147, 51, 234, 0.3));
+          }
+          
+          .canvas-box h3 {
+            color: #1e293b;
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 12px;
+            background: linear-gradient(135deg, #9333ea, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+          }
+          
+          .canvas-box h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #9333ea, #3b82f6, #10b981);
+            border-radius: 2px;
+          }
+          
+          .canvas-box p {
+            color: #334155;
+            font-size: 15px;
+            line-height: 1.9;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+          }
+          
+          .canvas-box:hover p {
+            color: #1e293b;
+            transition: color 0.3s ease;
+          }
+          
+          .canvas-box strong {
+            color: #1e293b;
+            font-weight: 700;
+          }
+          
+          .highlight {
+            background: linear-gradient(120deg, #fbbf24, #f59e0b);
+            padding: 8px 16px;
+            border-radius: 12px;
+            font-weight: 700;
+            color: #1e293b;
+            border: 2px solid #fbbf24;
+            box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
+            display: inline-block;
+            position: relative;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+          }
+          
+          .highlight:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(251, 191, 36, 0.4);
+          }
+          
+          .spectacular-title {
+            text-shadow: 2px 2px 10px rgba(147, 51, 234, 0.3);
+            background: linear-gradient(135deg, #fff, #e0e7ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+          
+          .glowing-divider {
+            box-shadow: 0 2px 10px rgba(147, 51, 234, 0.3);
+          }
+          
+          .bmc-footer {
+            background: linear-gradient(135deg, rgba(147, 51, 234, 0.95) 0%, rgba(59, 130, 246, 0.95) 50%, rgba(16, 185, 129, 0.95) 100%);
+            padding: 50px 40px;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.2);
+          }
+          
+          .footer-icons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            font-size: 40px;
+          }
+          
+          .footer-icon {
+            display: inline-block;
+            filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
+            cursor: pointer;
+            transition: transform 0.2s ease;
+          }
+          
+          .footer-icon:hover {
+            transform: scale(1.2);
+            filter: drop-shadow(0 10px 20px rgba(255, 255, 255, 0.3));
+          }
+          
+          .decorative-corner {
+            position: absolute;
+            font-size: 28px;
+            opacity: 0.1;
+            transition: opacity 0.2s ease;
+          }
+          
+          .canvas-box:hover .decorative-corner {
+            opacity: 0.3;
+          }
+          
+          .top-left { top: 8px; left: 8px; }
+          .top-right { top: 8px; right: 8px; }
+          .bottom-left { bottom: 8px; left: 8px; }
+          .bottom-right { bottom: 8px; right: 8px; }
+          
+          @media (max-width: 768px) {
+            .canvas-grid {
+              grid-template-columns: 1fr;
+              padding: 20px;
+            }
+            
+            .bmc-header h1 {
+              font-size: 28px;
+            }
+            
+            .bmc-header .subtitle {
+              font-size: 16px;
+            }
+            
+            .flag {
+              font-size: 32px;
+            }
+          }
+        `}</style>
+
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
+          {/* Section Header - SPECTACULAR */}
+          <div className="text-center mb-16">
+            <div className="inline-block mb-6" data-aos="fade-up">
+              <span className="px-6 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500/20 to-blue-500/20 text-white backdrop-blur-sm border border-white/20">
+                Our Strategic Framework
+              </span>
+            </div>
+            <h2 
+              className="spectacular-title text-4xl md:text-6xl font-bold text-white mb-6"
+              data-aos="fade-up" 
+              data-aos-delay="100"
+            >
+              Business Model Canvas
+            </h2>
+            <div 
+              className="glowing-divider w-32 h-1 bg-gradient-to-r from-purple-400 via-blue-400 to-green-400 mx-auto rounded-full mb-6"
+              data-aos="fade-up" 
+              data-aos-delay="150"
+            ></div>
+            <p 
+              className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-medium"
+              data-aos="fade-up" 
+              data-aos-delay="200"
+            >
+              ✨ Empowering integration through education and culture ✨
+            </p>
+          </div>
+
+          <div className="bmc-container" data-aos="fade-up" data-aos-delay="300">
+            <div className="bmc-header">
+              <h1>
+                <span className="flag">🇫🇮</span> Finlern Oy – Business Model Canvas 2025 <span className="flag">🌍</span>
+              </h1>
+            </div>
+          
+          <div className="canvas-grid">
+            {/* Row 1 */}
+            <div className="canvas-box">
+              <span className="decorative-corner top-left">🤝</span>
+              <span className="decorative-corner bottom-right">💱</span>
+              <div className="icon">🤝</div>
+              <h3>Key Partners</h3>
+              <p>
+                🏛️ <strong>Municipalities</strong><br />
+                🏢 <strong>Real Estates</strong><br />
+                🎭 <strong>Cultural Centers</strong><br />
+                🎓 <strong>HAMK University</strong><br />
+                🌐 <strong>Social Media Influencers</strong><br />
+                🔧 <strong>NPE Oy</strong>
+              </p>
+            </div>
+            
+            <div className="canvas-box">
+              <span className="decorative-corner top-left">🧭</span>
+              <span className="decorative-corner bottom-right">🎯</span>
+              <div className="icon">🧭</div>
+              <h3>Key Activities</h3>
+              <p>
+                📚 <strong>Language Education</strong><br />
+                🧩 <strong>Integration Consulting</strong><br />
+                🎪 <strong>Cultural & Educational Events</strong><br />
+                🏡 <strong>Relocation Services</strong><br />
+                💼 <strong>Professional Networking</strong><br />
+                🎨 <strong>Community Building</strong><br />
+                💸 <strong>Startup Funding</strong>
+              </p>
+            </div>
+            
+            <div className="canvas-box">
+              <span className="decorative-corner top-left">💎</span>
+              <span className="decorative-corner bottom-right">⭐</span>
+              <div className="icon">💎</div>
+              <h3>Value Propositions</h3>
+              <p>
+                <span className="highlight">🎯 One-Stop Multicultural Solution</span><br /><br />
+                Combining language learning, cultural immersion, and community integration for newcomers to Finland.<br /><br />
+                ✅ <strong>Comprehensive Support</strong><br />
+                ✅ <strong>Expert Guidance</strong><br />
+                ✅ <strong>Community Connection</strong>
+              </p>
+            </div>
+            
+            {/* Row 2 */}
+            <div className="canvas-box">
+              <span className="decorative-corner top-left">💬</span>
+              <span className="decorative-corner bottom-right">❤️</span>
+              <div className="icon">💬</div>
+              <h3>Customer Relationships</h3>
+              <p>
+                👥 <strong>Personalized Support</strong><br />
+                🌟 <strong>Community Engagement</strong><br />
+                🔍 <strong>Transparent Communication</strong><br />
+                🗣️ <strong>Multilingual Service</strong><br />
+                💻 <strong>Online + In-Person Consulting</strong><br />
+                📞 <strong>24/7 Availability</strong>
+              </p>
+            </div>
+            
+            <div className="canvas-box">
+              <span className="decorative-corner top-left">🌍</span>
+              <span className="decorative-corner bottom-right">👥</span>
+              <div className="icon">🌍</div>
+              <h3>Customer Segments</h3>
+              <p>
+                🎯 <strong>International experts and students in Pirkanmaa and Kanta-Häme (Tampere, Valkeakoski, Hämeenlinna, Riihimäki)</strong>
+              </p>
+            </div>
+            
+            <div className="canvas-box">
+              <span className="decorative-corner top-left">📣</span>
+              <span className="decorative-corner bottom-right">🚀</span>
+              <div className="icon">📣</div>
+              <h3>Channels</h3>
+              <p>
+                🌐 <strong>Website (finlern.vercel.app)</strong><br />
+                📱 <strong>Finlern Mobile App</strong><br />
+                📱 <strong>Social Media Platforms</strong><br />
+                🤝 <strong>Strategic Partnerships</strong><br />
+                🎪 <strong>Community Events</strong><br />
+                💬 <strong>Word-of-Mouth & Referrals</strong>
+              </p>
+            </div>
+            
+            {/* Row 3 */}
+            <div className="canvas-box">
+              <span className="decorative-corner top-left">🧑‍🏫</span>
+              <span className="decorative-corner bottom-right">🎓</span>
+              <div className="icon">🧑‍🏫</div>
+              <h3>Key Resources</h3>
+              <p>
+                👨‍🏫 <strong>Qualified Teachers</strong><br />
+                🧠 <strong>Expert Consultants</strong><br />
+                📱 <strong>Finlern App Platform</strong><br />
+                🌐 <strong>Website & Digital Tools</strong><br />
+                🎨 <strong>Brand & Reputation</strong><br />
+                🤝 <strong>Partner Network</strong>
+              </p>
+            </div>
+            
+            <div className="canvas-box">
+              <span className="decorative-corner top-left">💰</span>
+              <span className="decorative-corner bottom-right">📊</span>
+              <div className="icon">💰</div>
+              <h3>Cost Structure</h3>
+              <p>
+                💵 <strong>Staff Salaries</strong><br />
+                💻 <strong>App & Web Maintenance</strong><br />
+                📢 <strong>Marketing & Advertising</strong><br />
+                🏢 <strong>Administration</strong><br />
+                🎪 <strong>Events & Workshops</strong><br />
+                ⚖️ <strong>Legal & Accounting</strong><br />
+                🏠 <strong>Office & Operations</strong>
+              </p>
+            </div>
+            
+            <div className="canvas-box">
+              <span className="decorative-corner top-left">💼</span>
+              <span className="decorative-corner bottom-right">💵</span>
+              <div className="icon">💼</div>
+              <h3>Revenue Streams</h3>
+              <p>
+                <span className="highlight">👑 VIP Packages (€899–€1,249)</span><br />
+                📚 <strong>Language Courses</strong><br />
+                🎯 <strong>Individual Services</strong><br />
+                🤝 <strong>B2B Partnerships</strong><br />
+                🎓 <strong>Workshops & Events</strong><br />
+              </p>
+            </div>
+          </div>
+          
+          <div className="bmc-footer">
+            <div className="footer-icons">
+              <span className="footer-icon">🎓</span>
+              <span className="footer-icon">💡</span>
+              <span className="footer-icon">🤝</span>
+            </div>
+            <div>Empowering Integration Through Education & Culture</div>
+            <div className="mt-4 text-base opacity-95">
+              🌟 Building Bridges • Creating Communities • Transforming Lives 🌟
+            </div>
+          </div>
+        </div>
+      </div>
+      </section>
+
       {/* Team Member Popup */}
       {activeTeamMember && (
         <div className="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
@@ -828,217 +1321,6 @@ export default function OurStory() {
           </div>
         </div>
       )}
-
-      {/* Call to Action - Enhanced */}
-      <section className="py-16 md:py-24 relative overflow-hidden">
-        {/* Professional Background Design */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-blue-50/30"></div>
-        <div className="absolute top-0 right-1/3 w-96 h-96 bg-aurora-blue/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-1/3 w-96 h-96 bg-aurora-green/5 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 right-0 w-64 h-64 bg-aurora-purple/5 rounded-full blur-2xl"></div>
-
-        <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
-          {/* Main CTA Card */}
-          <div className="max-w-5xl mx-auto">
-            <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl border border-gray-100 overflow-hidden relative">
-              {/* Decorative header bar */}
-              <div className="h-2 bg-gradient-to-r from-aurora-blue via-aurora-green to-aurora-purple"></div>
-              
-              {/* Content */}
-              <div className="p-8 md:p-12">
-                {/* Header Section */}
-                <div className="text-center mb-12" data-aos="fade-up" data-aos-duration="800">
-                  <div className="inline-block mb-4 bg-gradient-to-r from-aurora-blue to-aurora-green px-6 py-2 rounded-full text-white text-sm font-medium shadow-lg">
-                    Join Our Community Today
-                </div>
-                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
-                    Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-aurora-blue to-aurora-green">Start Learning?</span>
-                </h2>
-                  <div className="w-24 h-1 bg-gradient-to-r from-aurora-blue to-aurora-green mx-auto rounded-full mb-6"></div>
-                  <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-                    Join our community of Finnish language learners and discover the joy of learning Finnish with our passionate team.
-                  </p>
-                </div>
-
-                {/* Team Highlights Grid */}
-                <div className="grid md:grid-cols-3 gap-6 mb-12">
-                  <div className="group" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
-                    <div className="bg-gradient-to-br from-aurora-blue/5 to-aurora-blue/10 rounded-2xl p-6 h-full border border-aurora-blue/10 group-hover:shadow-lg group-hover:shadow-aurora-blue/20 transition-all duration-300">
-                      <div className="flex items-start mb-4">
-                        <div className="w-14 h-14 rounded-xl bg-aurora-blue/10 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-                          <svg className="w-7 h-7 text-aurora-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                          </svg>
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-aurora-blue transition-colors duration-300">Expert Teaching</h3>
-                          <p className="text-gray-600">Experienced educators passionate about Finnish language</p>
-                        </div>
-                      </div>
-                      <div className="space-y-2">
-                        <div className="flex items-center text-sm text-gray-600">
-                          <svg className="w-4 h-4 text-aurora-green mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                          </svg>
-                          Qualified instructors
-                        </div>
-                        <div className="flex items-center text-sm text-gray-600">
-                          <svg className="w-4 h-4 text-aurora-green mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                          </svg>
-                          Years of experience
-                        </div>
-                        <div className="flex items-center text-sm text-gray-600">
-                          <svg className="w-4 h-4 text-aurora-green mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                          </svg>
-                          Proven methods
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="group" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
-                    <div className="bg-gradient-to-br from-aurora-green/5 to-aurora-green/10 rounded-2xl p-6 h-full border border-aurora-green/10 group-hover:shadow-lg group-hover:shadow-aurora-green/20 transition-all duration-300">
-                      <div className="flex items-start mb-4">
-                        <div className="w-14 h-14 rounded-xl bg-aurora-green/10 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-                          <svg className="w-7 h-7 text-aurora-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                          </svg>
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-aurora-green transition-colors duration-300">Passionate Mission</h3>
-                          <p className="text-gray-600">Dedicated to helping you succeed in Finland</p>
-                        </div>
-                      </div>
-                      <div className="space-y-2">
-                        <div className="flex items-center text-sm text-gray-600">
-                          <svg className="w-4 h-4 text-aurora-green mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                          </svg>
-                          Student-centered approach
-                        </div>
-                        <div className="flex items-center text-sm text-gray-600">
-                          <svg className="w-4 h-4 text-aurora-green mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                          </svg>
-                          Cultural integration
-                        </div>
-                        <div className="flex items-center text-sm text-gray-600">
-                          <svg className="w-4 h-4 text-aurora-green mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                          </svg>
-                          Community support
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="group" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
-                    <div className="bg-gradient-to-br from-aurora-purple/5 to-aurora-purple/10 rounded-2xl p-6 h-full border border-aurora-purple/10 group-hover:shadow-lg group-hover:shadow-aurora-purple/20 transition-all duration-300">
-                      <div className="flex items-start mb-4">
-                        <div className="w-14 h-14 rounded-xl bg-aurora-purple/10 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-                          <svg className="w-7 h-7 text-aurora-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                          </svg>
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-aurora-purple transition-colors duration-300">Your Success</h3>
-                          <p className="text-gray-600">Committed to your Finnish language journey</p>
-                        </div>
-                      </div>
-                      <div className="space-y-2">
-                        <div className="flex items-center text-sm text-gray-600">
-                          <svg className="w-4 h-4 text-aurora-green mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                          </svg>
-                          Personal support
-                        </div>
-                        <div className="flex items-center text-sm text-gray-600">
-                          <svg className="w-4 h-4 text-aurora-green mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                          </svg>
-                          Flexible learning
-                        </div>
-                        <div className="flex items-center text-sm text-gray-600">
-                          <svg className="w-4 h-4 text-aurora-green mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                          </svg>
-                          Real results
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Team Stats */}
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
-                  <div className="text-center" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-aurora-blue to-aurora-green mx-auto mb-3 flex items-center justify-center shadow-lg">
-                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                      </svg>
-                    </div>
-                    <div className="text-2xl font-bold text-aurora-blue mb-1">3</div>
-                    <p className="text-sm text-gray-600">Expert Teachers</p>
-                  </div>
-                  
-                  <div className="text-center" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-aurora-green to-aurora-blue mx-auto mb-3 flex items-center justify-center shadow-lg">
-                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <div className="text-2xl font-bold text-aurora-green mb-1">15+</div>
-                    <p className="text-sm text-gray-600">Years Combined</p>
-                  </div>
-                  
-                  <div className="text-center" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-aurora-purple to-aurora-green mx-auto mb-3 flex items-center justify-center shadow-lg">
-                      <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    </div>
-                    <div className="text-2xl font-bold text-aurora-purple mb-1">20+</div>
-                    <p className="text-sm text-gray-600">Happy Students</p>
-                  </div>
-
-                  <div className="text-center" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-aurora-blue to-aurora-purple mx-auto mb-3 flex items-center justify-center shadow-lg">
-                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                      </svg>
-                    </div>
-                    <div className="text-2xl font-bold text-aurora-blue mb-1">100%</div>
-                    <p className="text-sm text-gray-600">Passion</p>
-                  </div>
-                </div>
-
-                {/* Action Buttons */}
-                <div className="text-center" data-aos="fade-up" data-aos-delay="500" data-aos-duration="800">
-                  <div className="flex flex-col sm:flex-row justify-center gap-4">
-                    <Link href="/classes" className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-aurora-blue to-aurora-green text-white rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-blue/30 transform hover:scale-105 group">
-                      <svg className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                    </svg>
-                      Explore Our Courses
-                  </Link>
-                    <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-white border-2 border-aurora-blue text-aurora-blue rounded-xl font-medium transition-all duration-300 hover:bg-aurora-blue/5 hover:shadow-lg transform hover:scale-105 group">
-                      <svg className="w-5 h-5 mr-2 group-hover:-translate-y-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                    </svg>
-                      Get In Touch
-                  </Link>
-                  </div>
-                  <p className="text-sm text-gray-500 mt-4">
-                    Meet our team • Learn our story • Start your journey
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </Layout>
   )
 } 

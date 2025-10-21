@@ -88,7 +88,7 @@ const sanitizeDangerousPatterns = (input: string): string => {
   sanitized = sanitized.replace(/[\x00-\x1F\x7F]/g, '');
   
   // 2. Multi-pass removal of script tags
-  sanitized = multiPassReplace(sanitized, /<script[^>]*>.*?<\/script>/gi, '');
+  sanitized = multiPassReplace(sanitized, /<script\b[^>]*>[\s\S]*?<\/script\b[^>]*>/gi, '');
   sanitized = multiPassReplace(sanitized, /<script/gi, '');
   sanitized = multiPassReplace(sanitized, /script>/gi, '');
   

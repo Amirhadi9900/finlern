@@ -130,39 +130,12 @@ export default function Home() {
                 </h2>
                 <h1 className="text-xl md:text-2xl lg:text-4xl font-bold tracking-tight drop-shadow-[0_2px_5px_rgba(0,0,0,0.2)]">
                   <span className="text-white whitespace-nowrap">Master Finnish Life with</span>
-                  <span className="relative block mt-2">
-                    {/* Luxurious Finlern Text with Premium Animations */}
-                    <span className="relative z-10 group/finlern cursor-default">
-                      <span className="inline-block pl-4 pr-3 relative overflow-hidden rounded-2xl">
-                        {/* Main Text with Flowing Gradient Animation */}
-                        <span className="relative z-20 bg-gradient-to-r from-aurora-green via-emerald-400 to-aurora-blue bg-[length:300%_100%] bg-clip-text text-transparent font-black text-4xl md:text-5xl lg:text-6xl drop-shadow-[0_0_10px_rgba(71,167,106,0.3)]">
-                          Finlern
-                        </span>
-                        
-                        {/* Premium Shimmer Effect */}
-                        <span className="absolute inset-0 z-30 bg-gradient-to-r from-transparent via-white/40 to-transparent -skew-x-12 translate-x-[-100%] group-hover/finlern:translate-x-[200%] transition-transform duration-[2000ms] ease-out rounded-2xl"></span>
-                        
-                        {/* Elegant Glow Layer */}
-                        <span className="absolute inset-0 z-10 bg-gradient-to-r from-aurora-green/20 via-aurora-blue/20 to-aurora-green/20 blur-sm scale-110 opacity-60 group-hover/finlern:opacity-100 group-hover/finlern:scale-125 transition-all duration-700 ease-out rounded-2xl"></span>
-                        
-                        {/* Sophisticated Backdrop Glow */}
-                        <span className="absolute inset-0 z-5 bg-gradient-to-r from-aurora-green/10 via-cyan-300/15 to-aurora-blue/10 blur-lg scale-150 opacity-40 group-hover/finlern:opacity-80 group-hover/finlern:scale-[1.8] transition-all duration-1000 ease-out rounded-2xl"></span>
-                        
-                        {/* Premium Border Highlight */}
-                        <span className="absolute inset-0 z-15 border border-transparent bg-gradient-to-r from-aurora-green/30 via-transparent to-aurora-blue/30 bg-clip-border rounded-2xl opacity-0 group-hover/finlern:opacity-60 transition-opacity duration-500"></span>
-                      </span>
-                    </span>
-                    
-                    {/* Luxurious Animated Underline */}
-                    <span className="absolute -bottom-1 left-0 right-0 h-[4px] overflow-hidden rounded-full">
-                      {/* Base Gradient Line */}
-                      <span className="absolute inset-0 bg-gradient-to-r from-aurora-green/80 via-cyan-300/90 to-aurora-blue/80 rounded-full"></span>
-                      
-                      {/* Flowing Highlight Animation */}
-                      <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent translate-x-[-100%] group-hover/finlern:translate-x-[200%] transition-transform duration-[1500ms] ease-out rounded-full"></span>
-                      
-                      {/* Premium Glow Effect */}
-                      <span className="absolute -inset-1 bg-gradient-to-r from-aurora-green/40 via-cyan-300/50 to-aurora-blue/40 blur-sm opacity-50 group-hover/finlern:opacity-100 transition-opacity duration-500 rounded-full"></span>
+                  <span className="block mt-3">
+                    <span 
+                      className="inline-block font-black text-4xl md:text-5xl lg:text-6xl finlern-hero-text"
+                      data-text="Finlern"
+                    >
+                      Finlern
                     </span>
                   </span>
                 </h1>

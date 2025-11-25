@@ -145,7 +145,7 @@ export default function Events() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
             {/* Event 1 - Enhanced */}
             <div 
-              className="relative group bg-white rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100"
+              className="relative group bg-white rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 h-full flex flex-col"
               data-aos="fade-up"
               data-aos-delay="100"
             >
@@ -176,7 +176,7 @@ export default function Events() {
                 <div className="absolute inset-0 opacity-20 bg-[radial-gradient(white_1px,transparent_1px)] [background-size:16px_16px]"></div>
               </div>
               
-              <div className="p-6 md:p-8">
+              <div className="p-6 md:p-8 flex-1 flex flex-col">
                 <div className="space-y-4 mb-6">
                   <div className="flex items-center text-gray-700">
                     <div className="w-10 h-10 rounded-full bg-aurora-blue/10 flex items-center justify-center mr-3 flex-shrink-0">
@@ -207,7 +207,7 @@ export default function Events() {
                   </div>
                 </div>
                 
-                <div className="border-t border-gray-100 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div className="border-t border-gray-100 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 mt-auto">
                   <div className="bg-gradient-to-r from-aurora-blue/10 to-aurora-green/10 rounded-full px-6 py-2 text-aurora-blue font-bold">
                     Free Entrance!
                   </div>
@@ -223,7 +223,7 @@ export default function Events() {
 
             {/* Event 2 - Enhanced */}
             <div 
-              className="relative group bg-white rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100"
+              className="relative group bg-white rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 h-full flex flex-col"
               data-aos="fade-up"
               data-aos-delay="200"
             >
@@ -254,7 +254,7 @@ export default function Events() {
                 <div className="absolute inset-0 opacity-20 bg-[radial-gradient(white_1px,transparent_1px)] [background-size:16px_16px]"></div>
               </div>
               
-              <div className="p-6 md:p-8">
+              <div className="p-6 md:p-8 flex-1 flex flex-col">
                 <div className="space-y-4 mb-6">
                   <div className="flex items-center text-gray-700">
                     <div className="w-10 h-10 rounded-full bg-aurora-purple/10 flex items-center justify-center mr-3 flex-shrink-0">
@@ -285,7 +285,7 @@ export default function Events() {
                   </div>
                 </div>
                 
-                <div className="border-t border-gray-100 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div className="border-t border-gray-100 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 mt-auto">
                   <div className="bg-gradient-to-r from-aurora-purple/10 to-aurora-blue/10 rounded-full px-6 py-2 text-aurora-purple font-bold">
                     Free Entrance!
                   </div>

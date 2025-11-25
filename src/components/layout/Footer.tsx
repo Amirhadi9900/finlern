@@ -219,7 +219,7 @@ const Footer: React.FC = () => {
             
             {/* Social media links */}
             <div className="mt-8 flex space-x-4">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" 
+              <a href="https://www.facebook.com/people/Finlern/61578171630486/" target="_blank" rel="noopener noreferrer" 
                 className="text-gray-200 hover:text-white transition-all duration-300 hover:scale-110 transform group"
                 title="Facebook"
               >

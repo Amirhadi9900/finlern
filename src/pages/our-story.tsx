@@ -89,6 +89,9 @@ export default function OurStory() {
     }
   ];
 
+  const teamButtonClasses =
+    "mt-6 px-4 py-2.5 bg-gradient-to-r from-aurora-blue to-aurora-purple text-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group";
+
   // Function to open a team member's popup
   const openTeamMemberPopup = (memberId: string) => {
     setActiveTeamMember(memberId);
@@ -228,13 +231,6 @@ export default function OurStory() {
                   <p className="text-xl leading-relaxed text-gray-700 font-light">
                     At Finlern, you're not just learning Finnish. You're becoming part of a story. A story filled with growth, belonging, and endless possibilities.
                   </p>
-                  
-                  {/* Call-to-action statement */}
-                  <div className="mt-12 p-8 bg-gradient-to-r from-aurora-blue/5 via-aurora-purple/5 to-aurora-blue/5 rounded-2xl border border-aurora-blue/10">
-                    <p className="text-2xl font-bold text-aurora-blue leading-relaxed">
-                    Welcome to Finlern... your new beginning!!
-              </p>
-                  </div>
             </div>
               </div>
               
@@ -286,6 +282,15 @@ export default function OurStory() {
                     <div className="absolute -top-6 -right-6 w-12 h-12 border-2 border-aurora-blue/20 rounded-full"></div>
                     <div className="absolute top-1/3 -right-4 w-6 h-6 bg-aurora-purple/20 rounded-full"></div>
                   </div>
+                </div>
+              </div>
+              
+              {/* Centered Call-to-action */}
+              <div className="order-3 col-span-1 lg:col-span-2 mt-12 flex justify-center">
+                <div className="w-full max-w-3xl p-8 bg-gradient-to-r from-aurora-blue/5 via-aurora-purple/5 to-aurora-blue/5 rounded-2xl border border-aurora-blue/10 text-center shadow-lg/30 group">
+                  <p className="text-2xl font-bold text-aurora-blue leading-relaxed soft-blink-text lux-hover-text inline-block">
+                    Welcome to Finlern... Your new beginning!
+                  </p>
                 </div>
               </div>
             </div>
@@ -430,12 +435,12 @@ export default function OurStory() {
 
             {/* Team Member 1 - Enhanced */}
             <div 
-              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100"
+              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 h-full flex flex-col"
               data-aos="fade-up"
               data-aos-delay="100"
             >
               <div className="h-3 bg-gradient-to-r from-aurora-blue to-aurora-purple w-full"></div>
-              <div className="p-8 text-center">
+              <div className="p-8 text-center flex flex-col flex-1">
                 <div className="relative w-40 h-40 mx-auto mb-6 group">
                   {/* Decorative background */}
                   <div className="absolute inset-0 bg-gradient-to-br from-aurora-blue/30 to-aurora-purple/30 rounded-full blur-md transform scale-110 group-hover:scale-125 transition-all duration-700"></div>
@@ -473,29 +478,31 @@ export default function OurStory() {
                 <p className="text-lg text-gray-700 leading-relaxed">
                 With 20+ years of language teaching experience, Reeta's innovative approach to Finnish language education forms the foundation of Finlern's online courses.
                 </p>
-                <button 
-                  onClick={() => openTeamMemberPopup('reeta')}
-                  className="mt-6 px-4 py-2.5 bg-gradient-to-r from-aurora-blue to-aurora-purple text-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group"
-                  aria-label="Learn more about Reeta"
-                >
-                  <span className="flex items-center justify-center">
-                    <span>Here you can know me better!</span>
-                    <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </span>
-                </button>
+                <div className="mt-auto pt-6">
+                  <button 
+                    onClick={() => openTeamMemberPopup('reeta')}
+                    className={teamButtonClasses}
+                    aria-label="Learn more about Reeta"
+                  >
+                    <span className="flex items-center justify-center">
+                      <span>Here you can know me better!</span>
+                      <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
               </div>
             </div>
 
             {/* Team Member 2 - Enhanced */}
             <div 
-              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100"
+              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 h-full flex flex-col"
               data-aos="fade-up"
               data-aos-delay="200"
             >
               <div className="h-3 bg-gradient-to-r from-aurora-green to-aurora-blue w-full"></div>
-              <div className="p-8 text-center">
+              <div className="p-8 text-center flex flex-col flex-1">
                 <div className="relative w-40 h-40 mx-auto mb-6 group">
                   {/* Decorative background */}
                   <div className="absolute inset-0 bg-gradient-to-br from-aurora-green/30 to-aurora-blue/30 rounded-full blur-md transform scale-110 group-hover:scale-125 transition-all duration-700"></div>
@@ -533,29 +540,31 @@ export default function OurStory() {
                 <p className="text-lg text-gray-700 leading-relaxed">
                 Hamid Reza Ghorbani is the founder and leader of Finlern Oy, where he leverages his leadership and management skills to ensure the organization operates smoothly.
               </p>
-              <button 
-                onClick={() => openTeamMemberPopup('hamid')}
-                className="mt-6 px-4 py-2.5 bg-gradient-to-r from-aurora-green to-aurora-blue text-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group"
-                aria-label="Learn more about Hamid Reza Ghorbani"
-              >
-                <span className="flex items-center justify-center">
-                  <span>Here you can know me better!</span>
-                  <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </span>
-              </button>
+              <div className="mt-auto pt-6">
+                <button 
+                  onClick={() => openTeamMemberPopup('hamid')}
+                  className={teamButtonClasses}
+                  aria-label="Learn more about Hamid Reza Ghorbani"
+                >
+                  <span className="flex items-center justify-center">
+                    <span>Here you can know me better!</span>
+                    <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </span>
+                </button>
+              </div>
             </div>
           </div>
             
             {/* Team Member 3 - Enhanced */}
             <div 
-              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100"
+              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 h-full flex flex-col"
               data-aos="fade-up"
               data-aos-delay="200"
             >
               <div className="h-3 bg-gradient-to-r from-aurora-green to-aurora-blue w-full"></div>
-              <div className="p-8 text-center">
+              <div className="p-8 text-center flex flex-col flex-1">
                 <div className="relative w-40 h-40 mx-auto mb-6 group">
                   {/* Decorative background */}
                   <div className="absolute inset-0 bg-gradient-to-br from-aurora-green/30 to-aurora-blue/30 rounded-full blur-md transform scale-110 group-hover:scale-125 transition-all duration-700"></div>
@@ -593,29 +602,31 @@ export default function OurStory() {
                 <p className="text-lg text-gray-700 leading-relaxed">
                   Amirhadi is a dedicated ICT specialist who fosters and maintains the strong presence of Finlern in the digital world.
                 </p>
-                <button 
-                  onClick={() => openTeamMemberPopup('amirhadi')}
-                  className="mt-6 px-4 py-2.5 bg-gradient-to-r from-aurora-green to-aurora-blue text-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group"
-                  aria-label="Learn more about Amirhadi Borjian"
-                >
-                  <span className="flex items-center justify-center">
-                    <span>Here you can know me better!</span>
-                    <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </span>
-                </button>
+                <div className="mt-auto pt-6">
+                  <button 
+                    onClick={() => openTeamMemberPopup('amirhadi')}
+                    className={teamButtonClasses}
+                    aria-label="Learn more about Amirhadi Borjian"
+                  >
+                    <span className="flex items-center justify-center">
+                      <span>Here you can know me better!</span>
+                      <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
               </div>
             </div>
 
             {/* Team Member 4 - Enhanced */}
             <div 
-              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100"
+              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 h-full flex flex-col"
               data-aos="fade-up"
               data-aos-delay="300"
             >
               <div className="h-3 bg-gradient-to-r from-aurora-purple to-aurora-night w-full"></div>
-              <div className="p-8 text-center">
+              <div className="p-8 text-center flex flex-col flex-1">
                 <div className="relative w-40 h-40 mx-auto mb-6 group">
                   {/* Decorative background */}
                   <div className="absolute inset-0 bg-gradient-to-br from-aurora-purple/30 to-aurora-blue/30 rounded-full blur-md transform scale-110 group-hover:scale-125 transition-all duration-700"></div>
@@ -653,29 +664,31 @@ export default function OurStory() {
                 <p className="text-lg text-gray-700 leading-relaxed">
                   Saghar is an experienced graphic designer and social media specialist who designs all the glamorous visual content for Finlern on different social media platforms.
                 </p>
-                <button 
-                  onClick={() => openTeamMemberPopup('saghar')}
-                  className="mt-6 px-4 py-2.5 bg-gradient-to-r from-aurora-purple to-aurora-blue text-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group"
-                  aria-label="Learn more about Saghar Kazemi"
-                >
-                  <span className="flex items-center justify-center">
-                    <span>Here you can know me better!</span>
-                    <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </span>
-                </button>
+                <div className="mt-auto pt-6">
+                  <button 
+                    onClick={() => openTeamMemberPopup('saghar')}
+                    className={teamButtonClasses}
+                    aria-label="Learn more about Saghar Kazemi"
+                  >
+                    <span className="flex items-center justify-center">
+                      <span>Here you can know me better!</span>
+                      <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
               </div>
             </div>
 
             {/* Team Member 5 - Enhanced */}
             <div 
-              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100"
+              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 h-full flex flex-col"
               data-aos="fade-up"
               data-aos-delay="400"
             >
               <div className="h-3 bg-gradient-to-r from-aurora-teal to-aurora-green w-full"></div>
-              <div className="p-8 text-center">
+              <div className="p-8 text-center flex flex-col flex-1">
                 <div className="relative w-40 h-40 mx-auto mb-6 group">
                   {/* Decorative background */}
                   <div className="absolute inset-0 bg-gradient-to-br from-aurora-teal/30 to-aurora-green/30 rounded-full blur-md transform scale-110 group-hover:scale-125 transition-all duration-700"></div>
@@ -713,18 +726,20 @@ export default function OurStory() {
                 <p className="text-lg text-gray-700 leading-relaxed">
                   Soodabeh is a professional event organizer and communication specialist who organizes all the events and keeps the communication lines open between Finlern and its students.
                 </p>
-                <button 
-                  onClick={() => openTeamMemberPopup('soodabeh')}
-                  className="mt-6 px-4 py-2.5 bg-gradient-to-r from-aurora-teal to-aurora-green text-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group"
-                  aria-label="Learn more about Soodabeh Sadeghi Mihan"
-                >
-                  <span className="flex items-center justify-center">
-                    <span>Here you can know me better!</span>
-                    <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-                  </span>
-                </button>
+                <div className="mt-auto pt-6">
+                  <button 
+                    onClick={() => openTeamMemberPopup('soodabeh')}
+                    className={teamButtonClasses}
+                    aria-label="Learn more about Soodabeh Sadeghi Mihan"
+                  >
+                    <span className="flex items-center justify-center">
+                      <span>Here you can know me better!</span>
+                      <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -1143,7 +1158,7 @@ export default function OurStory() {
               <div className="icon">🌍</div>
               <h3>Customer Segments</h3>
               <p>
-                🎯 <strong>International experts and students in Pirkanmaa and Kanta-Häme (Tampere, Valkeakoski, Hämeenlinna, Riihimäki)</strong>
+                🎯 <strong>International experts and students in Pirkanmaa and Kanta-Häme (Tampere, Valkeakoski, Hämeenlinna, Riihimäki, Lahti, Lappeenranta, Forssa, Jyväskylä, Espoo, Helsinki, Vantaa)</strong>
               </p>
             </div>
             

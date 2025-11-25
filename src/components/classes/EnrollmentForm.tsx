@@ -200,25 +200,55 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
   const displayCourseName = getDisplayCourseName(courseType);
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4 md:p-6 lg:p-8 backdrop-blur-sm animate-fade-in">
-      <div className="relative bg-gradient-to-br from-blue-50 to-purple-50 p-6 sm:p-8 md:p-10 rounded-3xl shadow-2xl max-w-sm sm:max-w-md md:max-w-lg w-full transform scale-95 animate-scale-in border border-gray-200">
-        {/* Close Button */}
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 text-gray-500 hover:text-gray-900 transition-all duration-300 text-3xl font-light leading-none focus:outline-none"
-          aria-label="Close enrollment form"
-        >
-          &times;
-        </button>
-        
-        {/* Header */}
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 text-center bg-clip-text text-transparent bg-gradient-to-r from-aurora-blue to-aurora-purple">
-          Enroll in <span className="block text-xl sm:text-2xl md:text-3xl font-semibold mt-1 text-aurora-green">{displayCourseName}</span>
-        </h2>
-        <p className="text-center text-gray-600 text-sm sm:text-base mb-8">Fill out the form below to begin your learning journey with Finlern.</p>
+    <div className="fixed inset-0 z-50 flex items-center justify-center px-4 py-8 bg-slate-950/80 backdrop-blur-sm animate-fade-in overflow-y-auto">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -top-10 -right-6 w-64 h-64 bg-aurora-blue/30 rounded-full blur-3xl opacity-70"></div>
+        <div className="absolute -bottom-16 -left-8 w-72 h-72 bg-aurora-green/25 rounded-full blur-3xl opacity-70"></div>
+      </div>
+      <div className="relative w-full max-w-2xl">
+        <div className="relative bg-white/85 backdrop-blur-2xl rounded-3xl border border-white/60 shadow-[0_20px_80px_rgba(15,23,42,0.45)] overflow-hidden animate-scale-in max-h-[90vh] flex flex-col">
+          <div className="pointer-events-none absolute inset-px rounded-[calc(1.5rem-1px)] bg-gradient-to-br from-aurora-blue/20 via-transparent to-aurora-purple/30 opacity-70"></div>
+          <div className="relative p-6 sm:p-8 lg:p-10 overflow-y-auto">
+            {/* Close Button */}
+            <button
+              onClick={onClose}
+              className="absolute top-4 right-4 text-slate-400 hover:text-slate-700 transition-all duration-300 text-3xl font-light leading-none"
+              aria-label="Close enrollment form"
+            >
+              &times;
+            </button>
 
-        {/* Form Fields */}
-        <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
+            {/* Header */}
+            <div className="text-center space-y-3 mb-8">
+              <span className="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-[0.2em] text-slate-700 bg-white/70 border border-aurora-blue/20 shadow-sm">
+                Secure Enrollment
+              </span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight">
+                Begin Your Journey with&nbsp;
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-aurora-blue via-aurora-green to-aurora-purple">
+                  {displayCourseName}
+                </span>
+              </h2>
+              <p className="text-slate-600 text-sm sm:text-base max-w-xl mx-auto">
+                Our concierge team carefully reviews every submission. Expect a personalized response with tailored next steps within one business day.
+              </p>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2 mb-6">
+              <div className="rounded-2xl bg-white/80 border border-slate-100 p-4 shadow-sm">
+                <p className="text-xs uppercase tracking-wide text-slate-500 mb-1">Course Focus</p>
+                <p className="text-lg font-semibold text-aurora-blue">{displayCourseName}</p>
+                <p className="text-xs text-slate-500 mt-1">Premium learning guarantee</p>
+              </div>
+              <div className="rounded-2xl bg-gradient-to-br from-aurora-green/10 to-aurora-blue/10 border border-aurora-blue/20 p-4 shadow-sm">
+                <p className="text-xs uppercase tracking-wide text-slate-500 mb-1">Response Time</p>
+                <p className="text-lg font-semibold text-slate-900">Within 24 hours</p>
+                <p className="text-xs text-slate-500 mt-1">Direct access to our team</p>
+              </div>
+            </div>
+
+            {/* Form Fields */}
+            <form onSubmit={handleSubmit} className="space-y-6">
           
           {/* 🍯 HONEYPOT FIELD - INVISIBLE TO HUMANS, ATTRACTIVE TO BOTS */}
           {/* eslint-disable-next-line @next/next/no-css-tags */}
@@ -244,119 +274,185 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
             />
           </div>
 
-          <div>
-            <label htmlFor="fullName" className="block text-sm font-semibold text-gray-700 mb-1">Full Legal Name</label>
-            <input
-              type="text"
-              id="fullName"
-              name="fullName"
-              value={fullName}
-              onChange={(e) => setFullName(e.target.value)}
-              onFocus={() => handleFieldInteraction('fullName')}
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-aurora-blue focus:border-aurora-blue text-base sm:text-sm placeholder-gray-400 text-gray-900 bg-white"
-              placeholder="John Doe"
-              pattern="^[a-zA-ZÀ-ÿ\s'\-]{2,100}$"
-              title="Please enter your full legal name (2-100 characters, letters only)"
-              minLength={2}
-              maxLength={100}
-              required
-            />
+          <div className="grid gap-5 sm:grid-cols-2">
+            <div className="sm:col-span-2">
+              <label htmlFor="fullName" className="block text-sm font-semibold text-slate-700 mb-1">Full Legal Name</label>
+              <div className="relative group">
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-aurora-blue">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.6} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                </span>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                  onFocus={() => handleFieldInteraction('fullName')}
+                  className="mt-1 block w-full rounded-2xl border border-white/60 bg-white/90 py-3 pl-12 pr-4 text-base text-slate-900 shadow-inner shadow-white/10 focus:border-aurora-blue/40 focus:ring-2 focus:ring-aurora-blue/40 placeholder-slate-400 transition"
+                  placeholder="John Doe"
+                  pattern="^[a-zA-ZÀ-ÿ\s'\-]{2,100}$"
+                  title="Please enter your full legal name (2-100 characters, letters only)"
+                  minLength={2}
+                  maxLength={100}
+                  required
+                />
+              </div>
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-1">Email Address</label>
+              <div className="relative group">
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-aurora-blue">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.6} d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </span>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  onFocus={() => handleFieldInteraction('email')}
+                  className="mt-1 block w-full rounded-2xl border border-white/60 bg-white/90 py-3 pl-12 pr-4 text-base text-slate-900 shadow-inner focus:border-aurora-blue/40 focus:ring-2 focus:ring-aurora-blue/40 placeholder-slate-400 transition"
+                  placeholder="john.doe@example.com"
+                  pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                  title="Please enter a valid email address (e.g., john.doe@example.com)"
+                  maxLength={254}
+                  required
+                />
+              </div>
+            </div>
+            <div>
+              <label htmlFor="phoneNumber" className="block text-sm font-semibold text-slate-700 mb-1">Phone Number</label>
+              <div className="relative group">
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-aurora-blue">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.6} d="M8 2h8a2 2 0 012 2v16a2 2 0 01-2 2H8a2 2 0 01-2-2V4a2 2 0 012-2z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.6} d="M11 18h2" />
+                  </svg>
+                </span>
+                <input
+                  type="tel"
+                  id="phoneNumber"
+                  name="phoneNumber"
+                  value={phoneNumber}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
+                  onFocus={() => handleFieldInteraction('phoneNumber')}
+                  className="mt-1 block w-full rounded-2xl border border-white/60 bg-white/90 py-3 pl-12 pr-4 text-base text-slate-900 shadow-inner focus:border-aurora-blue/40 focus:ring-2 focus:ring-aurora-blue/40 placeholder-slate-400 transition"
+                  placeholder="+358 123 4567"
+                  pattern="^[+]?[0-9\s()-]{7,25}$"
+                  title="Please enter a valid phone number (7-25 characters, e.g., +358 123 4567)"
+                  minLength={7}
+                  maxLength={25}
+                  required
+                />
+              </div>
+            </div>
+            <div>
+              <label htmlFor="currentJobStatus" className="block text-sm font-semibold text-slate-700 mb-1">Current Job Status</label>
+              <div className="relative group">
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-aurora-blue">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.6} d="M12 11c2.21 0 4-1.567 4-3.5S14.21 4 12 4 8 5.567 8 7.5 9.79 11 12 11z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.6} d="M6.5 20a6 6 0 0111 0" />
+                  </svg>
+                </span>
+                <input
+                  type="text"
+                  id="currentJobStatus"
+                  name="currentJobStatus"
+                  value={currentJobStatus}
+                  onChange={(e) => setCurrentJobStatus(e.target.value)}
+                  onFocus={() => handleFieldInteraction('currentJobStatus')}
+                  className="mt-1 block w-full rounded-2xl border border-white/60 bg-white/90 py-3 pl-12 pr-4 text-base text-slate-900 shadow-inner focus:border-aurora-blue/40 focus:ring-2 focus:ring-aurora-blue/40 placeholder-slate-400 transition"
+                  placeholder="Student, Employed, Entrepreneur..."
+                  pattern="^[a-zA-Z0-9À-ÿ\s.,\-'/()]{2,100}$"
+                  title="Please enter your current job status (2-100 characters)"
+                  minLength={2}
+                  maxLength={100}
+                  required
+                />
+              </div>
+            </div>
+            <div>
+              <label htmlFor="desiredOccupation" className="block text-sm font-semibold text-slate-700 mb-1">Desired Occupation</label>
+              <div className="relative group">
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-aurora-blue">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.6} d="M12 7v10m5-5H7" />
+                  </svg>
+                </span>
+                <input
+                  type="text"
+                  id="desiredOccupation"
+                  name="desiredOccupation"
+                  value={desiredOccupation}
+                  onChange={(e) => setDesiredOccupation(e.target.value)}
+                  onFocus={() => handleFieldInteraction('desiredOccupation')}
+                  className="mt-1 block w-full rounded-2xl border border-white/60 bg-white/90 py-3 pl-12 pr-4 text-base text-slate-900 shadow-inner focus:border-aurora-blue/40 focus:ring-2 focus:ring-aurora-blue/40 placeholder-slate-400 transition"
+                  placeholder="Software Developer, Nurse..."
+                  pattern="^[a-zA-Z0-9À-ÿ\s.,\-'/()]{2,100}$"
+                  title="Please enter your desired occupation (2-100 characters)"
+                  minLength={2}
+                  maxLength={100}
+                  required
+                />
+              </div>
+            </div>
           </div>
-          <div>
-            <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-1">Email Address</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              onFocus={() => handleFieldInteraction('email')}
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-aurora-blue focus:border-aurora-blue text-base sm:text-sm placeholder-gray-400 text-gray-900 bg-white"
-              placeholder="john.doe@example.com"
-              pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-              title="Please enter a valid email address (e.g., john.doe@example.com)"
-              maxLength={254}
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="phoneNumber" className="block text-sm font-semibold text-gray-700 mb-1">Phone Number</label>
-            <input
-              type="tel"
-              id="phoneNumber"
-              name="phoneNumber"
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
-              onFocus={() => handleFieldInteraction('phoneNumber')}
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-aurora-blue focus:border-aurora-blue text-base sm:text-sm placeholder-gray-400 text-gray-900 bg-white"
-              placeholder="+358 123 4567"
-              pattern="^[+]?[0-9\s()-]{7,25}$"
-              title="Please enter a valid phone number (7-25 characters, e.g., +358 123 4567)"
-              minLength={7}
-              maxLength={25}
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="currentJobStatus" className="block text-sm font-semibold text-gray-700 mb-1">Current Job Status</label>
-            <input
-              type="text"
-              id="currentJobStatus"
-              name="currentJobStatus"
-              value={currentJobStatus}
-              onChange={(e) => setCurrentJobStatus(e.target.value)}
-              onFocus={() => handleFieldInteraction('currentJobStatus')}
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-aurora-blue focus:border-aurora-blue text-base sm:text-sm placeholder-gray-400 text-gray-900 bg-white"
-              placeholder="Student, Employed, Unemployed, etc."
-              pattern="^[a-zA-Z0-9À-ÿ\s.,\-'/()]{2,100}$"
-              title="Please enter your current job status (2-100 characters)"
-              minLength={2}
-              maxLength={100}
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="desiredOccupation" className="block text-sm font-semibold text-gray-700 mb-1">Desired Occupation</label>
-            <input
-              type="text"
-              id="desiredOccupation"
-              name="desiredOccupation"
-              value={desiredOccupation}
-              onChange={(e) => setDesiredOccupation(e.target.value)}
-              onFocus={() => handleFieldInteraction('desiredOccupation')}
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-aurora-blue focus:border-aurora-blue text-base sm:text-sm placeholder-gray-400 text-gray-900 bg-white"
-              placeholder="Software Developer, Nurse, Entrepreneur, etc."
-              pattern="^[a-zA-Z0-9À-ÿ\s.,\-'/()]{2,100}$"
-              title="Please enter your desired occupation (2-100 characters)"
-              minLength={2}
-              maxLength={100}
-              required
-            />
-          </div>
-          <button
-            type="submit"
-            className="w-full py-3 px-4 border border-transparent rounded-lg shadow-lg text-lg font-bold text-white bg-gradient-to-r from-aurora-green to-aurora-blue hover:from-aurora-green/90 hover:to-aurora-blue/90 transition-all duration-300 transform hover:scale-[1.01] flex items-center justify-center space-x-2"
-            disabled={submitStatus === 'loading'}
-          >
-            {submitStatus === 'loading' ? (
-              <>
-                <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+
+          <div className="space-y-4">
+            <button
+              type="submit"
+              className="w-full py-4 px-6 rounded-2xl text-lg font-semibold text-white bg-gradient-to-r from-aurora-green to-aurora-blue shadow-[0_15px_45px_rgba(79,70,229,0.3)] hover:shadow-[0_20px_60px_rgba(79,70,229,0.35)] transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
+              disabled={submitStatus === 'loading'}
+            >
+              {submitStatus === 'loading' ? (
+                <>
+                  <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  <span>Submitting...</span>
+                </>
+              ) : (
+                <>
+                  <span>Submit Enrollment</span>
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M14 5l7 7-7 7M21 12H3" />
+                  </svg>
+                </>
+              )}
+            </button>
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-aurora-green animate-pulse"></span>
+                Military-grade validation & encryption
+              </div>
+              <div className="flex items-center gap-2">
+                <svg className="w-4 h-4 text-aurora-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.6} d="M5 13l4 4L19 7" />
                 </svg>
-                <span>Submitting...</span>
-              </>
-            ) : (
-              <span>Submit Enrollment</span>
-            )}
-          </button>
+                No spam • No automated emails
+              </div>
+            </div>
+          </div>
+
           {submitStatus === 'success' && (
-            <p className="text-center text-green-700 font-medium mt-4 p-3 bg-green-50 rounded-lg border border-green-200 animate-fade-in">Enrollment submitted successfully! We will contact you soon.</p>
+            <p className="text-center text-green-700 font-medium mt-4 p-4 bg-green-50/90 rounded-2xl border border-green-200 animate-fade-in">
+              Enrollment submitted successfully! We will contact you soon.
+            </p>
           )}
           {submitStatus === 'error' && (
-            <p className="text-center text-red-700 font-medium mt-4 p-3 bg-red-50 rounded-lg border border-red-200 animate-fade-in" role="alert" aria-live="assertive">{errorMessage}</p>
+            <p className="text-center text-red-700 font-medium mt-4 p-4 bg-red-50/90 rounded-2xl border border-red-200 animate-fade-in" role="alert" aria-live="assertive">
+              {errorMessage}
+            </p>
           )}
         </form>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -271,13 +271,13 @@ export default function Classes() {
                         <svg className="w-5 h-5 text-aurora-green mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                        <span className="text-gray-700 text-sm">8-week course</span>
+                        <span className="text-gray-700 text-sm">4-week course</span>  
                       </div>
                       <div className="flex items-center bg-gray-50 rounded-lg p-3">
                         <svg className="w-5 h-5 text-aurora-green mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                         </svg>
-                        <span className="text-gray-700 text-sm">32 hours lessons + 12 hours conversation club</span>
+                        <span className="text-gray-700 text-sm">16 hours lessons + 4 hours conversation club</span>           
                       </div>
                       <div className="flex items-center bg-gray-50 rounded-lg p-3">
                         <svg className="w-5 h-5 text-aurora-green mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -330,7 +330,7 @@ export default function Classes() {
                     </div>
                   </div>
                   
-                  <div className="pt-4 border-t border-gray-100">
+                  <div className="pt-4 border-t border-gray-100 mt-auto">
                     <div className="flex items-center justify-between">
                       <div className="flex items-baseline">
                         <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-green to-aurora-blue">€99</span>
@@ -389,13 +389,13 @@ export default function Classes() {
                         <svg className="w-5 h-5 text-aurora-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                        <span className="text-gray-700 text-sm">8-week course</span>
+                        <span className="text-gray-700 text-sm">4-week course</span>  
                       </div>
                       <div className="flex items-center bg-gray-50 rounded-lg p-3">
                         <svg className="w-5 h-5 text-aurora-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                         </svg>
-                        <span className="text-gray-700 text-sm">32 hours lessons + 12 hours conversation club</span>
+                        <span className="text-gray-700 text-sm">16 hours lessons + 4 hours conversation club</span>           
                       </div>
                       <div className="flex items-center bg-gray-50 rounded-lg p-3">
                         <svg className="w-5 h-5 text-aurora-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -451,7 +451,7 @@ export default function Classes() {
                   <div className="pt-4 border-t border-gray-100">
                     <div className="flex items-center justify-between">
                       <div className="flex items-baseline">
-                        <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-blue to-aurora-purple">€119</span>
+                        <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-blue to-aurora-purple">€99</span>
                         <span className="text-gray-500 ml-2">/ course</span>
                       </div>
                       <button onClick={() => handleEnrollClick("Intermediate Finnish")} className="inline-flex items-center justify-center px-5 py-2 bg-gradient-to-r from-aurora-blue to-aurora-purple text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-blue/30 transform hover:scale-[1.02]">
@@ -504,13 +504,13 @@ export default function Classes() {
                         <svg className="w-5 h-5 text-aurora-purple mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        <span className="text-gray-700 text-sm">8-week course</span>
+                        <span className="text-gray-700 text-sm">4-week course</span>  
                       </div>
                       <div className="flex items-center bg-gray-50 rounded-lg p-3">
                         <svg className="w-5 h-5 text-aurora-purple mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                         </svg>
-                        <span className="text-gray-700 text-sm">32 hours lessons + 12 hours conversation club</span>
+                        <span className="text-gray-700 text-sm">16 hours lessons + 4 hours conversation club</span>            
                       </div>
                       <div className="flex items-center bg-gray-50 rounded-lg p-3">
                         <svg className="w-5 h-5 text-aurora-purple mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -566,7 +566,7 @@ export default function Classes() {
                   <div className="pt-4 border-t border-gray-100">
                     <div className="flex items-center justify-between">
                       <div className="flex items-baseline">
-                        <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-purple to-aurora-night">€129</span>
+                        <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-purple to-aurora-night">€99</span>
                         <span className="text-gray-500 ml-2">/ course</span>
                       </div>
                       <button onClick={() => handleEnrollClick("Advanced Finnish")} className="inline-flex items-center justify-center px-5 py-2 bg-gradient-to-r from-aurora-purple to-aurora-night text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-purple/30 transform hover:scale-[1.02]">
@@ -588,9 +588,9 @@ export default function Classes() {
               data-aos-delay="100"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-aurora-blue to-aurora-purple rounded-xl blur opacity-30 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="relative bg-white rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2 border border-gray-100">
+              <div className="relative bg-white rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2 border border-gray-100 h-full flex flex-col">
                 <div className="h-2 bg-gradient-to-r from-aurora-blue to-aurora-purple w-full"></div>
-                <div className="p-6">
+                <div className="p-6 flex-1 flex flex-col">
                   <div className="flex justify-between items-start mb-4">
                     <div className="w-14 h-14 rounded-xl bg-aurora-blue/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <svg className="w-7 h-7 text-aurora-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -644,7 +644,7 @@ export default function Classes() {
                     </div>
                   </div>
                   
-                  <div className="pt-4 border-t border-gray-100">
+                  <div className="pt-4 border-t border-gray-100 mt-auto">
                     <div className="flex flex-col space-y-4">
                       <div className="bg-gray-50 rounded-lg p-4">
                 <div className="flex justify-between items-center">
@@ -673,9 +673,9 @@ export default function Classes() {
               data-aos-delay="200"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-aurora-green to-aurora-purple rounded-xl blur opacity-30 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="relative bg-white rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2 border border-gray-100">
+              <div className="relative bg-white rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2 border border-gray-100 h-full flex flex-col">
                 <div className="h-2 bg-gradient-to-r from-aurora-green to-aurora-purple w-full"></div>
-                <div className="p-6">
+                <div className="p-6 flex-1 flex flex-col">
                   <div className="flex justify-between items-start mb-4">
                     <div className="w-14 h-14 rounded-xl bg-aurora-green/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <svg className="w-7 h-7 text-aurora-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -752,7 +752,7 @@ export default function Classes() {
                     </div>
                   </div>
                   
-                  <div className="pt-4 border-t border-gray-100">
+                  <div className="pt-4 border-t border-gray-100 mt-auto">
                     <div className="flex flex-col space-y-4">
                       <div className="bg-gray-50 rounded-lg p-4">
                         <div className="flex justify-between items-center">
@@ -781,9 +781,9 @@ export default function Classes() {
               data-aos-delay="300"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-aurora-violet to-aurora-green rounded-xl blur opacity-30 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="relative bg-white rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2 border border-gray-100">
+              <div className="relative bg-white rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform group-hover:-translate-y-2 border border-gray-100 h-full flex flex-col">
                 <div className="h-2 bg-gradient-to-r from-aurora-violet to-aurora-green w-full"></div>
-                <div className="p-6">
+                <div className="p-6 flex-1 flex flex-col">
                   <div className="flex justify-between items-start mb-4">
                     <div className="w-14 h-14 rounded-xl bg-aurora-violet/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <svg className="w-7 h-7 text-aurora-violet" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -959,7 +959,7 @@ export default function Classes() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
               {/* English Courses - Enhanced */}
               <div 
-                className="group relative bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100/60"
+                className="group relative bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100/60 h-full flex flex-col"
                 data-aos="fade-up"
                 data-aos-delay="100"
                 data-aos-duration="800"
@@ -970,7 +970,7 @@ export default function Classes() {
                 <div className="absolute -top-16 -left-16 w-40 h-40 bg-aurora-green/5 rounded-full"></div>
                 <div className="absolute top-0 right-0 w-24 h-24 bg-aurora-blue/5 -translate-y-1/2 translate-x-1/2 rounded-full"></div>
                 
-                <div className="p-8 md:p-10 relative z-10">
+                <div className="p-8 md:p-10 relative z-10 flex-1 flex flex-col">
                   <div className="flex items-start justify-between mb-8">
                     <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-aurora-blue to-aurora-green p-0.5 shadow-lg group-hover:shadow-aurora-blue/30 transition-all duration-500 transform group-hover:scale-105">
                       <div className="absolute inset-0 rounded-2xl bg-white p-3.5 flex items-center justify-center">
@@ -1021,24 +1021,26 @@ export default function Classes() {
               </div>
             </div>
             
-                  <Link 
-                    href="/english-courses" 
-                    className="group/btn relative inline-flex w-full items-center justify-center px-8 py-4 bg-gradient-to-r from-aurora-blue to-aurora-green text-white rounded-xl font-medium shadow-lg hover:shadow-xl hover:shadow-aurora-blue/20 transition-all duration-300 overflow-hidden"
-                  >
-                    <span className="absolute inset-0 bg-white/10 scale-x-0 group-hover/btn:scale-x-100 origin-left transition-transform duration-500"></span>
-                    <span className="relative z-10">Explore English Courses</span>
-                    <span className="absolute right-4 w-7 h-7 rounded-full bg-white/20 flex items-center justify-center transition-all duration-300 group-hover/btn:bg-white/30 group-hover/btn:translate-x-1">
-                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                    </span>
-                  </Link>
+                  <div className="mt-auto">
+                    <Link 
+                      href="/english-courses" 
+                      className="group/btn relative inline-flex w-full items-center justify-center px-8 py-4 bg-gradient-to-r from-aurora-blue to-aurora-green text-white rounded-xl font-medium shadow-lg hover:shadow-xl hover:shadow-aurora-blue/20 transition-all duration-300 overflow-hidden"
+                    >
+                      <span className="absolute inset-0 bg-white/10 scale-x-0 group-hover/btn:scale-x-100 origin-left transition-transform duration-500"></span>
+                      <span className="relative z-10">Explore English Courses</span>
+                      <span className="absolute right-4 w-7 h-7 rounded-full bg-white/20 flex items-center justify-center transition-all duration-300 group-hover/btn:bg-white/30 group-hover/btn:translate-x-1">
+                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </span>
+                    </Link>
+                  </div>
                 </div>
               </div>
               
               {/* Violin Courses - Enhanced */}
               <div 
-                className="group relative bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100/60"
+                className="group relative bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100/60 h-full flex flex-col"
                 data-aos="fade-up"
                 data-aos-delay="200"
                 data-aos-duration="800"
@@ -1049,7 +1051,7 @@ export default function Classes() {
                 <div className="absolute -top-16 -left-16 w-40 h-40 bg-aurora-night/5 rounded-full"></div>
                 <div className="absolute top-0 right-0 w-24 h-24 bg-aurora-purple/5 -translate-y-1/2 translate-x-1/2 rounded-full"></div>
                 
-                <div className="p-8 md:p-10 relative z-10">
+                <div className="p-8 md:p-10 relative z-10 flex-1 flex flex-col">
                   <div className="flex items-start justify-between mb-8">
                     <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-aurora-purple to-aurora-night p-0.5 shadow-lg group-hover:shadow-aurora-purple/30 transition-all duration-500 transform group-hover:scale-105">
                       <div className="absolute inset-0 rounded-2xl bg-white p-3.5 flex items-center justify-center">
@@ -1100,18 +1102,20 @@ export default function Classes() {
               </div>
             </div>
             
-                  <Link 
-                    href="/violin-courses" 
-                    className="group/btn relative inline-flex w-full items-center justify-center px-8 py-4 bg-gradient-to-r from-aurora-purple to-aurora-night text-white rounded-xl font-medium shadow-lg hover:shadow-xl hover:shadow-aurora-purple/20 transition-all duration-300 overflow-hidden"
-                  >
-                    <span className="absolute inset-0 bg-white/10 scale-x-0 group-hover/btn:scale-x-100 origin-left transition-transform duration-500"></span>
-                    <span className="relative z-10">Discover Violin Courses</span>
-                    <span className="absolute right-4 w-7 h-7 rounded-full bg-white/20 flex items-center justify-center transition-all duration-300 group-hover/btn:bg-white/30 group-hover/btn:translate-x-1">
-                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                    </span>
-                  </Link>
+                  <div className="mt-auto">
+                    <Link 
+                      href="/violin-courses" 
+                      className="group/btn relative inline-flex w-full items-center justify-center px-8 py-4 bg-gradient-to-r from-aurora-purple to-aurora-night text-white rounded-xl font-medium shadow-lg hover:shadow-xl hover:shadow-aurora-purple/20 transition-all duration-300 overflow-hidden"
+                    >
+                      <span className="absolute inset-0 bg-white/10 scale-x-0 group-hover/btn:scale-x-100 origin-left transition-transform duration-500"></span>
+                      <span className="relative z-10">Discover Violin Courses</span>
+                      <span className="absolute right-4 w-7 h-7 rounded-full bg-white/20 flex items-center justify-center transition-all duration-300 group-hover/btn:bg-white/30 group-hover/btn:translate-x-1">
+                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </span>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>

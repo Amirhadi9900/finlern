@@ -1,8 +1,64 @@
 import React, { useEffect } from 'react'
-import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../components/layout/Layout'
+import SEO from '@/components/SEO'
+
+const contactKeywords = [
+  'Finnish relocation partner',
+  'Consulting services in Finland',
+  'Complete integration support',
+  'Language proficiency Finland',
+  'Cultural immersion Finland',
+  'Workplace etiquette Finland',
+  'Professional networking Finland',
+  'Relocation services in Finland',
+  'Finnish life support',
+]
+
+const contactSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Finlern',
+  url: 'https://finlern.vercel.app/contact',
+  email: 'info@finlern.fi',
+  telephone: '+358417567339',
+  image: 'https://finlern.vercel.app/images/finlern.png',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Tietotie 1',
+    addressLocality: 'Valkeakoski',
+    postalCode: '37630',
+    addressCountry: 'FI',
+  },
+  areaServed: [
+    'Helsinki',
+    'Espoo',
+    'Vantaa',
+    'Tampere',
+    'Hämeenlinna',
+    'Lahti',
+    'Lappeenranta',
+    'Riihimäki',
+    'Jyväskylä',
+  ],
+  sameAs: [
+    'https://www.facebook.com/people/Finlern/61578171630486/',
+    'https://www.linkedin.com/company/finlern-oy/',
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer service',
+    email: 'info@finlern.fi',
+    telephone: '+358417567339',
+    availableLanguage: ['English', 'Finnish'],
+  },
+  serviceType: [
+    'Finnish language mastery',
+    'Relocation consulting',
+    'Cultural integration programs',
+  ],
+}
 
 // Add type declaration for window.scrollAnimations
 declare global {
@@ -34,10 +90,13 @@ export default function Contact() {
 
   return (
     <Layout>
-      <Head>
-        <title>Contact Us | Finlern - Language Learning & Relocation Services</title>
-        <meta name="description" content="Get in touch with Finlern for Finnish language classes, English courses, violin lessons, and comprehensive relocation services for international professionals and Finnish employers." />
-      </Head>
+      <SEO
+        title="Contact Us"
+        description="Reach Finlern for Finnish language mastery, relocation consulting, cultural integration, and workplace etiquette support across Finland."
+        canonical="https://finlern.vercel.app/contact"
+        keywords={contactKeywords}
+        structuredData={contactSchema}
+      />
 
       {/* Hero Section - Enhanced with modern design */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
@@ -78,7 +137,7 @@ export default function Contact() {
               data-aos-delay="200"
               className="text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed"
             >
-              We're here to help you with language learning, relocation services, and building your success in Finland. Reach out to us with any questions.
+              We're here to help you with language learning, relocation services, and building your success in Finland. Reach out to us with any questions🤗  
             </p>
             <div 
               data-aos="fade-up" 

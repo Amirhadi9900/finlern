@@ -64,13 +64,14 @@ export default function Home() {
       "addressCountry": "Finland"
     },
     "sameAs": [
-      "https://facebook.com/finlern",
-      "https://instagram.com/finlern",
+      "https://www.facebook.com/people/Finlern/61578171630486/",
+      "https://www.instagram.com/finlern",
       "https://www.linkedin.com/company/finlern-oy/"
     ],
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+358-XX-XXX-XXXX",
+      "telephone": "+358417567339",
+      "email": "info@finlern.fi",
       "contactType": "customer service",
       "availableLanguage": ["English", "Finnish"]
     }
@@ -81,7 +82,7 @@ export default function Home() {
       <SEO 
         title="Finnish Language Learning Made Easy"
         description="Learn Finnish language with Finlern's interactive online courses, designed for all levels from beginner to advanced. Join our community and discover Finland's language and culture."
-        canonical="https://finlern.com"
+        canonical="https://finlern.vercel.app/"
         ogImage="/images/finlern.png"
         structuredData={homePageSchema}
       />

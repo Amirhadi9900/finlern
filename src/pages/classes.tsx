@@ -1,9 +1,57 @@
 import React, { useEffect, useRef, useState } from 'react'
-import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../components/layout/Layout'
+import SEO from '@/components/SEO'
 import EnrollmentForm from '../components/classes/EnrollmentForm';
+
+const finnishCourseKeywords = [
+  'Online Finnish courses',
+  'Budget-friendly Finnish courses',
+  'Finnish language mastery',
+  'Finnish cultural integration',
+  'Finnish relocation partner',
+  'Language proficiency Finland',
+  'Cultural immersion Finland',
+  'Professional networking Finland',
+];
+
+const finnishCourseSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Finlern Finnish Course Catalog',
+  description:
+    'Comprehensive Finnish language programs delivering weekly learning support, conversation clubs, and working life guidance for internationals in Finland.',
+  itemListElement: [
+    {
+      '@type': 'Course',
+      position: 1,
+      name: 'Weekly Learning Support',
+      description:
+        'Twice-weekly Finnish learning materials with personalized coaching for consistent progress.',
+      provider: { '@type': 'Organization', name: 'Finlern' },
+      url: 'https://finlern.vercel.app/classes',
+    },
+    {
+      '@type': 'Course',
+      position: 2,
+      name: 'Conversation Club Events',
+      description:
+        'Immersive Finnish practice in cafés, parks, and libraries to strengthen fluency and cultural integration.',
+      provider: { '@type': 'Organization', name: 'Finlern' },
+      url: 'https://finlern.vercel.app/classes',
+    },
+    {
+      '@type': 'Course',
+      position: 3,
+      name: 'Working Life Guidance',
+      description:
+        'Career mentoring, networking, and interview preparation tailored for internationals entering the Finnish job market.',
+      provider: { '@type': 'Organization', name: 'Finlern' },
+      url: 'https://finlern.vercel.app/classes',
+    },
+  ],
+};
 
 // Add type declaration for window.scrollAnimations
 declare global {
@@ -60,10 +108,13 @@ export default function Classes() {
 
   return (
     <Layout>
-      <Head>
-        <title>Finnish Courses | Finlern - Finnish Language Learning</title>
-        <meta name="description" content="Join our Finnish language classes for all levels, from beginner to advanced. Learn Finnish with native teachers in a supportive environment." />
-      </Head>
+      <SEO
+        title="Finnish Courses"
+        description="Join Finlern’s Finnish language classes for every level, complete with cultural immersion, relocation support, and workplace mentoring for internationals in Finland."
+        canonical="https://finlern.vercel.app/classes"
+        keywords={finnishCourseKeywords}
+        structuredData={finnishCourseSchema}
+      />
 
       {/* Hero Section - Enhanced */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">

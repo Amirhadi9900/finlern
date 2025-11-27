@@ -253,13 +253,7 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
           {/* 🍯 HONEYPOT FIELD - INVISIBLE TO HUMANS, ATTRACTIVE TO BOTS */}
           {/* eslint-disable-next-line @next/next/no-css-tags */}
           <div 
-            style={{
-              position: 'absolute',
-              left: '-9999px',
-              width: '1px',
-              height: '1px',
-              overflow: 'hidden'
-            }}
+            className="absolute -left-[9999px] w-px h-px overflow-hidden"
             aria-hidden="true"
           >
             <label htmlFor="website">Website (leave blank)</label>
@@ -406,9 +400,10 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
           <div className="space-y-4">
             <button
               type="submit"
-              className="w-full py-4 px-6 rounded-2xl text-lg font-semibold text-white bg-gradient-to-r from-aurora-green to-aurora-blue shadow-[0_15px_45px_rgba(79,70,229,0.3)] hover:shadow-[0_20px_60px_rgba(79,70,229,0.35)] transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
+              className="group relative overflow-hidden w-full py-4 px-6 rounded-2xl text-lg font-semibold text-white bg-gradient-to-r from-aurora-green to-aurora-blue shadow-[0_15px_45px_rgba(79,70,229,0.3)] transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed hover:-translate-y-0.5 hover:shadow-[0_25px_70px_rgba(79,70,229,0.35)]"
               disabled={submitStatus === 'loading'}
             >
+              <span className="pointer-events-none absolute inset-0 translate-y-full group-hover:translate-y-0 opacity-0 group-hover:opacity-100 bg-white/15 blur-sm transition-all duration-300"></span>
               {submitStatus === 'loading' ? (
                 <>
                   <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">

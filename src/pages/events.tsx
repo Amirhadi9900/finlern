@@ -1,8 +1,55 @@
 import React, { useEffect } from 'react'
-import Head from 'next/head'
 import Image from 'next/image'
 import Layout from '../components/layout/Layout'
 import Link from 'next/link'
+import SEO from '@/components/SEO'
+
+const eventKeywords = [
+  'Finnish language events',
+  'Finnish cultural integration',
+  'Conversation club Finland',
+  'Professional networking Finland',
+  'Complete integration support',
+  'Relocation partner Finland',
+  'Language immersion Finland',
+]
+
+const eventsSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'EventSeries',
+  name: 'Finlern Language & Integration Events',
+  description:
+    'Weekly conversation clubs, cultural immersions, and professional networking sessions that help internationals in Finland build fluency and confidence.',
+  organizer: {
+    '@type': 'Organization',
+    name: 'Finlern',
+    url: 'https://finlern.vercel.app/',
+  },
+  location: {
+    '@type': 'Place',
+    name: 'Finlern Community Venues',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Helsinki',
+      addressCountry: 'FI',
+    },
+  },
+  eventSchedule: {
+    '@type': 'Schedule',
+    repeatFrequency: 'P1W',
+    byDay: ['MO', 'TH'],
+    startTime: '17:00',
+    endTime: '19:00',
+    scheduleTimezone: 'Europe/Helsinki',
+  },
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'EUR',
+    availability: 'https://schema.org/InStock',
+    url: 'https://finlern.vercel.app/events',
+  },
+}
 
 // Add type declaration for window.scrollAnimations
 declare global {
@@ -41,10 +88,13 @@ export default function Events() {
 
   return (
     <Layout>
-      <Head>
-        <title>Our Events | Finlern - Finnish Language Learning</title>
-        <meta name="description" content="Join our Finnish language and cultural events to practice your skills and immerse yourself in Finnish culture." />
-      </Head>
+      <SEO
+        title="Our Events"
+        description="Experience Finnish language events, conversation clubs, and cultural immersion meetups hosted by Finlern to speed up your integration journey."
+        canonical="https://finlern.vercel.app/events"
+        keywords={eventKeywords}
+        structuredData={eventsSchema}
+      />
 
       {/* Hero Section - Enhanced */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">

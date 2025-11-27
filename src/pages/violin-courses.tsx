@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Head from 'next/head';
-import Link from 'next/link';
 import Image from 'next/image';
 import Layout from '../components/layout/Layout';
+import SEO from '@/components/SEO';
 import EnrollmentForm from '../components/classes/EnrollmentForm';
 
 // Global type declaration to make TypeScript happy
@@ -14,6 +13,74 @@ declare global {
     };
   }
 }
+
+const violinCourseKeywords = [
+  'Violin courses in Finland',
+  'Online violin lessons',
+  'Music education Finland',
+  'Beginner violin classes',
+  'Advanced violin workshop',
+  'Multilingual music coaching',
+  'Budget-friendly violin lessons',
+];
+
+const violinCourseSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Course',
+  name: 'Finlern Violin Courses',
+  description:
+    'Finlern offers multilingual violin instruction for beginners to advanced students across Finland with online lessons and personalized coaching.',
+  provider: {
+    '@type': 'Organization',
+    name: 'Finlern',
+    url: 'https://finlern.vercel.app/',
+  },
+  inLanguage: ['Finnish', 'English', 'Kurdish', 'Persian'],
+  hasCourseInstance: [
+    {
+      '@type': 'CourseInstance',
+      name: 'Beginner Violin Course',
+      courseMode: 'online',
+      startDate: '2025-05-01',
+      endDate: '2025-08-31',
+      offers: {
+        '@type': 'Offer',
+        price: '35',
+        priceCurrency: 'EUR',
+        availability: 'https://schema.org/InStock',
+        url: 'https://finlern.vercel.app/violin-courses',
+      },
+    },
+    {
+      '@type': 'CourseInstance',
+      name: 'Intermediate Violin Course',
+      courseMode: 'online',
+      startDate: '2025-05-01',
+      endDate: '2025-08-31',
+      offers: {
+        '@type': 'Offer',
+        price: '35',
+        priceCurrency: 'EUR',
+        availability: 'https://schema.org/InStock',
+        url: 'https://finlern.vercel.app/violin-courses',
+      },
+    },
+    {
+      '@type': 'CourseInstance',
+      name: 'Advanced Violin Workshop',
+      courseMode: 'online',
+      startDate: '2025-05-01',
+      endDate: '2025-08-31',
+      offers: {
+        '@type': 'Offer',
+        price: '35',
+        priceCurrency: 'EUR',
+        availability: 'https://schema.org/InStock',
+        url: 'https://finlern.vercel.app/violin-courses',
+      },
+    },
+  ],
+};
 
 const ViolinCourses: React.FC = () => {
   // Scroll to upcoming courses section
@@ -55,10 +122,13 @@ const ViolinCourses: React.FC = () => {
 
   return (
     <Layout>
-      <Head>
-        <title>Violin Courses | Finlern</title>
-        <meta name="description" content="Learn violin with experienced teachers in Finland. From beginners to advanced players, our violin courses offer personalized instruction in a supportive environment." />
-      </Head>
+      <SEO
+        title="Violin Courses"
+        description="Learn violin online in Finland with Finlern’s multilingual instructors. Beginner, intermediate, and advanced workshops tailored to your goals."
+        canonical="https://finlern.vercel.app/violin-courses"
+        keywords={violinCourseKeywords}
+        structuredData={violinCourseSchema}
+      />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">

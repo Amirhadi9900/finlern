@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
-import Head from 'next/head'
 import Layout from '../components/layout/Layout'
 import Link from 'next/link'
+import SEO from '@/components/SEO'
 
 // Add type declaration for window.scrollAnimations
 declare global {
@@ -33,10 +33,12 @@ export default function Terms() {
 
   return (
     <Layout>
-      <Head>
-        <title>Terms of Service | Finlern</title>
-        <meta name="description" content="Terms of Service for Finlern - Finnish Language Learning Platform" />
-      </Head>
+      <SEO
+        title="Terms of Service"
+        description="Review Finlern’s Terms of Service covering Finnish language courses, relocation consulting, and cultural integration programs."
+        canonical="https://finlern.vercel.app/terms"
+        noindex
+      />
 
       <main className="min-h-screen bg-white">
         {/* Updated header section */}

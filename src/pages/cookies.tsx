@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
-import Head from 'next/head'
 import Layout from '../components/layout/Layout'
 import Link from 'next/link'
+import SEO from '@/components/SEO'
 
 // Add type declaration for window.scrollAnimations
 declare global {
@@ -33,10 +33,12 @@ export default function Cookies() {
 
   return (
     <Layout>
-      <Head>
-        <title>Cookie Policy | Finlern</title>
-        <meta name="description" content="Cookie Policy for Finlern - Learn about how we use cookies on our Finnish language learning platform." />
-      </Head>
+      <SEO
+        title="Cookie Policy"
+        description="Cookie Policy for Finlern – understand how we use cookies and tracking technologies to deliver secure language learning and relocation services."
+        canonical="https://finlern.vercel.app/cookies"
+        noindex
+      />
 
       <main className="min-h-screen bg-white">
         {/* Updated header section */}

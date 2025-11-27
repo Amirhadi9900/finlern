@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Head from 'next/head';
-import Link from 'next/link';
 import Image from 'next/image';
 import Layout from '../components/layout/Layout';
+import SEO from '@/components/SEO';
 import EnrollmentForm from '../components/classes/EnrollmentForm';
 
 // Global type declaration to make TypeScript happy
@@ -14,6 +13,101 @@ declare global {
     };
   }
 }
+
+const englishCourseKeywords = [
+  'Online English courses',
+  'English courses in Finland',
+  'Business English coaching',
+  'English conversation club',
+  'Professional English training',
+  'Budget-friendly English lessons',
+  'Finlern English program',
+  'English tutoring in Helsinki',
+];
+
+const englishCourseSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Course',
+  name: 'Finlern English Language Courses',
+  description:
+    'Personalized English coaching in Finland featuring business communication, academic writing, and conversation clubs for international professionals.',
+  provider: {
+    '@type': 'Organization',
+    name: 'Finlern',
+    url: 'https://finlern.vercel.app/',
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'customer service',
+      email: 'info@finlern.fi',
+      telephone: '+358417567339',
+    },
+  },
+  inLanguage: ['English', 'Finnish'],
+  audience: {
+    '@type': 'Audience',
+    audienceType: 'International professionals and students in Finland',
+  },
+  hasCourseInstance: [
+    {
+      '@type': 'CourseInstance',
+      name: 'Business English for Professionals',
+      courseMode: 'online',
+      startDate: '2025-01-13',
+      endDate: '2025-06-30',
+      instructor: {
+        '@type': 'Organization',
+        name: 'Finlern Coaching Team',
+      },
+      location: {
+        '@type': 'VirtualLocation',
+        url: 'https://finlern.vercel.app/english-courses',
+      },
+      offers: {
+        '@type': 'Offer',
+        price: '29',
+        priceCurrency: 'EUR',
+        availability: 'https://schema.org/InStock',
+        url: 'https://finlern.vercel.app/english-courses',
+      },
+    },
+    {
+      '@type': 'CourseInstance',
+      name: 'Conversation Skills Coaching',
+      courseMode: 'hybrid',
+      startDate: '2025-02-03',
+      endDate: '2025-07-28',
+      location: {
+        '@type': 'VirtualLocation',
+        url: 'https://finlern.vercel.app/english-courses',
+      },
+      offers: {
+        '@type': 'Offer',
+        price: '19',
+        priceCurrency: 'EUR',
+        availability: 'https://schema.org/InStock',
+        url: 'https://finlern.vercel.app/english-courses',
+      },
+    },
+    {
+      '@type': 'CourseInstance',
+      name: 'Academic Writing & Thesis Preparation',
+      courseMode: 'online',
+      startDate: '2025-01-20',
+      endDate: '2025-05-30',
+      location: {
+        '@type': 'VirtualLocation',
+        url: 'https://finlern.vercel.app/english-courses',
+      },
+      offers: {
+        '@type': 'Offer',
+        price: '29',
+        priceCurrency: 'EUR',
+        availability: 'https://schema.org/InStock',
+        url: 'https://finlern.vercel.app/english-courses',
+      },
+    },
+  ],
+};
 
 const EnglishCourses: React.FC = () => {
   // Scroll to upcoming courses section
@@ -56,10 +150,13 @@ const EnglishCourses: React.FC = () => {
 
   return (
     <Layout>
-      <Head>
-        <title>English Courses | Finlern</title>
-        <meta name="description" content="Learn English with our specialized courses for Finnish speakers. From business English to casual conversation, we help you communicate with confidence." />
-      </Head>
+      <SEO
+        title="English Courses"
+        description="Learn English with small group and 1-on-1 courses in Finland. Business English, conversation coaching, and academic writing support tailored to international professionals."
+        canonical="https://finlern.vercel.app/english-courses"
+        keywords={englishCourseKeywords}
+        structuredData={englishCourseSchema}
+      />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">

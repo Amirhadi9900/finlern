@@ -1,8 +1,61 @@
 import React, { useEffect, useState, useRef } from 'react'
-import Head from 'next/head'
 import Image from 'next/image'
 import Layout from '../components/layout/Layout'
 import Link from 'next/link'
+import SEO from '@/components/SEO'
+
+const storyKeywords = [
+  'Finnish life partner',
+  'Finnish cultural integration',
+  'Relocation partner in Finland',
+  'Complete integration support',
+  'Workplace etiquette Finland',
+  'Professional networking Finland',
+  'Finnish relocation service',
+  'Consulting services in Finland',
+]
+
+const storyServiceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Finlern Relocation & Integration Partner',
+  serviceType: [
+    'Finnish language mastery',
+    'Relocation consulting',
+    'Cultural immersion programs',
+    'Workplace etiquette coaching',
+  ],
+  provider: {
+    '@type': 'Organization',
+    name: 'Finlern',
+    url: 'https://finlern.vercel.app/',
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'Finland',
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Complete Integration Support',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        name: 'Accommodation & Housing',
+        description: 'Guided housing search and onboarding services for newcomers.',
+      },
+      {
+        '@type': 'Offer',
+        name: 'School Enrollment Support',
+        description: 'Advisory services for selecting and registering children in Finnish schools.',
+      },
+      {
+        '@type': 'Offer',
+        name: 'Working Life Guidance',
+        description: 'Career mentoring, networking, and professional Finnish language training.',
+      },
+    ],
+  },
+}
 
 // Add type declaration for window.scrollAnimations
 declare global {
@@ -117,10 +170,13 @@ export default function OurStory() {
 
   return (
     <Layout>
-      <Head>
-        <title>Our Story | Finlern - Finnish Language Learning</title>
-        <meta name="description" content="Learn about Finlern's journey and mission to make learning Finnish accessible, engaging and effective for everyone." />
-      </Head>
+      <SEO
+        title="Our Story"
+        description="Get to know Finlern’s mission to deliver Finnish language mastery, relocation consulting, cultural immersion, and professional networking for internationals in Finland."
+        canonical="https://finlern.vercel.app/our-story"
+        keywords={storyKeywords}
+        structuredData={storyServiceSchema}
+      />
 
       {/* Hero Section - Enhanced */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
@@ -154,7 +210,7 @@ export default function OurStory() {
               data-aos-duration="800"
               data-aos-delay="200"
               className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-              How Finlern was born and our mission to share the beauty of the Finnish language
+              How Finlern was born and our mission to share the beauty of the Finnish language and culture with the world.
             </p>
             <div 
               data-aos="fade-up" 
@@ -600,7 +656,7 @@ export default function OurStory() {
                   ICT & Co-founder
                 </div>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Amirhadi is a dedicated ICT specialist who fosters and maintains the strong presence of Finlern in the digital world.
+                  Amirhadi is a dedicated ICT specialist who fosters and maintains the strong presence of Finlern in the digital world, especially this website! <br /> :) <br />          
                 </p>
                 <div className="mt-auto pt-6">
                   <button 

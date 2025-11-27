@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Link from 'next/link';
-import Head from 'next/head';
+import SEO from '@/components/SEO';
 
 // Add type declaration for window.scrollAnimations
 declare global {
@@ -32,10 +32,12 @@ const Custom404 = () => {
 
   return (
     <>
-      <Head>
-        <title>Page Not Found | Finlern</title>
-        <meta name="description" content="The page you're looking for cannot be found." />
-      </Head>
+      <SEO
+        title="Page Not Found"
+        description="The page you are looking for cannot be found on Finlern."
+        canonical="https://finlern.vercel.app/404"
+        noindex
+      />
       
       <div className="relative min-h-screen overflow-hidden flex items-center justify-center">
         {/* Background with aurora colors */}

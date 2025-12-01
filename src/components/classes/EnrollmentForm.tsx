@@ -209,16 +209,16 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
         <div className="relative bg-white/85 backdrop-blur-2xl rounded-3xl border border-white/60 shadow-[0_20px_80px_rgba(15,23,42,0.45)] overflow-hidden animate-scale-in max-h-[90vh] flex flex-col">
           <div className="pointer-events-none absolute inset-px rounded-[calc(1.5rem-1px)] bg-gradient-to-br from-aurora-blue/20 via-transparent to-aurora-purple/30 opacity-70"></div>
           <div className="relative p-6 sm:p-8 lg:p-10 overflow-y-auto">
-            {/* Close Button */}
-            <button
-              onClick={onClose}
+        {/* Close Button */}
+        <button
+          onClick={onClose}
               className="absolute top-4 right-4 text-slate-400 hover:text-slate-700 transition-all duration-300 text-3xl font-light leading-none"
-              aria-label="Close enrollment form"
-            >
-              &times;
-            </button>
-
-            {/* Header */}
+          aria-label="Close enrollment form"
+        >
+          &times;
+        </button>
+        
+        {/* Header */}
             <div className="text-center space-y-3 mb-8">
               <span className="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-[0.2em] text-slate-700 bg-white/70 border border-aurora-blue/20 shadow-sm">
                 Secure Enrollment
@@ -228,7 +228,7 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-aurora-blue via-aurora-green to-aurora-purple">
                   {displayCourseName}
                 </span>
-              </h2>
+        </h2>
               <p className="text-slate-600 text-sm sm:text-base max-w-xl mx-auto">
                 Our concierge team carefully reviews every submission. Expect a personalized response with tailored next steps within one business day.
               </p>
@@ -247,7 +247,7 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
               </div>
             </div>
 
-            {/* Form Fields */}
+        {/* Form Fields */}
             <form onSubmit={handleSubmit} className="space-y-6">
           
           {/* 🍯 HONEYPOT FIELD - INVISIBLE TO HUMANS, ATTRACTIVE TO BOTS */}
@@ -277,24 +277,24 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.6} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                   </svg>
                 </span>
-                <input
-                  type="text"
-                  id="fullName"
-                  name="fullName"
-                  value={fullName}
-                  onChange={(e) => setFullName(e.target.value)}
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
                   onFocus={() => handleFieldInteraction('fullName')}
                   className="mt-1 block w-full rounded-2xl border border-white/60 bg-white/90 py-3 pl-12 pr-4 text-base text-slate-900 shadow-inner shadow-white/10 focus:border-aurora-blue/40 focus:ring-2 focus:ring-aurora-blue/40 placeholder-slate-400 transition"
-                  placeholder="John Doe"
+              placeholder="John Doe"
                   pattern="^[a-zA-ZÀ-ÿ\s'\-]{2,100}$"
                   title="Please enter your full legal name (2-100 characters, letters only)"
                   minLength={2}
                   maxLength={100}
-                  required
-                />
+              required
+            />
               </div>
-            </div>
-            <div>
+          </div>
+          <div>
               <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-1">Email Address</label>
               <div className="relative group">
                 <span className="absolute left-4 top-1/2 -translate-y-1/2 text-aurora-blue">
@@ -302,23 +302,23 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.6} d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </span>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
                   onFocus={() => handleFieldInteraction('email')}
                   className="mt-1 block w-full rounded-2xl border border-white/60 bg-white/90 py-3 pl-12 pr-4 text-base text-slate-900 shadow-inner focus:border-aurora-blue/40 focus:ring-2 focus:ring-aurora-blue/40 placeholder-slate-400 transition"
-                  placeholder="john.doe@example.com"
-                  pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-                  title="Please enter a valid email address (e.g., john.doe@example.com)"
+              placeholder="john.doe@example.com"
+              pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+              title="Please enter a valid email address (e.g., john.doe@example.com)"
                   maxLength={254}
-                  required
-                />
+              required
+            />
               </div>
-            </div>
-            <div>
+          </div>
+          <div>
               <label htmlFor="phoneNumber" className="block text-sm font-semibold text-slate-700 mb-1">Phone Number</label>
               <div className="relative group">
                 <span className="absolute left-4 top-1/2 -translate-y-1/2 text-aurora-blue">
@@ -327,24 +327,24 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.6} d="M11 18h2" />
                   </svg>
                 </span>
-                <input
-                  type="tel"
-                  id="phoneNumber"
-                  name="phoneNumber"
-                  value={phoneNumber}
-                  onChange={(e) => setPhoneNumber(e.target.value)}
+            <input
+              type="tel"
+              id="phoneNumber"
+              name="phoneNumber"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
                   onFocus={() => handleFieldInteraction('phoneNumber')}
                   className="mt-1 block w-full rounded-2xl border border-white/60 bg-white/90 py-3 pl-12 pr-4 text-base text-slate-900 shadow-inner focus:border-aurora-blue/40 focus:ring-2 focus:ring-aurora-blue/40 placeholder-slate-400 transition"
-                  placeholder="+358 123 4567"
-                  pattern="^[+]?[0-9\s()-]{7,25}$"
+              placeholder="+358 123 4567"
+              pattern="^[+]?[0-9\s()-]{7,25}$"
                   title="Please enter a valid phone number (7-25 characters, e.g., +358 123 4567)"
                   minLength={7}
                   maxLength={25}
-                  required
-                />
+              required
+            />
               </div>
-            </div>
-            <div>
+          </div>
+          <div>
               <label htmlFor="currentJobStatus" className="block text-sm font-semibold text-slate-700 mb-1">Current Job Status</label>
               <div className="relative group">
                 <span className="absolute left-4 top-1/2 -translate-y-1/2 text-aurora-blue">
@@ -353,12 +353,12 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.6} d="M6.5 20a6 6 0 0111 0" />
                   </svg>
                 </span>
-                <input
-                  type="text"
-                  id="currentJobStatus"
-                  name="currentJobStatus"
-                  value={currentJobStatus}
-                  onChange={(e) => setCurrentJobStatus(e.target.value)}
+            <input
+              type="text"
+              id="currentJobStatus"
+              name="currentJobStatus"
+              value={currentJobStatus}
+              onChange={(e) => setCurrentJobStatus(e.target.value)}
                   onFocus={() => handleFieldInteraction('currentJobStatus')}
                   className="mt-1 block w-full rounded-2xl border border-white/60 bg-white/90 py-3 pl-12 pr-4 text-base text-slate-900 shadow-inner focus:border-aurora-blue/40 focus:ring-2 focus:ring-aurora-blue/40 placeholder-slate-400 transition"
                   placeholder="Student, Employed, Entrepreneur..."
@@ -366,11 +366,11 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
                   title="Please enter your current job status (2-100 characters)"
                   minLength={2}
                   maxLength={100}
-                  required
-                />
+              required
+            />
               </div>
-            </div>
-            <div>
+          </div>
+          <div>
               <label htmlFor="desiredOccupation" className="block text-sm font-semibold text-slate-700 mb-1">Desired Occupation</label>
               <div className="relative group">
                 <span className="absolute left-4 top-1/2 -translate-y-1/2 text-aurora-blue">
@@ -378,12 +378,12 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.6} d="M12 7v10m5-5H7" />
                   </svg>
                 </span>
-                <input
-                  type="text"
-                  id="desiredOccupation"
-                  name="desiredOccupation"
-                  value={desiredOccupation}
-                  onChange={(e) => setDesiredOccupation(e.target.value)}
+            <input
+              type="text"
+              id="desiredOccupation"
+              name="desiredOccupation"
+              value={desiredOccupation}
+              onChange={(e) => setDesiredOccupation(e.target.value)}
                   onFocus={() => handleFieldInteraction('desiredOccupation')}
                   className="mt-1 block w-full rounded-2xl border border-white/60 bg-white/90 py-3 pl-12 pr-4 text-base text-slate-900 shadow-inner focus:border-aurora-blue/40 focus:ring-2 focus:ring-aurora-blue/40 placeholder-slate-400 transition"
                   placeholder="Software Developer, Nurse..."
@@ -391,36 +391,36 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
                   title="Please enter your desired occupation (2-100 characters)"
                   minLength={2}
                   maxLength={100}
-                  required
-                />
+              required
+            />
               </div>
             </div>
           </div>
 
           <div className="space-y-4">
-            <button
-              type="submit"
+          <button
+            type="submit"
               className="group relative overflow-hidden w-full py-4 px-6 rounded-2xl text-lg font-semibold text-white bg-gradient-to-r from-aurora-green to-aurora-blue shadow-[0_15px_45px_rgba(79,70,229,0.3)] transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed hover:-translate-y-0.5 hover:shadow-[0_25px_70px_rgba(79,70,229,0.35)]"
-              disabled={submitStatus === 'loading'}
-            >
+            disabled={submitStatus === 'loading'}
+          >
               <span className="pointer-events-none absolute inset-0 translate-y-full group-hover:translate-y-0 opacity-0 group-hover:opacity-100 bg-white/15 blur-sm transition-all duration-300"></span>
-              {submitStatus === 'loading' ? (
+            {submitStatus === 'loading' ? (
+              <>
+                <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <span>Submitting...</span>
+              </>
+            ) : (
                 <>
-                  <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                  </svg>
-                  <span>Submitting...</span>
-                </>
-              ) : (
-                <>
-                  <span>Submit Enrollment</span>
+              <span>Submit Enrollment</span>
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M14 5l7 7-7 7M21 12H3" />
                   </svg>
                 </>
-              )}
-            </button>
+            )}
+          </button>
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-aurora-green animate-pulse"></span>

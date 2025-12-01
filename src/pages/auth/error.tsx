@@ -58,7 +58,7 @@ export default function AuthError() {
         <div className="text-center mb-6">
           <div className="flex justify-center">
             <Image 
-              src="/logo.png" 
+              src="/images/finlern.png" 
               alt="Finlern Logo" 
               width={80} 
               height={80} 

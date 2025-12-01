@@ -118,7 +118,7 @@ export default function Home() {
           ></div>
         </div>
         
-        <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10 pt-16 md:pt-20">
           <div className="max-w-3xl mx-auto text-center">
             <ClientOnly fallback={
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8">
@@ -136,7 +136,7 @@ export default function Home() {
                       className="inline-block font-black text-4xl md:text-5xl lg:text-6xl finlern-hero-text"
                       data-text="Finlern"
                     >
-                      Finlern
+                          Finlern
                     </span>
                   </span>
                 </h1>
@@ -192,33 +192,31 @@ export default function Home() {
                 <span className="absolute inset-0 w-[200%] -translate-x-full group-hover:translate-x-full transition-all duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent"></span>
               </Link>
             </div>
+            
+            {/* Simplified scroll indicator - now in flow below buttons */}
+            <ClientOnly>
+              <button 
+                onClick={handleScrollDown}
+                className="mt-12 flex justify-center items-center cursor-pointer mx-auto"
+                aria-label="Scroll to stats section"
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    handleScrollDown();
+                  }
+                }}
+                data-aos="fade-up" 
+                data-aos-duration="600"
+                data-aos-delay="200"
+              >
+                <div className="group relative flex flex-col items-center">
+                  <div className="relative w-6 h-10 rounded-full border-2 border-white/70 group-hover:border-white transition-colors duration-300">
+                    <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-white rounded-full animate-scroll"></div>
+                  </div>
+                </div>
+              </button>
+            </ClientOnly>
           </div>
         </div>
-        
-        {/* Simplified scroll indicator */}
-        <ClientOnly>
-          <div 
-            onClick={handleScrollDown}
-            className="absolute bottom-4 w-full flex justify-center items-center cursor-pointer z-10 mt-8"
-            aria-label="Scroll to stats section"
-            role="button"
-            tabIndex={0}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                handleScrollDown();
-              }
-            }}
-            data-aos="fade-up" 
-            data-aos-duration="600"
-            data-aos-delay="200"
-          >
-            <div className="group relative flex flex-col items-center">
-              <div className="relative w-6 h-10 rounded-full border-2 border-white/70 group-hover:border-white transition-colors duration-300">
-                <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-white rounded-full animate-scroll"></div>
-              </div>
-            </div>
-          </div>
-        </ClientOnly>
       </section>
 
       {/* Stats Section - Enhanced */}

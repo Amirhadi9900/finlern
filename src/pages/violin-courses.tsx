@@ -131,7 +131,7 @@ const ViolinCourses: React.FC = () => {
       />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         {/* Clean Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-aurora-purple via-aurora-blue to-aurora-green">
           {/* Creative wave pattern */}

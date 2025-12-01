@@ -42,7 +42,7 @@ export default function Cookies() {
 
       <main className="min-h-screen bg-white">
         {/* Updated header section */}
-        <div className="bg-gray-900 relative overflow-hidden">
+        <div className="bg-gray-900 relative overflow-hidden pt-20">
           {/* Replace SVG pattern with gradient */}
           <div className="absolute inset-0 bg-gradient-to-br from-aurora-blue via-aurora-purple to-blue-600 opacity-20"></div>
           <div className="container mx-auto px-4 py-16 relative z-10">

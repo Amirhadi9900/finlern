@@ -70,7 +70,7 @@ export default function SignIn() {
 
   if (!authConfigured) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-aurora-blue via-aurora-purple to-blue-600">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-aurora-blue via-aurora-purple to-blue-600 pt-20">
         <div className="max-w-md w-full space-y-8 p-8 bg-white rounded-xl shadow-2xl">
           <div className="text-center">
             <Image
@@ -98,7 +98,7 @@ export default function SignIn() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-aurora-blue via-aurora-purple to-blue-600">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-aurora-blue via-aurora-purple to-blue-600 pt-20">
       <div className="max-w-md w-full space-y-8 p-8 bg-white rounded-xl shadow-2xl">
         <div className="text-center">
           <Image

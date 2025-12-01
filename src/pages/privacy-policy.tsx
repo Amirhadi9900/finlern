@@ -40,7 +40,7 @@ export default function PrivacyPolicy() {
       />
 
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-b from-aurora-night to-aurora-purple overflow-hidden">
+      <div className="relative bg-gradient-to-b from-aurora-night to-aurora-purple overflow-hidden pt-20">
         {/* Replace the image background with gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-aurora-blue via-aurora-purple to-blue-600 opacity-20"></div>
         

@@ -99,7 +99,7 @@ export default function Contact() {
       />
 
       {/* Hero Section - Enhanced with modern design */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20">
         {/* Modern background with aurora effect */}
         <div className="absolute inset-0 bg-gradient-to-br from-aurora-night via-aurora-purple/90 to-aurora-blue/80">
           {/* Simplified atmospheric glow */}

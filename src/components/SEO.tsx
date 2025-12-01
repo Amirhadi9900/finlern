@@ -80,10 +80,10 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="keywords" content={keywordContent} />
       <meta name="author" content={SITE_NAME} />
       <meta name="robots" content={robotsContent} />
-
+      
       {/* Canonical URL */}
       <link rel="canonical" href={url} />
-
+      
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={ogType} />
       <meta property="og:url" content={url} />
@@ -95,7 +95,7 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="og:image:height" content="630" />
       <meta property="og:site_name" content={SITE_NAME} />
       <meta property="og:locale" content="en_US" />
-
+      
       {/* Twitter */}
       <meta name="twitter:card" content={twitterCard} />
       <meta name="twitter:url" content={url} />
@@ -103,7 +103,7 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
       {twitterSite && <meta name="twitter:site" content={twitterSite} />}
-
+      
       {/* Structured Data / Schema.org */}
       {schemaList.map((schema, index) => (
         <script
@@ -116,4 +116,4 @@ const SEO: React.FC<SEOProps> = ({
   );
 };
 
-export default SEO;
+export default SEO; 

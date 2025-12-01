@@ -117,7 +117,7 @@ export default function Classes() {
       />
 
       {/* Hero Section - Enhanced */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20">
         {/* Animated Background with Aurora Effect */}
         <div className="absolute inset-0 bg-gradient-to-br from-aurora-blue via-aurora-purple to-aurora-night">
           {/* Animated floating shapes */}

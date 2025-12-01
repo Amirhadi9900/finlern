@@ -356,7 +356,7 @@ const Header: React.FC = () => {
               </svg>
             </a>
             <a
-              href="https://www.instagram.com/finlern"
+              href="https://www.instagram.com/finlernoy?igsh=amdobWp0NTlrYnFu"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/40 hover:text-white transition-colors duration-300"

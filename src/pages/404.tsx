@@ -39,7 +39,7 @@ const Custom404 = () => {
         noindex
       />
       
-      <div className="relative min-h-screen overflow-hidden flex items-center justify-center">
+      <div className="relative min-h-screen overflow-hidden flex items-center justify-center pt-20">
         {/* Background with aurora colors */}
         <div className="absolute inset-0 bg-gradient-to-br from-aurora-blue via-aurora-purple to-blue-600 opacity-30"></div>
         

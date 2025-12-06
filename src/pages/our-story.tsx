@@ -535,18 +535,18 @@ export default function OurStory() {
                 With 20+ years of language teaching experience, Reeta's innovative approach to Finnish language education forms the foundation of Finlern's online courses.
                 </p>
                 <div className="mt-auto pt-6">
-                  <button 
-                    onClick={() => openTeamMemberPopup('reeta')}
+                <button 
+                  onClick={() => openTeamMemberPopup('reeta')}
                     className={teamButtonClasses}
-                    aria-label="Learn more about Reeta"
-                  >
-                    <span className="flex items-center justify-center">
-                      <span>Here you can know me better!</span>
-                      <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </span>
-                  </button>
+                  aria-label="Learn more about Reeta"
+                >
+                  <span className="flex items-center justify-center">
+                    <span>Here you can know me better!</span>
+                    <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </span>
+                </button>
                 </div>
               </div>
             </div>
@@ -597,18 +597,18 @@ export default function OurStory() {
                 Hamid Reza Ghorbani is the founder and leader of Finlern Oy, where he leverages his leadership and management skills to ensure the organization operates smoothly.
               </p>
               <div className="mt-auto pt-6">
-                <button 
-                  onClick={() => openTeamMemberPopup('hamid')}
+              <button 
+                onClick={() => openTeamMemberPopup('hamid')}
                   className={teamButtonClasses}
-                  aria-label="Learn more about Hamid Reza Ghorbani"
-                >
-                  <span className="flex items-center justify-center">
-                    <span>Here you can know me better!</span>
-                    <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </span>
-                </button>
+                aria-label="Learn more about Hamid Reza Ghorbani"
+              >
+                <span className="flex items-center justify-center">
+                  <span>Here you can know me better!</span>
+                  <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </span>
+              </button>
               </div>
             </div>
           </div>
@@ -659,18 +659,18 @@ export default function OurStory() {
                   Amirhadi is a dedicated ICT specialist who fosters and maintains the strong presence of Finlern in the digital world, especially this website! <br /> :) <br />          
                 </p>
                 <div className="mt-auto pt-6">
-                  <button 
-                    onClick={() => openTeamMemberPopup('amirhadi')}
+                <button 
+                  onClick={() => openTeamMemberPopup('amirhadi')}
                     className={teamButtonClasses}
-                    aria-label="Learn more about Amirhadi Borjian"
-                  >
-                    <span className="flex items-center justify-center">
-                      <span>Here you can know me better!</span>
-                      <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </span>
-                  </button>
+                  aria-label="Learn more about Amirhadi Borjian"
+                >
+                  <span className="flex items-center justify-center">
+                    <span>Here you can know me better!</span>
+                    <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </span>
+                </button>
                 </div>
               </div>
             </div>
@@ -721,18 +721,18 @@ export default function OurStory() {
                   Saghar is an experienced graphic designer and social media specialist who designs all the glamorous visual content for Finlern on different social media platforms.
                 </p>
                 <div className="mt-auto pt-6">
-                  <button 
-                    onClick={() => openTeamMemberPopup('saghar')}
+                <button 
+                  onClick={() => openTeamMemberPopup('saghar')}
                     className={teamButtonClasses}
-                    aria-label="Learn more about Saghar Kazemi"
-                  >
-                    <span className="flex items-center justify-center">
-                      <span>Here you can know me better!</span>
-                      <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </span>
-                  </button>
+                  aria-label="Learn more about Saghar Kazemi"
+                >
+                  <span className="flex items-center justify-center">
+                    <span>Here you can know me better!</span>
+                    <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </span>
+                </button>
                 </div>
               </div>
             </div>
@@ -783,18 +783,18 @@ export default function OurStory() {
                   Soodabeh is a professional event organizer and communication specialist who organizes all the events and keeps the communication lines open between Finlern and its students.
                 </p>
                 <div className="mt-auto pt-6">
-                  <button 
-                    onClick={() => openTeamMemberPopup('soodabeh')}
+                <button 
+                  onClick={() => openTeamMemberPopup('soodabeh')}
                     className={teamButtonClasses}
-                    aria-label="Learn more about Soodabeh Sadeghi Mihan"
-                  >
-                    <span className="flex items-center justify-center">
-                      <span>Here you can know me better!</span>
-                      <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </span>
-                  </button>
+                  aria-label="Learn more about Soodabeh Sadeghi Mihan"
+                >
+                  <span className="flex items-center justify-center">
+                    <span>Here you can know me better!</span>
+                    <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+                  </span>
+                </button>
                 </div>
               </div>
             </div>
@@ -1289,10 +1289,10 @@ export default function OurStory() {
             <div>Empowering Integration Through Education & Culture</div>
             <div className="mt-4 text-base opacity-95">
               🌟 Building Bridges • Creating Communities • Transforming Lives 🌟
+              </div>
             </div>
           </div>
         </div>
-      </div>
       </section>
 
       {/* Team Member Popup */}

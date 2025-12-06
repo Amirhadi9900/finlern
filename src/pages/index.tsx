@@ -191,30 +191,30 @@ export default function Home() {
                 {/* Simplified shine effect */}
                 <span className="absolute inset-0 w-[200%] -translate-x-full group-hover:translate-x-full transition-all duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent"></span>
               </Link>
-            </div>
-            
+        </div>
+        
             {/* Simplified scroll indicator - now in flow below buttons */}
-            <ClientOnly>
+        <ClientOnly>
               <button 
-                onClick={handleScrollDown}
+            onClick={handleScrollDown}
                 className="mt-12 flex justify-center items-center cursor-pointer mx-auto"
-                aria-label="Scroll to stats section"
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    handleScrollDown();
-                  }
-                }}
-                data-aos="fade-up" 
-                data-aos-duration="600"
-                data-aos-delay="200"
-              >
-                <div className="group relative flex flex-col items-center">
-                  <div className="relative w-6 h-10 rounded-full border-2 border-white/70 group-hover:border-white transition-colors duration-300">
-                    <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-white rounded-full animate-scroll"></div>
-                  </div>
-                </div>
+            aria-label="Scroll to stats section"
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                handleScrollDown();
+              }
+            }}
+            data-aos="fade-up" 
+            data-aos-duration="600"
+            data-aos-delay="200"
+          >
+            <div className="group relative flex flex-col items-center">
+              <div className="relative w-6 h-10 rounded-full border-2 border-white/70 group-hover:border-white transition-colors duration-300">
+                <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-white rounded-full animate-scroll"></div>
+              </div>
+            </div>
               </button>
-            </ClientOnly>
+        </ClientOnly>
           </div>
         </div>
       </section>

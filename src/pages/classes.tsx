@@ -1073,18 +1073,18 @@ export default function Classes() {
             </div>
             
                   <div className="mt-auto">
-                    <Link 
-                      href="/english-courses" 
-                      className="group/btn relative inline-flex w-full items-center justify-center px-8 py-4 bg-gradient-to-r from-aurora-blue to-aurora-green text-white rounded-xl font-medium shadow-lg hover:shadow-xl hover:shadow-aurora-blue/20 transition-all duration-300 overflow-hidden"
-                    >
-                      <span className="absolute inset-0 bg-white/10 scale-x-0 group-hover/btn:scale-x-100 origin-left transition-transform duration-500"></span>
-                      <span className="relative z-10">Explore English Courses</span>
-                      <span className="absolute right-4 w-7 h-7 rounded-full bg-white/20 flex items-center justify-center transition-all duration-300 group-hover/btn:bg-white/30 group-hover/btn:translate-x-1">
-                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </span>
-                    </Link>
+                  <Link 
+                    href="/english-courses" 
+                    className="group/btn relative inline-flex w-full items-center justify-center px-8 py-4 bg-gradient-to-r from-aurora-blue to-aurora-green text-white rounded-xl font-medium shadow-lg hover:shadow-xl hover:shadow-aurora-blue/20 transition-all duration-300 overflow-hidden"
+                  >
+                    <span className="absolute inset-0 bg-white/10 scale-x-0 group-hover/btn:scale-x-100 origin-left transition-transform duration-500"></span>
+                    <span className="relative z-10">Explore English Courses</span>
+                    <span className="absolute right-4 w-7 h-7 rounded-full bg-white/20 flex items-center justify-center transition-all duration-300 group-hover/btn:bg-white/30 group-hover/btn:translate-x-1">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                    </span>
+                  </Link>
                   </div>
                 </div>
               </div>
@@ -1154,18 +1154,18 @@ export default function Classes() {
             </div>
             
                   <div className="mt-auto">
-                    <Link 
-                      href="/violin-courses" 
-                      className="group/btn relative inline-flex w-full items-center justify-center px-8 py-4 bg-gradient-to-r from-aurora-purple to-aurora-night text-white rounded-xl font-medium shadow-lg hover:shadow-xl hover:shadow-aurora-purple/20 transition-all duration-300 overflow-hidden"
-                    >
-                      <span className="absolute inset-0 bg-white/10 scale-x-0 group-hover/btn:scale-x-100 origin-left transition-transform duration-500"></span>
-                      <span className="relative z-10">Discover Violin Courses</span>
-                      <span className="absolute right-4 w-7 h-7 rounded-full bg-white/20 flex items-center justify-center transition-all duration-300 group-hover/btn:bg-white/30 group-hover/btn:translate-x-1">
-                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </span>
-                    </Link>
+                  <Link 
+                    href="/violin-courses" 
+                    className="group/btn relative inline-flex w-full items-center justify-center px-8 py-4 bg-gradient-to-r from-aurora-purple to-aurora-night text-white rounded-xl font-medium shadow-lg hover:shadow-xl hover:shadow-aurora-purple/20 transition-all duration-300 overflow-hidden"
+                  >
+                    <span className="absolute inset-0 bg-white/10 scale-x-0 group-hover/btn:scale-x-100 origin-left transition-transform duration-500"></span>
+                    <span className="relative z-10">Discover Violin Courses</span>
+                    <span className="absolute right-4 w-7 h-7 rounded-full bg-white/20 flex items-center justify-center transition-all duration-300 group-hover/btn:bg-white/30 group-hover/btn:translate-x-1">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                    </span>
+                  </Link>
                   </div>
                 </div>
               </div>

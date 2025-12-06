@@ -269,8 +269,8 @@ export default function Contact() {
                       className="text-xl font-bold text-aurora-purple hover:text-aurora-blue transition-colors inline-block cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aurora-purple/60 rounded-md"
                       aria-label="Open Häme University of Applied Sciences location on Google Maps"
                     >
-                      Tietotie 1<br />
-                      37630 Valkeakoski, Pirkanmaa, Finland 
+                    Tietotie 1<br />
+                    37630 Valkeakoski, Pirkanmaa, Finland 
                     </a>
                     <p className="text-sm text-gray-500">Open Mon-Fri 9:00-17:00</p>
                   </div>

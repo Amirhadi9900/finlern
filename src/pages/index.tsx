@@ -120,30 +120,24 @@ export default function Home() {
         
         <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10 pt-16 md:pt-20">
           <div className="max-w-3xl mx-auto text-center">
-            <ClientOnly fallback={
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8">
-              Master Finnish with <span className="text-aurora-green">Finlern</span>
-            </h1>
-            }>
-              <div className="mb-8" data-aos="fade-up" data-aos-duration="600">
-                <h2 className="text-3xl md:text-4xl lg:text-6xl text-white/90 mb-4 drop-shadow-[0_1px_4px_rgba(0,0,0,0.1)]">
-                  Tervetuloa Finlerniin
-                </h2>
-                <h1 className="text-xl md:text-2xl lg:text-4xl font-bold tracking-tight drop-shadow-[0_2px_5px_rgba(0,0,0,0.2)]">
-                  <span className="text-white whitespace-nowrap">Master Finnish Life with</span>
-                  <span className="block mt-3">
-                    <span 
-                      className="inline-block font-black text-4xl md:text-5xl lg:text-6xl finlern-hero-text"
-                      data-text="Finlern"
-                    >
-                          Finlern
-                    </span>
+            <div className="mb-8" data-aos="fade-up" data-aos-duration="600">
+              <h2 className="text-3xl md:text-4xl lg:text-6xl text-white/90 mb-4 drop-shadow-[0_1px_4px_rgba(0,0,0,0.1)]">
+                Tervetuloa Finlerniin
+              </h2>
+              <h1 className="text-xl md:text-2xl lg:text-4xl font-bold tracking-tight drop-shadow-[0_2px_5px_rgba(0,0,0,0.2)]">
+                <span className="text-white whitespace-nowrap">Master Finnish Life with</span>
+                <span className="block mt-3">
+                  <span
+                    className="inline-block font-black text-4xl md:text-5xl lg:text-6xl finlern-hero-text"
+                    data-text="Finlern"
+                  >
+                    Finlern
                   </span>
-                </h1>
-                {/* Simplified decorative divider */}
-                <div className="w-32 h-px mx-auto mt-8 rounded-full bg-gradient-to-r from-transparent via-white/70 to-transparent"></div>
-              </div>
-            </ClientOnly>
+                </span>
+              </h1>
+              {/* Simplified decorative divider */}
+              <div className="w-32 h-px mx-auto mt-8 rounded-full bg-gradient-to-r from-transparent via-white/70 to-transparent"></div>
+            </div>
             <p 
               data-aos="fade-up" 
               data-aos-duration="600"

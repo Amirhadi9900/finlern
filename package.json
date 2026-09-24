@@ -33,7 +33,7 @@
     "@types/react": "^18.2.67",
     "@types/react-dom": "^18.2.22",
     "aos": "^2.3.4",
-    "autoprefixer": "^10.4.19",
+    "autoprefixer": "^10.6.1",
     "clsx": "^2.0.0",
     "dompurify": "^3.2.7",
     "eslint": "^8.57.0",
@@ -52,12 +52,12 @@
     "typescript": "^5.7.3"
   },
   "devDependencies": {
-    "@types/aos": "^3.0.7",
+    "@types/aos": "^3.0.8",
     "@types/dompurify": "^3.2.0",
     "@types/he": "^1.2.3",
     "@types/nodemailer": "^7.0.1",
     "cross-env": "^7.0.3",
-    "prettier": "^3.2.5",
+    "prettier": "^3.9.8",
     "vitest": "^2.1.9"
   }
 }

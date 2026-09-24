@@ -166,6 +166,13 @@ const containsMaliciousPattern = (input: string): boolean => {
   return maliciousPatterns.some(pattern => pattern.test(input));
 };
 
+// Sanitize attacker-controlled request values before writing them to logs
+// (prevents log injection via control characters / oversized fields).
+const safeIp = (req: NextApiRequest): string => {
+  const raw = (req.headers['x-forwarded-for'] as string) || req.socket?.remoteAddress || 'unknown';
+  return String(raw).split(',')[0].replace(/[\x00-\x1f\x7f]/g, '').slice(0, 45);
+};
+
 async function handler(req: NextApiRequest, res: NextApiResponse<Data>): Promise<void> {
   if (req.method !== 'POST') {
     res.setHeader('Allow', ['POST']);
@@ -185,7 +192,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse<Data>): Promise
     // Check 1: Honeypot field should be empty
     if (_honeypot.website && _honeypot.website.trim().length > 0) {
       console.warn('Bot detected (server): Honeypot field filled', {
-        ip: req.headers['x-forwarded-for'] || req.socket.remoteAddress,
+        ip: safeIp(req),
         timestamp: new Date().toISOString(),
       });
       res.status(400).json({ message: 'Invalid submission detected.' });
@@ -196,7 +203,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse<Data>): Promise
     if (typeof _honeypot.timeSpent === 'number' && _honeypot.timeSpent < 2000) {
       console.warn('Bot detected (server): Form submitted too quickly', {
         timeSpent: _honeypot.timeSpent,
-        ip: req.headers['x-forwarded-for'] || req.socket.remoteAddress,
+        ip: safeIp(req),
         timestamp: new Date().toISOString(),
       });
       res.status(400).json({ message: 'Please take your time filling out the form.' });
@@ -206,7 +213,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse<Data>): Promise
     // Check 3: User should have interacted with the form
     if (_honeypot.userInteracted === false) {
       console.warn('Bot detected (server): No user interaction', {
-        ip: req.headers['x-forwarded-for'] || req.socket.remoteAddress,
+        ip: safeIp(req),
         timestamp: new Date().toISOString(),
       });
       res.status(400).json({ message: 'Invalid submission detected.' });
@@ -221,9 +228,9 @@ async function handler(req: NextApiRequest, res: NextApiResponse<Data>): Promise
       
       if (isExactOrder && typeof _honeypot.timeSpent === 'number' && _honeypot.timeSpent < 10000) {
         console.warn('Bot detected (server): Suspicious fill pattern', {
-          fillOrder: _honeypot.fieldFillOrder,
+          fillOrderLength: Array.isArray(_honeypot.fieldFillOrder) ? _honeypot.fieldFillOrder.length : 0,
           timeSpent: _honeypot.timeSpent,
-          ip: req.headers['x-forwarded-for'] || req.socket.remoteAddress,
+          ip: safeIp(req),
           timestamp: new Date().toISOString(),
         });
         res.status(400).json({ message: 'Invalid submission detected.' });
@@ -276,7 +283,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse<Data>): Promise
   if (allInputs.some(input => containsMaliciousPattern(input))) {
     console.warn('Malicious pattern detected in enrollment form submission', {
       timestamp: new Date().toISOString(),
-      ip: req.headers['x-forwarded-for'] || req.socket.remoteAddress,
+      ip: safeIp(req),
     });
     res.status(400).json({ message: 'Invalid input detected. Please ensure all fields contain valid information.' });
     return;
@@ -322,7 +329,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse<Data>): Promise
   ];
   
   if (!validCourseTypes.includes(normalizedCourseType)) {
-    console.warn('Invalid course type submitted', { courseType: normalizedCourseType });
+    console.warn('Invalid course type submitted', { ip: safeIp(req) });
     res.status(400).json({ message: 'Invalid course type selected.' });
     return;
   }

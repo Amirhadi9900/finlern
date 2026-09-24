@@ -98,24 +98,19 @@ export default function Contact() {
         structuredData={contactSchema}
       />
 
-      {/* Hero Section - Enhanced with modern design */}
+      {/* Hero Section - Enhanced */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20">
-        {/* Modern background with aurora effect */}
-        <div className="absolute inset-0 bg-gradient-to-br from-aurora-night via-aurora-purple/90 to-aurora-blue/80">
-          {/* Simplified atmospheric glow */}
-          <div className="absolute inset-0 bg-[conic-gradient(at_80%_20%,rgba(71,167,106,0.1),rgba(62,138,193,0.1),rgba(157,78,221,0.1),rgba(255,97,239,0.15),rgba(71,167,106,0.1))] opacity-50"></div>
-          
-          {/* Floating orb effects */}
-          <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
-            <div className="absolute top-[15%] left-[15%] w-[40vw] max-w-[400px] aspect-square rounded-full bg-gradient-to-br from-aurora-blue/20 via-aurora-purple/10 to-transparent blur-[60px] animate-float"></div>
+        {/* Animated Background with Aurora Effect */}
+        <div className="absolute inset-0 bg-gradient-to-br from-aurora-blue via-aurora-purple to-aurora-night">
+          {/* Animated floating shapes */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-float"></div>
             <div className="absolute bottom-1/3 right-1/3 w-80 h-80 bg-aurora-green/15 rounded-full blur-3xl animate-float-delayed"></div>
+            <div className="absolute top-1/2 left-2/3 w-64 h-64 bg-aurora-blue/20 rounded-full blur-3xl animate-float-slow"></div>
           </div>
-          
-          {/* Grid overlay */}
+
+          {/* Mesh overlay */}
           <div className="absolute inset-0 opacity-20 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(to_right,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
-          
-          {/* Vignette effect */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/10"></div>
         </div>
         
         <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
@@ -408,7 +403,7 @@ export default function Contact() {
               data-aos-duration="800"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-aurora-blue/5 to-aurora-purple/10">
-                <div className="absolute inset-0 opacity-30 bg-[radial-gradient(#6B8AFD_1px,transparent_1px)] [background-size:20px_20px]"></div>
+                <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#6B8AFD_1px,transparent_1px)] [background-size:20px_20px]"></div>
               </div>
               
               <div className="relative p-10 md:p-16 z-10">

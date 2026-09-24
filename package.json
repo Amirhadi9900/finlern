@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "generate-sitemap": "node scripts/generate-sitemap.js",
     "submit-sitemap": "node scripts/submit-sitemap.js",
     "build:with-sitemap": "npm run generate-sitemap && next build",
@@ -24,8 +26,6 @@
   "license": "ISC",
   "description": "Professional website for Finlern - Finnish Language Learning Platform",
   "dependencies": {
-    "@auth/core": "^0.34.3",
-    "@auth/firebase-adapter": "^2.8.0",    
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.15.0",
@@ -37,15 +37,11 @@
     "clsx": "^2.0.0",
     "dompurify": "^3.2.7",
     "eslint": "^8.57.0",
-    "eslint-config-next": "^15.5.7", 
-    "express-rate-limit": "^7.5.0",
-    "firebase": "^11.5.0",
-    "firebase-admin": "12.7.0",
+    "eslint-config-next": "^15.5.7",
     "googleapis": "^160.0.0",
     "he": "^1.2.0",
     "isomorphic-dompurify": "^2.28.0",
     "next": "^15.5.7",
-    "next-auth": "^4.24.11",
     "nodemailer": "^7.0.7",
     "postcss": "^8.4.38",
     "punycode": "^2.3.1",
@@ -61,6 +57,7 @@
     "@types/he": "^1.2.3",
     "@types/nodemailer": "^7.0.1",
     "cross-env": "^7.0.3",
-    "prettier": "^3.2.5"
+    "prettier": "^3.2.5",
+    "vitest": "^2.1.9"
   }
 }

@@ -22,6 +22,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# enrollment / debug logs (may contain PII)
+/logs/
+
 # local env files
 .env*.local
 .env

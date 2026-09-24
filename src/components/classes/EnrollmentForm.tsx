@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { sanitizeInput, containsSuspiciousPattern } from '@/utils/inputSanitizer';
+import { unlockAudio, playSuccessChime } from '@/utils/sound';
 
 interface EnrollmentFormProps {
   isOpen: boolean;
@@ -14,6 +15,7 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
   const [phoneNumber, setPhoneNumber] = useState('');
   const [currentJobStatus, setCurrentJobStatus] = useState('');
   const [desiredOccupation, setDesiredOccupation] = useState('');
+  const [consent, setConsent] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -45,6 +47,8 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    // Unlock audio inside the click gesture so the success chime can play later.
+    unlockAudio();
     setSubmitStatus('loading');
     setErrorMessage('');
 
@@ -135,6 +139,13 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
       return;
     }
 
+    // Consent gate (GDPR Art. 13): must accept the Privacy Policy before submitting.
+    if (!consent) {
+      setErrorMessage('Please review and accept the Privacy Policy before submitting.');
+      setSubmitStatus('error');
+      return;
+    }
+
     try {
       const response = await fetch('/api/enrollment-email', {
         method: 'POST',
@@ -160,16 +171,8 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
 
       if (response.ok) {
         setSubmitStatus('success');
-        setTimeout(() => {
-          onClose();
-          setFullName('');
-          setEmail('');
-          setPhoneNumber('');
-          setCurrentJobStatus('');
-          setDesiredOccupation('');
-          setSubmitStatus('idle');
-          setErrorMessage('');
-        }, 3000); // Close after 3 seconds and reset form
+        playSuccessChime();
+        // Stay in the success state until the user dismisses it (see the Done button).
       } else {
         let message = 'There was an error submitting your enrollment. Please try again.';
         try {
@@ -188,6 +191,18 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
       setErrorMessage('Network error. Please check your connection and try again.');
       setSubmitStatus('error');
     }
+  };
+
+  const resetAndClose = () => {
+    onClose();
+    setFullName('');
+    setEmail('');
+    setPhoneNumber('');
+    setCurrentJobStatus('');
+    setDesiredOccupation('');
+    setConsent(false);
+    setSubmitStatus('idle');
+    setErrorMessage('');
   };
 
   const getDisplayCourseName = (course: string) => {
@@ -311,7 +326,7 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
                   onFocus={() => handleFieldInteraction('email')}
                   className="mt-1 block w-full rounded-2xl border border-white/60 bg-white/90 py-3 pl-12 pr-4 text-base text-slate-900 shadow-inner focus:border-aurora-blue/40 focus:ring-2 focus:ring-aurora-blue/40 placeholder-slate-400 transition"
               placeholder="john.doe@example.com"
-              pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+              pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$"
               title="Please enter a valid email address (e.g., john.doe@example.com)"
                   maxLength={254}
               required
@@ -336,7 +351,7 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
                   onFocus={() => handleFieldInteraction('phoneNumber')}
                   className="mt-1 block w-full rounded-2xl border border-white/60 bg-white/90 py-3 pl-12 pr-4 text-base text-slate-900 shadow-inner focus:border-aurora-blue/40 focus:ring-2 focus:ring-aurora-blue/40 placeholder-slate-400 transition"
               placeholder="+358 123 4567"
-              pattern="^[+]?[0-9\s()-]{7,25}$"
+              pattern="^[+]?[0-9\s\(\)\-]{7,25}$"
                   title="Please enter a valid phone number (7-25 characters, e.g., +358 123 4567)"
                   minLength={7}
                   maxLength={25}
@@ -362,7 +377,7 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
                   onFocus={() => handleFieldInteraction('currentJobStatus')}
                   className="mt-1 block w-full rounded-2xl border border-white/60 bg-white/90 py-3 pl-12 pr-4 text-base text-slate-900 shadow-inner focus:border-aurora-blue/40 focus:ring-2 focus:ring-aurora-blue/40 placeholder-slate-400 transition"
                   placeholder="Student, Employed, Entrepreneur..."
-                  pattern="^[a-zA-Z0-9À-ÿ\s.,\-'/()]{2,100}$"
+                  pattern="^[a-zA-Z0-9À-ÿ\s.,\-'\/\(\)]{2,100}$"
                   title="Please enter your current job status (2-100 characters)"
                   minLength={2}
                   maxLength={100}
@@ -387,7 +402,7 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
                   onFocus={() => handleFieldInteraction('desiredOccupation')}
                   className="mt-1 block w-full rounded-2xl border border-white/60 bg-white/90 py-3 pl-12 pr-4 text-base text-slate-900 shadow-inner focus:border-aurora-blue/40 focus:ring-2 focus:ring-aurora-blue/40 placeholder-slate-400 transition"
                   placeholder="Software Developer, Nurse..."
-                  pattern="^[a-zA-Z0-9À-ÿ\s.,\-'/()]{2,100}$"
+                  pattern="^[a-zA-Z0-9À-ÿ\s.,\-'\/\(\)]{2,100}$"
                   title="Please enter your desired occupation (2-100 characters)"
                   minLength={2}
                   maxLength={100}
@@ -398,6 +413,27 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
           </div>
 
           <div className="space-y-4">
+            <label className="flex items-start gap-3 text-sm text-slate-600 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={consent}
+                onChange={(e) => setConsent(e.target.checked)}
+                className="mt-1 h-4 w-4 shrink-0 rounded border-slate-300 text-aurora-blue focus:ring-aurora-blue"
+                required
+              />
+              <span>
+                I have read and agree to the{' '}
+                <a
+                  href="/privacy-policy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-aurora-blue underline hover:text-aurora-purple"
+                >
+                  Privacy Policy
+                </a>
+                , and consent to Finlern using my details to respond to this inquiry.
+              </span>
+            </label>
           <button
             type="submit"
               className="group relative overflow-hidden w-full py-4 px-6 rounded-2xl text-lg font-semibold text-white bg-gradient-to-r from-aurora-green to-aurora-blue shadow-[0_15px_45px_rgba(79,70,229,0.3)] transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed hover:-translate-y-0.5 hover:shadow-[0_25px_70px_rgba(79,70,229,0.35)]"
@@ -421,11 +457,7 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
                 </>
             )}
           </button>
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-aurora-green animate-pulse"></span>
-                Military-grade validation & encryption
-              </div>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-xs text-slate-500">
               <div className="flex items-center gap-2">
                 <svg className="w-4 h-4 text-aurora-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.6} d="M5 13l4 4L19 7" />
@@ -435,11 +467,6 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
             </div>
           </div>
 
-          {submitStatus === 'success' && (
-            <p className="text-center text-green-700 font-medium mt-4 p-4 bg-green-50/90 rounded-2xl border border-green-200 animate-fade-in">
-              Enrollment submitted successfully! We will contact you soon.
-            </p>
-          )}
           {submitStatus === 'error' && (
             <p className="text-center text-red-700 font-medium mt-4 p-4 bg-red-50/90 rounded-2xl border border-red-200 animate-fade-in" role="alert" aria-live="assertive">
               {errorMessage}
@@ -447,6 +474,51 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
           )}
         </form>
           </div>
+
+          {/* In-progress overlay: locks the card and shows a clear processing state */}
+          {submitStatus === 'loading' && (
+            <div
+              className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-5 rounded-3xl bg-white/70 backdrop-blur-md animate-fade-in"
+              role="status"
+              aria-live="polite"
+            >
+              <div className="relative h-14 w-14">
+                <div className="absolute inset-0 rounded-full border-4 border-aurora-blue/15"></div>
+                <div className="absolute inset-0 rounded-full border-4 border-transparent border-t-aurora-blue border-r-aurora-green animate-spin"></div>
+              </div>
+              <p className="text-base font-semibold text-slate-700 tracking-wide">
+                Processing your enrollment&hellip;
+              </p>
+            </div>
+          )}
+
+          {/* Success overlay: stays until the user dismisses it */}
+          {submitStatus === 'success' && (
+            <div
+              className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-6 rounded-3xl bg-white/90 backdrop-blur-md animate-fade-in px-8 text-center"
+              role="status"
+              aria-live="polite"
+            >
+              <div className="h-16 w-16 rounded-full bg-green-100 flex items-center justify-center">
+                <svg className="h-9 w-9 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <div className="space-y-2">
+                <p className="text-2xl font-bold text-slate-900">Enrollment submitted successfully!</p>
+                <p className="text-slate-600 max-w-md">
+                  Thank you for reaching out. Our team will review your details and contact you within one business day.
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={resetAndClose}
+                className="mt-2 px-8 py-3 rounded-2xl text-base font-semibold text-white bg-gradient-to-r from-aurora-green to-aurora-blue shadow-lg transition-all duration-300 hover:-translate-y-0.5"
+              >
+                Done
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>

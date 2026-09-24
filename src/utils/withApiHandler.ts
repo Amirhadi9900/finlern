@@ -1,14 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { apiRateLimiter, authRateLimiter, sensitiveOpRateLimiter } from './rateLimiter';
 
-// Check if NextAuth is configured
-let getToken: ((options: { req: NextApiRequest }) => Promise<any>) | null = null;
-try {
-  getToken = require('next-auth/jwt').getToken;
-} catch (e) {
-  console.warn('NextAuth JWT not available:', e);
-}
-
 // Types of API handlers
 type ApiHandler = (req: NextApiRequest, res: NextApiResponse) => Promise<void> | void;
 type RateLimitType = 'standard' | 'auth' | 'sensitive';
@@ -16,8 +8,6 @@ type RateLimitType = 'standard' | 'auth' | 'sensitive';
 // Interface for handler options
 interface HandlerOptions {
   rateLimitType?: RateLimitType;
-  requireAuth?: boolean;
-  requiredRole?: string;
   // Allow bypassing CSRF for specific endpoints (e.g., webhooks)
   bypassCsrf?: boolean;
 }
@@ -26,13 +16,28 @@ interface HandlerOptions {
 const applyMiddleware = (middleware: any) => (handler: ApiHandler) => {
   return async (req: NextApiRequest, res: NextApiResponse) => {
     try {
-      await new Promise<void>((resolve) => {
-        middleware(req, res, () => {
+      await new Promise<void>((resolve, reject) => {
+        const next = (error?: unknown) => {
+          if (error) {
+            reject(error);
+            return;
+          }
           resolve();
-        });
+        };
+
+        Promise.resolve(middleware(req, res, next))
+          .then(() => {
+            // Middleware may end the response itself (e.g. 429); then don't run the handler.
+            if (res.writableEnded) {
+              resolve();
+            }
+          })
+          .catch(reject);
       });
-      
-      return handler(req, res);
+
+      if (!res.writableEnded) {
+        return handler(req, res);
+      }
     } catch (error: unknown) {
       // Security: Only log error message in production, full stack in development
       console.error('Middleware error:', process.env.NODE_ENV === 'production' 
@@ -44,22 +49,10 @@ const applyMiddleware = (middleware: any) => (handler: ApiHandler) => {
   };
 };
 
-// Validate a token is properly formatted
-const isValidToken = (token: any): boolean => {
-  return (
-    typeof token === 'object' &&
-    token !== null &&
-    typeof token.sub === 'string' &&
-    token.sub.length > 0
-  );
-};
-
 // Higher-order function to wrap API handlers with security middleware
 export const withApiHandler = (handler: ApiHandler, options: HandlerOptions = {}) => {
   const { 
     rateLimitType = 'standard', 
-    requireAuth = false, 
-    requiredRole,
     bypassCsrf = false
   } = options;
   
@@ -81,91 +74,45 @@ export const withApiHandler = (handler: ApiHandler, options: HandlerOptions = {}
   // Apply rate limiting middleware
   let enhancedHandler = applyMiddleware(rateLimit)(handler);
   
-  // Final handler with authentication checks if required
+  // Final handler with CSRF protection applied before the rate-limited handler
   return async (req: NextApiRequest, res: NextApiResponse) => {
     try {
       // Set common security headers
       res.setHeader('X-Content-Type-Options', 'nosniff');
-      res.setHeader('X-XSS-Protection', '1; mode=block');
       
-      // Apply CSRF protection for non-GET, non-HEAD, non-OPTIONS methods
+      // CSRF protection for state-changing methods: require an exact same-origin
+      // Origin (or Referer) match. https-only in production; http/localhost in dev.
       if (!bypassCsrf && !['GET', 'HEAD', 'OPTIONS'].includes(req.method || '')) {
-        // Check Origin header against Host
         const expectedHost = req.headers.host;
         const origin = req.headers.origin;
-        
-        // Check Referer as a fallback (less secure but better than nothing)
         const referer = req.headers.referer;
-        
-        // Multiple ways to check CSRF
-        const hasValidOrigin = origin && expectedHost && (
-          origin === `https://${expectedHost}` || 
-          origin === `http://${expectedHost}` ||
-          // Allow localhost in development
-          (process.env.NODE_ENV !== 'production' && 
-           (origin.startsWith('http://localhost:') || origin.startsWith('http://127.0.0.1:')))
-        );
-        
-        const hasValidReferer = referer && expectedHost && (
-          referer.includes(`https://${expectedHost}/`) || 
-          referer.includes(`http://${expectedHost}/`) ||
-          // Allow localhost in development
-          (process.env.NODE_ENV !== 'production' && 
-           (referer.startsWith('http://localhost:') || referer.startsWith('http://127.0.0.1:')))
-        );
-        
-        // Also check for CSRF token in header or body
-        const csrfToken = 
-          req.headers['x-csrf-token'] || 
-          req.headers['x-xsrf-token'] ||
-          (req.body && typeof req.body === 'object' ? req.body._csrf : undefined);
-          
-        // If no valid origin and no valid referer and no CSRF token
-        if (!hasValidOrigin && !hasValidReferer && !csrfToken) {
-          console.warn(`CSRF validation failed. Origin: ${origin}, Host: ${expectedHost}, Referer: ${referer}`);
-          return res.status(403).json({ 
-            error: 'Forbidden', 
-            message: 'CSRF validation failed' 
-          });
-        }
-      }
-      
-      // Apply authentication check if required
-      if (requireAuth) {
-        // Check if auth is configured
-        if (!getToken) {
-          return res.status(501).json({ 
-            error: 'Authentication Required', 
-            message: 'Authentication is not configured on this server' 
-          });
-        }
-        
-        try {
-          const token = await getToken({ req });
-          
-          if (!token || !isValidToken(token)) {
-            return res.status(401).json({ 
-              error: 'Unauthorized', 
-              message: 'Valid authentication is required' 
-            });
+        const isDev = process.env.NODE_ENV !== 'production';
+
+        const allowedOrigins = new Set<string>();
+        if (expectedHost) {
+          allowedOrigins.add(`https://${expectedHost}`);
+          if (isDev) {
+            allowedOrigins.add(`http://${expectedHost}`);
+            allowedOrigins.add('http://localhost:3000');
+            allowedOrigins.add('http://127.0.0.1:3000');
           }
-          
-          // Check for specific role if required
-          if (requiredRole && token.role !== requiredRole) {
-            return res.status(403).json({ 
-              error: 'Forbidden', 
-              message: 'Insufficient permissions' 
-            });
+        }
+
+        const originOk = !!origin && allowedOrigins.has(origin);
+        let refererOk = false;
+        if (referer) {
+          try {
+            refererOk = allowedOrigins.has(new URL(referer).origin);
+          } catch {
+            refererOk = false;
           }
-        } catch (authError: unknown) {
-          // Security: Only log error message in production, full stack in development
-          console.error('Authentication error:', process.env.NODE_ENV === 'production' 
-            ? (authError instanceof Error ? authError.message : 'Auth validation failed')
-            : authError
-          );
-          return res.status(401).json({ 
-            error: 'Authentication Error', 
-            message: 'Failed to validate authentication' 
+        }
+
+        if (!originOk && !refererOk) {
+          console.warn('CSRF validation failed');
+          return res.status(403).json({
+            error: 'Forbidden',
+            message: 'CSRF validation failed'
           });
         }
       }
@@ -181,4 +128,4 @@ export const withApiHandler = (handler: ApiHandler, options: HandlerOptions = {}
       return res.status(500).json({ error: 'Internal Server Error' });
     }
   };
-}; 
+};

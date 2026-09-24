@@ -46,17 +46,25 @@ export function clearEnrollmentBuffer(): void {
 }
 
 function escapeCSV(field: string): string {
-  // Escape quotes and wrap in quotes if contains comma, quote, or newline
-  if (field.includes(',') || field.includes('"') || field.includes('\n')) {
-    return '"' + field.replace(/"/g, '""') + '"';
+  let value = field ?? '';
+  // Neutralize spreadsheet formula (CSV) injection: if the cell begins with a
+  // formula-triggering character (ignoring leading whitespace/control chars), prefix a
+  // single quote so spreadsheet apps treat it as literal text rather than a formula.
+  const lead = value.replace(/^[\s\x00-\x1f]+/, '').charAt(0);
+  if (lead === '=' || lead === '+' || lead === '-' || lead === '@' || lead === '\t' || lead === '\r') {
+    value = "'" + value;
   }
-  return field;
+  // Escape quotes and wrap in quotes if contains comma, quote, or newline
+  if (value.includes(',') || value.includes('"') || value.includes('\n')) {
+    return '"' + value.replace(/"/g, '""') + '"';
+  }
+  return value;
 }
 
 export function convertToCSV(enrollments: EnrollmentData[]): string {
   const header = 'Timestamp,Full Name,Email,Phone Number,Current Job Status,Desired Occupation,Course Type\n';
   const rows = enrollments.map(data => [
-    data.timestamp,
+    escapeCSV(data.timestamp),
     escapeCSV(data.fullName),
     escapeCSV(data.email),
     escapeCSV(data.phoneNumber),

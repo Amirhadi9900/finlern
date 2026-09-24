@@ -124,9 +124,12 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl lg:text-6xl text-white/90 mb-4 drop-shadow-[0_1px_4px_rgba(0,0,0,0.1)]">
                 Tervetuloa Finlerniin
               </h2>
-              <h1 className="text-xl md:text-2xl lg:text-4xl font-bold tracking-tight drop-shadow-[0_2px_5px_rgba(0,0,0,0.2)]">
-                <span className="text-white whitespace-nowrap">Master Finnish Life with</span>
-                <span className="block mt-3">
+              <h1
+                className="text-xl md:text-2xl lg:text-4xl font-bold tracking-tight drop-shadow-[0_2px_5px_rgba(0,0,0,0.2)]"
+                aria-label="Master Finnish Life with Finlern"
+              >
+                <span className="text-white whitespace-nowrap" aria-hidden="true">Master Finnish Life with</span>
+                <span className="block mt-3" aria-hidden="true">
                   <span
                     className="inline-block font-black text-4xl md:text-5xl lg:text-6xl finlern-hero-text"
                     data-text="Finlern"

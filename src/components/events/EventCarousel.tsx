@@ -56,17 +56,13 @@ const EventCarousel: React.FC<EventCarouselProps> = ({ images }) => {
         style={{ transform: `translateX(${-currentIndex * 100}%)` }}
       >
         {images.map((src, index) => (
-          <div key={index} className="w-full flex-shrink-0">
+          <div key={index} className="relative w-full flex-shrink-0 aspect-[3/4]">
             <Image
               src={src}
               alt={`Event image ${index + 1}`}
-              width={1920} // High resolution width
-              height={1080} // High resolution height
-              layout="responsive"
-              objectFit="cover"
-              quality={80} // Reduce quality slightly for faster loading, maintain visual integrity
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 50vw" // Inform Next.js about image display size
-              className="rounded-3xl transform group-hover:scale-105 transition-transform duration-700 ease-in-out"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 50vw"
+              className="object-cover rounded-3xl transform group-hover:scale-105 transition-transform duration-700 ease-in-out"
             />
           </div>
         ))}

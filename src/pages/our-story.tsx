@@ -195,9 +195,6 @@ export default function OurStory() {
         
         <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-block mb-4 rounded-full bg-white/10 backdrop-blur-sm px-6 py-2 text-white font-medium" data-aos="fade-up" data-aos-duration="800">
-              Our Journey
-            </div>
             <h1 
               data-aos="fade-up" 
               data-aos-duration="800"
@@ -363,11 +360,6 @@ export default function OurStory() {
         
         <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <div className="inline-block mb-4" data-aos="fade-up">
-              <span className="px-4 py-1 rounded-full text-sm font-medium bg-aurora-green/10 text-aurora-green">
-                What Drives Us
-              </span>
-            </div>
             <h2 
               className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
               data-aos="fade-up" 
@@ -461,11 +453,6 @@ export default function OurStory() {
         
         <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-block mb-4" data-aos="fade-up">
-              <span className="px-4 py-1 rounded-full text-sm font-medium bg-aurora-purple/10 text-aurora-purple">
-                The People Behind Finlern
-              </span>
-            </div>
             <h2 
               className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
               data-aos="fade-up" 
@@ -1112,11 +1099,6 @@ export default function OurStory() {
         <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
           {/* Section Header - SPECTACULAR */}
           <div className="text-center mb-16">
-            <div className="inline-block mb-6" data-aos="fade-up">
-              <span className="px-6 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500/20 to-blue-500/20 text-white backdrop-blur-sm border border-white/20">
-                Our Strategic Framework
-              </span>
-            </div>
             <h2 
               className="spectacular-title text-4xl md:text-6xl font-bold text-white mb-6"
               data-aos="fade-up" 

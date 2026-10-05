@@ -115,9 +115,6 @@ export default function Contact() {
         
         <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-block mb-4 rounded-full bg-white/10 backdrop-blur-sm px-6 py-2 text-white font-medium" data-aos="fade-up" data-aos-duration="800">
-              Contact Us
-            </div>
             <h1 
               data-aos="fade-up" 
               data-aos-duration="800"
@@ -167,14 +164,6 @@ export default function Contact() {
         <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16" data-aos="fade-up" data-aos-duration="800">
-              <div className="inline-block mb-4">
-                <span className="px-4 py-1.5 rounded-full text-sm font-medium bg-aurora-purple/10 text-aurora-purple flex items-center gap-2 justify-center">
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                  </svg>
-                  Get in Touch
-                </span>
-                  </div>
               <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-aurora-blue to-aurora-purple">Get in Touch</h2>
               <div className="w-24 h-1.5 bg-gradient-to-r from-aurora-blue to-aurora-purple mx-auto rounded-full mb-6"></div>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
@@ -276,14 +265,6 @@ export default function Contact() {
             {/* Relocation Services Section */}
             <div className="my-20" data-aos="fade-up" data-aos-duration="800">
               <div className="text-center mb-12">
-                <div className="inline-block mb-4">
-                  <span className="px-4 py-1.5 rounded-full text-sm font-medium bg-aurora-green/10 text-aurora-green flex items-center gap-2 justify-center">
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    Relocation Services
-                  </span>
-                </div>
                 <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Complete Relocation Support</h3>
                 <div className="w-20 h-1 bg-gradient-to-r from-aurora-green to-aurora-blue mx-auto rounded-full mb-6"></div>
                 <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
@@ -515,9 +496,6 @@ export default function Contact() {
         <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16" data-aos="fade-up" data-aos-duration="800">
-              <div className="inline-block mb-4 bg-white/20 px-4 py-1 rounded-full text-white/90 backdrop-blur-sm">
-                  FAQ
-              </div>
               <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">Frequently Asked Questions</h2>
               <div className="w-24 h-1.5 bg-gradient-to-r from-aurora-blue to-aurora-purple mx-auto rounded-full mb-6"></div>
               <p className="text-lg text-white/90 leading-relaxed">

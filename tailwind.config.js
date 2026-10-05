@@ -58,8 +58,8 @@ module.exports = {
         }
       },
       fontFamily: {
-        sans: ['var(--font-inter)'],
-        heading: ['var(--font-poppins)'],
+        sans: ['var(--font-satoshi)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        heading: ['var(--font-fraunces)', 'ui-serif', 'Georgia', 'serif'],
       },
       keyframes: {
         'gradient-x': {

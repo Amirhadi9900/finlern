@@ -253,9 +253,6 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
         
         {/* Header */}
             <div className="text-center space-y-3 mb-8">
-              <span className="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-[0.2em] text-slate-700 bg-white/70 border border-aurora-blue/20 shadow-sm">
-                Secure Enrollment
-              </span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight">
                 Begin Your Journey with&nbsp;
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-aurora-blue via-aurora-green to-aurora-purple">

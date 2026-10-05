@@ -1,22 +1,29 @@
 import React, { useEffect } from 'react'
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
-import { Inter, Poppins } from 'next/font/google'
+import { Fraunces } from 'next/font/google'
+import localFont from 'next/font/local'
 import { useRouter } from 'next/router'
 import Script from 'next/script'
 import ClientOnly from '@/components/ClientOnly'
 import AosInitializer from '@/components/AosInitializer.js'
 import 'aos/dist/aos.css' // Import AOS styles
 
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
+const fraunces = Fraunces({
+  subsets: ['latin', 'latin-ext'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-fraunces',
+  display: 'swap',
 })
 
-const poppins = Poppins({
-  weight: ['400', '500', '600', '700'],
-  subsets: ['latin'],
-  variable: '--font-poppins',
+const satoshi = localFont({
+  src: [
+    { path: '../fonts/Satoshi-Regular.woff2', weight: '400', style: 'normal' },
+    { path: '../fonts/Satoshi-Medium.woff2', weight: '500', style: 'normal' },
+    { path: '../fonts/Satoshi-Bold.woff2', weight: '700', style: 'normal' },
+  ],
+  variable: '--font-satoshi',
+  display: 'swap',
 })
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -60,7 +67,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <div className={`${inter.variable} ${poppins.variable} font-sans`}>
+      <div className={`${satoshi.variable} ${fraunces.variable} font-sans`}>
         <Component {...pageProps} />
       </div>
 

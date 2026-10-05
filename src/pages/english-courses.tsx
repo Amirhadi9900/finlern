@@ -189,19 +189,6 @@ const EnglishCourses: React.FC = () => {
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             {/* Content Section - Creative */}
             <div className="lg:col-span-7 text-white">
-              {/* Creative Badge */}
-              <div className="inline-flex items-center mb-6 group" data-aos="fade-up" data-aos-duration="600">
-                <div className="relative">
-                  <div className="bg-white/10 backdrop-blur-sm border border-white/30 px-6 py-3 rounded-2xl text-sm font-medium shadow-lg transform hover:rotate-2 hover:scale-105 transition-all duration-300">
-                    <span className="flex items-center">
-                      <div className="w-2 h-2 bg-aurora-green rounded-full mr-3 animate-pulse"></div>
-                      English Language Learning
-                      <div className="w-2 h-2 bg-aurora-blue rounded-full ml-3 animate-pulse animation-delay-500"></div>
-                    </span>
-                  </div> 
-                </div>
-              </div>
-
               {/* Creative Heading */}
               <div className="mb-8" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6 leading-tight">
@@ -313,12 +300,6 @@ const EnglishCourses: React.FC = () => {
         
         <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-block mb-2 bg-gradient-to-r from-aurora-blue to-aurora-green px-4 py-1 rounded-full text-white text-sm font-medium shadow-md transform hover:scale-105 transition-all duration-300"
-              data-aos="fade-up" 
-              data-aos-duration="800"
-            >
-              Available Now
-            </div>
             <h2 
               className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900 bg-clip-text text-transparent bg-gradient-to-r from-aurora-blue via-aurora-green to-aurora-purple"
               data-aos="fade-up" 
@@ -708,13 +689,6 @@ const EnglishCourses: React.FC = () => {
         
         <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
-            <div 
-              data-aos="fade-up"
-              data-aos-duration="800"
-              className="inline-block mb-2 bg-gradient-to-r from-aurora-green to-aurora-blue px-4 py-1 rounded-full text-white text-sm font-medium shadow-sm"
-            >
-              Collaborative Learning
-            </div>
             <h2 
               className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900 bg-clip-text text-transparent bg-gradient-to-r from-aurora-blue via-aurora-green to-aurora-purple"
               data-aos="fade-up" 
@@ -1102,12 +1076,6 @@ const EnglishCourses: React.FC = () => {
           <div className="max-w-6xl mx-auto">
             {/* Enhanced Header */}
             <div className="text-center mb-20" data-aos="fade-up" data-aos-duration="800">
-              <div className="inline-flex items-center justify-center mb-6 bg-gradient-to-r from-aurora-blue to-aurora-green px-6 py-2 rounded-full text-white text-sm font-medium shadow-lg transform hover:scale-105 transition-all duration-300">
-                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                </svg>
-                Our Teaching Philosophy
-              </div>
               <h2 
               className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900 bg-clip-text text-transparent bg-gradient-to-r from-aurora-blue via-aurora-green to-aurora-purple"
               data-aos="fade-up" 
@@ -1287,9 +1255,6 @@ const EnglishCourses: React.FC = () => {
               <div className="p-8 md:p-12">
                 {/* Header Section */}
                 <div className="text-center mb-10" data-aos="fade-up" data-aos-duration="800">
-                  <div className="inline-block mb-4 bg-gradient-to-r from-aurora-blue to-aurora-green px-6 py-2 rounded-full text-white text-sm font-medium shadow-lg">
-                    Start Your English Journey Today
-                  </div>
                   <h2 
                   className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900 bg-clip-text text-transparent bg-gradient-to-r from-aurora-blue via-aurora-green to-aurora-purple"
                   data-aos="fade-up" 
@@ -1427,9 +1392,6 @@ const EnglishCourses: React.FC = () => {
                       View All Courses
                     </button>
                   </div>
-                  <p className="text-sm text-gray-500 mt-4">
-                    Free consultation available • No commitment required • Flexible scheduling
-                  </p>
                 </div>
               </div>
             </div>

@@ -113,9 +113,6 @@ export default function Events() {
         
         <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-block mb-4 rounded-full bg-white/10 backdrop-blur-sm px-6 py-2 text-white font-medium" data-aos="fade-up" data-aos-duration="800">
-              Finlern Events
-            </div>
             <h1 
               data-aos="fade-up" 
               data-aos-duration="800"
@@ -163,14 +160,6 @@ export default function Events() {
         
         <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-block mb-4" data-aos="fade-up">
-              <span className="px-4 py-1.5 rounded-full text-sm font-medium bg-aurora-blue/10 text-aurora-blue flex items-center gap-2 justify-center">
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-                Upcoming Events
-              </span>
-            </div>
             <h2 
               className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-aurora-blue to-aurora-purple"
               data-aos="fade-up" 
@@ -385,9 +374,6 @@ export default function Events() {
               <div className="p-8 md:p-12">
                 {/* Header Section */}
                 <div className="text-center mb-12" data-aos="fade-up" data-aos-duration="800">
-                  <div className="inline-block mb-4 bg-gradient-to-r from-aurora-blue to-aurora-green px-6 py-2 rounded-full text-white text-sm font-medium shadow-lg">
-                    Join Our Events Today
-                </div>
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
                     Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-aurora-blue to-aurora-green">Immerse Yourself?</span>
                 </h2>
@@ -567,9 +553,6 @@ export default function Events() {
                       Subscribe to Events
                     </Link>
                   </div>
-                  <p className="text-sm text-gray-500 mt-4">
-                    Free events • Regular schedule • All levels welcome
-                  </p>
                 </div>
               </div>
             </div>

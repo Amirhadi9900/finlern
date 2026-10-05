@@ -133,9 +133,6 @@ export default function Classes() {
         
         <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-block mb-4 rounded-full bg-white/10 backdrop-blur-sm px-6 py-2 text-white font-medium" data-aos="fade-up" data-aos-duration="800">
-              Finlern Courses
-            </div>
             <h1 
               data-aos="fade-up" 
               data-aos-duration="800"
@@ -183,15 +180,6 @@ export default function Classes() {
         <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
           {/* Enhanced Header */}
           <div className="text-center mb-20">
-            <div className="inline-flex items-center justify-center mb-6 bg-gradient-to-r from-aurora-blue to-aurora-purple px-6 py-2 rounded-full text-white text-sm font-medium shadow-lg transform hover:scale-105 transition-all duration-300"
-              data-aos="fade-up" 
-              data-aos-duration="800"
-            >
-              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-              </svg>
-              Language Courses
-            </div>
             <h2 
               className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-aurora-blue via-aurora-purple to-aurora-green"
               data-aos="fade-up" 
@@ -972,16 +960,6 @@ export default function Classes() {
         
         <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <div 
-              className="inline-flex items-center gap-2 mb-3 px-5 py-2 bg-white shadow-md rounded-full text-aurora-blue text-sm font-medium border border-gray-100" 
-              data-aos="fade-up"
-            >
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-              <span>More Learning Opportunities</span>
-            </div>
-            
             <h2 
               className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-aurora-blue via-aurora-purple to-aurora-green"
               data-aos="fade-up" 
@@ -1212,11 +1190,6 @@ export default function Classes() {
         
         <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-block mb-4" data-aos="fade-up">
-              <span className="px-4 py-1 rounded-full text-sm font-medium bg-aurora-blue/10 text-aurora-blue">
-                Our Approach
-              </span>
-                </div>
             <h2 
               className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-aurora-blue via-aurora-purple to-aurora-green"
               data-aos="fade-up" 
@@ -1342,9 +1315,6 @@ export default function Classes() {
               <div className="p-8 md:p-12">
                 {/* Header Section */}
                 <div className="text-center mb-12" data-aos="fade-up" data-aos-duration="800">
-                  <div className="inline-block mb-4 bg-gradient-to-r from-aurora-blue to-aurora-green px-6 py-2 rounded-full text-white text-sm font-medium shadow-lg">
-                    Start Your Finnish Journey Today
-                  </div>
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
                     Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-aurora-blue to-aurora-green">Master Finnish?</span>
                   </h2>
@@ -1524,9 +1494,6 @@ export default function Classes() {
                       Schedule Consultation
                     </Link>
                   </div>
-                  <p className="text-sm text-gray-500 mt-4">
-                    Free consultation available • Flexible scheduling • Proven results
-                  </p>
                 </div>
               </div>
             </div>

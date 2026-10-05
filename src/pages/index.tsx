@@ -359,15 +359,6 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center mb-6 bg-gradient-to-r from-aurora-green to-aurora-blue px-6 py-2 rounded-full text-white text-sm font-medium shadow-lg transform hover:scale-105 transition-all duration-300"
-              data-aos="fade-up" 
-              data-aos-duration="800"
-            >
-              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              Beyond Language Learning
-            </div>
             <h2 
               className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-white"
               data-aos="fade-up" 
@@ -657,9 +648,6 @@ export default function Home() {
                 Learn About Our Mission
               </Link>
             </div>
-            <p className="text-sm text-blue-100/60 mt-4">
-              Professional relocation services • Complete cultural integration • Proven success rate
-            </p>
           </div>
         </div>
       </section>
@@ -675,15 +663,6 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
           {/* Enhanced Header */}
           <div className="text-center mb-20">
-            <div className="inline-flex items-center justify-center mb-6 bg-gradient-to-r from-aurora-purple to-aurora-blue px-6 py-2 rounded-full text-white text-sm font-medium shadow-lg transform hover:scale-105 transition-all duration-300"
-              data-aos="fade-up" 
-              data-aos-duration="800"
-            >
-              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-              Our Advantages
-            </div>
             <h2 
               className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-gray-900"
               data-aos="fade-up" 
@@ -868,9 +847,6 @@ export default function Home() {
               <div className="p-8 md:p-12">
                 {/* Header Section */}
                 <div className="text-center mb-12" data-aos="fade-up" data-aos-duration="800">
-                  <div className="inline-block mb-4 bg-gradient-to-r from-aurora-blue to-aurora-green px-6 py-2 rounded-full text-white text-sm font-medium shadow-lg">
-                    Start Your Finnish Journey Today
-                  </div>
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
                     Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-aurora-blue to-aurora-green">Master Finnish?</span>
                   </h2>
@@ -1050,9 +1026,6 @@ export default function Home() {
                       Schedule Consultation
             </Link>
                   </div>
-                  <p className="text-sm text-gray-500 mt-4">
-                    Free consultation available • Flexible scheduling • Proven results
-                  </p>
                 </div>
               </div>
             </div>

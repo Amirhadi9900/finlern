@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { getEnrollmentBuffer, convertToCSV } from '@/lib/enrollmentLogger';
 import { withApiHandler } from '@/utils/withApiHandler';
+import { getClientIp } from '@/utils/clientIp';
 
 export const runtime = 'nodejs';
 
@@ -18,7 +19,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
   // Validate admin key exists and matches
   if (!adminKey || !authHeader || !authHeader.startsWith('Bearer ')) {
     console.warn('Admin API unauthorized access attempt', {
-      ip: req.headers['x-forwarded-for'] || req.socket.remoteAddress,
+      ip: getClientIp(req),
       timestamp: new Date().toISOString(),
       path: req.url,
     });
@@ -36,7 +37,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
   // Ensure buffers are same length to prevent length-based timing attacks
   if (expectedBuffer.length !== providedBuffer.length) {
     console.warn('Admin API invalid key length', {
-      ip: req.headers['x-forwarded-for'] || req.socket.remoteAddress,
+      ip: getClientIp(req),
       timestamp: new Date().toISOString(),
     });
     res.status(401).json({ message: 'Unauthorized' });
@@ -46,7 +47,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
   // Timing-safe comparison
   if (!crypto.timingSafeEqual(expectedBuffer, providedBuffer)) {
     console.warn('Admin API invalid key', {
-      ip: req.headers['x-forwarded-for'] || req.socket.remoteAddress,
+      ip: getClientIp(req),
       timestamp: new Date().toISOString(),
     });
     res.status(401).json({ message: 'Unauthorized' });
@@ -56,7 +57,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
   try {
     // Audit log: Record successful admin access
     console.log('Admin API access granted', {
-      ip: req.headers['x-forwarded-for'] || req.socket.remoteAddress,
+      ip: getClientIp(req),
       timestamp: new Date().toISOString(),
       action: 'enrollment-export',
       userAgent: req.headers['user-agent'],

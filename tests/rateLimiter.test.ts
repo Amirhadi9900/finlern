@@ -35,4 +35,14 @@ describe('withRateLimit (F-04)', () => {
     expect(next).not.toHaveBeenCalled();
     expect(res.statusCode).toBe(503);
   });
+
+  it('fails closed (503) when the limiter is unavailable (fix #4)', async () => {
+    for (const bad of [null, undefined, {}]) {
+      const res = makeMockRes();
+      const next = vi.fn();
+      await withRateLimit(bad)(makeMockReq(), res as any, next);
+      expect(next).not.toHaveBeenCalled();
+      expect(res.statusCode).toBe(503);
+    }
+  });
 });

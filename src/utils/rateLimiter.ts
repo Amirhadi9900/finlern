@@ -1,4 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
+import { getClientIp } from './clientIp';
 
 interface RateLimitResult {
   remainingPoints: number;
@@ -14,26 +15,21 @@ function isRateLimitResult(value: unknown): value is RateLimitResult {
   );
 }
 
-// Try to safely import RateLimiterMemory
-let RateLimiterMemory: any;
+// Import RateLimiterMemory. If the module is unavailable we do NOT fall back to
+// an allow-all limiter — limiter instances become null and withRateLimit fails
+// closed (503), so a broken limiter can never silently disable throttling.
+let RateLimiterMemory: any = null;
 try {
-  // Import rate-limiter-flexible
   const rateLimiterModule = require('rate-limiter-flexible');
-  RateLimiterMemory = rateLimiterModule.RateLimiterMemory;
+  RateLimiterMemory = rateLimiterModule.RateLimiterMemory || null;
 } catch (e) {
-  // Fallback if the module is not installed
-  console.warn('Rate limiter not available:', e);
-
-  // Create a dummy rate limiter that always allows requests
-  RateLimiterMemory = class DummyRateLimiter {
-    async consume() {
-      return { remainingPoints: 1 };
-    }
-  };
+  console.error('Rate limiter module unavailable — requests will fail closed:', e);
+  RateLimiterMemory = null;
 }
 
-// Create the rate limiter instances with error handling
+// Create the rate limiter instances. Any failure yields null (fail closed).
 const createLimiter = (points: number, duration: number, blockDuration?: number) => {
+  if (!RateLimiterMemory) return null;
   try {
     // Sanitize inputs to prevent errors
     const sanitizedPoints = Math.max(1, Math.floor(points) || 1);
@@ -46,9 +42,8 @@ const createLimiter = (points: number, duration: number, blockDuration?: number)
       blockDuration: sanitizedBlockDuration,
     });
   } catch (e) {
-    console.warn(`Failed to create rate limiter (${points}/${duration}s):`, e);
-    // Return a dummy limiter that always allows requests
-    return new RateLimiterMemory();
+    console.error(`Failed to create rate limiter (${points}/${duration}s) — failing closed:`, e);
+    return null;
   }
 };
 
@@ -65,18 +60,15 @@ const sensitiveOpLimiterInstance = createLimiter(3, 60, 300);
 export const withRateLimit = (limiter: any) => {
   return async (req: NextApiRequest, res: NextApiResponse, next: () => void) => {
     try {
-      // Check if we have a valid limiter
+      // Fail closed: if the limiter is unavailable, reject rather than serve unthrottled.
       if (!limiter || typeof limiter.consume !== 'function') {
-        // If limiter is not available, just continue
-        console.warn('Rate limiter not available, skipping rate limit check');
-        return next();
+        console.error('Rate limiter unavailable — rejecting request (fail closed).');
+        res.status(503).json({ error: 'Service Unavailable', message: 'Rate limiting unavailable' });
+        return;
       }
 
-      // Get client IP with fallbacks
-      const clientIp =
-        ((req.headers['x-forwarded-for'] as string) || '')?.split(',')[0]?.trim() ||
-        req.socket.remoteAddress ||
-        'unknown';
+      // Get the trusted client IP (never the client-controlled XFF leftmost hop).
+      const clientIp = getClientIp(req);
 
       // Rate-limit key: client IP (the site has no authenticated users).
       const key = clientIp;

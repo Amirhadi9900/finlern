@@ -3,6 +3,7 @@ import nodemailer from 'nodemailer';
 import { google } from 'googleapis';
 import { logEnrollment } from '@/lib/enrollmentLogger';
 import { withApiHandler } from '@/utils/withApiHandler';
+import { getClientIp } from '@/utils/clientIp';
 import he from 'he';
 
 export const runtime = 'nodejs';
@@ -168,10 +169,7 @@ const containsMaliciousPattern = (input: string): boolean => {
 
 // Sanitize attacker-controlled request values before writing them to logs
 // (prevents log injection via control characters / oversized fields).
-const safeIp = (req: NextApiRequest): string => {
-  const raw = (req.headers['x-forwarded-for'] as string) || req.socket?.remoteAddress || 'unknown';
-  return String(raw).split(',')[0].replace(/[\x00-\x1f\x7f]/g, '').slice(0, 45);
-};
+const safeIp = (req: NextApiRequest): string => getClientIp(req);
 
 async function handler(req: NextApiRequest, res: NextApiResponse<Data>): Promise<void> {
   if (req.method !== 'POST') {
@@ -187,56 +185,61 @@ async function handler(req: NextApiRequest, res: NextApiResponse<Data>): Promise
 
   const { fullName, email, phoneNumber, currentJobStatus, desiredOccupation, courseType, _honeypot } = req.body || {};
 
-  // 🍯 SERVER-SIDE HONEYPOT VALIDATION (Double-check bot detection)
-  if (_honeypot) {
-    // Check 1: Honeypot field should be empty
-    if (_honeypot.website && _honeypot.website.trim().length > 0) {
-      console.warn('Bot detected (server): Honeypot field filled', {
-        ip: safeIp(req),
-        timestamp: new Date().toISOString(),
-      });
-      res.status(400).json({ message: 'Invalid submission detected.' });
-      return;
-    }
+  // 🍯 SERVER-SIDE HONEYPOT VALIDATION — MANDATORY.
+  // A real browser submission always carries this metadata; a scripted client
+  // that omits or malforms it is now rejected (previously it was skipped when
+  // the key was absent). Still a soft signal — a server-verified CAPTCHA is the
+  // durable fix.
+  const hp = _honeypot as
+    | { website?: unknown; timeSpent?: unknown; userInteracted?: unknown; fieldFillOrder?: unknown }
+    | undefined;
 
-    // Check 2: Time spent should be at least 2 seconds
-    if (typeof _honeypot.timeSpent === 'number' && _honeypot.timeSpent < 2000) {
-      console.warn('Bot detected (server): Form submitted too quickly', {
-        timeSpent: _honeypot.timeSpent,
-        ip: safeIp(req),
-        timestamp: new Date().toISOString(),
-      });
-      res.status(400).json({ message: 'Please take your time filling out the form.' });
-      return;
-    }
+  const honeypotReject = (reason: string) => {
+    console.warn('Bot detected (server): Honeypot validation failed', {
+      reason,
+      ip: safeIp(req),
+      timestamp: new Date().toISOString(),
+    });
+    res.status(400).json({ message: 'Invalid submission detected.' });
+  };
 
-    // Check 3: User should have interacted with the form
-    if (_honeypot.userInteracted === false) {
-      console.warn('Bot detected (server): No user interaction', {
-        ip: safeIp(req),
-        timestamp: new Date().toISOString(),
-      });
-      res.status(400).json({ message: 'Invalid submission detected.' });
-      return;
-    }
-
-    // Check 4: Suspicious field fill order (optional but powerful)
-    if (Array.isArray(_honeypot.fieldFillOrder) && _honeypot.fieldFillOrder.length >= 5) {
-      const expectedOrder = ['fullName', 'email', 'phoneNumber', 'currentJobStatus', 'desiredOccupation'];
-      const isExactOrder = _honeypot.fieldFillOrder.length === expectedOrder.length && 
-                           _honeypot.fieldFillOrder.every((field: string, index: number) => field === expectedOrder[index]);
-      
-      if (isExactOrder && typeof _honeypot.timeSpent === 'number' && _honeypot.timeSpent < 10000) {
-        console.warn('Bot detected (server): Suspicious fill pattern', {
-          fillOrderLength: Array.isArray(_honeypot.fieldFillOrder) ? _honeypot.fieldFillOrder.length : 0,
-          timeSpent: _honeypot.timeSpent,
-          ip: safeIp(req),
-          timestamp: new Date().toISOString(),
-        });
-        res.status(400).json({ message: 'Invalid submission detected.' });
-        return;
-      }
-    }
+  if (!hp || typeof hp !== 'object') {
+    honeypotReject('missing');
+    return;
+  }
+  if (
+    typeof hp.website !== 'string' ||
+    typeof hp.timeSpent !== 'number' ||
+    typeof hp.userInteracted !== 'boolean' ||
+    !Array.isArray(hp.fieldFillOrder)
+  ) {
+    honeypotReject('malformed');
+    return;
+  }
+  // Check 1: the hidden field must be left empty
+  if (hp.website.trim().length > 0) {
+    honeypotReject('filled');
+    return;
+  }
+  // Check 2: humans need at least 2 seconds to fill the form
+  if (hp.timeSpent < 2000) {
+    honeypotReject('too-fast');
+    return;
+  }
+  // Check 3: the user must have interacted with the fields
+  if (hp.userInteracted !== true) {
+    honeypotReject('no-interaction');
+    return;
+  }
+  // Check 4: filling every field in exact DOM order very fast looks scripted
+  const expectedOrder = ['fullName', 'email', 'phoneNumber', 'currentJobStatus', 'desiredOccupation'];
+  const order = hp.fieldFillOrder as unknown[];
+  const isExactOrder =
+    order.length === expectedOrder.length &&
+    order.every((field, index) => field === expectedOrder[index]);
+  if (isExactOrder && hp.timeSpent < 10000) {
+    honeypotReject('suspicious-order');
+    return;
   }
 
   // Normalize inputs

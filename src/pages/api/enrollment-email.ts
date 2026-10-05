@@ -4,6 +4,7 @@ import { google } from 'googleapis';
 import { logEnrollment } from '@/lib/enrollmentLogger';
 import { withApiHandler } from '@/utils/withApiHandler';
 import { getClientIp } from '@/utils/clientIp';
+import { verifyTurnstileToken } from '@/utils/turnstile';
 import he from 'he';
 
 export const runtime = 'nodejs';
@@ -183,7 +184,22 @@ async function handler(req: NextApiRequest, res: NextApiResponse<Data>): Promise
     return;
   }
 
-  const { fullName, email, phoneNumber, currentJobStatus, desiredOccupation, courseType, _honeypot } = req.body || {};
+  const { fullName, email, phoneNumber, currentJobStatus, desiredOccupation, courseType, turnstileToken, _honeypot } = req.body || {};
+
+  // 🛡️ Cloudflare Turnstile verification (mandatory, fails closed). This is the
+  // durable bot control; the honeypot below is a secondary soft signal.
+  const turnstileOk = await verifyTurnstileToken(
+    typeof turnstileToken === 'string' ? turnstileToken : undefined,
+    getClientIp(req)
+  );
+  if (!turnstileOk) {
+    console.warn('Turnstile verification failed', {
+      ip: safeIp(req),
+      timestamp: new Date().toISOString(),
+    });
+    res.status(400).json({ message: 'Please complete the captcha to continue.' });
+    return;
+  }
 
   // 🍯 SERVER-SIDE HONEYPOT VALIDATION — MANDATORY.
   // A real browser submission always carries this metadata; a scripted client

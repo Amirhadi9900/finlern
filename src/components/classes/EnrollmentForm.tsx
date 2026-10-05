@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { sanitizeInput, containsSuspiciousPattern } from '@/utils/inputSanitizer';
 import { unlockAudio, playSuccessChime } from '@/utils/sound';
+import Turnstile from '@/components/Turnstile';
 
 interface EnrollmentFormProps {
   isOpen: boolean;
@@ -18,6 +19,8 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
   const [consent, setConsent] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
+  const [turnstileToken, setTurnstileToken] = useState('');
+  const [turnstileReset, setTurnstileReset] = useState(0);
 
   // 🍯 HONEYPOT FIELDS (Anti-Bot Protection)
   // 1. Classic honeypot - hidden field with attractive name
@@ -146,6 +149,13 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
       return;
     }
 
+    // Cloudflare Turnstile token must be present (verified again server-side).
+    if (!turnstileToken) {
+      setErrorMessage('Please complete the captcha before submitting.');
+      setSubmitStatus('error');
+      return;
+    }
+
     try {
       const response = await fetch('/api/enrollment-email', {
         method: 'POST',
@@ -159,6 +169,7 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
           currentJobStatus: sanitizedJob, 
           desiredOccupation: sanitizedOccupation, 
           courseType,
+          turnstileToken,
           // 🍯 Honeypot metadata for server-side verification
           _honeypot: {
             website: website, // Should always be empty
@@ -185,11 +196,16 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
         }
         setErrorMessage(message);
         setSubmitStatus('error');
+        // Turnstile tokens are single-use; re-arm the challenge for a retry.
+        setTurnstileToken('');
+        setTurnstileReset((n) => n + 1);
       }
     } catch (error) {
       console.error('Form submission error:', error);
       setErrorMessage('Network error. Please check your connection and try again.');
       setSubmitStatus('error');
+      setTurnstileToken('');
+      setTurnstileReset((n) => n + 1);
     }
   };
 
@@ -203,6 +219,8 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
     setConsent(false);
     setSubmitStatus('idle');
     setErrorMessage('');
+    setTurnstileToken('');
+    setTurnstileReset((n) => n + 1);
   };
 
   const getDisplayCourseName = (course: string) => {
@@ -410,6 +428,14 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
             />
               </div>
             </div>
+          </div>
+
+          <div className="flex justify-center py-1">
+            <Turnstile
+              onVerify={(token) => setTurnstileToken(token)}
+              onExpire={() => setTurnstileToken('')}
+              resetSignal={turnstileReset}
+            />
           </div>
 
           <div className="space-y-4">

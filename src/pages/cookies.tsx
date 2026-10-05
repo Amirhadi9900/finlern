@@ -4,9 +4,11 @@ import Link from 'next/link'
 import SEO from '@/components/SEO'
 
 /*
- * NOTE FOR OWNER / COUNSEL: Rewritten to match reality — after removing the
- * authentication stack and with no analytics/advertising installed, this site
- * sets no non-essential cookies and needs no consent banner. Confirm wording.
+ * NOTE FOR OWNER / COUNSEL: Rewritten to match reality — the site sets no
+ * analytics/advertising/tracking cookies. Since adding Cloudflare Turnstile,
+ * strictly-necessary security cookies may be set by Cloudflare during bot
+ * verification (disclosed above); this is why no consent banner is required.
+ * Confirm wording before publishing.
  */
 
 declare global {
@@ -53,7 +55,7 @@ export default function Cookies() {
               Cookie Policy
             </h1>
             <p className="text-xl text-gray-300 text-center max-w-3xl mx-auto" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-              Last updated: September 24, 2026
+              Last updated: October 5, 2026
             </p>
           </div>
         </div>
@@ -63,23 +65,35 @@ export default function Cookies() {
             <Section title="What this site uses">
               <p>
                 Finlern’s website is informational. It does <strong>not</strong> use analytics, advertising, social-media, or
-                cross-site tracking cookies, and it has no login area or shopping cart. We therefore do not set non-essential
-                cookies and do not require a cookie-consent banner.
+                cross-site tracking cookies, and it has no login area or shopping cart. The only cookies involved are{' '}
+                <strong>strictly necessary security cookies</strong> used by our bot-protection provider while you complete the
+                enquiry form. Because we set no non-essential cookies, we do not require a cookie-consent banner.
               </p>
             </Section>
 
             <Section title="Strictly necessary">
               <p>
-                No persistent functional cookies are required to browse the site or to submit the course-enquiry form. If we
-                ever introduce cookies or similar technologies that are not strictly necessary, we will update this policy and
-                ask for your consent first.
+                No persistent functional cookies are required to browse the site. When you submit the course-enquiry form, our
+                bot-protection service (Cloudflare Turnstile) may set a temporary security cookie to verify that the request
+                comes from a human and not an automated script. This is strictly necessary for the security of the form and is
+                processed on the basis of our legitimate interest in preventing abuse (GDPR Art. 6(1)(f)).
+              </p>
+            </Section>
+
+            <Section title="Cloudflare Turnstile (security)">
+              <p>
+                Turnstile runs from <span className="font-medium">challenges.cloudflare.com</span>. While the challenge is shown,
+                Cloudflare may set one or more security cookies on that domain and process basic device/browser information to
+                assess whether the request is automated. These cookies are used only for bot detection — not for advertising or
+                cross-site tracking — and are governed by Cloudflare’s own privacy terms.
               </p>
             </Section>
 
             <Section title="Server logs (not cookies)">
               <p>
                 Our hosting provider (Vercel) may record standard technical request information — such as IP address, browser
-                type, and timestamps — in server logs to operate and secure the site. This is not cookie-based tracking.
+                type, and timestamps — in server logs, and applies edge firewall, DDoS mitigation, and rate limiting to secure the
+                site. This is not cookie-based tracking.
               </p>
             </Section>
 

@@ -60,7 +60,7 @@ export default function PrivacyPolicy() {
               Privacy Policy
             </h1>
             <p className="text-lg text-aurora-snow/80" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-              Last updated: September 24, 2026
+              Last updated: October 5, 2026
             </p>
           </div>
         </div>
@@ -79,7 +79,7 @@ export default function PrivacyPolicy() {
               <p>
                 Finlern<br />
                 Tietotie 1, Häme University of Applied Sciences<br />
-                Valkeakoski 37600, Pirkanmaa, Finland<br />
+                Valkeakoski 37630, Pirkanmaa, Finland<br />
                 Email: <a href="mailto:info@finlern.fi" className="text-aurora-blue hover:text-aurora-purple">info@finlern.fi</a>
               </p>
             </Section>
@@ -99,8 +99,15 @@ export default function PrivacyPolicy() {
               </ul>
               <p>
                 We do <strong>not</strong> require an account, do <strong>not</strong> process payments on this website, and do
-                <strong> not</strong> use advertising or analytics trackers. Our hosting provider may record standard technical
-                request data (such as IP address and browser information) in server logs for security and operation.
+                <strong> not</strong> use advertising or analytics trackers.
+              </p>
+              <p>
+                To keep the site and the enquiry form working safely, we also process limited <strong>technical security
+                data</strong>: your IP address (used to rate-limit and to protect against abuse), and the information that our
+                bot-protection provider, <strong>Cloudflare Turnstile</strong>, needs to check whether a submission comes from a
+                human rather than an automated script (for example basic device and browser information and interaction with the
+                challenge). Our hosting provider (Vercel) may likewise record standard request data such as IP address and
+                browser type in server logs. These are used only for security and operation, never for profiling or advertising.
               </p>
             </Section>
 
@@ -108,7 +115,7 @@ export default function PrivacyPolicy() {
               <p>We use the details you submit only to respond to your enquiry and, if you proceed, to arrange the course or service you asked about.</p>
               <ul className="list-disc list-inside space-y-1">
                 <li><strong>Consent (GDPR Art. 6(1)(a))</strong> — you provide your details and tick the consent box to receive a reply.</li>
-                <li><strong>Legitimate interests (Art. 6(1)(f))</strong> — replying to enquiries and securing the site.</li>
+                <li><strong>Legitimate interests (Art. 6(1)(f))</strong> — replying to enquiries, and securing the site: bot detection (Cloudflare Turnstile), rate limiting, the Vercel firewall, and server logs, all to prevent abuse, spam, and attacks.</li>
                 <li><strong>Contract (Art. 6(1)(b))</strong> — steps you ask us to take before entering a course agreement.</li>
               </ul>
             </Section>
@@ -116,7 +123,8 @@ export default function PrivacyPolicy() {
             <Section title="Who we share it with">
               <p>We do not sell or rent your data. We share it only with the service providers needed to operate, and where legally required:</p>
               <ul className="list-disc list-inside space-y-1">
-                <li><strong>Vercel</strong> — website hosting.</li>
+                <li><strong>Vercel</strong> — website hosting, edge firewall, and server logs.</li>
+                <li><strong>Cloudflare</strong> — Turnstile bot verification (to tell humans from scripts).</li>
                 <li><strong>Google (Gmail / Google Workspace)</strong> — delivering and storing the enquiry email we send ourselves.</li>
                 <li><strong>Authorities</strong> — only when required by law.</li>
               </ul>
@@ -145,7 +153,9 @@ export default function PrivacyPolicy() {
               <p>We use reasonable technical and organisational measures, including:</p>
               <ul className="list-disc list-inside space-y-1">
                 <li>Encryption in transit (HTTPS/TLS with HSTS).</li>
-                <li>Server-side validation and sanitisation of form input, rate limiting, CSRF protection, and a Content-Security-Policy.</li>
+                <li>Server-side validation and sanitisation of form input, CSRF protection, and a Content-Security-Policy.</li>
+                <li>Bot protection (Cloudflare Turnstile) and abuse throttling (application rate limiting plus the Vercel edge firewall / DDoS mitigation).</li>
+                <li>Protection against injection in stored data (e.g. CSV formula-injection neutralisation) and log sanitisation.</li>
                 <li>Least-privilege access to the mailbox that receives enquiries.</li>
               </ul>
               <p>No method of transmission or storage is completely secure; we work to protect your data proportionate to the risk.</p>
@@ -153,8 +163,10 @@ export default function PrivacyPolicy() {
 
             <Section title="International transfers">
               <p>
-                Our providers (Vercel, Google) may process data outside the EEA. Where this happens we rely on appropriate
-                safeguards such as the EU Standard Contractual Clauses. (Counsel to confirm the current transfer mechanisms.)
+                Some of our providers (Vercel, Cloudflare, Google) may process data outside the European Economic Area, for
+                example in the United States. Where we do, we rely on appropriate safeguards — such as the EU–US Data Privacy
+                Framework (which Vercel, Cloudflare, and Google participate in) and/or the EU Standard Contractual Clauses — to
+                ensure an adequate level of protection. (Counsel to confirm the current transfer mechanisms for each vendor.)
               </p>
             </Section>
 

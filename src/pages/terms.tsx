@@ -54,7 +54,7 @@ export default function Terms() {
               Terms of Service
             </h1>
             <p className="text-xl text-gray-300 text-center max-w-3xl mx-auto" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-              Last updated: September 24, 2026
+              Last updated: October 5, 2026
             </p>
           </div>
         </div>
@@ -86,9 +86,18 @@ export default function Terms() {
               </p>
             </Section>
 
-            <Section n="5" title="Acceptable use">
-              <p>You agree not to misuse the site — for example by attempting to disrupt it, gain unauthorised access, submit
-              false or malicious information, or use it for unlawful purposes.</p>
+            <Section n="5" title="Acceptable use &amp; automated security">
+              <p>
+                You agree not to misuse the site — for example by attempting to disrupt it, gain unauthorised access, submit
+                false or malicious information, or use it for unlawful purposes. You must not use bots, scrapers, scripts, or
+                other automated means to access the site or submit the enquiry form, or attempt to circumvent our security
+                measures.
+              </p>
+              <p>
+                To protect the site we use automated safeguards, including bot detection (Cloudflare Turnstile), rate limiting,
+                an edge firewall / DDoS mitigation (Vercel), and input validation. These may occasionally slow or block requests
+                — including legitimate ones — and we may limit or refuse access where abuse is detected.
+              </p>
             </Section>
 
             <Section n="6" title="Accuracy and disclaimer">

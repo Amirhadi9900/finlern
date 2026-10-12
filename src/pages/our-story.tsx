@@ -790,57 +790,46 @@ export default function OurStory() {
       </section>
 
       {/* Business Model Canvas Section - ELEGANT VERSION */}
-      <section className="py-16 md:py-24 relative overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-        {/* Simple Static Background Effects */}
+      <section className="py-16 md:py-24 relative overflow-hidden bg-gray-50">
+        {/* Soft background effects */}
         <div className="absolute inset-0">
-          {/* Static gradient orbs */}
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500 rounded-full filter blur-[128px] opacity-20"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500 rounded-full filter blur-[128px] opacity-20"></div>
-          
-          {/* Static grid overlay */}
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-aurora-blue/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-aurora-green/10 rounded-full blur-3xl"></div>
+
+          {/* Subtle grid overlay */}
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.03)_1px,transparent_1px),linear-gradient(to_right,rgba(15,23,42,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
         </div>
         
         <style jsx>{`
-          :root {
-            --aurora-blue: #3E8AC1;
-            --aurora-purple: #6650a4;
-            --aurora-green: #47A76A;
-            --aurora-night: #05021A;
-            --finnish-blue: #002F6C;
-          }
-          
           .bmc-container {
             max-width: 1500px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            background: #ffffff;
             border-radius: 24px;
-            box-shadow: 
-              0 25px 50px -12px rgba(0, 0, 0, 0.5),
-              0 0 0 1px rgba(255, 255, 255, 0.1);
+            box-shadow:
+              0 20px 45px -18px rgba(15, 23, 42, 0.18),
+              0 0 0 1px rgba(15, 23, 42, 0.06);
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(15, 23, 42, 0.06);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
           }
-          
+
           .bmc-container:hover {
-            transform: translateY(-5px);
-            box-shadow: 
-              0 35px 60px -15px rgba(0, 0, 0, 0.6),
-              0 0 0 1px rgba(255, 255, 255, 0.2),
-              0 20px 40px rgba(147, 51, 234, 0.3);
+            transform: translateY(-4px);
+            box-shadow:
+              0 28px 60px -20px rgba(15, 23, 42, 0.22),
+              0 0 0 1px rgba(62, 138, 193, 0.18);
           }
-          
+
           .bmc-header {
-            background: linear-gradient(135deg, rgba(147, 51, 234, 0.9) 0%, rgba(59, 130, 246, 0.9) 50%, rgba(16, 185, 129, 0.9) 100%);
-            padding: 60px 40px;
+            background: linear-gradient(135deg, rgba(62, 138, 193, 0.12) 0%, rgba(71, 167, 106, 0.12) 100%);
+            padding: 56px 40px;
             text-align: center;
             position: relative;
             overflow: hidden;
+            border-bottom: 1px solid rgba(15, 23, 42, 0.06);
           }
-          
+
           .bmc-header::before {
             content: '';
             position: absolute;
@@ -848,69 +837,57 @@ export default function OurStory() {
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background: radial-gradient(circle, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
             background-size: 50px 50px;
           }
-          
+
           .bmc-header h1 {
-            color: white;
+            color: #0f172a;
             font-size: 42px;
             font-weight: 800;
             margin-bottom: 20px;
             position: relative;
             z-index: 1;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
             letter-spacing: -0.5px;
           }
-          
+
           .bmc-header .subtitle {
-            color: rgba(255, 255, 255, 0.95);
+            color: #334155;
             font-size: 20px;
             font-weight: 500;
             position: relative;
             z-index: 1;
           }
-          
-          .flag {
-            font-size: 42px;
-            display: inline-block;
-            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
-          }
-          
+
           .canvas-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
             padding: 60px;
-            background: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(10px);
+            background: #f8fafc;
             position: relative;
           }
-          
+
           .canvas-grid::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at center, transparent 0%, rgba(147, 51, 234, 0.1) 100%);
+            background: radial-gradient(circle at center, transparent 0%, rgba(62, 138, 193, 0.05) 100%);
             pointer-events: none;
           }
-          
+
           .canvas-box {
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(15, 23, 42, 0.08);
             padding: 32px;
             min-height: 260px;
             position: relative;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            background: #ffffff;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 
-              0 8px 32px rgba(0, 0, 0, 0.1),
-              inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+            box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
           }
-          
+
           .canvas-box::before {
             content: '';
             position: absolute;
@@ -918,56 +895,50 @@ export default function OurStory() {
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, var(--aurora-blue), var(--aurora-purple), var(--aurora-green));
+            background: linear-gradient(90deg, #3E8AC1, #1B0B3B, #47A76A);
             opacity: 0;
             transition: opacity 0.2s ease;
           }
-          
+
           .canvas-box:hover {
             transform: translateY(-5px);
-            box-shadow: 
-              0 25px 60px rgba(147, 51, 234, 0.3),
-              inset 0 0 0 1px rgba(255, 255, 255, 0.8);
-            border-color: rgba(147, 51, 234, 0.5);
-            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+            border-color: rgba(62, 138, 193, 0.35);
           }
-          
+
           .canvas-box:hover::before {
             opacity: 1;
           }
-          
+
           .canvas-box .icon {
             font-size: 48px;
             margin-bottom: 20px;
             display: inline-block;
-            filter: drop-shadow(0 5px 10px rgba(147, 51, 234, 0.2));
+            filter: drop-shadow(0 4px 8px rgba(15, 23, 42, 0.12));
             position: relative;
             z-index: 2;
             transition: transform 0.2s ease;
           }
-          
+
           .canvas-box:hover .icon {
             transform: scale(1.1);
-            filter: drop-shadow(0 10px 20px rgba(147, 51, 234, 0.3));
           }
-          
+
           .canvas-box h3 {
-            color: #1e293b;
             font-size: 20px;
             font-weight: 800;
             margin-bottom: 20px;
             display: flex;
             align-items: center;
             gap: 10px;
-            border-bottom: 2px solid transparent;
             padding-bottom: 12px;
-            background: linear-gradient(135deg, #9333ea, #3b82f6);
+            background: linear-gradient(135deg, #3E8AC1, #1B0B3B);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             position: relative;
           }
-          
+
           .canvas-box h3::after {
             content: '';
             position: absolute;
@@ -975,71 +946,70 @@ export default function OurStory() {
             left: 0;
             right: 0;
             height: 2px;
-            background: linear-gradient(90deg, #9333ea, #3b82f6, #10b981);
+            background: linear-gradient(90deg, #3E8AC1, #1B0B3B, #47A76A);
             border-radius: 2px;
           }
-          
+
           .canvas-box p {
-            color: #334155;
+            color: #475569;
             font-size: 15px;
             line-height: 1.9;
             font-weight: 500;
             position: relative;
             z-index: 1;
           }
-          
+
           .canvas-box:hover p {
-            color: #1e293b;
+            color: #334155;
             transition: color 0.3s ease;
           }
-          
+
           .canvas-box strong {
             color: #1e293b;
             font-weight: 700;
           }
           
           .highlight {
-            background: linear-gradient(120deg, #fbbf24, #f59e0b);
+            background: linear-gradient(120deg, #fde68a, #fcd34d);
             padding: 8px 16px;
             border-radius: 12px;
             font-weight: 700;
             color: #1e293b;
             border: 2px solid #fbbf24;
-            box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
+            box-shadow: 0 4px 12px rgba(251, 191, 36, 0.25);
             display: inline-block;
             position: relative;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
           }
-          
+
           .highlight:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(251, 191, 36, 0.4);
+            box-shadow: 0 6px 18px rgba(251, 191, 36, 0.35);
           }
-          
+
           .spectacular-title {
-            text-shadow: 2px 2px 10px rgba(147, 51, 234, 0.3);
-            background: linear-gradient(135deg, #fff, #e0e7ff);
+            background: linear-gradient(135deg, #0f172a, #3E8AC1);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
           }
-          
+
           .glowing-divider {
-            box-shadow: 0 2px 10px rgba(147, 51, 234, 0.3);
+            box-shadow: 0 2px 10px rgba(62, 138, 193, 0.25);
           }
-          
+
           .bmc-footer {
-            background: linear-gradient(135deg, rgba(147, 51, 234, 0.95) 0%, rgba(59, 130, 246, 0.95) 50%, rgba(16, 185, 129, 0.95) 100%);
-            padding: 50px 40px;
+            background: linear-gradient(135deg, rgba(62, 138, 193, 0.12) 0%, rgba(71, 167, 106, 0.12) 100%);
+            padding: 48px 40px;
             text-align: center;
-            color: white;
+            color: #1e293b;
             font-size: 24px;
             font-weight: 700;
             position: relative;
             overflow: hidden;
-            box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.2);
+            border-top: 1px solid rgba(15, 23, 42, 0.06);
           }
-          
+
           .footer-icons {
             display: flex;
             justify-content: center;
@@ -1047,51 +1017,46 @@ export default function OurStory() {
             margin-bottom: 20px;
             font-size: 40px;
           }
-          
+
           .footer-icon {
             display: inline-block;
-            filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
+            filter: drop-shadow(0 4px 8px rgba(15, 23, 42, 0.15));
             cursor: pointer;
             transition: transform 0.2s ease;
           }
-          
+
           .footer-icon:hover {
             transform: scale(1.2);
-            filter: drop-shadow(0 10px 20px rgba(255, 255, 255, 0.3));
           }
-          
+
           .decorative-corner {
             position: absolute;
             font-size: 28px;
-            opacity: 0.1;
+            opacity: 0.12;
             transition: opacity 0.2s ease;
           }
-          
+
           .canvas-box:hover .decorative-corner {
-            opacity: 0.3;
+            opacity: 0.28;
           }
-          
+
           .top-left { top: 8px; left: 8px; }
           .top-right { top: 8px; right: 8px; }
           .bottom-left { bottom: 8px; left: 8px; }
           .bottom-right { bottom: 8px; right: 8px; }
-          
+
           @media (max-width: 768px) {
             .canvas-grid {
               grid-template-columns: 1fr;
               padding: 20px;
             }
-            
+
             .bmc-header h1 {
               font-size: 28px;
             }
-            
+
             .bmc-header .subtitle {
               font-size: 16px;
-            }
-            
-            .flag {
-              font-size: 32px;
             }
           }
         `}</style>
@@ -1100,19 +1065,19 @@ export default function OurStory() {
           {/* Section Header - SPECTACULAR */}
           <div className="text-center mb-16">
             <h2 
-              className="spectacular-title text-4xl md:text-6xl font-bold text-white mb-6"
+              className="spectacular-title text-4xl md:text-6xl font-bold text-slate-900 mb-6"
               data-aos="fade-up" 
               data-aos-delay="100"
             >
               Business Model Canvas
             </h2>
             <div 
-              className="glowing-divider w-32 h-1 bg-gradient-to-r from-purple-400 via-blue-400 to-green-400 mx-auto rounded-full mb-6"
+              className="glowing-divider w-32 h-1 bg-gradient-to-r from-aurora-blue via-aurora-purple to-aurora-green mx-auto rounded-full mb-6"
               data-aos="fade-up" 
               data-aos-delay="150"
             ></div>
             <p 
-              className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-medium"
+              className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-medium"
               data-aos="fade-up" 
               data-aos-delay="200"
             >
@@ -1123,7 +1088,7 @@ export default function OurStory() {
           <div className="bmc-container" data-aos="fade-up" data-aos-delay="300">
             <div className="bmc-header">
               <h1>
-                <span className="flag">🇫🇮</span> Finlern Oy – Business Model Canvas 2025 <span className="flag">🌍</span>
+                Finlern Oy – Business Model Canvas 2026
               </h1>
             </div>
           

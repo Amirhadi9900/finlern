@@ -5,6 +5,7 @@ import { Fraunces } from 'next/font/google'
 import localFont from 'next/font/local'
 import { useRouter } from 'next/router'
 import Script from 'next/script'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import ClientOnly from '@/components/ClientOnly'
 import AosInitializer from '@/components/AosInitializer.js'
 import 'aos/dist/aos.css' // Import AOS styles
@@ -85,6 +86,9 @@ export default function App({ Component, pageProps }: AppProps) {
           }}
         />
       </ClientOnly>
+
+      {/* Vercel Speed Insights */}
+      <SpeedInsights />
     </>
   )
 }

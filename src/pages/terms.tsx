@@ -31,10 +31,15 @@ export default function Terms() {
   }, []);
 
   const Section = ({ n, title, children }: { n: string; title: string; children: React.ReactNode }) => (
-    <section className="mb-8" data-aos="fade-up" data-aos-duration="800">
-      <h2 className="text-2xl font-bold text-gray-900 mb-4">{n}. {title}</h2>
-      <div className="text-gray-700 space-y-3">{children}</div>
-    </section>
+    <div className="mb-12" data-aos="fade-up" data-aos-duration="800">
+      <h2 className="text-2xl md:text-3xl font-bold text-aurora-purple mb-6 flex items-center">
+        <span className="w-1 h-8 bg-gradient-to-b from-aurora-blue to-aurora-purple rounded-full mr-4"></span>
+        {n}. {title}
+      </h2>
+      <div className="bg-aurora-snow/50 rounded-lg p-6 border border-aurora-blue/10 text-gray-700 leading-relaxed space-y-3">
+        {children}
+      </div>
+    </div>
   );
 
   return (
@@ -46,21 +51,23 @@ export default function Terms() {
         noindex
       />
 
-      <div className="min-h-screen bg-white">
-        <div className="bg-gray-900 relative overflow-hidden pt-20">
+      <div className="bg-white">
+        <div className="relative bg-gradient-to-b from-aurora-night to-aurora-purple overflow-hidden pt-20">
           <div className="absolute inset-0 bg-gradient-to-br from-aurora-blue via-aurora-purple to-blue-600 opacity-20"></div>
-          <div className="container mx-auto px-4 py-16 relative z-10">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-6" data-aos="fade-up" data-aos-duration="800">
-              Terms of Service
-            </h1>
-            <p className="text-xl text-gray-300 text-center max-w-3xl mx-auto" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-              Last updated: October 5, 2026
-            </p>
+          <div className="relative container mx-auto px-4 py-16 md:py-24">
+            <div className="max-w-3xl mx-auto text-center">
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up" data-aos-duration="800">
+                Terms of Service
+              </h1>
+              <p className="text-lg text-aurora-snow/80" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                Last updated: October 5, 2026
+              </p>
+            </div>
           </div>
         </div>
 
-        <div className="container mx-auto px-4 py-12">
-          <div className="max-w-4xl mx-auto">
+        <div className="container mx-auto px-4 py-12 md:py-16">
+          <div className="max-w-3xl mx-auto">
             <Section n="1" title="Acceptance of terms">
               <p>By using this website you agree to these terms. If you do not agree, please do not use the site.</p>
             </Section>

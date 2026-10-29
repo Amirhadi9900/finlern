@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../components/layout/Layout'
 import SEO from '@/components/SEO'
@@ -1085,7 +1084,7 @@ export default function Classes() {
                     <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-aurora-purple to-aurora-night p-0.5 shadow-lg group-hover:shadow-aurora-purple/30 transition-all duration-500 transform group-hover:scale-105">
                       <div className="absolute inset-0 rounded-2xl bg-white p-3.5 flex items-center justify-center">
                         <svg className="w-full h-full text-aurora-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2zM9 10l12-3" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
                         </svg>
                       </div>
                     </div>

@@ -1,8 +1,133 @@
 import React, { useEffect } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 import Layout from '../components/layout/Layout'
 import SEO from '@/components/SEO'
+import FaqAccordion, { FaqEntry } from '@/components/contact/FaqAccordion'
+
+const FAQ_ITEMS: FaqEntry[] = [
+  {
+    question: 'How quickly will I receive a response to my inquiry?',
+    answer: (
+      <p>
+        We aim to respond to all inquiries within 24 hours during business days. For urgent matters, we recommend calling our
+        office directly at +358 41 756 7339.
+      </p>
+    ),
+  },
+  {
+    question: 'What services do you offer?',
+    answer: (
+      <div className="space-y-4">
+        <p>We offer a range of services designed to help you succeed in Finland.</p>
+        <div>
+          <h4 className="mb-2 font-bold text-white">Language Services:</h4>
+          <ul className="list-disc list-inside space-y-1">
+            <li>Finnish language courses (€99 per 4-week course)</li>
+            <li>English language courses (private €19-29 per session, group €14-24 per session)</li>
+          </ul>
+          <p className="mt-3">
+            You can choose between private 1-on-1 instruction or small group classes (3-6 students) for English courses.
+          </p>
+        </div>
+        <div>
+          <h4 className="mb-2 font-bold text-white">Music Education:</h4>
+          <ul className="list-disc list-inside space-y-1">
+            <li>
+              Violin lessons (€35 per session, online, private, available in Finnish, English, Kurdish, and Persian)
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="mb-2 font-bold text-white">VIP Relocation Services:</h4>
+          <ul className="list-disc list-inside space-y-1">
+            <li>Phone Consultation &amp; Support (20 mins)</li>
+            <li>Accommodation &amp; Housing</li>
+            <li>School Enrollment for Children</li>
+            <li>Special Residency Solutions</li>
+            <li>Administrative &amp; Government Affairs</li>
+            <li>Car Purchase &amp; Registration</li>
+            <li>Translation &amp; Interpreter Services</li>
+            <li>Residential &amp; Social Integration Support</li>
+            <li>Airport Transfer &amp; Transportation Services</li>
+          </ul>
+          <p className="mt-3">We also offer comprehensive package deals: Single Person Package | Family Package.</p>
+        </div>
+      </div>
+    ),
+  },
+  {
+    question: 'What is the difference between private and group courses?',
+    answer: (
+      <div className="space-y-4">
+        <p>
+          Private 1-on-1 courses offer personalized instruction tailored exactly to your needs and pace, while our small group
+          courses (3-6 students) provide a collaborative learning environment at a more affordable price (saving €5 per
+          session). Both options deliver high-quality content with expert instruction.
+        </p>
+        <p>
+          Our violin lessons are only available in online, private format. Furthermore, violin lessons are taught in Finnish,
+          English, Kurdish, and Persian.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question: 'Where are your physical locations?',
+    answer: (
+      <p>
+        Our central office is at the Häme University of Applied Sciences in Valkeakoski, Finland. Currently, we provide
+        relocation services in the following cities: Helsinki, Espoo, Vantaa, Tampere, Valkeakoski, Hämeenlinna, Forssa, Lahti,
+        Lappeenranta, Riihimäki, and Jyväskylä.
+      </p>
+    ),
+  },
+  {
+    question: 'Do you offer free consultation before signing up?',
+    answer: (
+      <p>
+        Yes! We offer free 20-minute consultations to discuss your learning goals and help you choose the right course. Contact
+        us at info@finlern.fi to schedule your consultation with one of our expert instructors.
+      </p>
+    ),
+  },
+  {
+    question: 'Are there any additional benefits with your courses?',
+    answer: (
+      <p>
+        Yes! All our language courses include weekly learning support materials, access to our Language Conversation Club
+        events, and working life guidance with our partner companies. These benefits are provided free of charge to all our
+        language students.
+      </p>
+    ),
+  },
+  {
+    question: 'How do your relocation services work?',
+    answer: (
+      <div className="space-y-4">
+        <p>
+          Our comprehensive VIP relocation services are designed to support individuals and families moving to Finland, as well
+          as Finnish employers hiring international talent. We offer a range of services including:
+        </p>
+        <ul className="list-disc list-inside space-y-1">
+          <li>Assistance with Accommodation &amp; Housing, School Enrollment for Children, and Special Residency Solutions.</li>
+          <li>Support for Administrative &amp; Government Affairs (e.g., Social Security, Kela, permits, bank accounts, tax cards).</li>
+          <li>Guidance for Car Purchase &amp; Registration, and Translation &amp; Interpreter Services.</li>
+          <li>
+            Comprehensive Residential &amp; Social Integration Support, including access to libraries, cultural spaces,
+            recreational activities, public transport, and shopping guidance.
+          </li>
+          <li>Phone Consultation &amp; Support, and Airport Transfer &amp; Transportation Services.</li>
+        </ul>
+        <p>
+          We also provide complete integration support for international professionals, covering language mastery, cultural
+          integration, workplace culture navigation, and career development. For Finnish employers, we assist with international
+          talent acquisition, employee language training, cross-cultural integration workshops, and relocation support for new
+          hires. Our services boast a 95% integration success rate and 24/7 support available.
+        </p>
+      </div>
+    ),
+  },
+]
 
 const contactKeywords = [
   'Finnish relocation partner',
@@ -456,7 +581,7 @@ export default function Contact() {
                   </svg>
                 </a>
                 <a 
-                  href="https://www.instagram.com/finlernoy?igsh=amdobWp0NTlrYnFu" 
+                  href="https://www.instagram.com/finlernoy/" 
                   className="w-12 h-12 rounded-full bg-gradient-to-br from-pink-500 to-red-600 flex items-center justify-center text-white transform transition-all duration-300 hover:scale-110 hover:shadow-lg"
                   aria-label="Instagram"
                 >
@@ -503,96 +628,8 @@ export default function Contact() {
             </p>
           </div>
           
-            <div className="space-y-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-              <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 shadow-xl border border-white/20 hover:bg-white/15 transition-all duration-300">
-                <h3 className="text-xl font-bold text-white mb-4">How quickly will I receive a response to my inquiry?</h3>
-                <p className="text-lg text-white/90 leading-relaxed">
-                We aim to respond to all inquiries within 24 hours during business days. For urgent matters, 
-                  we recommend calling our office directly at +358 41 756 7339.
-              </p>
-            </div>
-            
-              <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 shadow-xl border border-white/20 hover:bg-white/15 transition-all duration-300">
-                <h3 className="text-xl font-bold text-white mb-4">What services do you offer?</h3>  
-                <p className="text-lg text-white/90 leading-relaxed">
-                  We offer a range of services designed to help you succeed in Finland:
-                </p>
-                <h4 className="text-lg font-bold text-white mb-2 mt-4">Language Services:</h4>
-                <ul className="list-disc list-inside text-lg text-white/90 leading-relaxed mt-2 pl-4">
-                  <li>Finnish language courses (€99 per 4-week course)</li> 
-                  <li>English language courses (private €19-29 per session, group €14-24 per session)</li> 
-                </ul>
-                <p className="text-lg text-white/90 leading-relaxed mt-4">
-                  You can choose between private 1-on-1 instruction or small group classes (3-6 students) for English courses.
-                </p>
-                <h4 className="text-lg font-bold text-white mb-2 mt-4">Music Education:</h4>
-                <ul className="list-disc list-inside text-lg text-white/90 leading-relaxed mt-2 pl-4">
-                  <li>Violin lessons (€35 per session, online, private, available in Finnish, English, Kurdish, and Persian)</li>
-                </ul>
-                <h4 className="text-lg font-bold text-white mb-2 mt-4">VIP Relocation Services:</h4>
-                <ul className="list-disc list-inside text-lg text-white/90 leading-relaxed mt-2 pl-4">
-                  <li>Phone Consultation & Support (20 mins)</li>
-                  <li>Accommodation & Housing</li>
-                  <li>School Enrollment for Children</li>
-                  <li>Special Residency Solutions</li>
-                  <li>Administrative & Government Affairs</li>
-                  <li>Car Purchase & Registration</li>
-                  <li>Translation & Interpreter Services</li>
-                  <li>Residential & Social Integration Support</li>
-                  <li>Airport Transfer & Transportation Services</li>
-                </ul>
-                <p className="text-lg text-white/90 leading-relaxed mt-4">
-                  We also offer comprehensive package deals: Single Person Package | Family Package.
-                </p>
-            </div>
-            
-              <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 shadow-xl border border-white/20 hover:bg-white/15 transition-all duration-300">
-                <h3 className="text-xl font-bold text-white mb-4">What is the difference between private and group courses?</h3>
-                <p className="text-lg text-white/90 leading-relaxed">
-                  Private 1-on-1 courses offer personalized instruction tailored exactly to your needs and pace, while our small group courses (3-6 students) provide a collaborative learning environment at a more affordable price (saving €5 per session). Both options deliver high-quality content with expert instruction.
-                </p>
-                <p className="text-lg text-white/90 leading-relaxed mt-4">
-                    Our violin lessons are only available in online, private format. Furthermore, violin lessons are taught in Finnish, English, Kurdish, and Persian.
-              </p>
-            </div>
-            
-              <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 shadow-xl border border-white/20 hover:bg-white/15 transition-all duration-300">
-                <h3 className="text-xl font-bold text-white mb-4">Where are your physical locations?</h3>
-                <p className="text-lg text-white/90 leading-relaxed">
-                  Our central office is at the Häme University of Applied Sciences in Valkeakoski, Finland. Currently, we provide relocation services in the following cities: Helsinki, Espoo, Vantaa, Tampere, Valkeakoski, Hämeenlinna, Forssa, Lahti, Lappeenranta, Riihimäki, and Jyväskylä. 
-              </p>
-            </div>
-              
-              <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 shadow-xl border border-white/20 hover:bg-white/15 transition-all duration-300">
-                <h3 className="text-xl font-bold text-white mb-4">Do you offer free consultation before signing up?</h3>
-                <p className="text-lg text-white/90 leading-relaxed">
-                  Yes! We offer free 20-minute consultations to discuss your learning goals and help you choose the right course. Contact us at info@finlern.fi to schedule your consultation with one of our expert instructors.
-                </p>
-              </div>
-              
-              <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 shadow-xl border border-white/20 hover:bg-white/15 transition-all duration-300">
-                <h3 className="text-xl font-bold text-white mb-4">Are there any additional benefits with your courses?</h3>
-                <p className="text-lg text-white/90 leading-relaxed">
-                  Yes! All our language courses include weekly learning support materials, access to our Language Conversation Club events, and working life guidance with our partner companies. These benefits are provided free of charge to all our language students.
-                </p>
-              </div>
-              
-              <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 shadow-xl border border-white/20 hover:bg-white/15 transition-all duration-300">
-                <h3 className="text-xl font-bold text-white mb-4">How do your relocation services work?</h3>
-                <p className="text-lg text-white/90 leading-relaxed">
-                  Our comprehensive VIP relocation services are designed to support individuals and families moving to Finland, as well as Finnish employers hiring international talent. We offer a range of services including:
-                </p>
-                <ul className="list-disc list-inside text-lg text-white/90 leading-relaxed mt-2 pl-4">
-                  <li>Assistance with Accommodation & Housing, School Enrollment for Children, and Special Residency Solutions.</li>
-                  <li>Support for Administrative & Government Affairs (e.g., Social Security, Kela, permits, bank accounts, tax cards).</li>
-                  <li>Guidance for Car Purchase & Registration, and Translation & Interpreter Services.</li>
-                  <li>Comprehensive Residential & Social Integration Support, including access to libraries, cultural spaces, recreational activities, public transport, and shopping guidance.</li>
-                  <li>Phone Consultation & Support, and Airport Transfer & Transportation Services.</li>
-                </ul>
-                <p className="text-lg text-white/90 leading-relaxed mt-4">
-                  We also provide complete integration support for international professionals, covering language mastery, cultural integration, workplace culture navigation, and career development. For Finnish employers, we assist with international talent acquisition, employee language training, cross-cultural integration workshops, and relocation support for new hires. Our services boast a 95% integration success rate and 24/7 support available.
-                </p>
-              </div>
+            <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+              <FaqAccordion items={FAQ_ITEMS} />
             </div>
           </div>
         </div>

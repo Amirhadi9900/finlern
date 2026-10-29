@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // A stray lockfile in the user home dir makes Next infer the workspace root
+  // there; pin it to this project so serverless tracing matches Vercel.
+  outputFileTracingRoot: __dirname,
   // SEO-friendly URL structure
   trailingSlash: true,
   // Optimize image performance

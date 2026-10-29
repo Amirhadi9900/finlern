@@ -17,13 +17,9 @@ function expectedHostnames(): string[] {
   return DEFAULT_HOSTNAMES;
 }
 
-export function getTurnstileSecretKey(): string {
+function getTurnstileSecretKey(): string {
   if (process.env.TURNSTILE_SECRET_KEY) return process.env.TURNSTILE_SECRET_KEY;
   return process.env.NODE_ENV === 'production' ? '' : TEST_SECRET_KEY;
-}
-
-export function isTurnstileConfigured(): boolean {
-  return getTurnstileSecretKey().length > 0;
 }
 
 // Returns true only when Cloudflare confirms the token. Fails closed on any

@@ -41,9 +41,6 @@ export function getEnrollmentBuffer(): EnrollmentData[] {
   return [...enrollmentBuffer];
 }
 
-export function clearEnrollmentBuffer(): void {
-  enrollmentBuffer = [];
-}
 
 function escapeCSV(field: string): string {
   let value = field ?? '';

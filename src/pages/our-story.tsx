@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import Image from 'next/image'
 import Layout from '../components/layout/Layout'
-import Link from 'next/link'
 import SEO from '@/components/SEO'
 
 const storyKeywords = [

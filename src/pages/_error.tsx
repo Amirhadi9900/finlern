@@ -1,5 +1,4 @@
 import { NextPage } from 'next';
-import { ErrorProps } from 'next/error';
 import Link from 'next/link';
 import { NextPageContext } from 'next';
 

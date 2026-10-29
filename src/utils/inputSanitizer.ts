@@ -258,36 +258,3 @@ export const containsSuspiciousPattern = (input: string): boolean => {
   return suspiciousPatterns.some(pattern => pattern.test(input));
 };
 
-/**
- * Sanitize for HTML context (when displaying user input)
- * Uses DOMPurify with strict configuration
- */
-export const sanitizeForHTML = (input: string): string => {
-  return DOMPurify.sanitize(input, {
-    ALLOWED_TAGS: ['b', 'i', 'em', 'strong', 'p', 'br'], // Very limited
-    ALLOWED_ATTR: [],
-    KEEP_CONTENT: true,
-    RETURN_TRUSTED_TYPE: false
-  });
-};
-
-/**
- * Sanitize for URL context
- */
-export const sanitizeForURL = (input: string): string => {
-  // Only allow safe URL protocols
-  const urlPattern = /^(https?|mailto|tel):/i;
-  
-  if (!urlPattern.test(input)) {
-    return '';
-  }
-  
-  // Use DOMPurify with URI_SAFE_ATTRIBUTES
-  return DOMPurify.sanitize(input, {
-    ALLOWED_TAGS: [],
-    ALLOWED_ATTR: [],
-    ALLOW_DATA_ATTR: false,
-    SAFE_FOR_TEMPLATES: true
-  });
-};
-

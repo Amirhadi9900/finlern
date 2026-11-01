@@ -16,9 +16,16 @@ async function generateSitemap() {
   // slashes so the output is identical on Windows and Linux.
   const EXCLUDED = /(^|\/)(_app|_document|_error|404|500)(\.(tsx|jsx))?$|(^|\/)api\//;
 
+  // These pages carry noindex, so listing them in the sitemap would contradict
+  // the robots directive.
+  const NOINDEX_PAGES = ['terms', 'cookies', 'privacy-policy'];
+
+  const HOME_URL = `${WEBSITE_URL}/`;
+
   const pages = pagePaths
     .map((page) => path.relative(PAGES_DIR, page).split(path.sep).join('/'))
     .filter((rel) => !EXCLUDED.test(rel))
+    .filter((rel) => !NOINDEX_PAGES.includes(rel.replace(/\.(tsx|jsx)$/, '')))
     .map((rel) => {
       const route = rel
         .replace(/\.(tsx|jsx)$/, '')
@@ -40,9 +47,9 @@ async function generateSitemap() {
           <loc>${url}</loc>
           <lastmod>${new Date().toISOString()}</lastmod>
           <changefreq>${
-            url === WEBSITE_URL ? 'weekly' : 'monthly'
+            url === HOME_URL ? 'weekly' : 'monthly'
           }</changefreq>
-          <priority>${url === WEBSITE_URL ? '1.0' : '0.8'}</priority>
+          <priority>${url === HOME_URL ? '1.0' : '0.8'}</priority>
         </url>
       `
         )

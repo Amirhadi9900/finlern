@@ -2,53 +2,76 @@ import React, { useEffect } from 'react'
 import Layout from '../components/layout/Layout'
 import Link from 'next/link'
 import SEO from '@/components/SEO'
+import { providerRef } from '@/utils/structuredData'
+import { SOCIAL_CHANNELS } from '@/components/layout/socialChannels'
 
 const eventKeywords = [
-  'Finnish language events',
-  'Finnish cultural integration',
-  'Conversation club Finland',
-  'Professional networking Finland',
-  'Complete integration support',
-  'Relocation partner Finland',
-  'Language immersion Finland',
+  'Finnish conversation club Tampere',
+  'Language exchange Finland',
+  'International events Tampere',
+  'Finnish practice events',
+  'Cultural events for expats Finland',
+  'Networking events for internationals Finland',
+  'Free Finnish conversation meetup',
 ]
 
+// No startDate/eventSchedule: the two listings below are dated April and May
+// 2025 on the page, so publishing them as upcoming events would be false.
 const eventsSchema = {
   '@context': 'https://schema.org',
-  '@type': 'EventSeries',
-  name: 'Finlern Language & Integration Events',
+  '@type': 'ItemList',
+  name: 'Finlern Conversation Club & Integration Events',
   description:
-    'Weekly conversation clubs, cultural immersions, and professional networking sessions that help internationals in Finland build fluency and confidence.',
-  organizer: {
-    '@type': 'Organization',
-    name: 'Finlern',
-    url: 'https://finlern.vercel.app/',
-  },
-  location: {
-    '@type': 'Place',
-    name: 'Finlern Community Venues',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Helsinki',
-      addressCountry: 'FI',
+    'Free Finnish conversation clubs and cultural events in Tampere, Valkeakoski and Lempäälä, open to international students and professionals learning Finnish.',
+  itemListElement: [
+    {
+      '@type': 'EducationEvent',
+      position: 1,
+      name: 'Hiking Event Tampere',
+      description:
+        'Practice Finnish conversation with locals and peers while exploring the nature of Tampere.',
+      eventAttendanceMode: 'https://schema.org/OnsiteEventAttendanceMode',
+      isAccessibleForFree: true,
+      inLanguage: ['Finnish', 'English'],
+      organizer: providerRef,
+      location: {
+        '@type': 'Place',
+        name: 'Tredu',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Santalahdentie 10',
+          addressLocality: 'Tampere',
+          addressRegion: 'Pirkanmaa',
+          addressCountry: 'FI',
+        },
+      },
     },
-  },
-  eventSchedule: {
-    '@type': 'Schedule',
-    repeatFrequency: 'P1W',
-    byDay: ['MO', 'TH'],
-    startTime: '17:00',
-    endTime: '19:00',
-    scheduleTimezone: 'Europe/Helsinki',
-  },
-  offers: {
-    '@type': 'Offer',
-    price: '0',
-    priceCurrency: 'EUR',
-    availability: 'https://schema.org/InStock',
-    url: 'https://finlern.vercel.app/events',
-  },
+    {
+      '@type': 'EducationEvent',
+      position: 2,
+      name: 'Cafe Lingua Valkeakoski',
+      description: 'Informal Finnish conversation practice with Finnish students at the HAMK campus.',
+      eventAttendanceMode: 'https://schema.org/OnsiteEventAttendanceMode',
+      isAccessibleForFree: true,
+      inLanguage: ['Finnish', 'English'],
+      organizer: providerRef,
+      location: {
+        '@type': 'Place',
+        name: 'Häme University of Applied Sciences (HAMK)',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Tietotie 1',
+          addressLocality: 'Valkeakoski',
+          postalCode: '37630',
+          addressRegion: 'Pirkanmaa',
+          addressCountry: 'FI',
+        },
+      },
+    },
+  ],
 }
+
+const instagramHref = SOCIAL_CHANNELS.find((channel) => channel.label === 'Instagram')!.href;
 
 // Add type declaration for window.scrollAnimations
 declare global {
@@ -88,8 +111,8 @@ export default function Events() {
   return (
     <Layout>
       <SEO
-        title="Our Events"
-        description="Experience Finnish language events, conversation clubs, and cultural immersion meetups hosted by Finlern to speed up your integration journey."
+        title="Finnish Conversation Club & Events in Tampere"
+        description="Free Finnish conversation clubs and cultural meetups in Tampere, Valkeakoski and Lempäälä. Practice Finnish with native speakers and other internationals."
         canonical="https://finlern.vercel.app/events/"
         keywords={eventKeywords}
         structuredData={eventsSchema}
@@ -178,6 +201,27 @@ export default function Events() {
             >
               Join our Conversation Club events to practice your Finnish, connect with fellow learners, and meet native speakers in a relaxed environment. Our events are held regularly in Tampere, Valkeakoski, and Lempäälä (IdeaPark).
             </p>
+            <p
+              className="text-base text-gray-700 max-w-2xl mx-auto mt-6 bg-white/70 border border-gray-100 rounded-2xl px-5 py-3 inline-block"
+              data-aos="fade-up"
+              data-aos-delay="250"
+            >
+              New dates are announced on{' '}
+              {SOCIAL_CHANNELS.filter((channel) => channel.href.startsWith('https')).map((channel, index, all) => (
+                <React.Fragment key={channel.href}>
+                  <a
+                    href={channel.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-aurora-blue hover:text-aurora-purple transition-colors"
+                  >
+                    {channel.label}
+                  </a>
+                  {index < all.length - 1 ? ', ' : ''}
+                </React.Fragment>
+              ))}
+              . The two events below are from our 2025 programme.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
@@ -249,8 +293,8 @@ export default function Events() {
                   <div className="bg-gradient-to-r from-aurora-blue/10 to-aurora-green/10 rounded-full px-6 py-2 text-aurora-blue font-bold">
                     Free Entrance!
                   </div>
-                  <Link href="mailto:info@finlern.fi?subject=Hiking Event Tampere Registration" className="inline-flex items-center justify-center bg-gradient-to-r from-aurora-blue to-aurora-green text-white rounded-full px-6 py-2.5 font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-blue/30">
-                    Register Now
+                  <Link href="mailto:info@finlern.fi?subject=Next%20Hiking%20Event%20Enquiry" className="inline-flex items-center justify-center bg-gradient-to-r from-aurora-blue to-aurora-green text-white rounded-full px-6 py-2.5 font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-blue/30">
+                    Enquire Now
                     <svg className="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
@@ -327,8 +371,8 @@ export default function Events() {
                   <div className="bg-gradient-to-r from-aurora-purple/10 to-aurora-blue/10 rounded-full px-6 py-2 text-aurora-purple font-bold">
                     Free Entrance!
                   </div>
-                  <Link href="mailto:info@finlern.fi?subject=Cafe Lingua Valkeakoski Registration" className="inline-flex items-center justify-center bg-gradient-to-r from-aurora-purple to-aurora-blue text-white rounded-full px-6 py-2.5 font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-purple/30">
-                    Register Now
+                  <Link href="mailto:info@finlern.fi?subject=Next%20Cafe%20Lingua%20Enquiry" className="inline-flex items-center justify-center bg-gradient-to-r from-aurora-purple to-aurora-blue text-white rounded-full px-6 py-2.5 font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-purple/30">
+                    Enquire Now
                     <svg className="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
@@ -394,7 +438,7 @@ export default function Events() {
                         </div>
                         <div>
                           <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-aurora-blue transition-colors duration-300">Regular Events</h3>
-                          <p className="text-gray-600">Weekly conversation clubs and cultural activities</p>
+                          <p className="text-gray-600">Biweekly conversation clubs and cultural activities</p>
                         </div>
                       </div>
                       <div className="space-y-2">
@@ -511,7 +555,7 @@ export default function Events() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       </svg>
                     </div>
-                    <div className="text-2xl font-bold text-aurora-green mb-1">3</div>
+                    <div className="text-2xl font-bold text-aurora-green mb-1">3+</div>
                     <p className="text-sm text-gray-600">Cities</p>
                   </div>
                   
@@ -545,11 +589,11 @@ export default function Events() {
                   </svg>
                       View All Events
                     </Link>
-                    <Link href="mailto:info@finlern.fi?subject=Event Notifications Subscription" className="inline-flex items-center justify-center px-8 py-4 bg-white border-2 border-aurora-blue text-aurora-blue rounded-xl font-medium transition-all duration-300 hover:bg-aurora-blue/5 hover:shadow-lg transform hover:scale-105 group">
+                    <Link href={instagramHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-4 bg-white border-2 border-aurora-blue text-aurora-blue rounded-xl font-medium transition-all duration-300 hover:bg-aurora-blue/5 hover:shadow-lg transform hover:scale-105 group">
                       <svg className="w-5 h-5 mr-2 group-hover:-translate-y-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
                   </svg>
-                      Subscribe to Events
+                      Follow Us for Dates
                     </Link>
                   </div>
                 </div>

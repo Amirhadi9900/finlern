@@ -2,58 +2,28 @@ import React, { useEffect, useState, useRef } from 'react'
 import Image from 'next/image'
 import Layout from '../components/layout/Layout'
 import SEO from '@/components/SEO'
+import { ORG_ID, providerRef, relocationServiceSchema } from '@/utils/structuredData'
 
 const storyKeywords = [
-  'Finnish life partner',
-  'Finnish cultural integration',
-  'Relocation partner in Finland',
-  'Complete integration support',
-  'Workplace etiquette Finland',
-  'Professional networking Finland',
-  'Finnish relocation service',
-  'Consulting services in Finland',
+  'Finlern Oy',
+  'Relocation company Finland',
+  'International student support Finland',
+  'Integration services Finland',
+  'Relocation consultant Tampere',
+  'Settling in Finland for families',
+  'Language school Valkeakoski',
+  'Finnish residence permit help',
 ]
 
-const storyServiceSchema = {
+const storyAboutPageSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Service',
-  name: 'Finlern Relocation & Integration Partner',
-  serviceType: [
-    'Finnish language mastery',
-    'Relocation consulting',
-    'Cultural immersion programs',
-    'Workplace etiquette coaching',
-  ],
-  provider: {
-    '@type': 'Organization',
-    name: 'Finlern',
-    url: 'https://finlern.vercel.app/',
-  },
-  areaServed: {
-    '@type': 'Country',
-    name: 'Finland',
-  },
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'Complete Integration Support',
-    itemListElement: [
-      {
-        '@type': 'Offer',
-        name: 'Accommodation & Housing',
-        description: 'Guided housing search and onboarding services for newcomers.',
-      },
-      {
-        '@type': 'Offer',
-        name: 'School Enrollment Support',
-        description: 'Advisory services for selecting and registering children in Finnish schools.',
-      },
-      {
-        '@type': 'Offer',
-        name: 'Working Life Guidance',
-        description: 'Career mentoring, networking, and professional Finnish language training.',
-      },
-    ],
-  },
+  '@type': 'AboutPage',
+  url: 'https://finlern.vercel.app/our-story/',
+  name: 'About Finlern Oy',
+  description:
+    'Finlern Oy was founded in 2024 as a Finnish language school and now supports international students, families and employees with relocation, residency and integration services across Finland.',
+  mainEntity: { '@id': ORG_ID },
+  publisher: providerRef,
 }
 
 // Add type declaration for window.scrollAnimations
@@ -170,11 +140,11 @@ export default function OurStory() {
   return (
     <Layout>
       <SEO
-        title="Our Story"
-        description="Get to know Finlern’s mission to deliver Finnish language mastery, relocation consulting, cultural immersion, and professional networking for internationals in Finland."
+        title="About Finlern: Relocation & Language Support"
+        description="Founded in 2024, Finlern Oy helps international students and families settle in Finland with relocation support, Finnish and English courses and violin lessons."
         canonical="https://finlern.vercel.app/our-story/"
         keywords={storyKeywords}
-        structuredData={storyServiceSchema}
+        structuredData={[storyAboutPageSchema, relocationServiceSchema]}
       />
 
       {/* Hero Section - Enhanced */}

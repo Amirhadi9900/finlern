@@ -46,7 +46,7 @@ export default function PrivacyPolicy() {
   return (
     <Layout>
       <SEO
-        title="Privacy Policy | Finlern"
+        title="Privacy Policy"
         description="How Finlern collects, uses, and protects personal information submitted through our course-enquiry form."
         canonical="https://finlern.vercel.app/privacy-policy/"
         noindex
@@ -60,7 +60,7 @@ export default function PrivacyPolicy() {
               Privacy Policy
             </h1>
             <p className="text-lg text-aurora-snow/80" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-              Last updated: October 5, 2026
+              Last updated: November 1, 2026
             </p>
           </div>
         </div>
@@ -71,7 +71,8 @@ export default function PrivacyPolicy() {
           <div className="max-w-3xl mx-auto">
             <Section title="Who we are">
               <p>
-                Finlern provides Finnish language courses and relocation/integration information. This policy explains how we
+                Finlern provides Finnish and English language courses, violin lessons and relocation/integration support. This
+                policy explains how we
                 handle personal data when you use our website at <span className="font-medium">finlern.fi</span> /{' '}
                 <span className="font-medium">finlern.vercel.app</span>.
               </p>

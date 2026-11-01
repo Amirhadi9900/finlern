@@ -5,6 +5,7 @@ import ClientOnly from '@/components/ClientOnly'
 import SEO from '@/components/SEO'
 import EventCarousel from '@/components/events/EventCarousel'
 import MorphWords from '@/components/home/MorphWords'
+import { organizationSchema, relocationServiceSchema } from '@/utils/structuredData'
 import styles from '../styles/heroEffects.module.css'
 
 // Add type declaration for window.scrollAnimations
@@ -48,39 +49,13 @@ export default function Home() {
     }
   };
 
-  // Schema.org structured data for the homepage
-  const homePageSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Finlern",
-    "url": "https://finlern.vercel.app",
-    "logo": "https://finlern.vercel.app/images/finlern.png",
-    "description": "Learn Finnish language with Finlern's interactive online courses, designed for all levels from beginner to advanced. Join our community and discover Finland's language and culture.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Helsinki",
-      "addressRegion": "Uusimaa",
-      "addressCountry": "Finland"
-    },
-    "sameAs": [
-      "https://www.facebook.com/people/Finlern/61578171630486/",
-      "https://www.instagram.com/finlernoy/",
-      "https://www.linkedin.com/company/finlern-oy/"
-    ],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+358417567339",
-      "email": "info@finlern.fi",
-      "contactType": "customer service",
-      "availableLanguage": ["English", "Finnish"]
-    }
-  };
+  const homePageSchema = [organizationSchema, relocationServiceSchema];
   
   return (
     <Layout>
       <SEO 
-        title="Finnish Language Learning Made Easy"
-        description="Learn Finnish language with Finlern's interactive online courses, designed for all levels from beginner to advanced. Join our community and discover Finland's language and culture."
+        title="Relocation Support & Language Courses in Finland"
+        description="Relocation support for international students in Finland — housing, residency, Kela and bank paperwork — plus Finnish and English courses and violin lessons."
         canonical="https://finlern.vercel.app/"
         ogImage="/images/finlern.png"
         structuredData={homePageSchema}
@@ -125,9 +100,9 @@ export default function Home() {
               </h2>
               <h1
                 className="text-xl md:text-2xl lg:text-4xl font-bold tracking-tight drop-shadow-[0_2px_5px_rgba(0,0,0,0.2)]"
-                aria-label="Master Finnish Life with Finlern"
+                aria-label="Learn, Move and Settle in Finland, Finlern"
               >
-                <span className="text-white whitespace-nowrap" aria-hidden="true">Master Finnish Life with</span>
+                <span className="text-white sm:whitespace-nowrap" aria-hidden="true">Learn, Move and Settle in Finland</span>
                 <span className="block mt-3" aria-hidden="true">
                   <span
                     className="inline-block font-black text-4xl md:text-5xl lg:text-6xl finlern-hero-text"
@@ -240,10 +215,10 @@ export default function Home() {
                 <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-aurora-blue/30 to-transparent"></div>
                 
                 <div className="relative z-10">
-                  <ClientOnly fallback={<h3 className="text-4xl font-bold text-aurora-blue mb-2">20+</h3>}>
+                  <ClientOnly fallback={<h3 className="text-4xl font-bold text-aurora-blue mb-2">110+</h3>}>
                     <div className="flex justify-center items-baseline">
-                      <h3 className="counter text-5xl font-bold text-aurora-blue mb-2 relative group-hover:scale-110 transition-transform duration-300" data-target="20">
-                        20
+                      <h3 className="counter text-5xl font-bold text-aurora-blue mb-2 relative group-hover:scale-110 transition-transform duration-300" data-target="110">
+                        110
                       </h3>
                       <span className="text-2xl font-bold text-aurora-blue">+</span>
                     </div>
@@ -298,10 +273,10 @@ export default function Home() {
                 <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-aurora-violet/30 to-transparent"></div>
                 
                 <div className="relative z-10">
-                  <ClientOnly fallback={<h3 className="text-4xl font-bold text-aurora-violet mb-2">5+</h3>}>
+                  <ClientOnly fallback={<h3 className="text-4xl font-bold text-aurora-violet mb-2">9</h3>}>
                     <div className="flex justify-center items-baseline">
-                      <h3 className="counter text-5xl font-bold text-aurora-violet mb-2 relative group-hover:scale-110 transition-transform duration-300" data-target="5">
-                        5
+                      <h3 className="counter text-5xl font-bold text-aurora-violet mb-2 relative group-hover:scale-110 transition-transform duration-300" data-target="9">
+                        9
                       </h3>
                       <span className="text-2xl font-bold text-aurora-violet">+</span>
                     </div>
@@ -327,10 +302,10 @@ export default function Home() {
                 <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-aurora-purple/30 to-transparent"></div>
                 
                 <div className="relative z-10">
-                  <ClientOnly fallback={<h3 className="text-4xl font-bold text-aurora-purple mb-2">98%</h3>}>
+                  <ClientOnly fallback={<h3 className="text-4xl font-bold text-aurora-purple mb-2">95%</h3>}>
                     <div className="flex justify-center items-baseline">
-                      <h3 className="counter text-5xl font-bold text-aurora-purple mb-2 relative group-hover:scale-110 transition-transform duration-300" data-target="98">
-                        98
+                      <h3 className="counter text-5xl font-bold text-aurora-purple mb-2 relative group-hover:scale-110 transition-transform duration-300" data-target="95">
+                        95
                       </h3>
                       <span className="text-2xl font-bold text-aurora-purple">%</span>
             </div>
@@ -764,7 +739,7 @@ export default function Home() {
                 {/* Enhanced Content Container */}
                 <div className="bg-gradient-to-br from-gray-50/80 to-white rounded-2xl p-6 flex-grow flex items-center">
                   <p className="text-lg text-gray-700 text-center leading-relaxed">
-                    Join our weekly social gatherings in public spaces like cafés, parks, and libraries to practice Finnish in real-life settings.
+                    Join our biweekly social gatherings in public spaces like cafés, parks, and libraries to practice Finnish in real-life settings.
                   </p>
                 </div>
               </div>
@@ -930,7 +905,7 @@ export default function Home() {
                           <svg className="w-4 h-4 text-aurora-green mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                           </svg>
-                          2 hours per session
+                          2 hours per group session
                         </div>
                         <div className="flex items-center text-sm text-gray-600">
                           <svg className="w-4 h-4 text-aurora-green mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -996,7 +971,7 @@ export default function Home() {
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                       </svg>
                     </div>
-                    <div className="text-2xl font-bold text-aurora-blue mb-1">98%</div>
+                    <div className="text-2xl font-bold text-aurora-blue mb-1">95%</div>
                     <p className="text-sm text-gray-600">Success Rate</p>
                   </div>
                   
@@ -1016,7 +991,7 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                       </svg>
                     </div>
-                    <div className="text-2xl font-bold text-aurora-purple mb-1">20+</div>
+                    <div className="text-2xl font-bold text-aurora-purple mb-1">110+</div>
                     <p className="text-sm text-gray-600">Happy Students</p>
                   </div>
 
@@ -1026,8 +1001,8 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v10a2 2 0 012 2z" />
                       </svg>
                     </div>
-                    <div className="text-2xl font-bold text-aurora-blue mb-1">15+ Years</div>
-                    <p className="text-sm text-gray-600">Teaching Excellence</p>
+                    <div className="text-2xl font-bold text-aurora-blue mb-1">20+ Years</div>
+                    <p className="text-sm text-gray-600">Instructor Experience</p>
                   </div>
                 </div>
 

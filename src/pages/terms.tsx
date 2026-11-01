@@ -60,7 +60,7 @@ export default function Terms() {
                 Terms of Service
               </h1>
               <p className="text-lg text-aurora-snow/80" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-                Last updated: October 5, 2026
+                Last updated: November 1, 2026
               </p>
             </div>
           </div>
@@ -74,7 +74,8 @@ export default function Terms() {
 
             <Section n="2" title="What this website is">
               <p>
-                This site provides information about Finlern’s Finnish-language courses and relocation/integration services and
+                This site provides information about Finlern’s Finnish and English language courses, violin lessons and
+                relocation/integration services and
                 lets you submit a course enquiry. Submitting the form is an <strong>enquiry</strong>, not a binding contract.
                 Any course or service agreement, its price, and payment are arranged separately with us and documented in their
                 own terms — they are <strong>not</strong> concluded or processed on this website.

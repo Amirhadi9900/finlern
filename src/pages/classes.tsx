@@ -3,53 +3,50 @@ import Link from 'next/link'
 import Layout from '../components/layout/Layout'
 import SEO from '@/components/SEO'
 import EnrollmentForm from '../components/classes/EnrollmentForm';
+import { providerRef } from '@/utils/structuredData';
 
 const finnishCourseKeywords = [
+  'Finnish language courses Finland',
   'Online Finnish courses',
-  'Budget-friendly Finnish courses',
-  'Finnish language mastery',
-  'Finnish cultural integration',
-  'Finnish relocation partner',
-  'Language proficiency Finland',
-  'Cultural immersion Finland',
-  'Professional networking Finland',
+  'Finnish courses for international students',
+  'Beginner Finnish course',
+  'Finnish conversation club Tampere',
+  'Affordable Finnish classes',
+  'Finnish for working life',
+  'Learn Finnish in Finland',
 ];
+
+const COURSE_URL = 'https://finlern.vercel.app/classes/';
+
+const finnishCourseTiers = ['Beginner Finnish', 'Intermediate Finnish', 'Advanced Finnish'];
 
 const finnishCourseSchema = {
   '@context': 'https://schema.org',
-  '@type': 'ItemList',
-  name: 'Finlern Finnish Course Catalog',
+  '@type': 'Course',
+  name: 'Finnish Language Course for Internationals in Finland',
   description:
-    'Comprehensive Finnish language programs delivering weekly learning support, conversation clubs, and working life guidance for internationals in Finland.',
-  itemListElement: [
-    {
-      '@type': 'Course',
-      position: 1,
-      name: 'Weekly Learning Support',
-      description:
-        'Twice-weekly Finnish learning materials with personalized coaching for consistent progress.',
-      provider: { '@type': 'Organization', name: 'Finlern' },
-      url: 'https://finlern.vercel.app/classes',
+    'Four-week Finnish courses from beginner to advanced, taught online in groups of up to 15 with 16 lesson hours plus 4 hours of conversation club, weekly study materials and working life guidance.',
+  provider: providerRef,
+  inLanguage: ['Finnish', 'English'],
+  educationalLevel: ['Beginner', 'Intermediate', 'Advanced'],
+  teaches: 'Practical Finnish for daily life, studies and the Finnish workplace',
+  isAccessibleForFree: false,
+  hasCourseInstance: finnishCourseTiers.map((name) => ({
+    '@type': 'CourseInstance',
+    name,
+    courseMode: 'online',
+    courseWorkload: 'PT20H',
+    timeRequired: 'P4W',
+    instructor: providerRef,
+    location: { '@type': 'VirtualLocation', url: COURSE_URL },
+    offers: {
+      '@type': 'Offer',
+      price: '99',
+      priceCurrency: 'EUR',
+      availability: 'https://schema.org/InStock',
+      url: COURSE_URL,
     },
-    {
-      '@type': 'Course',
-      position: 2,
-      name: 'Conversation Club Events',
-      description:
-        'Immersive Finnish practice in cafés, parks, and libraries to strengthen fluency and cultural integration.',
-      provider: { '@type': 'Organization', name: 'Finlern' },
-      url: 'https://finlern.vercel.app/classes',
-    },
-    {
-      '@type': 'Course',
-      position: 3,
-      name: 'Working Life Guidance',
-      description:
-        'Career mentoring, networking, and interview preparation tailored for internationals entering the Finnish job market.',
-      provider: { '@type': 'Organization', name: 'Finlern' },
-      url: 'https://finlern.vercel.app/classes',
-    },
-  ],
+  })),
 };
 
 // Add type declaration for window.scrollAnimations
@@ -108,8 +105,8 @@ export default function Classes() {
   return (
     <Layout>
       <SEO
-        title="Finnish Courses"
-        description="Join Finlern’s Finnish language classes for every level, complete with cultural immersion, relocation support, and workplace mentoring for internationals in Finland."
+        title="Finnish Language Courses in Finland"
+        description="Finnish courses online, beginner to advanced. Groups of up to 15, €99 per four-week course, weekly materials and conversation club events near Tampere."
         canonical="https://finlern.vercel.app/classes/"
         keywords={finnishCourseKeywords}
         structuredData={finnishCourseSchema}
@@ -215,8 +212,8 @@ export default function Classes() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-blue to-aurora-purple mb-2 group-hover:scale-110 transition-transform duration-300">15+</div>
-                <p className="text-gray-700 font-medium">Years of language teaching</p>
+                <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-blue to-aurora-purple mb-2 group-hover:scale-110 transition-transform duration-300">20+</div>
+                <p className="text-gray-700 font-medium">Years of combined instructor experience</p>
               </div>
             </div>
             
@@ -243,8 +240,8 @@ export default function Classes() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
                 </div>
-                <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-purple to-aurora-green mb-2 group-hover:scale-110 transition-transform duration-300">20+</div>
-                <p className="text-gray-700 font-medium">Students taught</p>
+                <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-purple to-aurora-green mb-2 group-hover:scale-110 transition-transform duration-300">60+</div>
+                <p className="text-gray-700 font-medium">Finnish students taught</p>
               </div>
             </div>
             
@@ -327,7 +324,7 @@ export default function Classes() {
                         <svg className="w-5 h-5 text-aurora-green mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                         </svg>
-                        <span className="text-gray-700 text-sm">Hybrid format</span>
+                        <span className="text-gray-700 text-sm">Online + in-person club</span>
                       </div>
                     </div>
                   </div>
@@ -445,7 +442,7 @@ export default function Classes() {
                         <svg className="w-5 h-5 text-aurora-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                         </svg>
-                        <span className="text-gray-700 text-sm">Hybrid format</span>
+                        <span className="text-gray-700 text-sm">Online + in-person club</span>
                       </div>
                     </div>
                   </div>
@@ -560,7 +557,7 @@ export default function Classes() {
                         <svg className="w-5 h-5 text-aurora-purple mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                         </svg>
-                        <span className="text-gray-700 text-sm">Hybrid format</span>
+                        <span className="text-gray-700 text-sm">Online + in-person club</span>
                       </div>
                     </div>
                   </div>
@@ -676,7 +673,7 @@ export default function Classes() {
                           <svg className="w-4 h-4 text-aurora-blue mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
-                          Part of monthly subscription
+                          Part of every 4-week course
                   </li>
                 </ul>
                     </div>
@@ -727,7 +724,7 @@ export default function Classes() {
                   
                   <div className="bg-gray-50 p-4 rounded-lg mb-5">
                     <p className="text-gray-700">
-                      Weekly social gatherings in public spaces like cafés and libraries where learners can practice Finnish in real-life settings with native speakers.
+                      Regular social gatherings in public spaces like cafés and libraries where learners can practice Finnish in real-life settings with native speakers.
               </p>
             </div>
                   
@@ -1147,36 +1144,6 @@ export default function Classes() {
                 </div>
               </div>
             </div>
-            
-            {/* Coming Soon card - New */}
-            <div 
-              className="mt-12 bg-white/70 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg border border-gray-100/60 p-8 max-w-3xl mx-auto"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
-              <div className="flex flex-col md:flex-row items-center gap-6">
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-aurora-blue/30 to-aurora-purple/30 flex items-center justify-center">
-                  <svg className="w-8 h-8 text-aurora-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
-                  </svg>
-                </div>
-                <div className="text-center md:text-left">
-                  <h3 className="text-xl md:text-2xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-aurora-blue to-aurora-purple">Coming Soon: Art Workshops</h3>
-                  <p className="text-gray-700">We're expanding our offerings with creative art workshops. Join our mailing list to be the first to know when these courses launch.</p>
-                </div>
-                <div className="flex-shrink-0">
-                  <Link 
-                    href="/contact" 
-                    className="inline-flex items-center px-5 py-2 bg-gradient-to-r from-aurora-blue/20 to-aurora-purple/20 text-aurora-purple rounded-full font-medium transition-all duration-300 hover:from-aurora-blue/30 hover:to-aurora-purple/30"
-                  >
-                    <span>Stay Updated</span>
-                    <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -1442,7 +1409,7 @@ export default function Classes() {
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                     </svg>
                     </div>
-                    <div className="text-2xl font-bold text-aurora-blue mb-1">98%</div>
+                    <div className="text-2xl font-bold text-aurora-blue mb-1">95%</div>
                     <p className="text-sm text-gray-600">Success Rate</p>
                   </div>
                   
@@ -1462,8 +1429,8 @@ export default function Classes() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                       </svg>
                     </div>
-                    <div className="text-2xl font-bold text-aurora-purple mb-1">20+</div>
-                    <p className="text-sm text-gray-600">Happy Students</p>
+                    <div className="text-2xl font-bold text-aurora-purple mb-1">60+</div>
+                    <p className="text-sm text-gray-600">Happy Finnish Students</p>
                   </div>
 
                   <div className="text-center" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
@@ -1472,8 +1439,8 @@ export default function Classes() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v10a2 2 0 012 2z" />
                       </svg>
                     </div>
-                    <div className="text-2xl font-bold text-aurora-blue mb-1">15+ Years</div>
-                    <p className="text-sm text-gray-600">Teaching Excellence</p>
+                    <div className="text-2xl font-bold text-aurora-blue mb-1">20+ Years</div>
+                    <p className="text-sm text-gray-600">Instructor Experience</p>
                   </div>
                 </div>
 

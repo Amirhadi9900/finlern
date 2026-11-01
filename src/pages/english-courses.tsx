@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Layout from '../components/layout/Layout';
 import SEO from '@/components/SEO';
 import EnrollmentForm from '../components/classes/EnrollmentForm';
+import { providerRef } from '@/utils/structuredData';
 
 // Global type declaration to make TypeScript happy
 declare global {
@@ -15,98 +16,59 @@ declare global {
 }
 
 const englishCourseKeywords = [
+  'English language courses Finland',
   'Online English courses',
-  'English courses in Finland',
-  'Business English coaching',
-  'English conversation club',
-  'Professional English training',
-  'Budget-friendly English lessons',
-  'Finlern English program',
-  'English tutoring in Helsinki',
+  'Business English coaching Finland',
+  'English conversation practice',
+  'Academic English writing support',
+  'English lessons for international professionals',
+  'Affordable English tutoring Finland',
+  'English courses for students in Finland',
+];
+
+const ENGLISH_COURSE_URL = 'https://finlern.vercel.app/english-courses/';
+
+const englishCourseInstances = [
+  { name: 'Business English for Professionals', courseMode: 'online', price: '29' },
+  { name: 'Conversation Skills Coaching', courseMode: 'hybrid', price: '19' },
+  { name: 'Academic Writing & Thesis Preparation', courseMode: 'online', price: '29' },
 ];
 
 const englishCourseSchema = {
   '@context': 'https://schema.org',
   '@type': 'Course',
-  name: 'Finlern English Language Courses',
+  name: 'English Language Courses in Finland',
   description:
-    'Personalized English coaching in Finland featuring business communication, academic writing, and conversation clubs for international professionals.',
-  provider: {
-    '@type': 'Organization',
-    name: 'Finlern',
-    url: 'https://finlern.vercel.app/',
-    contactPoint: {
-      '@type': 'ContactPoint',
-      contactType: 'customer service',
-      email: 'info@finlern.fi',
-      telephone: '+358417567339',
-    },
-  },
+    'Private and small-group English coaching in Finland: business English, conversation practice and academic writing support for international professionals and students.',
+  provider: providerRef,
   inLanguage: ['English', 'Finnish'],
   audience: {
     '@type': 'Audience',
     audienceType: 'International professionals and students in Finland',
   },
-  hasCourseInstance: [
-    {
-      '@type': 'CourseInstance',
-      name: 'Business English for Professionals',
-      courseMode: 'online',
-      startDate: '2025-01-13',
-      endDate: '2025-06-30',
-      instructor: {
-        '@type': 'Organization',
-        name: 'Finlern Coaching Team',
-      },
-      location: {
-        '@type': 'VirtualLocation',
-        url: 'https://finlern.vercel.app/english-courses',
-      },
-      offers: {
-        '@type': 'Offer',
-        price: '29',
-        priceCurrency: 'EUR',
-        availability: 'https://schema.org/InStock',
-        url: 'https://finlern.vercel.app/english-courses',
-      },
+  offers: {
+    '@type': 'AggregateOffer',
+    lowPrice: '14',
+    highPrice: '29',
+    priceCurrency: 'EUR',
+    offerCount: String(englishCourseInstances.length),
+    url: ENGLISH_COURSE_URL,
+  },
+  hasCourseInstance: englishCourseInstances.map(({ name, courseMode, price }) => ({
+    '@type': 'CourseInstance',
+    name,
+    courseMode,
+    instructor: providerRef,
+    location: { '@type': 'VirtualLocation', url: ENGLISH_COURSE_URL },
+    offers: {
+      '@type': 'Offer',
+      description: 'Private 1-on-1 lesson, per session',
+      price,
+      priceCurrency: 'EUR',
+      availability: 'https://schema.org/InStock',
+      url: ENGLISH_COURSE_URL,
     },
-    {
-      '@type': 'CourseInstance',
-      name: 'Conversation Skills Coaching',
-      courseMode: 'hybrid',
-      startDate: '2025-02-03',
-      endDate: '2025-07-28',
-      location: {
-        '@type': 'VirtualLocation',
-        url: 'https://finlern.vercel.app/english-courses',
-      },
-      offers: {
-        '@type': 'Offer',
-        price: '19',
-        priceCurrency: 'EUR',
-        availability: 'https://schema.org/InStock',
-        url: 'https://finlern.vercel.app/english-courses',
-      },
-    },
-    {
-      '@type': 'CourseInstance',
-      name: 'Academic Writing & Thesis Preparation',
-      courseMode: 'online',
-      startDate: '2025-01-20',
-      endDate: '2025-05-30',
-      location: {
-        '@type': 'VirtualLocation',
-        url: 'https://finlern.vercel.app/english-courses',
-      },
-      offers: {
-        '@type': 'Offer',
-        price: '29',
-        priceCurrency: 'EUR',
-        availability: 'https://schema.org/InStock',
-        url: 'https://finlern.vercel.app/english-courses',
-      },
-    },
-  ],
+  })),
 };
 
 const EnglishCourses: React.FC = () => {
@@ -151,8 +113,8 @@ const EnglishCourses: React.FC = () => {
   return (
     <Layout>
       <SEO
-        title="English Courses"
-        description="Learn English with small group and 1-on-1 courses in Finland. Business English, conversation coaching, and academic writing support tailored to international professionals."
+        title="English Language Courses in Finland"
+        description="English lessons in Finland from €14 a session: business English, conversation practice and academic writing, online or hybrid, private or in a small group."
         canonical="https://finlern.vercel.app/english-courses/"
         keywords={englishCourseKeywords}
         structuredData={englishCourseSchema}
@@ -1104,7 +1066,7 @@ const EnglishCourses: React.FC = () => {
                   </div>
                   <div className="text-center lg:text-left">
                     <div className="text-4xl md:text-5xl font-bold text-aurora-blue mb-2">92%</div>
-                    <p className="text-xl font-semibold text-gray-900 mb-3">Success Rate</p>
+                    <p className="text-xl font-semibold text-gray-900 mb-3">English Course Success</p>
                     <p className="text-gray-700 max-w-lg text-lg leading-relaxed">
                       Our students consistently reach their proficiency goals within their planned timeframe.
                     </p>
@@ -1352,7 +1314,7 @@ const EnglishCourses: React.FC = () => {
                       </svg>
                     </div>
                     <div className="text-2xl font-bold text-aurora-blue mb-1">92%</div>
-                    <p className="text-sm text-gray-600">Success Rate</p>
+                    <p className="text-sm text-gray-600">English Success Rate</p>
                   </div>
                   
                   <div className="text-center" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
@@ -1371,7 +1333,7 @@ const EnglishCourses: React.FC = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                       </svg>
                     </div>
-                    <div className="text-2xl font-bold text-aurora-purple mb-1">20+</div>
+                    <div className="text-2xl font-bold text-aurora-purple mb-1">10+</div>
                     <p className="text-sm text-gray-600">Happy Students</p>
                   </div>
                 </div>

@@ -3,14 +3,15 @@ import Image from 'next/image'
 import Layout from '../components/layout/Layout'
 import SEO from '@/components/SEO'
 import FaqAccordion, { FaqEntry } from '@/components/contact/FaqAccordion'
+import { ORG_ID, SITE_URL, organizationSchema, providerRef } from '@/utils/structuredData'
 
 const FAQ_ITEMS: FaqEntry[] = [
   {
     question: 'How quickly will I receive a response to my inquiry?',
     answer: (
       <p>
-        We aim to respond to all inquiries within 24 hours during business days. For urgent matters, we recommend calling our
-        office directly at +358 41 756 7339.
+        We reply to all inquiries within 24 hours from Monday to Friday and during our Saturday hours (10:00–18:00). We are closed
+        on Sundays, so messages sent then are answered on Monday. For urgent matters, call us directly at +358 41 756 7339.
       </p>
     ),
   },
@@ -60,9 +61,10 @@ const FAQ_ITEMS: FaqEntry[] = [
     answer: (
       <div className="space-y-4">
         <p>
-          Private 1-on-1 courses offer personalized instruction tailored exactly to your needs and pace, while our small group
-          courses (3-6 students) provide a collaborative learning environment at a more affordable price (saving €5 per
-          session). Both options deliver high-quality content with expert instruction.
+          Private 1-on-1 English courses offer personalized instruction tailored exactly to your needs and pace, while our small
+          group English courses (3-6 students) provide a collaborative learning environment at a more affordable price (saving €5
+          per session). Both options deliver high-quality content with expert instruction. Finnish group classes hold up to 15
+          students.
         </p>
         <p>
           Our violin lessons are only available in online, private format. Furthermore, violin lessons are taught in Finnish,
@@ -131,59 +133,27 @@ const FAQ_ITEMS: FaqEntry[] = [
 ]
 
 const contactKeywords = [
-  'Finnish relocation partner',
-  'Consulting services in Finland',
-  'Complete integration support',
-  'Language proficiency Finland',
-  'Cultural immersion Finland',
-  'Workplace etiquette Finland',
-  'Professional networking Finland',
-  'Relocation services in Finland',
-  'Finnish life support',
+  'Relocation support Finland',
+  'Finnish language course enquiry',
+  'International student services Finland',
+  'Relocation consultant Finland',
+  'Finnish residence permit help',
+  'Kela registration support Finland',
+  'Contact Finlern',
+  'Finnish conversation club Pirkanmaa',
 ]
 
-const contactSchema = {
+// ContactPage pointing at the organization declared on the home page: a second
+// @type here (LocalBusiness) would publish a conflicting entity for one company.
+const contactPageSchema = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'Finlern',
-  url: 'https://finlern.vercel.app/contact',
-  email: 'info@finlern.fi',
-  telephone: '+358417567339',
-  image: 'https://finlern.vercel.app/images/finlern.png',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'Tietotie 1',
-    addressLocality: 'Valkeakoski',
-    postalCode: '37630',
-    addressCountry: 'FI',
-  },
-  areaServed: [
-    'Helsinki',
-    'Espoo',
-    'Vantaa',
-    'Tampere',
-    'Hämeenlinna',
-    'Lahti',
-    'Lappeenranta',
-    'Riihimäki',
-    'Jyväskylä',
-  ],
-  sameAs: [
-    'https://www.facebook.com/people/Finlern/61578171630486/',
-    'https://www.linkedin.com/company/finlern-oy/',
-  ],
-  contactPoint: {
-    '@type': 'ContactPoint',
-    contactType: 'customer service',
-    email: 'info@finlern.fi',
-    telephone: '+358417567339',
-    availableLanguage: ['English', 'Finnish'],
-  },
-  serviceType: [
-    'Finnish language mastery',
-    'Relocation consulting',
-    'Cultural integration programs',
-  ],
+  '@type': 'ContactPage',
+  url: `${SITE_URL}/contact/`,
+  name: 'Contact Finlern',
+  description:
+    'Contact Finlern Oy in Valkeakoski about relocation support in Finland, Finnish and English courses, violin lessons and the free 20-minute consultation.',
+  about: { '@id': ORG_ID },
+  publisher: providerRef,
 }
 
 // Add type declaration for window.scrollAnimations
@@ -217,11 +187,11 @@ export default function Contact() {
   return (
     <Layout>
       <SEO
-        title="Contact Us"
-        description="Reach Finlern for Finnish language mastery, relocation consulting, cultural integration, and workplace etiquette support across Finland."
+        title="Contact Finlern: Relocation & Course Support"
+        description="Talk to Finlern about relocation support in Finland or Finnish, English and violin lessons. Free 20-minute consultation, info@finlern.fi or +358 41 756 7339."
         canonical="https://finlern.vercel.app/contact/"
         keywords={contactKeywords}
-        structuredData={contactSchema}
+        structuredData={[contactPageSchema, organizationSchema]}
       />
 
       {/* Hero Section - Enhanced */}
@@ -320,7 +290,7 @@ export default function Contact() {
                     <a href="tel:+358417567339" className="text-xl font-bold text-aurora-blue hover:text-aurora-purple transition-colors block">
                       +358 41 756 7339
                     </a>
-                    <p className="text-sm text-gray-500">Mon-Fri 9:00-17:00</p>
+                    <p className="text-sm text-gray-500">Mon–Fri 24 h · Sat 10:00–18:00 · Closed Sun</p>
                   </div>
                   </div>
                 </div>
@@ -347,7 +317,7 @@ export default function Contact() {
                     <a href="mailto:info@finlern.fi" className="text-xl font-bold text-aurora-green hover:text-aurora-teal transition-colors block">
                       info@finlern.fi
                     </a>
-                    <p className="text-sm text-gray-500">We respond within 24 hours</p>
+                    <p className="text-sm text-gray-500">Replies within 24 h on weekdays and during Saturday hours</p>
                   </div>
                   </div>
                 </div>
@@ -382,10 +352,36 @@ export default function Contact() {
                     Tietotie 1<br />
                     37630 Valkeakoski, Pirkanmaa, Finland 
                     </a>
-                    <p className="text-sm text-gray-500">Open Mon-Fri 9:00-17:00</p>
                   </div>
                 </div>
               </div>
+            </div>
+
+            {/* Support hours — the only place the schedule is stated in full */}
+            <div
+              className="bg-white rounded-xl shadow-xl border border-gray-100 p-6 md:p-8 my-10"
+              data-aos="fade-up"
+              data-aos-duration="800"
+            >
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-5">Support Hours</h3>
+              <dl className="grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-4">
+                <div>
+                  <dt className="text-sm text-gray-500">Monday–Friday</dt>
+                  <dd className="font-semibold text-gray-900">Open around the clock</dd>
+                </div>
+                <div>
+                  <dt className="text-sm text-gray-500">Saturday</dt>
+                  <dd className="font-semibold text-gray-900">10:00–18:00</dd>
+                </div>
+                <div>
+                  <dt className="text-sm text-gray-500">Sunday</dt>
+                  <dd className="font-semibold text-gray-500">Closed</dd>
+                </div>
+                <div>
+                  <dt className="text-sm text-gray-500">Time zone</dt>
+                  <dd className="font-semibold text-gray-900">Finnish time (EET/EEST)</dd>
+                </div>
+              </dl>
             </div>
 
             {/* Relocation Services Section */}

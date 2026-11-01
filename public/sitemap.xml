@@ -2,70 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://finlern.vercel.app/</loc>
-    <lastmod>2026-11-01T12:15:20.722Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-11-01T17:42:01.755Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://finlern.vercel.app/classes/</loc>
-    <lastmod>2026-11-01T12:15:20.723Z</lastmod>
+    <lastmod>2026-11-01T17:42:01.755Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://finlern.vercel.app/contact/</loc>
-    <lastmod>2026-11-01T12:15:20.723Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://finlern.vercel.app/cookies/</loc>
-    <lastmod>2026-11-01T12:15:20.723Z</lastmod>
+    <lastmod>2026-11-01T17:42:01.755Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://finlern.vercel.app/english-courses/</loc>
-    <lastmod>2026-11-01T12:15:20.723Z</lastmod>
+    <lastmod>2026-11-01T17:42:01.755Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://finlern.vercel.app/events/</loc>
-    <lastmod>2026-11-01T12:15:20.723Z</lastmod>
+    <lastmod>2026-11-01T17:42:01.755Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://finlern.vercel.app/our-story/</loc>
-    <lastmod>2026-11-01T12:15:20.723Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://finlern.vercel.app/privacy-policy/</loc>
-    <lastmod>2026-11-01T12:15:20.723Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://finlern.vercel.app/terms/</loc>
-    <lastmod>2026-11-01T12:15:20.723Z</lastmod>
+    <lastmod>2026-11-01T17:42:01.755Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://finlern.vercel.app/violin-courses/</loc>
-    <lastmod>2026-11-01T12:15:20.723Z</lastmod>
+    <lastmod>2026-11-01T17:42:01.755Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

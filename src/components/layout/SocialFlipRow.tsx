@@ -37,6 +37,9 @@ export default function SocialFlipRow({ channels, tone = 'onLight', className = 
         @media (hover: none) {
           .finlern-flip-inner { transform: rotateY(180deg); }
         }
+        /* The REACH letters are decoration: rendered as generated content so
+           they never become DOM text nodes for crawlers to read. */
+        .finlern-flip-letter::before { content: attr(data-letter); }
       `}</style>
 
       <span aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-px overflow-hidden rounded-2xl">
@@ -80,15 +83,15 @@ export default function SocialFlipRow({ channels, tone = 'onLight', className = 
             style={{ transformStyle: 'preserve-3d', transitionDelay: `${index * 70}ms` }}
           >
             <div
-              className={`absolute inset-0 flex items-center justify-center rounded-xl text-base font-bold shadow-sm ${
+              aria-hidden="true"
+              data-letter={channel.letter}
+              className={`finlern-flip-letter absolute inset-0 flex items-center justify-center rounded-xl text-base font-bold shadow-sm ${
                 onDark
                   ? 'border border-white/15 bg-white/10 text-white/85'
                   : 'border border-slate-200 bg-white text-slate-800'
               }`}
               style={{ backfaceVisibility: 'hidden' }}
-            >
-              {channel.letter}
-            </div>
+            />
 
             <div
               className="absolute inset-0 flex items-center justify-center rounded-xl bg-gradient-to-br from-aurora-blue to-aurora-purple text-white shadow-md transition-shadow duration-300 group-hover/item:shadow-[0_10px_26px_-8px_rgba(62,138,193,0.9)]"

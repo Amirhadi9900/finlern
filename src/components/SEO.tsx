@@ -22,24 +22,15 @@ const SITE_NAME = 'Finlern';
 const DEFAULT_URL = 'https://finlern.vercel.app';
 const DEFAULT_KEYWORDS = [
   'Finlern',
-  'Finnish life',
-  'Finnish language mastery',
-  'Finnish cultural integration',
-  'Finnish relocation service',
-  'Consulting services in Finland',
-  'Relocation services in Finland',
-  'Online Finnish courses',
-  'Budget-friendly Finnish courses',
-  'Relocation partner in Finland',
-  'Complete integration support',
-  'Language proficiency',
-  'Cultural immersion',
-  'Workplace etiquette',
-  'Professional networking',
-  'Learning Finnish',
-  'Mastering Finnish',
-  'Online English courses',
-  'English courses in Finland',
+  'Relocation support Finland',
+  'International students in Finland',
+  'Finnish residence permit support',
+  'Kela and tax registration Finland',
+  'Finnish language courses Finland',
+  'English language courses Finland',
+  'Violin lessons Finland',
+  'Integration services Finland',
+  'Settling in Finland',
 ];
 
 const SEO: React.FC<SEOProps> = ({

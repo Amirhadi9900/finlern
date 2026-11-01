@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Layout from '../components/layout/Layout';
 import SEO from '@/components/SEO';
 import EnrollmentForm from '../components/classes/EnrollmentForm';
+import { providerRef } from '@/utils/structuredData';
 
 // Global type declaration to make TypeScript happy
 declare global {
@@ -15,71 +16,54 @@ declare global {
 }
 
 const violinCourseKeywords = [
-  'Violin courses in Finland',
+  'Violin lessons Finland',
   'Online violin lessons',
+  'Beginner violin lessons',
+  'Violin teacher for adults',
   'Music education Finland',
-  'Beginner violin classes',
-  'Advanced violin workshop',
-  'Multilingual music coaching',
-  'Budget-friendly violin lessons',
+  'Violin lessons in English',
+  'Private violin coaching Finland',
+];
+
+const VIOLIN_COURSE_URL = 'https://finlern.vercel.app/violin-courses/';
+
+const violinCourseInstances = [
+  { name: 'Beginner Violin Course', byDay: 'SU' },
+  { name: 'Intermediate Violin Course', byDay: 'MO' },
+  { name: 'Advanced Violin Workshop', byDay: 'TU' },
 ];
 
 const violinCourseSchema = {
   '@context': 'https://schema.org',
   '@type': 'Course',
-  name: 'Finlern Violin Courses',
+  name: 'Online Violin Lessons in Finland',
   description:
-    'Finlern offers multilingual violin instruction for beginners to advanced students across Finland with online lessons and personalized coaching.',
-  provider: {
-    '@type': 'Organization',
-    name: 'Finlern',
-    url: 'https://finlern.vercel.app/',
-  },
+    'Private 45-minute online violin lessons for beginner to advanced players, €35 a session with materials included, taught in English, Finnish, Kurdish and Persian.',
+  provider: providerRef,
   inLanguage: ['Finnish', 'English', 'Kurdish', 'Persian'],
-  hasCourseInstance: [
-    {
-      '@type': 'CourseInstance',
-      name: 'Beginner Violin Course',
-      courseMode: 'online',
-      startDate: '2025-05-01',
-      endDate: '2025-08-31',
-      offers: {
-        '@type': 'Offer',
-        price: '35',
-        priceCurrency: 'EUR',
-        availability: 'https://schema.org/InStock',
-        url: 'https://finlern.vercel.app/violin-courses',
-      },
+  hasCourseInstance: violinCourseInstances.map(({ name, byDay }) => ({
+    '@type': 'CourseInstance',
+    name,
+    courseMode: 'online',
+    courseWorkload: 'PT45M',
+    eventSchedule: {
+      '@type': 'Schedule',
+      byDay,
+      startTime: '17:00',
+      endTime: '17:45',
+      scheduleTimezone: 'Europe/Helsinki',
     },
-    {
-      '@type': 'CourseInstance',
-      name: 'Intermediate Violin Course',
-      courseMode: 'online',
-      startDate: '2025-05-01',
-      endDate: '2025-08-31',
-      offers: {
-        '@type': 'Offer',
-        price: '35',
-        priceCurrency: 'EUR',
-        availability: 'https://schema.org/InStock',
-        url: 'https://finlern.vercel.app/violin-courses',
-      },
+    instructor: providerRef,
+    location: { '@type': 'VirtualLocation', url: VIOLIN_COURSE_URL },
+    offers: {
+      '@type': 'Offer',
+      description: 'Private lesson, per session',
+      price: '35',
+      priceCurrency: 'EUR',
+      availability: 'https://schema.org/InStock',
+      url: VIOLIN_COURSE_URL,
     },
-    {
-      '@type': 'CourseInstance',
-      name: 'Advanced Violin Workshop',
-      courseMode: 'online',
-      startDate: '2025-05-01',
-      endDate: '2025-08-31',
-      offers: {
-        '@type': 'Offer',
-        price: '35',
-        priceCurrency: 'EUR',
-        availability: 'https://schema.org/InStock',
-        url: 'https://finlern.vercel.app/violin-courses',
-      },
-    },
-  ],
+  })),
 };
 
 const ViolinCourses: React.FC = () => {
@@ -123,8 +107,8 @@ const ViolinCourses: React.FC = () => {
   return (
     <Layout>
       <SEO
-        title="Violin Courses"
-        description="Learn violin online in Finland with Finlern’s multilingual instructors. Beginner, intermediate, and advanced workshops tailored to your goals."
+        title="Online Violin Lessons in Finland"
+        description="Private 45-minute online violin lessons from Finland, €35 a session with materials included. Beginner to advanced, taught in English, Finnish, Kurdish, Persian."
         canonical="https://finlern.vercel.app/violin-courses/"
         keywords={violinCourseKeywords}
         structuredData={violinCourseSchema}
@@ -292,11 +276,11 @@ const ViolinCourses: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-16">
             <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-100 flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
               <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-purple to-aurora-blue mb-2">5+</div>
-              <p className="text-gray-700">Years of teaching excellence</p>
+              <p className="text-gray-700">Years of instructor experience</p>
             </div>
             <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-100 flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
-              <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-blue to-aurora-green mb-2">100+</div>
-              <p className="text-gray-700">Students taught</p>
+              <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-blue to-aurora-green mb-2">40+</div>
+              <p className="text-gray-700">Violin students taught</p>
             </div>
             <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-100 flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
               <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-green to-aurora-purple mb-2">94%</div>
@@ -343,7 +327,7 @@ const ViolinCourses: React.FC = () => {
                         <svg className="w-5 h-5 text-aurora-purple mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                         </svg>
-                        <span className="text-gray-700 text-sm">Starts: May, 2025</span>
+                        <span className="text-gray-700 text-sm">Weekly lessons</span>
                       </div>
                       <div className="flex items-center bg-gray-50 rounded-lg p-3">
                         <svg className="w-5 h-5 text-aurora-purple mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -456,7 +440,7 @@ const ViolinCourses: React.FC = () => {
                         <svg className="w-5 h-5 text-aurora-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                         </svg>
-                        <span className="text-gray-700 text-sm">Starts: May, 2025</span>
+                        <span className="text-gray-700 text-sm">Weekly lessons</span>
                       </div>
                       <div className="flex items-center bg-gray-50 rounded-lg p-3">
                         <svg className="w-5 h-5 text-aurora-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -566,7 +550,7 @@ const ViolinCourses: React.FC = () => {
                         <svg className="w-5 h-5 text-aurora-green mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                         </svg>
-                        <span className="text-gray-700 text-sm">Starts: May, 2025</span>
+                        <span className="text-gray-700 text-sm">Weekly lessons</span>
                       </div>
                       <div className="flex items-center bg-gray-50 rounded-lg p-3">
                         <svg className="w-5 h-5 text-aurora-green mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -979,7 +963,7 @@ const ViolinCourses: React.FC = () => {
                       </svg>
                     </div>
                     <div className="text-2xl font-bold text-aurora-blue mb-1">5+ Years</div>
-                    <p className="text-sm text-gray-600">Teaching Excellence</p>
+                    <p className="text-sm text-gray-600">Instructor Experience</p>
                   </div>
                   
                   <div className="text-center" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
@@ -988,8 +972,8 @@ const ViolinCourses: React.FC = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                       </svg>
                     </div>
-                    <div className="text-2xl font-bold text-aurora-green mb-1">100+</div>
-                    <p className="text-sm text-gray-600">Students Taught</p>
+                    <div className="text-2xl font-bold text-aurora-green mb-1">40+</div>
+                    <p className="text-sm text-gray-600">Violin Students Taught</p>
                   </div>
                 </div>
 

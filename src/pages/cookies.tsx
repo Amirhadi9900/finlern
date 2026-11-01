@@ -48,7 +48,7 @@ export default function Cookies() {
       <SEO
         title="Cookie Policy"
         description="How Finlern uses cookies — this site sets no analytics, advertising, or tracking cookies."
-        canonical="https://finlern.vercel.app/cookies"
+        canonical="https://finlern.vercel.app/cookies/"
         noindex
       />
 

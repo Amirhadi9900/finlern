@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Your site's domain (change this to your actual domain)
-const DOMAIN = 'finlern.com';
+const DOMAIN = 'finlern.vercel.app';
 
 // URLs for submitting sitemaps to search engines
 const SEARCH_ENGINES = [

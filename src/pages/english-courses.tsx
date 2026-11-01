@@ -153,7 +153,7 @@ const EnglishCourses: React.FC = () => {
       <SEO
         title="English Courses"
         description="Learn English with small group and 1-on-1 courses in Finland. Business English, conversation coaching, and academic writing support tailored to international professionals."
-        canonical="https://finlern.vercel.app/english-courses"
+        canonical="https://finlern.vercel.app/english-courses/"
         keywords={englishCourseKeywords}
         structuredData={englishCourseSchema}
       />

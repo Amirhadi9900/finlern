@@ -53,8 +53,8 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Finlern",
-    "url": "https://finlern.com",
-    "logo": "https://finlern.com/images/finlern.png",
+    "url": "https://finlern.vercel.app",
+    "logo": "https://finlern.vercel.app/images/finlern.png",
     "description": "Learn Finnish language with Finlern's interactive online courses, designed for all levels from beginner to advanced. Join our community and discover Finland's language and culture.",
     "address": {
       "@type": "PostalAddress",
@@ -624,7 +624,7 @@ export default function Home() {
                   <p className="text-sm text-blue-100/70">Partner Companies</p>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-aurora-green mb-2">24/7</div>
+                  <div className="text-2xl font-bold text-aurora-green mb-2">Mon–Sat</div>
                   <p className="text-sm text-blue-100/70">Support Available</p>
                 </div>
               </div>

@@ -47,7 +47,7 @@ export default function Terms() {
       <SEO
         title="Terms of Service"
         description="Terms of Service for Finlern’s informational website and course-enquiry service."
-        canonical="https://finlern.vercel.app/terms"
+        canonical="https://finlern.vercel.app/terms/"
         noindex
       />
 

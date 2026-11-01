@@ -1,51 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://finlern.com/</loc>
-    <lastmod>2025-03-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://finlern.com/classes</loc>
-    <lastmod>2025-03-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://finlern.com/events</loc>
-    <lastmod>2025-03-17</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://finlern.vercel.app/</loc>
+    <lastmod>2026-11-01T12:15:20.722Z</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://finlern.com/our-story</loc>
-    <lastmod>2025-03-17</lastmod>
+    <loc>https://finlern.vercel.app/classes/</loc>
+    <lastmod>2026-11-01T12:15:20.723Z</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://finlern.com/contact</loc>
-    <lastmod>2025-03-17</lastmod>
+    <loc>https://finlern.vercel.app/contact/</loc>
+    <lastmod>2026-11-01T12:15:20.723Z</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://finlern.com/terms</loc>
-    <lastmod>2025-03-17</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://finlern.vercel.app/cookies/</loc>
+    <lastmod>2026-11-01T12:15:20.723Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://finlern.com/privacy-policy</loc>
-    <lastmod>2025-03-17</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://finlern.vercel.app/english-courses/</loc>
+    <lastmod>2026-11-01T12:15:20.723Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://finlern.com/cookies</loc>
-    <lastmod>2025-03-17</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://finlern.vercel.app/events/</loc>
+    <lastmod>2026-11-01T12:15:20.723Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
-</urlset> 
+
+  <url>
+    <loc>https://finlern.vercel.app/our-story/</loc>
+    <lastmod>2026-11-01T12:15:20.723Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://finlern.vercel.app/privacy-policy/</loc>
+    <lastmod>2026-11-01T12:15:20.723Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://finlern.vercel.app/terms/</loc>
+    <lastmod>2026-11-01T12:15:20.723Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://finlern.vercel.app/violin-courses/</loc>
+    <lastmod>2026-11-01T12:15:20.723Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>

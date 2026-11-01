@@ -122,7 +122,8 @@ const FAQ_ITEMS: FaqEntry[] = [
           We also provide complete integration support for international professionals, covering language mastery, cultural
           integration, workplace culture navigation, and career development. For Finnish employers, we assist with international
           talent acquisition, employee language training, cross-cultural integration workshops, and relocation support for new
-          hires. Our services boast a 95% integration success rate and 24/7 support available.
+          hires. Our services boast a 95% integration success rate, with support available around the clock Monday to Friday and
+          10:00–18:00 on Saturday. We are closed on Sundays.
         </p>
       </div>
     ),
@@ -218,7 +219,7 @@ export default function Contact() {
       <SEO
         title="Contact Us"
         description="Reach Finlern for Finnish language mastery, relocation consulting, cultural integration, and workplace etiquette support across Finland."
-        canonical="https://finlern.vercel.app/contact"
+        canonical="https://finlern.vercel.app/contact/"
         keywords={contactKeywords}
         structuredData={contactSchema}
       />

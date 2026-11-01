@@ -125,7 +125,7 @@ const ViolinCourses: React.FC = () => {
       <SEO
         title="Violin Courses"
         description="Learn violin online in Finland with Finlern’s multilingual instructors. Beginner, intermediate, and advanced workshops tailored to your goals."
-        canonical="https://finlern.vercel.app/violin-courses"
+        canonical="https://finlern.vercel.app/violin-courses/"
         keywords={violinCourseKeywords}
         structuredData={violinCourseSchema}
       />

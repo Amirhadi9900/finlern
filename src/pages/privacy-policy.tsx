@@ -48,7 +48,7 @@ export default function PrivacyPolicy() {
       <SEO
         title="Privacy Policy | Finlern"
         description="How Finlern collects, uses, and protects personal information submitted through our course-enquiry form."
-        canonical="https://finlern.vercel.app/privacy-policy"
+        canonical="https://finlern.vercel.app/privacy-policy/"
         noindex
       />
 

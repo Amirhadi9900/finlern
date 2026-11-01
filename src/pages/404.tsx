@@ -35,7 +35,7 @@ const Custom404 = () => {
       <SEO
         title="Page Not Found"
         description="The page you are looking for cannot be found on Finlern."
-        canonical="https://finlern.vercel.app/404"
+        canonical="https://finlern.vercel.app/404/"
         noindex
       />
       

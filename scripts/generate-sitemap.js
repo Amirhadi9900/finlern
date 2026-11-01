@@ -3,7 +3,7 @@ const path = require('path');
 const prettier = require('prettier');
 
 // Your site URL
-const WEBSITE_URL = 'https://finlern.com';
+const WEBSITE_URL = 'https://finlern.vercel.app';
 const PAGES_DIR = path.join(process.cwd(), 'src/pages');
 
 async function generateSitemap() {
@@ -12,28 +12,22 @@ async function generateSitemap() {
   // Get all .tsx and .jsx files from the pages directory
   const pagePaths = getAllPages(PAGES_DIR);
   
-  // Filter out pages that shouldn't be in sitemap
+  // Build URLs from paths relative to the pages dir, normalised to forward
+  // slashes so the output is identical on Windows and Linux.
+  const EXCLUDED = /(^|\/)(_app|_document|_error|404|500)(\.(tsx|jsx))?$|(^|\/)api\//;
+
   const pages = pagePaths
-    .filter(page => {
-      // Filter out pages that shouldn't be in the sitemap
-      return !(
-        page.includes('_app') ||
-        page.includes('_document') ||
-        page.includes('api/') ||
-        page.includes('404') ||
-        page.includes('500')
-      );
-    })
-    .map(page => {
-      // Convert file paths to URLs
-      const path = page
-        .replace(PAGES_DIR, '')
+    .map((page) => path.relative(PAGES_DIR, page).split(path.sep).join('/'))
+    .filter((rel) => !EXCLUDED.test(rel))
+    .map((rel) => {
+      const route = rel
         .replace(/\.(tsx|jsx)$/, '')
-        .replace(/\/index$/, '/')
-        .replace(/\[([^\]]+)\]/g, 'param'); // Replace dynamic routes with placeholders
-      
-      return `${WEBSITE_URL}${path}`;
-    });
+        .replace(/(^|\/)index$/, '')
+        .replace(/\[([^\]]+)\]/g, 'param');
+      // trailingSlash is enabled, so every canonical URL ends with a slash.
+      return `${WEBSITE_URL}${route ? `/${route}` : ''}/`;
+    })
+    .sort();
 
   // Create sitemap XML
   const sitemap = `

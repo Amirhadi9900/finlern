@@ -20,7 +20,6 @@ interface SEOProps {
 
 const SITE_NAME = 'Finlern';
 const DEFAULT_URL = 'https://finlern.vercel.app';
-const DEFAULT_TWITTER_HANDLE = '@Finlern';
 const DEFAULT_KEYWORDS = [
   'Finlern',
   'Finnish life',
@@ -51,7 +50,7 @@ const SEO: React.FC<SEOProps> = ({
   ogImageAlt,
   ogType = 'website',
   twitterCard = 'summary_large_image',
-  twitterSite = DEFAULT_TWITTER_HANDLE,
+  twitterSite,
   keywords,
   structuredData,
   noindex = false,
@@ -59,6 +58,14 @@ const SEO: React.FC<SEOProps> = ({
 }) => {
   const siteTitle = `${title} | ${SITE_NAME}`;
   const url = canonical || DEFAULT_URL;
+  // Social crawlers refuse relative image URLs, so resolve against the page origin.
+  let origin = DEFAULT_URL;
+  try {
+    origin = new URL(url).origin;
+  } catch {
+    origin = DEFAULT_URL;
+  }
+  const absoluteImage = /^https?:\/\//.test(ogImage) ? ogImage : `${origin}${ogImage}`;
   const keywordContent = keywords
     ? Array.isArray(keywords)
       ? keywords.join(', ')
@@ -89,19 +96,17 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="og:url" content={url} />
       <meta property="og:title" content={siteTitle} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={ogImage} />
+      <meta property="og:image" content={absoluteImage} />
       <meta property="og:image:alt" content={imageAlt} />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
       <meta property="og:site_name" content={SITE_NAME} />
-      <meta property="og:locale" content="en_US" />
+      <meta property="og:locale" content="en_FI" />
       
       {/* Twitter */}
       <meta name="twitter:card" content={twitterCard} />
       <meta name="twitter:url" content={url} />
       <meta name="twitter:title" content={siteTitle} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={ogImage} />
+      <meta name="twitter:image" content={absoluteImage} />
       {twitterSite && <meta name="twitter:site" content={twitterSite} />}
       
       {/* Structured Data / Schema.org */}

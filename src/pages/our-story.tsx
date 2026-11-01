@@ -172,7 +172,7 @@ export default function OurStory() {
       <SEO
         title="Our Story"
         description="Get to know Finlern’s mission to deliver Finnish language mastery, relocation consulting, cultural immersion, and professional networking for internationals in Finland."
-        canonical="https://finlern.vercel.app/our-story"
+        canonical="https://finlern.vercel.app/our-story/"
         keywords={storyKeywords}
         structuredData={storyServiceSchema}
       />
@@ -1150,7 +1150,7 @@ export default function OurStory() {
                 🔍 <strong>Transparent Communication</strong><br />
                 🗣️ <strong>Multilingual Service</strong><br />
                 💻 <strong>Online + In-Person Consulting</strong><br />
-                📞 <strong>24/7 Availability</strong>
+                📞 <strong>Mon–Sat Availability</strong>
               </p>
             </div>
             

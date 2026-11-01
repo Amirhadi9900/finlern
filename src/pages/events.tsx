@@ -90,7 +90,7 @@ export default function Events() {
       <SEO
         title="Our Events"
         description="Experience Finnish language events, conversation clubs, and cultural immersion meetups hosted by Finlern to speed up your integration journey."
-        canonical="https://finlern.vercel.app/events"
+        canonical="https://finlern.vercel.app/events/"
         keywords={eventKeywords}
         structuredData={eventsSchema}
       />

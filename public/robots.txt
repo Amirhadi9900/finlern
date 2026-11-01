@@ -8,4 +8,4 @@ Allow: /
 # Disallow: /staging/
 
 # Sitemap location
-Sitemap: https://finlern.com/sitemap.xml 
+Sitemap: https://finlern.vercel.app/sitemap.xml 

@@ -123,17 +123,6 @@ module.exports = {
             transform: 'translateY(-20px)',
           },
         },
-        'scroll': {
-          '0%': {
-            transform: 'translateY(0)',
-          },
-          '50%': {
-            transform: 'translateY(5px)',
-          },
-          '100%': {
-            transform: 'translateY(0)',
-          },
-        },
       },
       animation: {
         'gradient-x': 'gradient-x 5s ease-in-out infinite',
@@ -141,7 +130,6 @@ module.exports = {
         'shine': 'shine 3s ease-in-out infinite',
         // New animation timings
         'float-slow': 'float-slow 10s ease-in-out infinite',
-        'scroll': 'scroll 1.5s ease-in-out infinite',
       },
       backgroundSize: {
         'auto': 'auto',

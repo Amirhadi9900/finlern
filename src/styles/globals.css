@@ -68,19 +68,6 @@
   }
 }
 
-/* Modern scroll indicator animations */
-@keyframes scroll {
-  0% {
-    transform: translate(-50%, 0);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(-50%, 20px);
-    opacity: 0;
-  }
-}
-
-
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -327,11 +314,6 @@ html {
   }
 }
 
-.animate-scroll {
-  animation: scroll 1.5s ease-in-out infinite;
-}
-
-
 @layer utilities {
   /* Add the new utility class here */
   .aurora-wave-bg {
@@ -400,6 +382,53 @@ h3 {
 @keyframes gradient-y {
   0%, 100% { background-position: 50% 0%; }
   50% { background-position: 50% 100%; }
+}
+
+/* Markup across contact/classes/index pairs `animate-gradient` with
+   `bg-[length:200%_auto]`, but no rule ever defined it, so those bars never
+   moved. Reuse the gradient-x keyframes rather than a new set. */
+.animate-gradient {
+  animation: gradient-x 6s ease infinite;
+}
+
+/* `.animate-float` / `.animate-float-delayed` were named in the will-change
+   group further down but never given an animation rule, and Tailwind has no
+   entry for them, so the hero blobs on classes/contact/events/our-story sat
+   still. @keyframes float already exists above. */
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 9s ease-in-out 1.5s infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out both;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-scale-in {
+  animation: scale-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-blob {
+  animation: blob 9s ease-in-out infinite;
+}
+
+@keyframes blob {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(24px, -32px) scale(1.08); }
+  66% { transform: translate(-20px, 18px) scale(0.94); }
 }
 
 /* Add other custom styles */

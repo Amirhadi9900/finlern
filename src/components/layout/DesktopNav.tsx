@@ -132,7 +132,7 @@ export default function DesktopNav({ tone, activePath }: DesktopNavProps) {
     group.items.some((leaf) => activePath === leaf.href || (leaf.href !== '/classes' && activePath.startsWith(leaf.href)))
 
   return (
-    <nav ref={navRef} className="hidden items-center gap-1 lg:flex" onMouseLeave={() => setOpenKey(null)}>
+    <nav ref={navRef} aria-label="Primary" className="hidden items-center gap-1 lg:flex" onMouseLeave={() => setOpenKey(null)}>
       {GROUPS.map((group) => {
         const isOpen = openKey === group.key
         return (

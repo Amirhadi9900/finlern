@@ -82,7 +82,7 @@ const Custom404 = () => {
             data-aos-delay="300"
           >
             The page you're looking for seems to have wandered off like a 
-            student trying to pronounce "Lentokonesuihkuturbiinimoottoriapumekaanikkoaliupseerioppilas"
+            student trying to pronounce "Lentokonesuihkuturbiinimoottoriapumekaanikkoaliupseerioppilas".
           </p>
           
           <div 

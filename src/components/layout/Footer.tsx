@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
                     onError={(e) => {
                       // Set fallback image if the logo fails to load
                       const target = e.target as HTMLImageElement;
-                      target.src = "https://via.placeholder.com/800x280?text=Finlern";
+                      target.src = "/images/finlern.png";
                       target.onerror = null; // Prevent infinite loop
                     }}
                   />

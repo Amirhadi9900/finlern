@@ -45,17 +45,6 @@ export default function App({ Component, pageProps }: AppProps) {
     const handleRouteChange = () => {
       // Scroll to top on page change
       window.scrollTo(0, 0);
-
-      // Add animation classes to page elements on navigation
-      setTimeout(() => {
-        const fadeElements = document.querySelectorAll('.fade-in');
-        fadeElements.forEach(el => {
-          el.classList.remove('appear');
-          setTimeout(() => {
-            el.classList.add('appear');
-          }, 100);
-        });
-      }, 100);
     };
 
     router.events.on('routeChangeComplete', handleRouteChange);

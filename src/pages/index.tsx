@@ -5,6 +5,7 @@ import ClientOnly from '@/components/ClientOnly'
 import SEO from '@/components/SEO'
 import EventCarousel from '@/components/events/EventCarousel'
 import MorphWords from '@/components/home/MorphWords'
+import ScrollCue from '@/components/home/ScrollCue'
 import { organizationSchema, relocationServiceSchema } from '@/utils/structuredData'
 import styles from '../styles/heroEffects.module.css'
 
@@ -39,11 +40,11 @@ export default function Home() {
     }
   }, []);
 
-  // Handle scroll down click
   const handleScrollDown = () => {
     if (statsRef.current) {
-      statsRef.current.scrollIntoView({ 
-        behavior: 'smooth',
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      statsRef.current.scrollIntoView({
+        behavior: reduced ? 'auto' : 'smooth',
         block: 'start'
       });
     }
@@ -95,9 +96,9 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10 pt-16 md:pt-20">
           <div className="max-w-3xl mx-auto text-center">
             <div className="mb-8" data-aos="fade-up" data-aos-duration="600">
-              <h2 className="text-3xl md:text-4xl lg:text-6xl text-white/90 mb-4 drop-shadow-[0_1px_4px_rgba(0,0,0,0.1)]">
+              <p lang="fi" className="text-3xl md:text-4xl lg:text-6xl text-white/90 mb-4 drop-shadow-[0_1px_4px_rgba(0,0,0,0.1)]">
                 Tervetuloa Finlerniin
-              </h2>
+              </p>
               <h1
                 className="text-xl md:text-2xl lg:text-4xl font-bold tracking-tight drop-shadow-[0_2px_5px_rgba(0,0,0,0.2)]"
                 aria-label="Learn, Move and Settle in Finland, Finlern"
@@ -164,27 +165,9 @@ export default function Home() {
               </Link>
         </div>
         
-            {/* Simplified scroll indicator - now in flow below buttons */}
+            {/* Scroll cue */}
         <ClientOnly>
-              <button 
-            onClick={handleScrollDown}
-                className="mt-12 flex justify-center items-center cursor-pointer mx-auto"
-            aria-label="Scroll to stats section"
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                handleScrollDown();
-              }
-            }}
-            data-aos="fade-up" 
-            data-aos-duration="600"
-            data-aos-delay="200"
-          >
-            <div className="group relative flex flex-col items-center">
-              <div className="relative w-6 h-10 rounded-full border-2 border-white/70 group-hover:border-white transition-colors duration-300">
-                <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-white rounded-full animate-scroll"></div>
-              </div>
-            </div>
-              </button>
+          <ScrollCue onClick={handleScrollDown} />
         </ClientOnly>
           </div>
         </div>
@@ -202,6 +185,7 @@ export default function Home() {
         
         <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
           <div className="max-w-5xl mx-auto">
+            <h2 className="sr-only">Finlern at a glance</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
               {/* Stat 1 - Enhanced */}
               <div 

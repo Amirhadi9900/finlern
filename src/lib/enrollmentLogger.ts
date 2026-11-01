@@ -12,6 +12,14 @@ export interface EnrollmentData {
 // Note: This will reset on each deployment, but serves as a fallback
 let enrollmentBuffer: EnrollmentData[] = [];
 
+// Domain only: the previous mask kept the first three characters of the local
+// part, which left short addresses (jo@hamk.fi) and any address without an @
+// completely unredacted in the function logs.
+const emailDomain = (email: string): string => {
+  const at = email.lastIndexOf('@');
+  return at > 0 ? email.slice(at + 1) : '***';
+};
+
 export async function logEnrollment(data: EnrollmentData): Promise<void> {
   try {
     // Store in memory buffer (fallback)
@@ -21,7 +29,7 @@ export async function logEnrollment(data: EnrollmentData): Promise<void> {
     console.log('New enrollment logged:', {
       timestamp: data.timestamp,
       course: data.courseType,
-      email: data.email.replace(/(.{3}).*(@.*)/, '$1***$2') // Partially mask email for privacy
+      emailDomain: emailDomain(data.email)
     });
     
     // For now, we'll rely on email notifications as the primary record

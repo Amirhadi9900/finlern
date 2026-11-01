@@ -260,7 +260,7 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
                 </span>
         </h2>
               <p className="text-slate-600 text-sm sm:text-base max-w-xl mx-auto">
-                Our concierge team carefully reviews every submission. Expect a personalized response with tailored next steps within one business day.
+                Our team reviews every submission and replies with next steps, usually within 24 hours on days we are open.
               </p>
             </div>
 
@@ -268,7 +268,7 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
               <div className="rounded-2xl bg-white/80 border border-slate-100 p-4 shadow-sm">
                 <p className="text-xs uppercase tracking-wide text-slate-500 mb-1">Course Focus</p>
                 <p className="text-lg font-semibold text-aurora-blue">{displayCourseName}</p>
-                <p className="text-xs text-slate-500 mt-1">Premium learning guarantee</p>
+                <p className="text-xs text-slate-500 mt-1">Learning materials included</p>
               </div>
               <div className="rounded-2xl bg-gradient-to-br from-aurora-green/10 to-aurora-blue/10 border border-aurora-blue/20 p-4 shadow-sm">
                 <p className="text-xs uppercase tracking-wide text-slate-500 mb-1">Response Time</p>
@@ -281,7 +281,6 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
             <form onSubmit={handleSubmit} className="space-y-6">
           
           {/* 🍯 HONEYPOT FIELD - INVISIBLE TO HUMANS, ATTRACTIVE TO BOTS */}
-          {/* eslint-disable-next-line @next/next/no-css-tags */}
           <div 
             className="absolute -left-[9999px] w-px h-px overflow-hidden"
             aria-hidden="true"
@@ -311,6 +310,7 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
               type="text"
               id="fullName"
               name="fullName"
+              autoComplete="name"
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
                   onFocus={() => handleFieldInteraction('fullName')}
@@ -336,6 +336,7 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
               type="email"
               id="email"
               name="email"
+              autoComplete="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
                   onFocus={() => handleFieldInteraction('email')}
@@ -361,6 +362,7 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
               type="tel"
               id="phoneNumber"
               name="phoneNumber"
+              autoComplete="tel"
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
                   onFocus={() => handleFieldInteraction('phoneNumber')}
@@ -536,7 +538,7 @@ const EnrollmentForm: React.FC<EnrollmentFormProps> = ({ isOpen, onClose, course
               <div className="space-y-2">
                 <p className="text-2xl font-bold text-slate-900">Enrollment submitted successfully!</p>
                 <p className="text-slate-600 max-w-md">
-                  Thank you for reaching out. Our team will review your details and contact you within one business day.
+                  Thank you for reaching out. Our team will review your details and contact you within 24 hours on days we are open.
                 </p>
               </div>
               <button

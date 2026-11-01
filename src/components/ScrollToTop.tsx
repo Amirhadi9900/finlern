@@ -38,7 +38,7 @@ const ScrollToTop: React.FC = () => {
   return (
     // Make sure the button is fixed and has a high z-index to be visible on all devices
     <div className={`scroll-to-top-btn ${
-      isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
+      isVisible ? 'visible opacity-100' : 'invisible opacity-0 pointer-events-none'
     }`}>
       <button
         onClick={scrollToTop}

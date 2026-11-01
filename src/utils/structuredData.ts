@@ -90,7 +90,7 @@ export const relocationServiceSchema: StructuredData = {
   name: 'Relocation & Integration Support in Finland',
   serviceType: 'Relocation support for international students, families and employees',
   description:
-    'End-to-end support for moving to and settling in Finland: housing search, school enrolment, residency permits, Kela and tax registration, bank accounts, car registration, translation and social integration.',
+    'End-to-end support for moving to and settling in Finland: housing search, school enrollment, residency permits, Kela and tax registration, bank accounts, car registration, translation and social integration.',
   provider: providerRef,
   areaServed: areaServedSchema,
   audience: {

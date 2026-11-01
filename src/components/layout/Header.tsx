@@ -1,5 +1,3 @@
-'use client'
-
 import React, { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -121,6 +119,8 @@ const Header: React.FC = () => {
                     : 'bg-amber-50/10 hover:bg-amber-50/20'
               }`}
               aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-menu"
             >
               <div className="w-5 h-4 relative flex flex-col justify-between">
                 {/* Hamburger lines that animate to X */}
@@ -157,12 +157,15 @@ const Header: React.FC = () => {
         </div>
       </header>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu Overlay — `invisible` (not just opacity-0) keeps the closed
+          menu out of the tab order and the accessibility tree on every page. */}
       <div
+        id="mobile-menu"
+        aria-hidden={!isMobileMenuOpen}
         className={`fixed inset-0 z-40 lg:hidden transition-all duration-500 ${
           isMobileMenuOpen
-            ? 'opacity-100 pointer-events-auto'
-            : 'opacity-0 pointer-events-none'
+            ? 'visible opacity-100 pointer-events-auto'
+            : 'invisible opacity-0 pointer-events-none'
         }`}
       >
         {/* Backdrop */}
@@ -187,7 +190,7 @@ const Header: React.FC = () => {
           }`}
         >
           {/* Navigation Links */}
-          <nav className="flex flex-col items-center gap-2 w-full max-w-sm">
+          <nav aria-label="Mobile menu" className="flex flex-col items-center gap-2 w-full max-w-sm">
             {NAV_LINKS.map((link, index) => {
               const isActive = isLinkActive(link.href)
               return (

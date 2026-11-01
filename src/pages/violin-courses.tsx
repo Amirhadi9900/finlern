@@ -151,7 +151,7 @@ const ViolinCourses: React.FC = () => {
                   <span className="relative inline-block">
                     {/* Creative text with multiple effects */}
                     <span className="relative z-10 text-white drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]">
-                      Master the Violin for Every
+                      Violin Lessons for Every
                     </span>
                   </span>
                   <br />
@@ -333,7 +333,7 @@ const ViolinCourses: React.FC = () => {
                         <svg className="w-5 h-5 text-aurora-purple mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        <span className="text-gray-700 text-sm">Sundays, 17:00-17:45</span>
+                        <span className="text-gray-700 text-sm">Sundays, 17:00–17:45</span>
                       </div>
                       <div className="flex items-center bg-gray-50 rounded-lg p-3">
                         <svg className="w-5 h-5 text-aurora-purple mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -446,7 +446,7 @@ const ViolinCourses: React.FC = () => {
                         <svg className="w-5 h-5 text-aurora-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        <span className="text-gray-700 text-sm">Mondays, 17:00-17:45</span>
+                        <span className="text-gray-700 text-sm">Mondays, 17:00–17:45</span>
                       </div>
                       <div className="flex items-center bg-gray-50 rounded-lg p-3">
                         <svg className="w-5 h-5 text-aurora-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -556,7 +556,7 @@ const ViolinCourses: React.FC = () => {
                         <svg className="w-5 h-5 text-aurora-green mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        <span className="text-gray-700 text-sm">Tuesdays, 17:00-17:45</span>
+                        <span className="text-gray-700 text-sm">Tuesdays, 17:00–17:45</span>
                       </div>
                       <div className="flex items-center bg-gray-50 rounded-lg p-3">
                         <svg className="w-5 h-5 text-aurora-green mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -741,7 +741,7 @@ const ViolinCourses: React.FC = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-aurora-green transition-colors duration-300">Performance Opportunities</h3>
-                      <p className="text-gray-700 leading-relaxed">Regular recitals and ensemble experiences to build confidence and performance skills.</p>
+                      <p className="text-gray-700 leading-relaxed">Online showcase sessions to build confidence and performance skills.</p>
                     </div>
                   </div>
                 </div>

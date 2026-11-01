@@ -266,7 +266,7 @@ export default function Events() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                     </div>
-                    <span>17:00 - 19:00</span>
+                    <span>17:00–19:00</span>
                 </div>
                   
                   <div className="flex items-center text-gray-700">
@@ -285,13 +285,13 @@ export default function Events() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                       </svg>
                     </div>
-                    <span>Minimum 15 participants are expected!</span>
+                    <span>15+ participants expected!</span>
                   </div>
                 </div>
                 
                 <div className="border-t border-gray-100 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 mt-auto">
                   <div className="bg-gradient-to-r from-aurora-blue/10 to-aurora-green/10 rounded-full px-6 py-2 text-aurora-blue font-bold">
-                    Free Entrance!
+                    Free entry!
                   </div>
                   <Link href="mailto:info@finlern.fi?subject=Next%20Hiking%20Event%20Enquiry" className="inline-flex items-center justify-center bg-gradient-to-r from-aurora-blue to-aurora-green text-white rounded-full px-6 py-2.5 font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-blue/30">
                     Enquire Now
@@ -344,7 +344,7 @@ export default function Events() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                     </div>
-                    <span>16:00 - 18:00</span>
+                    <span>16:00–18:00</span>
                 </div>
                   
                   <div className="flex items-center text-gray-700">
@@ -369,7 +369,7 @@ export default function Events() {
                 
                 <div className="border-t border-gray-100 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 mt-auto">
                   <div className="bg-gradient-to-r from-aurora-purple/10 to-aurora-blue/10 rounded-full px-6 py-2 text-aurora-purple font-bold">
-                    Free Entrance!
+                    Free entry!
                   </div>
                   <Link href="mailto:info@finlern.fi?subject=Next%20Cafe%20Lingua%20Enquiry" className="inline-flex items-center justify-center bg-gradient-to-r from-aurora-purple to-aurora-blue text-white rounded-full px-6 py-2.5 font-medium transition-all duration-300 hover:shadow-lg hover:shadow-aurora-purple/30">
                     Enquire Now
@@ -422,7 +422,7 @@ export default function Events() {
                 </h2>
                   <div className="w-24 h-1 bg-gradient-to-r from-aurora-blue to-aurora-green mx-auto rounded-full mb-6"></div>
                   <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-                  Join our events to practice your Finnish language skills in real-world environments throughout Tampere, Valkeakoski, and Lempäälä regions.
+                  Join our events to practice your Finnish language skills in real-world environments in and around Tampere, Valkeakoski, and Lempäälä.
                 </p>
                 </div>
 

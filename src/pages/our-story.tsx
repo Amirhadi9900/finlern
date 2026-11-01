@@ -497,7 +497,7 @@ export default function OurStory() {
                   aria-label="Learn more about Reeta"
                 >
                   <span className="flex items-center justify-center">
-                    <span>Here you can know me better!</span>
+                    <span>Get to know me better!</span>
                     <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
@@ -559,7 +559,7 @@ export default function OurStory() {
                 aria-label="Learn more about Hamid Reza Ghorbani"
               >
                 <span className="flex items-center justify-center">
-                  <span>Here you can know me better!</span>
+                  <span>Get to know me better!</span>
                   <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
@@ -621,7 +621,7 @@ export default function OurStory() {
                   aria-label="Learn more about Amirhadi Borjian"
                 >
                   <span className="flex items-center justify-center">
-                    <span>Here you can know me better!</span>
+                    <span>Get to know me better!</span>
                     <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
@@ -683,7 +683,7 @@ export default function OurStory() {
                   aria-label="Learn more about Saghar Kazemi"
                 >
                   <span className="flex items-center justify-center">
-                    <span>Here you can know me better!</span>
+                    <span>Get to know me better!</span>
                     <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
@@ -745,7 +745,7 @@ export default function OurStory() {
                   aria-label="Learn more about Soodabeh Sadeghi Mihan"
                 >
                   <span className="flex items-center justify-center">
-                    <span>Here you can know me better!</span>
+                    <span>Get to know me better!</span>
                     <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
@@ -810,7 +810,7 @@ export default function OurStory() {
             background-size: 50px 50px;
           }
 
-          .bmc-header h1 {
+          .bmc-header h2 {
             color: #0f172a;
             font-size: 42px;
             font-weight: 800;
@@ -1020,7 +1020,7 @@ export default function OurStory() {
               padding: 20px;
             }
 
-            .bmc-header h1 {
+            .bmc-header h2 {
               font-size: 28px;
             }
 
@@ -1056,9 +1056,9 @@ export default function OurStory() {
 
           <div className="bmc-container" data-aos="fade-up" data-aos-delay="300">
             <div className="bmc-header">
-              <h1>
+              <h2>
                 Finlern Oy – Business Model Canvas 2026
-              </h1>
+              </h2>
             </div>
           
           <div className="canvas-grid">
@@ -1072,9 +1072,9 @@ export default function OurStory() {
                 🏛️ <strong>Municipalities</strong><br />
                 🏢 <strong>Real Estates</strong><br />
                 🎭 <strong>Cultural Centers</strong><br />
-                🎓 <strong>HAMK University</strong><br />
+                🎓 <strong>Häme University of Applied Sciences</strong><br />
                 🌐 <strong>Social Media Influencers</strong><br />
-                🔧 <strong>NPE Oy</strong>
+                🔧 <strong>NPE Kulplan Oy</strong>
               </p>
             </div>
             
@@ -1130,7 +1130,7 @@ export default function OurStory() {
               <div className="icon">🌍</div>
               <h3>Customer Segments</h3>
               <p>
-                🎯 <strong>International experts and students in Pirkanmaa and Kanta-Häme (Tampere, Valkeakoski, Hämeenlinna, Riihimäki, Lahti, Lappeenranta, Forssa, Jyväskylä, Espoo, Helsinki, Vantaa)</strong>
+                🎯 <strong>International experts and students across Finland (Tampere, Valkeakoski, Hämeenlinna, Riihimäki, Lahti, Lappeenranta, Forssa, Jyväskylä, Espoo, Helsinki, Vantaa)</strong>
               </p>
             </div>
             
@@ -1141,7 +1141,6 @@ export default function OurStory() {
               <h3>Channels</h3>
               <p>
                 🌐 <strong>Website (finlern.vercel.app)</strong><br />
-                📱 <strong>Finlern Mobile App</strong><br />
                 📱 <strong>Social Media Platforms</strong><br />
                 🤝 <strong>Strategic Partnerships</strong><br />
                 🎪 <strong>Community Events</strong><br />
@@ -1158,7 +1157,6 @@ export default function OurStory() {
               <p>
                 👨‍🏫 <strong>Qualified Teachers</strong><br />
                 🧠 <strong>Expert Consultants</strong><br />
-                📱 <strong>Finlern App Platform</strong><br />
                 🌐 <strong>Website & Digital Tools</strong><br />
                 🎨 <strong>Brand & Reputation</strong><br />
                 🤝 <strong>Partner Network</strong>
@@ -1228,7 +1226,7 @@ export default function OurStory() {
                 {/* Close button */}
                 <button 
                   onClick={closeTeamMemberPopup}
-                  className="absolute top-4 right-4 z-10 bg-white rounded-full p-2 shadow-md hover:shadow-lg transition-all duration-300 focus:outline-none"
+                  className="absolute top-4 right-4 z-10 bg-white rounded-full p-2 shadow-md hover:shadow-lg transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-aurora-blue"
                   aria-label="Close popup"
                 >
                   <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1244,7 +1242,7 @@ export default function OurStory() {
                   {/* Content */}
                   <div className="px-8 py-10">
                     <div className="mb-8">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                      <h3 id="modal-title" className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
                         <span className="bg-gradient-to-r from-aurora-blue to-aurora-purple bg-clip-text text-transparent">{getActiveMemberDetails()?.name}</span>
                         <span className="ml-3 h-px flex-grow bg-gradient-to-r from-aurora-blue/30 to-transparent"></span>
                       </h3>

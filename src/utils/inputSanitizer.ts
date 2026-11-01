@@ -50,7 +50,6 @@ const removeEventHandlers = (input: string): string => {
       
       // Look ahead for event handler pattern: on[word chars][optional spaces]=
       let j = i + 2;
-      let foundEventHandler = false;
       
       // Skip word characters (letters, numbers, underscore)
       while (j < input.length && /\w/.test(input[j])) {
@@ -64,7 +63,6 @@ const removeEventHandlers = (input: string): string => {
       
       // Check for equals sign
       if (j < input.length && input[j] === '=') {
-        foundEventHandler = true;
         i = j + 1; // Skip the entire event handler
         continue;
       }

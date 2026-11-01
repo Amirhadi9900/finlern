@@ -24,10 +24,10 @@ const FAQ_ITEMS: FaqEntry[] = [
           <h4 className="mb-2 font-bold text-white">Language Services:</h4>
           <ul className="list-disc list-inside space-y-1">
             <li>Finnish language courses (€99 per 4-week course)</li>
-            <li>English language courses (private €19-29 per session, group €14-24 per session)</li>
+            <li>English language courses (private €19–29 per session, group €14–24 per session)</li>
           </ul>
           <p className="mt-3">
-            You can choose between private 1-on-1 instruction or small group classes (3-6 students) for English courses.
+            You can choose between private 1-on-1 instruction or small group classes (3–6 students) for English courses.
           </p>
         </div>
         <div>
@@ -62,13 +62,13 @@ const FAQ_ITEMS: FaqEntry[] = [
       <div className="space-y-4">
         <p>
           Private 1-on-1 English courses offer personalized instruction tailored exactly to your needs and pace, while our small
-          group English courses (3-6 students) provide a collaborative learning environment at a more affordable price (saving €5
+          group English courses (3–6 students) provide a collaborative learning environment at a more affordable price (saving €5
           per session). Both options deliver high-quality content with expert instruction. Finnish group classes hold up to 15
           students.
         </p>
         <p>
-          Our violin lessons are only available in online, private format. Furthermore, violin lessons are taught in Finnish,
-          English, Kurdish, and Persian.
+          Our violin lessons are online and private — one instructor, one student. They are taught in Finnish, English, Kurdish,
+          and Persian.
         </p>
       </div>
     ),
@@ -225,7 +225,7 @@ export default function Contact() {
               data-aos-delay="200"
               className="text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed"
             >
-              We're here to help you with language learning, relocation services, and building your success in Finland. Reach out to us with any questions🤗  
+              We're here to help you with language learning, relocation services, and building your success in Finland. Reach out to us with any questions 🤗  
             </p>
             <div 
               data-aos="fade-up" 
@@ -551,7 +551,7 @@ export default function Contact() {
                         style={{ objectFit: 'cover' }}
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
-                          target.src = "https://via.placeholder.com/500x300?text=Finlern";
+                          target.src = "/images/finlern.png";
                           target.onerror = null;
                         }}
                       />

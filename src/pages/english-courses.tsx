@@ -664,14 +664,14 @@ const EnglishCourses: React.FC = () => {
               data-aos-delay="200"
               data-aos-duration="800"
             >
-              Don't like learning English alone? Then team up for top-notch, budget-friendly lessons in just 2 hours!
+              Don't like learning English alone? Then team up for top-notch, budget-friendly 2-hour group sessions!
             </p>
           </div>
           
           {/* Stats Section */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-16">
             <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-100 flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
-              <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-blue to-aurora-green mb-2">3-6</div>
+              <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-aurora-blue to-aurora-green mb-2">3–6</div>
               <p className="text-gray-700">Students per group</p>
             </div>
             <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-100 flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
@@ -693,7 +693,7 @@ const EnglishCourses: React.FC = () => {
               </div>
               <div className="text-center md:text-left">
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  At Finlern, we understand that some students prefer the dynamics and affordability of group learning. Our small group courses provide the same high-quality content at a more accessible price point, with 3-6 students per group. Each session lasts for 2 hours, giving you ample time to practice and learn.
+                  At Finlern, we understand that some students prefer the dynamics and affordability of group learning. Our small group courses provide the same high-quality content at a more accessible price point, with 3–6 students per group. Each session lasts for 2 hours, giving you ample time to practice and learn.
                 </p>
               </div>
             </div>
@@ -912,9 +912,9 @@ const EnglishCourses: React.FC = () => {
                   <tbody className="divide-y divide-gray-200">
                     <tr>
                       <td className="py-4 px-6 text-sm font-medium text-gray-900">Group Size</td>
-                      <td className="py-4 px-6 text-sm text-gray-700 text-center">3-6 students</td>
-                      <td className="py-4 px-6 text-sm text-gray-700 text-center">3-6 students</td>
-                      <td className="py-4 px-6 text-sm text-gray-700 text-center">3-6 students</td>
+                      <td className="py-4 px-6 text-sm text-gray-700 text-center">3–6 students</td>
+                      <td className="py-4 px-6 text-sm text-gray-700 text-center">3–6 students</td>
+                      <td className="py-4 px-6 text-sm text-gray-700 text-center">3–6 students</td>
                     </tr>
                     <tr className="bg-gray-50">
                       <td className="py-4 px-6 text-sm font-medium text-gray-900">Session Duration</td>

@@ -72,7 +72,7 @@ const EventCarousel: React.FC<EventCarouselProps> = ({ images }) => {
       <div className="absolute inset-0 flex items-center justify-between p-4">
         <button
           onClick={goToPrevious}
-          className={`bg-black/50 text-white p-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-full group-hover:translate-x-0 
+          className={`bg-black/50 text-white p-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-all duration-300 transform -translate-x-full group-hover:translate-x-0 group-focus-within:translate-x-0 
             hover:bg-aurora-purple/70 hover:scale-110 hover:shadow-xl hover:ring-1 hover:ring-white 
             ${isAnimatingPrev ? 'scale-110 bg-aurora-purple ring-2 ring-white' : ''}
           `}
@@ -84,7 +84,7 @@ const EventCarousel: React.FC<EventCarouselProps> = ({ images }) => {
         </button>
         <button
           onClick={goToNext}
-          className={`bg-black/50 text-white p-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-x-full group-hover:translate-x-0 
+          className={`bg-black/50 text-white p-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-all duration-300 transform translate-x-full group-hover:translate-x-0 group-focus-within:translate-x-0 
             hover:bg-aurora-green/70 hover:scale-110 hover:shadow-xl hover:ring-1 hover:ring-white 
             ${isAnimatingNext ? 'scale-110 bg-aurora-green ring-2 ring-white' : ''}
           `}

@@ -64,6 +64,7 @@ const Footer: React.FC = () => {
                   alt="Finlern Logo" 
                   width={512} 
                   height={512} 
+                  sizes="96px"
                     className="h-20 md:h-24 w-auto filter drop-shadow-lg"
                     onError={(e) => {
                       // Set fallback image if the logo fails to load

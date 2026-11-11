@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react'
 import Image from 'next/image'
 import Layout from '../components/layout/Layout'
 import SEO from '@/components/SEO'
-import { ORG_ID, providerRef, relocationServiceSchema } from '@/utils/structuredData'
+import { breadcrumbs, ORG_ID, providerRef, relocationServiceSchema } from '@/utils/structuredData'
 
 const storyKeywords = [
   'Finlern Oy',
@@ -144,7 +144,7 @@ export default function OurStory() {
         description="Founded in 2024, Finlern Oy helps international students and families settle in Finland with relocation support, Finnish and English courses and violin lessons."
         canonical="https://finlern.vercel.app/our-story/"
         keywords={storyKeywords}
-        structuredData={[storyAboutPageSchema, relocationServiceSchema]}
+        structuredData={[storyAboutPageSchema, relocationServiceSchema, breadcrumbs.ourStory]}
       />
 
       {/* Hero Section - Enhanced */}
@@ -267,8 +267,9 @@ export default function OurStory() {
                         <Image 
                           src="/images/our-story-founder.jpg" 
                           alt="Finlern Founder" 
-                        width={800} 
-                        height={1000} 
+                        width={800}
+                        height={1000}
+                        sizes="(min-width: 1024px) 592px, 512px"
                         className="w-full h-full object-cover object-center transform transition-transform duration-700 group-hover:scale-105"
                           style={{ objectFit: 'cover' }}
                           onError={(e) => {
@@ -471,6 +472,7 @@ export default function OurStory() {
                       alt="Reeta"
                       width={160}
                       height={160}
+                      sizes="144px"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-3"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
@@ -533,6 +535,7 @@ export default function OurStory() {
                       alt="Hamid Reza Ghorbani"
                       width={160}
                       height={160}
+                      sizes="144px"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-3"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
@@ -595,6 +598,7 @@ export default function OurStory() {
                       alt="Amirhadi Borjian"
                       width={160}
                       height={160}
+                      sizes="144px"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-3"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
@@ -657,6 +661,7 @@ export default function OurStory() {
                       alt="Saghar Kazemi"
                       width={160}
                       height={160}
+                      sizes="144px"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-3"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
@@ -719,6 +724,7 @@ export default function OurStory() {
                       alt="Soodabeh Sadeghi Mihan"
                       width={160}
                       height={160}
+                      sizes="144px"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-3"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;

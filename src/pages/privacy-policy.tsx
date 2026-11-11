@@ -73,7 +73,7 @@ export default function PrivacyPolicy() {
               <p>
                 Finlern provides Finnish and English language courses, violin lessons and relocation/integration support. This
                 policy explains how we
-                handle personal data when you use our website at <span className="font-medium">finlern.fi</span> /{' '}
+                handle personal data when you use our website at{' '}
                 <span className="font-medium">finlern.vercel.app</span>.
               </p>
               <p className="font-medium">Data controller:</p>

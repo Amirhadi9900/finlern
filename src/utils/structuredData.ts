@@ -101,6 +101,40 @@ const RELOCATION_SERVICES = [
   'Phone Consultation & Support',
 ];
 
+// Google's own BreadcrumbList example gives the final crumb a name but no
+// `item`, so the trail ends without a self-link. Paths keep the trailing slash
+// that trailingSlash: true makes canonical.
+const pageUrl = (path: string) => (path === '/' ? `${SITE_URL}/` : `${SITE_URL}${path}/`);
+
+type Crumb = { name: string; path: string };
+
+export function breadcrumbSchema(trail: Crumb[]): StructuredData {
+  const lastIndex = trail.length - 1;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: trail.map((crumb, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: crumb.name,
+      ...(index === lastIndex ? {} : { item: pageUrl(crumb.path) }),
+    })),
+  };
+}
+
+// Crumb names are copied from the labels the header already shows on every
+// page, so the trail Google reads cannot disagree with the trail it can see.
+const HOME: Crumb = { name: 'Home', path: '/' };
+
+export const breadcrumbs: Record<string, StructuredData> = {
+  classes: breadcrumbSchema([HOME, { name: 'Finnish Language', path: '/classes' }]),
+  english: breadcrumbSchema([HOME, { name: 'English Language', path: '/english-courses' }]),
+  violin: breadcrumbSchema([HOME, { name: 'Violin Lessons', path: '/violin-courses' }]),
+  events: breadcrumbSchema([HOME, { name: 'Events', path: '/events' }]),
+  ourStory: breadcrumbSchema([HOME, { name: 'Our Story', path: '/our-story' }]),
+  contact: breadcrumbSchema([HOME, { name: 'Contact', path: '/contact' }]),
+};
+
 export const relocationServiceSchema: StructuredData = {
   '@context': 'https://schema.org',
   '@type': 'Service',

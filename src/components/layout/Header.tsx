@@ -82,6 +82,7 @@ const Header: React.FC = () => {
                   alt="Finlern Logo"
                   width={512}
                   height={512}
+                  sizes="48px"
                   className={`w-auto transition-all duration-500 ease-out group-hover:scale-105 ${
                     isScrolled ? 'h-10 sm:h-11' : 'h-11 sm:h-12'
                   }`}

@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Layout from '../components/layout/Layout';
 import SEO from '@/components/SEO';
 import EnrollmentForm from '../components/classes/EnrollmentForm';
-import { providerRef } from '@/utils/structuredData';
+import { breadcrumbs, providerRef } from '@/utils/structuredData';
 
 // Global type declaration to make TypeScript happy
 declare global {
@@ -111,7 +111,7 @@ const ViolinCourses: React.FC = () => {
         description="Private 45-minute online violin lessons from Finland, €35 a session with materials included. Beginner to advanced, taught in English, Finnish, Kurdish, Persian."
         canonical="https://finlern.vercel.app/violin-courses/"
         keywords={violinCourseKeywords}
-        structuredData={violinCourseSchema}
+        structuredData={[violinCourseSchema, breadcrumbs.violin]}
       />
 
       {/* Hero Section */}
@@ -232,6 +232,7 @@ const ViolinCourses: React.FC = () => {
                         alt="Violin learning environment" 
                         width={600}
                         height={400}
+                        sizes="(min-width: 1024px) 460px, 100vw"
                         className="w-full h-auto rounded-2xl shadow-lg hover:scale-110 transition-transform duration-700"
                       />
                       

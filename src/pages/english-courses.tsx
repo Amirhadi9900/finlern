@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Layout from '../components/layout/Layout';
 import SEO from '@/components/SEO';
 import EnrollmentForm from '../components/classes/EnrollmentForm';
-import { providerRef } from '@/utils/structuredData';
+import { breadcrumbs, providerRef } from '@/utils/structuredData';
 
 // Global type declaration to make TypeScript happy
 declare global {
@@ -117,7 +117,7 @@ const EnglishCourses: React.FC = () => {
         description="English lessons in Finland from €14 a session: business English, conversation practice and academic writing, online or hybrid, private or in a small group."
         canonical="https://finlern.vercel.app/english-courses/"
         keywords={englishCourseKeywords}
-        structuredData={englishCourseSchema}
+        structuredData={[englishCourseSchema, breadcrumbs.english]}
       />
 
       {/* Hero Section */}
@@ -239,6 +239,7 @@ const EnglishCourses: React.FC = () => {
                         alt="English learning environment" 
                         width={600}
                         height={400}
+                        sizes="(min-width: 1024px) 460px, 100vw"
                         className="w-full h-auto rounded-2xl shadow-lg hover:scale-110 transition-transform duration-700"
                       />
                       

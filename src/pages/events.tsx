@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import Layout from '../components/layout/Layout'
 import Link from 'next/link'
 import SEO from '@/components/SEO'
-import { providerRef } from '@/utils/structuredData'
+import { breadcrumbs, providerRef } from '@/utils/structuredData'
 import { SOCIAL_CHANNELS } from '@/components/layout/socialChannels'
 
 const eventKeywords = [
@@ -115,7 +115,7 @@ export default function Events() {
         description="Free Finnish conversation clubs and cultural meetups in Tampere, Valkeakoski and Lempäälä. Practice Finnish with native speakers and other internationals."
         canonical="https://finlern.vercel.app/events/"
         keywords={eventKeywords}
-        structuredData={eventsSchema}
+        structuredData={[eventsSchema, breadcrumbs.events]}
       />
 
       {/* Hero Section - Enhanced */}

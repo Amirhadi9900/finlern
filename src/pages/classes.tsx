@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Layout from '../components/layout/Layout'
 import SEO from '@/components/SEO'
 import EnrollmentForm from '../components/classes/EnrollmentForm';
-import { providerRef } from '@/utils/structuredData';
+import { breadcrumbs, providerRef } from '@/utils/structuredData';
 
 const finnishCourseKeywords = [
   'Finnish language courses Finland',
@@ -109,7 +109,7 @@ export default function Classes() {
         description="Finnish courses online, beginner to advanced. Groups of up to 15, €99 per four-week course, weekly materials and conversation club events near Tampere."
         canonical="https://finlern.vercel.app/classes/"
         keywords={finnishCourseKeywords}
-        structuredData={finnishCourseSchema}
+        structuredData={[finnishCourseSchema, breadcrumbs.classes]}
       />
 
       {/* Hero Section - Enhanced */}

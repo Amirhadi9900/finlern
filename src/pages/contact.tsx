@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Layout from '../components/layout/Layout'
 import SEO from '@/components/SEO'
 import FaqAccordion, { FaqEntry } from '@/components/contact/FaqAccordion'
-import { ORG_ID, SITE_URL, organizationSchema, providerRef } from '@/utils/structuredData'
+import { breadcrumbs, ORG_ID, SITE_URL, organizationSchema, providerRef } from '@/utils/structuredData'
 
 const FAQ_ITEMS: FaqEntry[] = [
   {
@@ -191,7 +191,7 @@ export default function Contact() {
         description="Talk to Finlern about relocation support in Finland or Finnish, English and violin lessons. Free 20-minute consultation, info@finlern.fi or +358 41 756 7339."
         canonical="https://finlern.vercel.app/contact/"
         keywords={contactKeywords}
-        structuredData={[contactPageSchema, organizationSchema]}
+        structuredData={[contactPageSchema, organizationSchema, breadcrumbs.contact]}
       />
 
       {/* Hero Section - Enhanced */}
@@ -547,6 +547,7 @@ export default function Contact() {
                         alt="Finlern Logo" 
                         width={512} 
                         height={512} 
+                        sizes="512px"
                         className="rounded-lg" 
                         style={{ objectFit: 'contain' }}
                         onError={(e) => {

@@ -66,6 +66,17 @@ const nextConfig = {
   async headers() {
     return [
       {
+        source: '/api/:path*',
+        headers: [
+          // Belt to robots.txt's Disallow: /api/ — endpoints are not pages and
+          // must never reach the index.
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex, nofollow'
+          }
+        ],
+      },
+      {
         source: '/(.*)',
         headers: [
           // Security Headers

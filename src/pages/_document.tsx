@@ -10,6 +10,9 @@ export default function Document() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        {/* Turnstile is fetched from here on every enrolment form; warming the
+            connection removes a DNS and TLS round trip before the widget shows. */}
+        <link rel="preconnect" href="https://challenges.cloudflare.com" />
 
         {/* iOS Safari compatibility script */}
         <Script

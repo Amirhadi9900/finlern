@@ -60,10 +60,10 @@ const Footer: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-aurora-blue via-aurora-purple to-aurora-green opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
                 <div className="overflow-hidden rounded-lg bg-aurora-night p-3">
                 <Image 
-                  src="/images/finlern.png" 
+                  src="/images/finlern-mark.png" 
                   alt="Finlern Logo" 
-                  width={800} 
-                  height={280} 
+                  width={512} 
+                  height={512} 
                     className="h-20 md:h-24 w-auto filter drop-shadow-lg"
                     onError={(e) => {
                       // Set fallback image if the logo fails to load

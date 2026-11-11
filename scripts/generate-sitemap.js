@@ -1,6 +1,22 @@
 const fs = require('fs');
 const path = require('path');
 const prettier = require('prettier');
+const { execSync } = require('child_process');
+
+// Date the page's own source last changed, not the build date. Stamping every
+// URL with "today" on every deploy teaches Google to ignore lastmod. If git is
+// unavailable (a shallow clone during a Vercel build) the tag is omitted.
+function lastModified(relPagePath) {
+  try {
+    const stamp = execSync(`git log -1 --format=%cs -- "src/pages/${relPagePath}"`, {
+      encoding: 'utf8',
+      cwd: process.cwd(),
+    }).trim();
+    return /^\d{4}-\d{2}-\d{2}$/.test(stamp) ? stamp : null;
+  } catch (err) {
+    return null;
+  }
+}
 
 // Your site URL
 const WEBSITE_URL = 'https://finlern.vercel.app';
@@ -32,9 +48,9 @@ async function generateSitemap() {
         .replace(/(^|\/)index$/, '')
         .replace(/\[([^\]]+)\]/g, 'param');
       // trailingSlash is enabled, so every canonical URL ends with a slash.
-      return `${WEBSITE_URL}${route ? `/${route}` : ''}/`;
+      return { url: `${WEBSITE_URL}${route ? `/${route}` : ''}/`, lastmod: lastModified(rel) };
     })
-    .sort();
+    .sort((a, b) => a.url.localeCompare(b.url));
 
   // Create sitemap XML
   const sitemap = `
@@ -42,10 +58,10 @@ async function generateSitemap() {
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       ${pages
         .map(
-          (url) => `
+          ({ url, lastmod }) => `
         <url>
           <loc>${url}</loc>
-          <lastmod>${new Date().toISOString()}</lastmod>
+          ${lastmod ? `<lastmod>${lastmod}</lastmod>` : ''}
           <changefreq>${
             url === HOME_URL ? 'weekly' : 'monthly'
           }</changefreq>

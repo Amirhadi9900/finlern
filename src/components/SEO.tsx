@@ -37,7 +37,7 @@ const SEO: React.FC<SEOProps> = ({
   title,
   description,
   canonical,
-  ogImage = '/images/finlern.png',
+  ogImage = '/images/finlern-og.png',
   ogImageAlt,
   ogType = 'website',
   twitterCard = 'summary_large_image',
@@ -62,8 +62,8 @@ const SEO: React.FC<SEOProps> = ({
       ? keywords.join(', ')
       : keywords
     : DEFAULT_KEYWORDS.join(', ');
-  const robotsContent = robots ?? (noindex ? 'noindex, nofollow' : 'index, follow');
-  const imageAlt = ogImageAlt || `${SITE_NAME} featured image`;
+  const robotsContent = robots ?? (noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large');
+  const imageAlt = ogImageAlt || 'Finlern logo';
   const schemaList = Array.isArray(structuredData)
     ? structuredData
     : structuredData
@@ -89,6 +89,10 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="og:description" content={description} />
       <meta property="og:image" content={absoluteImage} />
       <meta property="og:image:alt" content={imageAlt} />
+      {/* Every social image on this site is 1200x630; a page that passes a
+          different ogImage must supply a same-sized asset. */}
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:site_name" content={SITE_NAME} />
       <meta property="og:locale" content="en_FI" />
       

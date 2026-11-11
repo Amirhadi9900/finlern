@@ -11,8 +11,14 @@ export const organizationSchema: StructuredData = {
   '@id': ORG_ID,
   name: 'Finlern',
   legalName: 'Finlern Oy',
+  // Every value below is stated on our-story.tsx, so the entity Google builds
+  // from the JSON-LD matches the page it can already read.
+  foundingDate: '2024',
+  founder: { '@type': 'Person', name: 'Hamid Reza Ghorbani' },
+  slogan: 'Empowering integration through education and culture',
+  knowsLanguage: ['English', 'Finnish', 'Kurdish', 'Persian'],
   url: SITE_URL,
-  logo: `${SITE_URL}/images/finlern.png`,
+  logo: `${SITE_URL}/images/finlern-logo-512.png`,
   description:
     'Relocation support for international students and professionals in Finland — accommodation, residency and Kela paperwork — plus Finnish and English language courses and violin lessons.',
   address: {
@@ -70,6 +76,18 @@ const areaServedSchema: StructuredData[] = [
 // Lets every page point at the single organization entity declared on the home
 // page instead of re-declaring an Organization with the same name.
 export const providerRef: StructuredData = { '@id': ORG_ID };
+
+// A WebSite entity ties the site-wide brand to the organization, which matters
+// more on a platform subdomain than on a owned domain.
+export const webSiteSchema: StructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${SITE_URL}/#website`,
+  url: SITE_URL,
+  name: 'Finlern',
+  inLanguage: 'en-FI',
+  publisher: providerRef,
+};
 
 const RELOCATION_SERVICES = [
   'Accommodation & Housing',

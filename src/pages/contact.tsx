@@ -543,12 +543,12 @@ export default function Contact() {
                     <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-aurora-blue to-aurora-purple blur-lg opacity-30"></div>
                     <div className="relative bg-white p-2 rounded-xl shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                       <Image 
-                        src="/images/finlern.png" 
+                        src="/images/finlern-mark.png" 
                         alt="Finlern Logo" 
-                        width={500} 
-                        height={300} 
+                        width={512} 
+                        height={512} 
                         className="rounded-lg" 
-                        style={{ objectFit: 'cover' }}
+                        style={{ objectFit: 'contain' }}
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
                           target.src = "/images/finlern.png";

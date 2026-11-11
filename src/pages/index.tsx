@@ -6,7 +6,7 @@ import SEO from '@/components/SEO'
 import EventCarousel from '@/components/events/EventCarousel'
 import MorphWords from '@/components/home/MorphWords'
 import ScrollCue from '@/components/home/ScrollCue'
-import { organizationSchema, relocationServiceSchema } from '@/utils/structuredData'
+import { organizationSchema, relocationServiceSchema, webSiteSchema } from '@/utils/structuredData'
 import styles from '../styles/heroEffects.module.css'
 
 // Add type declaration for window.scrollAnimations
@@ -50,7 +50,7 @@ export default function Home() {
     }
   };
 
-  const homePageSchema = [organizationSchema, relocationServiceSchema];
+  const homePageSchema = [organizationSchema, relocationServiceSchema, webSiteSchema];
   
   return (
     <Layout>
@@ -58,7 +58,6 @@ export default function Home() {
         title="Relocation Support & Language Courses in Finland"
         description="Relocation support for international students in Finland — housing, residency, Kela and bank paperwork — plus Finnish and English courses and violin lessons."
         canonical="https://finlern.vercel.app/"
-        ogImage="/images/finlern.png"
         structuredData={homePageSchema}
       />
 

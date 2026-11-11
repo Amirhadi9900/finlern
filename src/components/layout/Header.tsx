@@ -78,10 +78,10 @@ const Header: React.FC = () => {
               {/* Logo Image */}
               <div className="relative overflow-hidden rounded-xl">
                 <Image
-                  src="/images/finlern.png"
+                  src="/images/finlern-mark.png"
                   alt="Finlern Logo"
-                  width={140}
-                  height={49}
+                  width={512}
+                  height={512}
                   className={`w-auto transition-all duration-500 ease-out group-hover:scale-105 ${
                     isScrolled ? 'h-10 sm:h-11' : 'h-11 sm:h-12'
                   }`}

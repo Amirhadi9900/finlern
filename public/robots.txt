@@ -2,6 +2,9 @@
 User-agent: *
 Allow: /
 
+# Server endpoints are not pages; keep crawlers out of them.
+Disallow: /api/
+
 # Disallow development/staging environments (if needed)
 # User-agent: *
 # Disallow: /dev/

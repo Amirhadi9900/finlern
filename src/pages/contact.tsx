@@ -11,7 +11,7 @@ const FAQ_ITEMS: FaqEntry[] = [
     answer: (
       <p>
         We reply to all inquiries within 24 hours from Monday to Friday and during our Saturday hours (10:00–18:00). We are closed
-        on Sundays, so messages sent then are answered on Monday. For urgent matters, call us directly at +358 41 756 7339.
+        on Sundays, so messages sent then are answered on Monday. For urgent matters, call us directly at +358 44 975 6713.
       </p>
     ),
   },
@@ -188,7 +188,7 @@ export default function Contact() {
     <Layout>
       <SEO
         title="Contact Finlern: Relocation & Course Support"
-        description="Talk to Finlern about relocation support in Finland or Finnish, English and violin lessons. Free 20-minute consultation, info@finlern.fi or +358 41 756 7339."
+        description="Talk to Finlern about relocation support in Finland or Finnish, English and violin lessons. Free 20-minute consultation, info@finlern.fi or +358 44 975 6713."
         canonical="https://finlern.vercel.app/contact/"
         keywords={contactKeywords}
         structuredData={[contactPageSchema, organizationSchema, breadcrumbs.contact]}
@@ -287,8 +287,8 @@ export default function Contact() {
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Call Us</h3>
                   <div className="space-y-3">
                     <p className="text-gray-600">Main Office</p>
-                    <a href="tel:+358417567339" className="text-xl font-bold text-aurora-blue hover:text-aurora-purple transition-colors block">
-                      +358 41 756 7339
+                    <a href="tel:+358449756713" className="text-xl font-bold text-aurora-blue hover:text-aurora-purple transition-colors block">
+                      +358 44 975 6713
                     </a>
                     <p className="text-sm text-gray-500">Mon–Fri 24 h · Sat 10:00–18:00 · Closed Sun</p>
                   </div>
@@ -542,12 +542,13 @@ export default function Contact() {
                   <div className="relative hidden md:block">
                     <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-aurora-blue to-aurora-purple blur-lg opacity-30"></div>
                     <div className="relative bg-white p-2 rounded-xl shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                      {/* unoptimized keeps a clean /images/ URL in the HTML: Google Images needs a stable image identity, not an /_next/image query string. */}
                       <Image 
                         src="/images/finlern-mark.png" 
                         alt="Finlern Logo" 
                         width={512} 
                         height={512} 
-                        sizes="512px"
+                        unoptimized
                         className="rounded-lg" 
                         style={{ objectFit: 'contain' }}
                         onError={(e) => {

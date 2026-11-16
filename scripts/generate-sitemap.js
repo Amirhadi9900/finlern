@@ -38,6 +38,20 @@ async function generateSitemap() {
 
   const HOME_URL = `${WEBSITE_URL}/`;
 
+  // Every <img> on the site is an /_next/image rendition, so the clean logo URL
+  // never appears in the HTML. The image sitemap is where Google is told the
+  // stable, full-size identity of the brand mark.
+  const LOGO_IMAGE = {
+    loc: `${WEBSITE_URL}/images/finlern-mark.png`,
+    title: 'Finlern logo',
+    caption:
+      'Finlern — Finnish and English language courses, violin lessons and relocation support in Finland.',
+  };
+  const PAGE_IMAGES = {
+    [HOME_URL]: [LOGO_IMAGE],
+    [`${WEBSITE_URL}/contact/`]: [LOGO_IMAGE],
+  };
+
   const pages = pagePaths
     .map((page) => path.relative(PAGES_DIR, page).split(path.sep).join('/'))
     .filter((rel) => !EXCLUDED.test(rel))
@@ -55,7 +69,7 @@ async function generateSitemap() {
   // Create sitemap XML
   const sitemap = `
     <?xml version="1.0" encoding="UTF-8"?>
-    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
       ${pages
         .map(
           ({ url, lastmod }) => `
@@ -66,6 +80,16 @@ async function generateSitemap() {
             url === HOME_URL ? 'weekly' : 'monthly'
           }</changefreq>
           <priority>${url === HOME_URL ? '1.0' : '0.8'}</priority>
+          ${(PAGE_IMAGES[url] || [])
+            .map(
+              (img) => `
+          <image:image>
+            <image:loc>${img.loc}</image:loc>
+            <image:title>${img.title}</image:title>
+            <image:caption>${img.caption}</image:caption>
+          </image:image>`
+            )
+            .join('')}
         </url>
       `
         )

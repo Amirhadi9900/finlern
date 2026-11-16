@@ -52,7 +52,7 @@ export const organizationSchema: StructuredData = {
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'customer service',
-    telephone: '+358417567339',
+    telephone: '+358449756713',
     email: 'info@finlern.fi',
     availableLanguage: ['English', 'Finnish', 'Kurdish', 'Persian'],
   },

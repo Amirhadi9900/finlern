@@ -213,7 +213,7 @@ const Footer: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-200 font-medium">Call Us</p>
-                    <a href="tel:+358417567339" className="text-white hover:text-aurora-green-light transition-colors duration-300 font-medium">+358 41 756 7339</a>
+                    <a href="tel:+358449756713" className="text-white hover:text-aurora-green-light transition-colors duration-300 font-medium">+358 44 975 6713</a>
                   </div>
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-aurora-green to-aurora-blue opacity-0 group-hover:opacity-100 transition-all duration-300"></div>

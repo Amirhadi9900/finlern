@@ -55,5 +55,5 @@ export const SOCIAL_CHANNELS: SocialChannel[] = [
     external: true,
   },
   { letter: 'C', label: 'Email us', href: 'mailto:info@finlern.fi', icon: EnvelopeIcon },
-  { letter: 'H', label: 'Call us', href: 'tel:+358417567339', icon: PhoneIcon },
+  { letter: 'H', label: 'Call us', href: 'tel:+358449756713', icon: PhoneIcon },
 ]

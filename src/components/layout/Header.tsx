@@ -271,7 +271,7 @@ const Header: React.FC = () => {
 
           {/* Contact info */}
           <p className="mt-6 text-white/30 text-sm">
-            info@finlern.fi • +358 41 756 7339
+            info@finlern.fi • +358 44 975 6713
           </p>
         </div>
       </div>

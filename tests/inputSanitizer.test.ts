@@ -7,7 +7,7 @@ describe('sanitizeInput — boundary validation (input sanitization)', () => {
   });
 
   it('keeps only phone-permitted characters and trims', () => {
-    expect(sanitizeInput('+358 41 756 7339 abc', 'phone')).toBe('+358 41 756 7339');
+    expect(sanitizeInput('+358 44 975 6713 abc', 'phone')).toBe('+358 44 975 6713');
   });
 
   it('lowercases and removes spaces for email', () => {

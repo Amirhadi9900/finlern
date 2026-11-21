@@ -52,6 +52,6 @@
     "@types/nodemailer": "^8.0.2",
     "cross-env": "^7.0.3",
     "prettier": "^3.2.5",
-    "vitest": "^2.1.9"
+    "vitest": "^4.1.11"
   }
 }
